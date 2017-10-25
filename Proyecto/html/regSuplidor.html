@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registrar suplidor</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../css/_all-skins.min.css">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>V</b>S</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Victor Sinclair</b></span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Navegación</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              
+              <!-- User Account: style can be found in dropdown.less -->  
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+       
+       <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+                    
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header"></li>
+            <li>
+              <a href="#">
+                <i class="fa fa-home"></i> <span>Inico</span>
+              </a>
+            </li>
+          
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-users"></i>
+                <span>Gestion suplidores</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Suplidores</a></li>
+                
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Gestion materia prima</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Materia prima</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Inventario</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Entrada</a></li>
+                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Salida</a></li>
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Gestion empleados</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Empleados</a></li>
+                
+              </ul>
+            </li>
+           
+            
+               <li class="treeview">
+              <a href="#">
+                <i class="fa fa-tasks"></i>
+                <span>Producción</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
+               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Cigarros</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
+                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
+              </ul>
+            </li>
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Gestion nomina</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Nomina</a></li>
+                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i>Reporte de horas</a></li>
+                
+              </ul>
+            </li>
+           
+                       
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i> <span> Gestion usuarios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-print"></i>
+                <span>Reportes</span>
+               <!-- <small class="label pull-right bg-green">xlsx</small>-->
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
+               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Reporte nomina</a></li>
+              </ul>
+            </li>
+            
+          
+           
+                        
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+      
+
+       <!--Contenido-->
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        
+        <!-- Main content -->
+        <section class="content">
+          
+          <div class="row">
+            <div class="col-md-12">
+             
+ 
+    <div class="row">
+        <div class="col-md-12">
+    
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+
+                  
+                    <legend class="text-center header">Registrar Suplidor</legend>
+
+                        
+
+  <form>
+
+    <div class="form-group"> <!-- Full Name -->
+
+        <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Empresa</label></span>
+         <div class="col-md-8">
+        <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="John Deer"></div>
+    </div>  
+
+    <div class="form-group">
+                             <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
+                            <div class="col-md-8">
+                                <input id="telefono" name="phone" type="text" placeholder="Telefono" class="form-control">
+                            </div>
+                        </div>  
+
+     <div class="form-group">
+                           <span class="col-md-1 col-md-offset-2 text-center"> <label for="full_name_id" class="control-label">Direccion</label></span>
+                            <div class="col-md-8">
+                                <input id="direccion" name="Address" type="Address" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control">
+                            </div>
+                        </div>                  
+                            
+                            <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label ">Correo</label></span>
+                            <div class="col-md-8">
+                                <input id="email" name="email" type="text" placeholder="@ejemplo.com" class="form-control">
+                            </div>
+                        </div>
+
+                               
+                            
+    <div class="form-group"> <!-- State Button -->
+       <span class="col-md-1 col-md-offset-2 text-center"><label for="state_id" class="control-label">Pais</label></span>
+         <div class="col-md-8">
+        <select class="form-control" id="pais_id">
+           
+            <option value="AF">Afganistán</option>
+<option value="AL">Albania</option>
+<option value="DE">Alemania</option>
+<option value="AD">Andorra</option>
+<option value="AO">Angola</option>
+<option value="AI">Anguilla</option>
+<option value="AQ">Antártida</option>
+<option value="AG">Antigua y Barbuda</option>
+<option value="AN">Antillas Holandesas</option>
+<option value="SA">Arabia Saudí</option>
+<option value="DZ">Argelia</option>
+<option value="AR">Argentina</option>
+<option value="AM">Armenia</option>
+<option value="AW">Aruba</option>
+<option value="AU">Australia</option>
+<option value="AT">Austria</option>
+<option value="AZ">Azerbaiyán</option>
+<option value="BS">Bahamas</option>
+<option value="BH">Bahrein</option>
+<option value="BD">Bangladesh</option>
+<option value="BB">Barbados</option>
+<option value="BE">Bélgica</option>
+<option value="BZ">Belice</option>
+<option value="BJ">Benin</option>
+<option value="BM">Bermudas</option>
+<option value="BY">Bielorrusia</option>
+<option value="MM">Birmania</option>
+<option value="BO">Bolivia</option>
+<option value="BA">Bosnia y Herzegovina</option>
+<option value="BW">Botswana</option>
+<option value="BR">Brasil</option>
+<option value="BN">Brunei</option>
+<option value="BG">Bulgaria</option>
+<option value="BF">Burkina Faso</option>
+<option value="BI">Burundi</option>
+<option value="BT">Bután</option>
+<option value="CV">Cabo Verde</option>
+<option value="KH">Camboya</option>
+<option value="CM">Camerún</option>
+<option value="CA">Canadá</option>
+<option value="TD">Chad</option>
+<option value="CL">Chile</option>
+<option value="CN">China</option>
+<option value="CY">Chipre</option>
+<option value="VA">Ciudad del Vaticano (Santa Sede)</option>
+<option value="CO">Colombia</option>
+<option value="KM">Comores</option>
+<option value="CG">Congo</option>
+<option value="CD">Congo, República Democrática del</option>
+<option value="KR">Corea</option>
+<option value="KP">Corea del Norte</option>
+<option value="CI">Costa de Marfíl</option>
+<option value="CR">Costa Rica</option>
+<option value="HR">Croacia (Hrvatska)</option>
+<option value="CU">Cuba</option>
+<option value="DK">Dinamarca</option>
+<option value="DJ">Djibouti</option>
+<option value="DM">Dominica</option>
+<option value="EC">Ecuador</option>
+<option value="EG">Egipto</option>
+<option value="SV">El Salvador</option>
+<option value="AE">Emiratos Árabes Unidos</option>
+<option value="ER">Eritrea</option>
+<option value="SI">Eslovenia</option>
+<option value="ES">España</option>
+<option value="US">Estados Unidos</option>
+<option value="EE">Estonia</option>
+<option value="ET">Etiopía</option>
+<option value="FJ">Fiji</option>
+<option value="PH">Filipinas</option>
+<option value="FI">Finlandia</option>
+<option value="FR">Francia</option>
+<option value="GA">Gabón</option>
+<option value="GM">Gambia</option>
+<option value="GE">Georgia</option>
+<option value="GH">Ghana</option>
+<option value="GI">Gibraltar</option>
+<option value="GD">Granada</option>
+<option value="GR">Grecia</option>
+<option value="GL">Groenlandia</option>
+<option value="GP">Guadalupe</option>
+<option value="GU">Guam</option>
+<option value="GT">Guatemala</option>
+<option value="GY">Guayana</option>
+<option value="GF">Guayana Francesa</option>
+<option value="GN">Guinea</option>
+<option value="GQ">Guinea Ecuatorial</option>
+<option value="GW">Guinea-Bissau</option>
+<option value="HT">Haití</option>
+<option value="HN">Honduras</option>
+<option value="HU">Hungría</option>
+<option value="IN">India</option>
+<option value="ID">Indonesia</option>
+<option value="IQ">Irak</option>
+<option value="IR">Irán</option>
+<option value="IE">Irlanda</option>
+<option value="BV">Isla Bouvet</option>
+<option value="CX">Isla de Christmas</option>
+<option value="IS">Islandia</option>
+<option value="KY">Islas Caimán</option>
+<option value="CK">Islas Cook</option>
+<option value="CC">Islas de Cocos o Keeling</option>
+<option value="FO">Islas Faroe</option>
+<option value="HM">Islas Heard y McDonald</option>
+<option value="FK">Islas Malvinas</option>
+<option value="MP">Islas Marianas del Norte</option>
+<option value="MH">Islas Marshall</option>
+<option value="UM">Islas menores de Estados Unidos</option>
+<option value="PW">Islas Palau</option>
+<option value="SB">Islas Salomón</option>
+<option value="SJ">Islas Svalbard y Jan Mayen</option>
+<option value="TK">Islas Tokelau</option>
+<option value="TC">Islas Turks y Caicos</option>
+<option value="VI">Islas Vírgenes (EEUU)</option>
+<option value="VG">Islas Vírgenes (Reino Unido)</option>
+<option value="WF">Islas Wallis y Futuna</option>
+<option value="IL">Israel</option>
+<option value="IT">Italia</option>
+<option value="JM">Jamaica</option>
+<option value="JP">Japón</option>
+<option value="JO">Jordania</option>
+<option value="KZ">Kazajistán</option>
+<option value="KE">Kenia</option>
+<option value="KG">Kirguizistán</option>
+<option value="KI">Kiribati</option>
+<option value="KW">Kuwait</option>
+<option value="LA">Laos</option>
+<option value="LS">Lesotho</option>
+<option value="LV">Letonia</option>
+<option value="LB">Líbano</option>
+<option value="LR">Liberia</option>
+<option value="LY">Libia</option>
+<option value="LI">Liechtenstein</option>
+<option value="LT">Lituania</option>
+<option value="LU">Luxemburgo</option>
+<option value="MK">Macedonia, Ex-República Yugoslava de</option>
+<option value="MG">Madagascar</option>
+<option value="MY">Malasia</option>
+<option value="MW">Malawi</option>
+<option value="MV">Maldivas</option>
+<option value="ML">Malí</option>
+<option value="MT">Malta</option>
+<option value="MA">Marruecos</option>
+<option value="MQ">Martinica</option>
+<option value="MU">Mauricio</option>
+<option value="MR">Mauritania</option>
+<option value="YT">Mayotte</option>
+<option value="MX">México</option>
+<option value="FM">Micronesia</option>
+<option value="MD">Moldavia</option>
+<option value="MC">Mónaco</option>
+<option value="MN">Mongolia</option>
+<option value="MS">Montserrat</option>
+<option value="MZ">Mozambique</option>
+<option value="NA">Namibia</option>
+<option value="NR">Nauru</option>
+<option value="NP">Nepal</option>
+<option value="NI">Nicaragua</option>
+<option value="NE">Níger</option>
+<option value="NG">Nigeria</option>
+<option value="NU">Niue</option>
+<option value="NF">Norfolk</option>
+<option value="NO">Noruega</option>
+<option value="NC">Nueva Caledonia</option>
+<option value="NZ">Nueva Zelanda</option>
+<option value="OM">Omán</option>
+<option value="NL">Países Bajos</option>
+<option value="PA">Panamá</option>
+<option value="PG">Papúa Nueva Guinea</option>
+<option value="PK">Paquistán</option>
+<option value="PY">Paraguay</option>
+<option value="PE">Perú</option>
+<option value="PN">Pitcairn</option>
+<option value="PF">Polinesia Francesa</option>
+<option value="PL">Polonia</option>
+<option value="PT">Portugal</option>
+<option value="PR">Puerto Rico</option>
+<option value="QA">Qatar</option>
+<option value="UK">Reino Unido</option>
+<option value="CF">República Centroafricana</option>
+<option value="CZ">República Checa</option>
+<option value="ZA">República de Sudáfrica</option>
+<option value="DO" selected>República Dominicana</option>
+<option value="SK">República Eslovaca</option>
+<option value="RE">Reunión</option>
+<option value="RW">Ruanda</option>
+<option value="RO">Rumania</option>
+<option value="RU">Rusia</option>
+<option value="EH">Sahara Occidental</option>
+<option value="KN">Saint Kitts y Nevis</option>
+<option value="WS">Samoa</option>
+<option value="AS">Samoa Americana</option>
+<option value="SM">San Marino</option>
+<option value="VC">San Vicente y Granadinas</option>
+<option value="SH">Santa Helena</option>
+<option value="LC">Santa Lucía</option>
+<option value="ST">Santo Tomé y Príncipe</option>
+<option value="SN">Senegal</option>
+<option value="SC">Seychelles</option>
+<option value="SL">Sierra Leona</option>
+<option value="SG">Singapur</option>
+<option value="SY">Siria</option>
+<option value="SO">Somalia</option>
+<option value="LK">Sri Lanka</option>
+<option value="PM">St Pierre y Miquelon</option>
+<option value="SZ">Suazilandia</option>
+<option value="SD">Sudán</option>
+<option value="SE">Suecia</option>
+<option value="CH">Suiza</option>
+<option value="SR">Surinam</option>
+<option value="TH">Tailandia</option>
+<option value="TW">Taiwán</option>
+<option value="TZ">Tanzania</option>
+<option value="TJ">Tayikistán</option>
+<option value="TF">Territorios franceses del Sur</option>
+<option value="TP">Timor Oriental</option>
+<option value="TG">Togo</option>
+<option value="TO">Tonga</option>
+<option value="TT">Trinidad y Tobago</option>
+<option value="TN">Túnez</option>
+<option value="TM">Turkmenistán</option>
+<option value="TR">Turquía</option>
+<option value="TV">Tuvalu</option>
+<option value="UA">Ucrania</option>
+<option value="UG">Uganda</option>
+<option value="UY">Uruguay</option>
+<option value="UZ">Uzbekistán</option>
+<option value="VU">Vanuatu</option>
+<option value="VE">Venezuela</option>
+<option value="VN">Vietnam</option>
+<option value="YE">Yemen</option>
+<option value="YU">Yugoslavia</option>
+<option value="ZM">Zambia</option>
+<option value="ZW">Zimbabue</option>
+        </select>  
+        </div>                  
+    </div>
+    
+   
+    
+                   
+                    </fieldset>
+                    
+                    <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                            </div>
+                        </div>
+                </form>
+           
+        </div>
+    </div>
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <!--Fin-Contenido-->
+
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2017-2020.</strong> All rights reserved.
+      </footer>
+
+      
+    <!-- jQuery 2.1.4 -->
+    <script src="../js/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../js/app.min.js"></script>
+    <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+
+  </body>
+</html>

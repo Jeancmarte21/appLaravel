@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Registrar Produccion Maquina</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../css/font-awesome.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-datetimepicker.css">
+  
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../css/_all-skins.min.css">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <script src="/vendor/bootstrap-combobox/js/bootstrap-combobox.js"></script>
+
+  </head>
+  <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+
+      <header class="main-header">
+
+        <!-- Logo -->
+        <a href="index2.html" class="logo">
+          <!-- mini logo for sidebar mini 50x50 pixels -->
+          <span class="logo-mini"><b>V</b>S</span>
+          <!-- logo for regular state and mobile devices -->
+          <span class="logo-lg"><b>Victor Sinclair</b></span>
+        </a>
+
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Navegación</span>
+          </a>
+          <!-- Navbar Right Menu -->
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              
+              <!-- User Account: style can be found in dropdown.less -->  
+            </ul>
+          </div>
+
+        </nav>
+      </header>
+       <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+                    
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <li class="header"></li>
+            <li>
+              <a href="#">
+                <i class="fa fa-home"></i> <span>Inico</span>
+              </a>
+            </li>
+          
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-users"></i>
+                <span>Suplidores</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar suplidor</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion suplidor</a></li>
+                
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-th"></i>
+                <span>Almacen</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar materia prima</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion materia prima</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Inventario</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Entrada</a></li>
+                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Salida</a></li>
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i>
+                <span>Empleado</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar empleado</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Consulta empleado</a></li>
+                
+              </ul>
+            </li>
+           
+            
+               <li class="treeview">
+              <a href="#">
+                <i class="fa fa-tasks"></i>
+                <span>Producción</span>
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
+               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion cigarros</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
+                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
+              </ul>
+            </li>
+            
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Nomina</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Gestion de nomina</a></li>
+                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i>Reporte de horas</a></li>
+                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Pagos</a></li>
+              </ul>
+            </li>
+           
+                       
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i> <span> Usuarios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Crear usuario</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Consultar usuario</a></li>
+              </ul>
+            </li>
+            
+              <li class="treeview">
+              <a href="#">
+                <i class="fa fa-print"></i>
+                <span>Reportes</span>
+               <!-- <small class="label pull-right bg-green">xlsx</small>-->
+                 <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
+               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Reporte nomina</a></li>
+              </ul>
+            </li>
+            
+          
+           
+                        
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+      
+      
+       <!--Contenido-->
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        
+        <!-- Main content -->
+        <section class="content">
+          
+          <div class="row">
+            <div class="col-md-12">
+             
+ 
+    <div class="row">
+        <div class="col-md-12">
+    
+                <form class="form-horizontal" method="post">
+                    <fieldset>
+
+                   <legend class="text-center header">Producción de Máquinas</legend>
+                   
+                   <div class="form-group">
+        <label class="col-xs-3 control-label">Fecha</label>
+        <div class="col-xs-5 selectContainer">
+           <input class="form-control" type="date"  id="example-date-input">
+        </div>
+    </div>
+                              <div class="form-group">
+        <label class="col-xs-3 control-label">Maquina</label>
+        <div class="col-xs-5 selectContainer">
+            <select class="form-control" name="size">
+                <option value="">Seleccione</option>
+                <option value="">Arenco</option>
+              <option value="">AMF</option>
+            </select>
+        </div>
+    </div>
+                 
+                <div class="form-group">
+        <label class="col-xs-3 control-label">Cigarro</label>
+        <div class="col-xs-5 selectContainer">
+            <select class="form-control" name="size">
+                <option value="">Seleccione</option>
+                <option value="">...</option>
+              <option value="">...</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Configuración</label>
+        <div class="col-xs-5 selectContainer">
+            <select class="form-control" name="size">
+                <option value="">Seleccione</option>
+                <option value="">...</option>
+              <option value="">...</option>
+            </select>
+        </div>
+    </div>
+                 
+                           
+                                                   
+                   
+                     <div class="form-group">
+        <label class="col-xs-3 control-label">Cantidad</label>
+        <div class="col-xs-5 inputGroupContainer">
+            <div class="input-group">
+               
+                <input type="number" class="form-control" name="price" min="0"/>
+				
+            </div>
+        </div>
+    </div>
+                     
+                  
+                   
+                    </fieldset>
+                    <div class="form-group">
+                            <div class="col-md-12 text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                            </div>
+                        </div>
+                       
+                </form>
+           
+        </div>
+    </div>
+          </div><!-- /.row -->
+        </section><!-- /.content -->
+      </div><!-- /.content-wrapper -->
+      <!--Fin-Contenido-->
+
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0.0
+        </div>
+        <strong>Copyright &copy; 2017-2020.</strong> All rights reserved.
+      </footer>
+
+      
+    <!-- jQuery 2.1.4 -->
+    <script src="../js/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="../js/app.min.js"></script>
+    <script type="text/javascript" src="../js/locales/bootstrap-datetimepicker.fr.js" charset="UTF-8"></script>
+    <script>
+$(document).ready(function() {
+    $('#productForm')
+        .formValidation({
+            framework: 'bootstrap',
+            icon: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            excluded: ':disabled',
+            fields: {
+                name: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The name is required'
+                        },
+                        stringLength: {
+                            min: 6,
+                            max: 30,
+                            message: 'The name must be more than 6 and less than 30 characters long'
+                        }
+                    }
+                },
+                description: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The description is required'
+                        },
+                        stringLength: {
+                            min: 50,
+                            max: 1000,
+                            message: 'The description must be more than 50 and less than 1000 characters'
+                        }
+                    }
+                },
+                price: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The price is required'
+                        },
+                        numeric: {
+                            message: 'The price must be a number'
+                        }
+                    }
+                },
+                size: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The size is required'
+                        }
+                    }
+                },
+                color: {
+                    validators: {
+                        notEmpty: {
+                            message: 'The color is required'
+                        }
+                    }
+                }
+            }
+        })
+        /* Using Combobox for color and size select elements */
+        .find('[name="color"], [name="size"]')
+            .combobox()
+            .end()
+});
+</script>
+
+  </body>
+</html>
