@@ -13,7 +13,7 @@ class MateriaPrimaFromRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,9 @@ class MateriaPrimaFromRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+
+            'nombre'=>'required|max:50','categoria'=>'required|max:50', 'porcentaje_pesohumedo'=>'required|max:15','existencia_minima'=>'max:15','existencia_real'=>'required|max:15'
+           
         ];
     }
 }

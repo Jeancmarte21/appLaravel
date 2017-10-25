@@ -62,10 +62,10 @@ public function edit($id){
 
 public function update(CigarroFromRequest $request,$id){
 
-	$cigarro=Empleado::findOrFail($id);
+	$cigarro=Cigarro::findOrFail($id);
 	$cigarro->nombre=$request->get(nombre);
 	$cigarro->tipo_cigarro=$request->get(tipo_cigarro);
-	$cigarro->=materiaPrima_idmateriaPrima$request->get(materiaPrima_idmateriaPrima);
+	$cigarro->=materiaPrima_idmateriaPrima=$request->get(materiaPrima_idmateriaPrima);
 	$cigarro->update();
 	return Redirect::to(produccion/cigarro);
 
