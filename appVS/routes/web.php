@@ -14,7 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::resource('empleados', 'EmpleadosController');
 Route::resource('gestionSuplidores/suplidor','SuplidorController');
 Route::resource('gestionEmpleados/empleado','EmpleadoController');
 Route::resource('produccion/cigarro','CigarroController');
