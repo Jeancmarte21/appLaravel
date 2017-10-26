@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
-     protected $table='empleado';
+    protected $fillable = [
+    	'cedula',
+    	'nombre',
+    	'apellidos',
+    	'fecha_nacimiento',
+    	'direccion'
+    ]
 
-    protected $primaryKey="idempleado";
-
-    public $timestamps=false;
-
-    protected $fillable=[
-    	'cedula','nombre','apellidos','fecha_naci','direccion'
-    ];
-
-    protected $guarded=[];
+    public function jornadas{
+    	return $this->belongsTo('appVs\Models\Jornada');
+    }
 }
