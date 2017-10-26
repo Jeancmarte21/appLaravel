@@ -12,9 +12,9 @@ class Empleado extends Model
     	'apellidos',
     	'fecha_nacimiento',
     	'direccion'
-    ]
+    ];
 
-    public function jornadas{
+    public function jornadas(){
     	return $this->hasMany('appVs\Jornada');
     }
 }
