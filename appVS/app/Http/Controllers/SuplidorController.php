@@ -24,7 +24,8 @@ class SuplidorController extends Controller
 
    		$suplidores=DB::table('suplidor')->where('nombre','LIKE','%'.$query.'%')
    		->orderBy('idsuplidor','desc')
-   		    ->paginate(7);
+   		->paginate(7);
+
    		    return view('gestionSuplidores.suplidor.index',["suplidores"=>$suplidores,"searchText"=>$query]);
    	}
 
