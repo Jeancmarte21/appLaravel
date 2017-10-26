@@ -15,6 +15,6 @@ class Empleado extends Model
     ]
 
     public function jornadas{
-    	return $this->belongsTo('appVs\Models\Jornada');
+    	return $this->hasMany('appVs\Jornada');
     }
 }
