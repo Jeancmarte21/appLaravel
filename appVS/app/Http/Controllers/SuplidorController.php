@@ -4,7 +4,7 @@ namespace appVS\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use appVS\Http\Request;
+/*use appVS\Http\Request;*/
 use appVS\Suplidor;
 use Illuminate\Support\Facades\Redirect;
 use appVS\Http\Request\SuplidorFromRequest;
@@ -13,16 +13,17 @@ use DB;
 
 class SuplidorController extends Controller
 {
-   public function__construct(){
+  /* <!--public function__construct(){
 
-   }
+   } */
    public function index(Request $request){
 
    	if($request)
    	{
    		$query=trim($request->get('searchText'));//filtro de busqueda
 
-   		$suplidores=DB::table('suplidor')->where('nombre','LIKE','%'.$query.'%')->orderBy('idsuplidor','desc')
+   		$suplidores=DB::table('suplidor')->where('nombre','LIKE','%'.$query.'%')
+   		->orderBy('idsuplidor','desc')
    		    ->paginate(7);
    		    return view('gestionSuplidores.suplidor.index',["suplidores"=>$suplidores,"searchText"=>$query]);
    	}
