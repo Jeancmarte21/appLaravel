@@ -3,20 +3,21 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ADVentas | www.incanatoit.com</title>
+    <title>Victor Sinclair</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="{{assert('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href=" {{ asset('css/bootstrap.min.css') }} ">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{assert('css/font-awesome.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}">
     <!-- Theme style -->
-    <link rel="stylesheet" href="{{assert('css/AdminLTE.min.css')}}">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="{{assert('css/_all-skins.min.css')}}">
-    <link rel="apple-touch-icon" href="{{assert('img/apple-touch-icon.png')}}">
-    <link rel="shortcut icon" href="{{assert('img/favicon.ico')}}">
+    <link rel="stylesheet" href="{{ asset('css/AdminLTE.min.css') }}">
+    
+    <link rel="stylesheet" href="{{asset('css/_all-skins.min.css')}}">
+
+    <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
+
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
@@ -125,18 +126,7 @@
               </ul>
             </li>
             
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Gestion nomina</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-               <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Nomina</a></li>
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i>Reporte de horas</a></li>
-                
-              </ul>
-            </li>
+            
            
                        
             <li class="treeview">
@@ -188,7 +178,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Sistema de Ventas</h3>
+                  <h3 class="box-title">  <center>Contenido</center></h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
                     
@@ -224,11 +214,11 @@
 
       
     <!-- jQuery 2.1.4 -->
-    <script src="{{assert('js/jQuery-2.1.4.min.js')}}"></script>
+    <script src="{{asset('js/jQuery-2.1.4.min.js')}}"></script>
     <!-- Bootstrap 3.3.5 -->
-    <script src="{{assert('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
-    <script src="{{assert('js/app.min.js')}}"></script>
+    <script src="{{asset('js/app.min.js')}}"></script>
     
   </body>
 </html>
