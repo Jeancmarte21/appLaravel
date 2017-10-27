@@ -90,7 +90,7 @@
               <ul class="treeview-menu">
                
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Materia prima</a></li>
+                <li><a href="materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Inventario</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Entrada</a></li>
                  <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Salida</a></li>
@@ -120,7 +120,7 @@
               <ul class="treeview-menu">
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
-               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Cigarros</a></li>
+               <li><a href="cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
                 <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>

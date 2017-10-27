@@ -3,6 +3,6 @@
 
 @section('contenido')
 
- <h1>No se cuando aportaras algo, pero mientras seguire resolviendo. att: Jean tu papa Marte</h1>
+ <h1>Empleados</h1>
 
 @endsection
