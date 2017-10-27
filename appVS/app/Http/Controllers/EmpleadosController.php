@@ -4,6 +4,7 @@ namespace appVS\Http\Controllers;
 
 use appVS\Empleado;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmpleadosController extends Controller
 {
@@ -27,6 +28,7 @@ class EmpleadosController extends Controller
     public function create()
     {
         //
+        return view('empleados.create');
     }
 
     /**
@@ -38,6 +40,22 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         //
+        if(Auth::check()){
+            $empleado = Empleado::create([
+                'cedula' => $request->input('nombre'),
+                'nombre' => $request->input('cedula'),
+                'apellidos' => $request->input('apellidos'),
+                'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+                'direccion' => $request->input('direccion'),
+                ]);
+            
+        if($empleado){
+            return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
+        }
+
+        return back()->withInput()->with('errors', 'Error registrando empleado');
+
+        }
     }
 
     /**
