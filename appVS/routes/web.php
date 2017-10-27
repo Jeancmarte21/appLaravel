@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
+Route::resource('materiasPrimas', 'MateriasPrimasController');
 
 Auth::routes();
 
