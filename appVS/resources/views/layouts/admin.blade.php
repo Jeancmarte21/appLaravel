@@ -76,7 +76,7 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Suplidores</a></li>
+                <li><a href="suplidores"><i class="fa fa-circle-o"></i> Suplidores</a></li>
                 
               </ul>
             </li>
@@ -104,8 +104,8 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Empleados</a></li>
+               <li><a href=""><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
                 
               </ul>
             </li>
