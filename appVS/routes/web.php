@@ -20,3 +20,6 @@ Route::resource('gestionEmpleados/empleado','EmpleadoController');
 Route::resource('produccion/cigarro','CigarroController');
 Route::resource('gestionNomina/nomina','NominaController');
 Route::resource('gestionMateriaPrima/materiaPrima','MateriaPrimaController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
