@@ -40,7 +40,7 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         //
-        if(Auth::check()){
+        
             $empleado = Empleado::create([
                 'cedula' => $request->input('nombre'),
                 'nombre' => $request->input('cedula'),
@@ -52,10 +52,9 @@ class EmpleadosController extends Controller
         if($empleado){
             return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
         }
-
         return back()->withInput()->with('errors', 'Error registrando empleado');
 
-        }
+        
     }
 
     /**
