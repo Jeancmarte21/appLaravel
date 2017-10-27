@@ -15,11 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('empleados', 'EmpleadosController');
-Route::resource('gestionSuplidores/suplidor','SuplidorController');
-Route::resource('gestionEmpleados/empleado','EmpleadoController');
-Route::resource('produccion/cigarro','CigarroController');
-Route::resource('gestionNomina/nomina','NominaController');
-Route::resource('gestionMateriaPrima/materiaPrima','MateriaPrimaController');
+Route::resource('suplidores','SuplidoresController');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
