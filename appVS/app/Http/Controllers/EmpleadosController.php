@@ -14,7 +14,7 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-        //
+       //
         $empleados = Empleado::all();
         return view('empleados.index');
     }
@@ -26,7 +26,7 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
-     
+        //
     }
 
     /**
@@ -71,7 +71,7 @@ class EmpleadosController extends Controller
      */
     public function update(Request $request, Empleado $empleado)
     {
-    
+        //
     }
 
     /**

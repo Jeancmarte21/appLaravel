@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
-    protected $primaryKey="idempleado";
+    //
+    protected $table = 'empleado';
+    protected $primaryKey='idempleado';
 
     protected $fillable = [
     	'cedula',
@@ -15,8 +17,6 @@ class Empleado extends Model
     	'fecha_nacimiento',
     	'direccion'
     ];
-
-
 
     public function jornadas(){
     	return $this->hasMany('appVs\Jornada');
