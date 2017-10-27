@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Suplidor extends Model
 {
 
-    protected $primaryKey="idsuplidor";
+    protected $table='suplidor';
+    protected $primaryKey='idsuplidor';
 
 
     protected $fillable=[
