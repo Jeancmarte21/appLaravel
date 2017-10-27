@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Empleado extends Model
 {
-    protected $primaryKey="idEmpleado";
-    
+    protected $primaryKey="idempleado";
+
     protected $fillable = [
     	'cedula',
     	'nombre',
