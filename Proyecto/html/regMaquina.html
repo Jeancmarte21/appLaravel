@@ -51,7 +51,8 @@
 
         </nav>
       </header>
-       <aside class="main-sidebar">
+       <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
           <!-- Sidebar user panel -->
@@ -69,12 +70,12 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i>
-                <span>Suplidores</span>
+                <span>Gestion suplidores</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar suplidor</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion suplidor</a></li>
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Suplidores</a></li>
                 
               </ul>
             </li>
@@ -82,13 +83,13 @@
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Almacen</span>
+                <span>Gestion materia prima</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar materia prima</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion materia prima</a></li>
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Materia prima</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Inventario</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Entrada</a></li>
                  <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Salida</a></li>
@@ -98,12 +99,12 @@
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-user"></i>
-                <span>Empleado</span>
+                <span>Gestion empleados</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar empleado</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Consulta empleado</a></li>
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Empleados</a></li>
                 
               </ul>
             </li>
@@ -117,34 +118,25 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
-               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Gestion cigarros</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
+               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Cigarros</a></li>
                 <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
+                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
               </ul>
             </li>
             
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Nomina</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-               <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Gestion de nomina</a></li>
-                <li><a href="almacen/articulo"><i class="fa fa-circle-o"></i>Reporte de horas</a></li>
-                <li><a href="almacen/categoria"><i class="fa fa-circle-o"></i> Pagos</a></li>
-              </ul>
-            </li>
+            
            
                        
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-user"></i> <span> Usuarios</span>
+                <i class="fa fa-user"></i> <span> Gestion usuarios</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Crear usuario</a></li>
-                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Consultar usuario</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
               </ul>
             </li>
             
@@ -169,6 +161,7 @@
         </section>
         <!-- /.sidebar -->
       </aside>
+      
        <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">

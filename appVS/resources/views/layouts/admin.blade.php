@@ -52,8 +52,7 @@
       </header>
      
 
-
-      <!-- Left side column. contains the logo and sidebar -->
+<!-- Left side column. contains the logo and sidebar -->
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
         <section class="sidebar">
@@ -120,9 +119,11 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
+               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Cigarros</a></li>
                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
                 <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
               </ul>
             </li>
             
@@ -161,10 +162,6 @@
         </section>
         <!-- /.sidebar -->
       </aside>
-      
-
-
-
 
 
        <!--Contenido-->
