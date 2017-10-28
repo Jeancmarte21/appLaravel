@@ -20,6 +20,7 @@ Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');
 Route::resource('configuraciones' , 'ConfiguracionesController');
 Route::resource('maquinas', 'MaquinasController');
+Route::resource('jornadas', 'JornadasController');
 
 Auth::routes();
 
