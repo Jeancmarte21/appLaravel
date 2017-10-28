@@ -21,6 +21,7 @@ Route::resource('materiasPrimas', 'MateriasPrimasController');
 Route::resource('configuraciones' , 'ConfiguracionesController');
 Route::resource('maquinas', 'MaquinasController');
 Route::resource('jornadas', 'JornadasController');
+Route::resource('entradas', 'EntradasController');
 
 Auth::routes();
 
