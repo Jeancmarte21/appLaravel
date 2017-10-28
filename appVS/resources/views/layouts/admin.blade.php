@@ -91,9 +91,9 @@
                
                <li><a href="materiasPrimas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
                 <li><a href="materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Inventario</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Entrada</a></li>
-                 <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Salida</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Inventario</a></li>
+                <li><a href=""><i class="fa fa-circle-o"></i> Entrada</a></li>
+                 <li><a href=""><i class="fa fa-circle-o"></i> Salida</a></li>
               </ul>
             </li>
             
