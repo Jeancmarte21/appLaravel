@@ -21,24 +21,25 @@
                   
                    
                         <legend class="text-center header">Registrar Empleado</legend>
-                        
+                        <form method = "get" action = "{{route ('empleados.store') }}">
+      {{ csrf_field()}}
                   <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
                             <div class="col-md-8">
-                                <input id="cedula" name="name" type="text" placeholder="Cedula" class="form-control">
+                                <input id="empleado-cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="nombre" name="name" type="text" placeholder="Nombre" class="form-control">
+                                <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="apellido" name="name" type="text" placeholder="Apellido" class="form-control">
+                                <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control">
                             </div>
                         </div>
 
@@ -47,7 +48,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="telefono" name="phone" type="text" placeholder="Telefono" class="form-control">
+                                <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
                             </div>
                         </div>
 
@@ -59,7 +60,7 @@
        
         <div class="col-md-8">
         
-<input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
+<input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus="(this.type='date')"  id="empleado-fechanac" name="fecha_nacimiento"> 
 
       </div>
       </div>
@@ -73,7 +74,7 @@
        
         <div class="col-md-8">
         
-<input placeholder="Fecha ingreso" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
+<input placeholder="Fecha ingreso" class="form-control" type="text" onfocus="(this.type='date')"  id="empleado-fechaing" name ="fecha_ingreso"> 
 
       </div>
       </div>

@@ -49,10 +49,10 @@ class EmpleadosController extends Controller
                 'direccion' => $request->input('direccion'),
                 ]);
             
-        if($empleado){
+       /* if($empleado){
             return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
-        }
-        return back()->withInput()->with('errors', 'Error registrando empleado');
+        }*/
+        //return back()->withInput()->with('errors', 'Error registrando empleado');
 
         
     }
