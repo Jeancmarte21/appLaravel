@@ -26,6 +26,7 @@ class SuplidoresController extends Controller
     public function create()
     {
         //
+        return view('suplidores.create');
     }
 
     /**
