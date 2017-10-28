@@ -19,6 +19,7 @@ Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');
 Route::resource('configuraciones' , 'ConfiguracionesController');
+Route::resource('maquinas', 'MaquinasController');
 
 Auth::routes();
 
