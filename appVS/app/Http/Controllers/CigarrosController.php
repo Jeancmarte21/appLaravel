@@ -25,7 +25,7 @@ class CigarrosController extends Controller
      */
     public function create()
     {
-        //
+        return view('cigarros.create');
     }
 
     /**
@@ -36,8 +36,14 @@ class CigarrosController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+     $cigarro = Cigarro::create([
+                
+                'nombre' => $request->input('nombre'),
+                'tipo_cigarro' => $request->input('tipo_cigarro')
+
+                
+    ]);
+ }
 
     /**
      * Display the specified resource.
