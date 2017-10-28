@@ -69,15 +69,7 @@
      
 <form method="post">
 
-      <div class="form-group"> <!-- Date input -->
-        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-       
-        <div class="col-md-8">
-        
-<input placeholder="Fecha ingreso" class="form-control" type="text" onfocus="(this.type='date')"  id="empleado-fechaing" name ="fecha_ingreso"> 
-
-      </div>
-      </div>
+     
     
      </form>
      
