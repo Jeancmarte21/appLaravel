@@ -42,8 +42,8 @@ class EmpleadosController extends Controller
         //
         
             $empleado = Empleado::create([
-                'cedula' => $request->input('nombre'),
-                'nombre' => $request->input('cedula'),
+                'cedula' => $request->input('cedula'),
+                'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
                 'fecha_nacimiento' => $request->input('fecha_nacimiento'),
                 'direccion' => $request->input('direccion'),

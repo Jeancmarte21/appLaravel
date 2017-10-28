@@ -37,7 +37,7 @@ class SuplidoresController extends Controller
      */
     public function store(Request $request)
     {
-       $suplidor = suplidor::create([
+       $suplidor = Suplidor::create([
                 'nombre' => $request->input('nombre'),
                 'telefono' => $request->input('telefono'),
                 'correo' => $request->input('correo'),

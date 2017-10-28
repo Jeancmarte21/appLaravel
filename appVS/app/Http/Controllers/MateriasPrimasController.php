@@ -25,7 +25,7 @@ class MateriasPrimasController extends Controller
      */
     public function create()
     {
-        //
+        return view('materiasPrimas.create');
     }
 
     /**
@@ -36,7 +36,13 @@ class MateriasPrimasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $materiaPrima = MateriaPrima::create([
+                'nombre' => $request->input('nombre'),
+                'categoria' => $request->input('categoria'),
+                'porcentaje_pesohumedo' => $request->input('porcentaje_pesohumedo'),
+                'existencia_minima' => $request->input('existencia_minima'),
+                'existencia_real' => $request->input('existencia_real'),
+                ]);
     }
 
     /**
