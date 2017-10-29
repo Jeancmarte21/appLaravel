@@ -15,7 +15,7 @@
                     <fieldset>
 <legend class="text-center header">Registrar materia prima</legend>
                   
-            <form method = "get" action = "{{route ('suplidores.store') }}">
+            <form method = "get" action = "{{route ('materiasPrimas.store') }}">
       {{ csrf_field()}}      
                     <div class="form-group"> 
                  <label class="col-xs-3 control-label">Nombre</label>

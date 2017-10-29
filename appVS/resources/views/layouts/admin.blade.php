@@ -119,11 +119,11 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="cigarros/create"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
+               <li><a href="maquinas/create"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
                <li><a href="cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
-                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
-                <li><a href="ventas/venta"><i class="fa fa-circle-o"></i> Jornada</a></li>
-                <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
+                <li><a href="configuraciones/create"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
+                <li><a href="jornadas/create"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                <li><a href="produccionesmaquinas/create"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
               </ul>
             </li>
             
