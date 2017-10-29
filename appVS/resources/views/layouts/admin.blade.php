@@ -91,9 +91,9 @@
                
                <li><a href="/materiasPrimas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
                 <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Inventario</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> Entrada</a></li>
-                 <li><a href=""><i class="fa fa-circle-o"></i> Salida</a></li>
+                <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
+                <li><a href="/entradas/create"><i class="fa fa-circle-o"></i> Entrada</a></li>
+                 <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
               </ul>
             </li>
             
@@ -120,10 +120,10 @@
               <ul class="treeview-menu">
                <li><a href="/cigarros/create"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
                <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
-               <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
                 <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
-                <li><a href="/jornadas/create"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/produccionesmaquinas/create"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
+                <li><a href="/jornadas/create"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
               </ul>
             </li>
             
