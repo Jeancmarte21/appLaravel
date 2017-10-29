@@ -3,7 +3,7 @@
 @section('contenido')
 
 
-        
+       {!! Form::open(['route' => 'empleados.store', 'method' => 'POST'])  !!}
         <!-- Main content -->
         <section class="content">
           
@@ -20,23 +20,23 @@
                   
                         <form method = "get" action = "{{route ('empleados.store') }}">
       {{ csrf_field()}}
-                  <div class="form-group">
+       <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
                             <div class="col-md-8">
-                                <input id="empleado-cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
+                                <input id="cedula" name="name" type="text" placeholder="Cedula" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
+                                <input id="nombre" name="name" type="text" placeholder="Nombre" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control">
+                                <input id="apellido" name="name" type="text" placeholder="Apellido" class="form-control">
                             </div>
                         </div>
 
@@ -45,7 +45,7 @@
                         <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
-                                <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
+                                <input id="telefono" name="phone" type="text" placeholder="Telefono" class="form-control">
                             </div>
                         </div>
 
@@ -57,7 +57,7 @@
        
         <div class="col-md-8">
         
-<input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus="(this.type='date')"  id="empleado-fechanac" name="fecha_nacimiento"> 
+<input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
 
       </div>
       </div>
@@ -66,10 +66,23 @@
      
 <form method="post">
 
-     
+      <div class="form-group"> <!-- Date input -->
+        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
+       
+        <div class="col-md-8">
+        
+<input placeholder="Fecha ingreso" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
+
+      </div>
+      </div>
     
      </form>
-     
+     <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-globe bigicon"></i></span>
+                            <div class="col-md-8">
+                                <input id="empleado-direccion" name="direccion" type="text" placeholder="Direccion" class="form-control">
+                            </div>
+                        </div>
 
     <div class="form-group">
                             <div class="col-md-12 text-center">
@@ -88,6 +101,8 @@
     </div>
           </div><!-- /.row -->
         </section><!-- /.content -->
-    
+      </div><!-- /.content-wrapper -->
+      <!--Fin-Contenido-->
+    {!! Form::close() !!}
 
 @endsection
