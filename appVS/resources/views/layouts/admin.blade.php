@@ -90,10 +90,10 @@
               <ul class="treeview-menu">
                
                <li><a href="/materiasPrimas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
-                <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
                 <li><a href="/entradas/create"><i class="fa fa-circle-o"></i> Entrada</a></li>
                  <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
+                 <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
+                 <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
               </ul>
             </li>
             
