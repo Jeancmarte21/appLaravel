@@ -38,7 +38,11 @@ class JornadasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $empleado = Empleado::create([
+                'incentivo' => $request->input('incentivo'),
+                'fecha' => $request->input('fecha'),
+                'comida' => $request->input('comida')
+                ]);
     }
 
     /**

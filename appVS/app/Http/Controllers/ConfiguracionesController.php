@@ -38,7 +38,11 @@ class ConfiguracionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $empleado = Empleado::create([
+               
+                'nombre' => $request->input('nombre'),
+                'fecha' => $request->input('fecha')
+                ]);
     }
 
     /**
