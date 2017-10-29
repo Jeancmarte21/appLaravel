@@ -3,7 +3,7 @@
 @section('contenido')
 
 
-       {!! Form::open(['route' => 'empleados.store', 'method' => 'POST'])  !!}
+      
         <!-- Main content -->
         <section class="content">
           
@@ -64,19 +64,7 @@
     
      </form>
      
-<form method="post">
 
-      <div class="form-group"> <!-- Date input -->
-        <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
-       
-        <div class="col-md-8">
-        
-<input placeholder="Fecha ingreso" class="form-control" type="text" onfocus="(this.type='date')"  id="date"> 
-
-      </div>
-      </div>
-    
-     </form>
      <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-globe bigicon"></i></span>
                             <div class="col-md-8">
@@ -103,6 +91,6 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
-    {!! Form::close() !!}
+   
 
 @endsection
