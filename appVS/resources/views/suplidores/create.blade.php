@@ -15,8 +15,6 @@
                 <form class="form-horizontal" method="post">
                     <fieldset>
 
-                  
-                    <legend class="text-center header">Registrar Suplidor</legend>
 
    <form method = "get" action = "{{route ('suplidores.store') }}">
       {{ csrf_field()}}

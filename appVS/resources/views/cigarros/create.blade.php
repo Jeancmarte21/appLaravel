@@ -17,7 +17,7 @@
                 <form class="form-horizontal" method="post">
                     <fieldset>
 
-                   <legend class="text-center header">Registrar cigarro</legend>
+                  
               
                   <form method = "get" action = "{{route ('cigarros.store') }}">
       {{ csrf_field()}} 	

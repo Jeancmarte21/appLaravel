@@ -15,7 +15,7 @@
     
                 <form class="form-horizontal" method="post">
                     <fieldset>
-<legend class="text-center header">Producción de Máquinas</legend>
+
                    <form method = "get" action = "{{route ('produccionesmaquinas.store') }}">
       {{ csrf_field()}}
                    <div class="form-group">

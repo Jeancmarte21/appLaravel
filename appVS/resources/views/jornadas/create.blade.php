@@ -16,7 +16,7 @@
                 <form class="form-horizontal" method="post">
                     <fieldset>
 
-                   <legend class="text-center header">Jornada</legend>
+                   
                    <form method = "get" action = "{{route ('jornadas.store') }}">
       {{ csrf_field()}}
                    <div class="form-group">

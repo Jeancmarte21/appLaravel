@@ -15,7 +15,7 @@
                 <form class="form-horizontal" method="post">
                     <fieldset>
 
-                   <legend class="text-center header">Configuración</legend>
+                   
 
                <form method = "get" action = "{{route ('configuraciones.store') }}">
       {{ csrf_field()}}

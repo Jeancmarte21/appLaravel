@@ -18,9 +18,6 @@
                     <fieldset>
 
                   
-                  
-                   
-                        <legend class="text-center header">Registrar Empleado</legend>
                         <form method = "get" action = "{{route ('empleados.store') }}">
       {{ csrf_field()}}
                   <div class="form-group">
