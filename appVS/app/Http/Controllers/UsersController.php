@@ -34,7 +34,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $empleado = Empleado::create([
+        $user = User::create([
                 
                 'nombre' => $request->input('nombre'),
                 'contrasena' => $request->input('contrasena'),

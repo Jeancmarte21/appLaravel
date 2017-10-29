@@ -38,7 +38,7 @@ class ProduccionesMaquinasController extends Controller
     public function store(Request $request)
     {
        
-            $empleado = Empleado::create([
+            $produccionMaquina = ProduccionMaquina::create([
                 'maquina_idmaquina' => $request->input('maquina_idmaquina'),
                 'cigarro_idcigarro' => $request->input('cigarro_idcigarro'),
                 'configuracion_idconfiguracion' => $request->input('configuracion_idconfiguracion'),
