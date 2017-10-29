@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title','Crear Configuración')
 @section('contenido')
 
  <!-- Main content -->

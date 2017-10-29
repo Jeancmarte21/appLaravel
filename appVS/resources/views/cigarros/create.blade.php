@@ -1,10 +1,8 @@
 @extends('layouts.admin')
-
+@section ('title','Crear Cigarro')
 @section('contenido')
 
- <!--Contenido-->
-      <!-- Content Wrapper. Contains page content -->
-     
+
         <!-- Main content -->
         <section class="content">
           

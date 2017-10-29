@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-
+@section('title','Crear Maquina')
 @section('contenido')
 
   <!-- Main content -->

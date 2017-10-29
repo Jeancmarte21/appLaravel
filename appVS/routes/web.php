@@ -14,6 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Route::group(['prefix' => 'admin'], function() {
+
+
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
@@ -24,6 +28,8 @@ Route::resource('jornadas', 'JornadasController');
 Route::resource('entradas', 'EntradasController');
 Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 
+
+//});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
