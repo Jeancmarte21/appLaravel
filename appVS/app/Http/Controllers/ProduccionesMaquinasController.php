@@ -37,7 +37,14 @@ class ProduccionesMaquinasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+            $empleado = Empleado::create([
+                'maquina_idmaquina' => $request->input('maquina_idmaquina'),
+                'cigarro_idcigarro' => $request->input('cigarro_idcigarro'),
+                'configuracion_idconfiguracion' => $request->input('configuracion_idconfiguracion'),
+                'cantidad' => $request->input('cantidad'),
+                'fecha' => $request->input('fecha'),
+                ]);
     }
 
     /**

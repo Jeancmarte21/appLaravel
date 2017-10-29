@@ -37,7 +37,12 @@ class EntradasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $entrada = Entrada::create([
+                'precio' => $request->input('precio'),
+                'cantidad' => $request->input('cantidad'),
+                'fecha' => $request->input('fecha')
+                ]);
+            
     }
 
     /**

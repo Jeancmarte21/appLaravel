@@ -38,7 +38,12 @@ class MaquinasController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
+            $maquina = Maquina::create([
+               
+                'nombre' => $request->input('nombre'),
+                'produccion' => $request->input('produccion')
+                ]);
     }
 
     /**
