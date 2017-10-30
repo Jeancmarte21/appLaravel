@@ -18,8 +18,8 @@
                     <fieldset>
 
                   
-                        <form method = "get" action = "{{route ('empleados.store') }}">
-      {{ csrf_field()}}
+                        <form method = "POST" action = "{{route ('empleados.create') }}">
+                                          {{ csrf_field()}}
        <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
                             <div class="col-md-8">

@@ -15,7 +15,7 @@ class MateriasPrimasController extends Controller
     public function index()
     {
         $materiasPrimas= MateriaPrima::all();
-        return view('materiasPrimas.index');
+        return view('materiasPrimas.index', ['materiasPrimas' => $materiasPrimas]);
     }
 
     /**

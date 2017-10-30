@@ -15,7 +15,7 @@ class SuplidoresController extends Controller
     public function index()
     {
         $suplidores = Suplidor::all();
-        return view('suplidores.index');
+        return view('suplidores.index', ['suplidores' => $suplidores]);
     }
 
     /**
