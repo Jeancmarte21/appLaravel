@@ -9,16 +9,16 @@ class Empleado extends Model
     //
     protected $table = 'empleado';
     protected $primaryKey='idempleado';
-    protected $guarded = [];
-    /*protected $fillable = [
+    protected $fillable = [
     	'cedula',
     	'nombre',
     	'apellidos',
+        'telefono',
     	'fecha_nacimiento',
     	'direccion'
     ];
-    */
-    public function jornadas(){
-    	return $this->hasMany('appVs\Jornada');
-    }
+    
+   // public function jornadas(){
+   // 	return $this->hasMany('appVs\Jornada');
+   // }
 }

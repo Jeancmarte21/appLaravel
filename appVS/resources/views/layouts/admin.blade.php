@@ -184,6 +184,9 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
+
+                @include('partials.errors')
+                @include('partials.success')
                   	<div class="row">
 	                  	<div class="col-md-12">
 		                          <!--Contenido-->

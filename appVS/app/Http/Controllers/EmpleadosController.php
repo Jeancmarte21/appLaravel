@@ -40,7 +40,7 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         //
-        $empleado=new Empleado;
+       /* $empleado=new Empleado;
     $empleado->cedula=$request->get('cedula');
     $empleado->nombre=$request->get('nombre');
     $empleado->apellidos=$request->get('apellidos');
@@ -48,7 +48,7 @@ class EmpleadosController extends Controller
     $empleado->direccion=$request->get('direccion');
     $empleado->save();
     return Redirect::to('empleado.show');
-    
+        */
         /*request()->validate([
             'cedula' => 'required|numeric',
             'nombre' => 'required|alpha',
@@ -61,17 +61,20 @@ class EmpleadosController extends Controller
 
         return redirect()->route('empleados.index');
         */
-           /* $empleado = Empleado::create([
+           $empleado = Empleado::create([
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
                 'fecha_nacimiento' => $request->input('fecha_nacimiento'),
-                'direccion' => $request->input('direccion'),
-                ]);
-           */ 
-       /* if($empleado){
-            return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
-        }*/
+                'direccion' => $request->input('direccion')
+                ]); 
+            $empleado->save();
+
+           return back();
+          // return redirect()->route('empleado.index');
+       //if($empleado){
+       //     return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
+       // }
         //return back()->withInput()->with('errors', 'Error registrando empleado');
 
         
@@ -86,6 +89,8 @@ class EmpleadosController extends Controller
     public function show(Empleado $empleado)
     {
         //
+        $empleado = Empleado::find($empleado->id);
+        return view('empleados.show', ['empleado'=>$empleado]);
     }
 
     /**
@@ -97,6 +102,8 @@ class EmpleadosController extends Controller
     public function edit(Empleado $empleado)
     {
         //
+        $empleado = Empleado::find($empleado->idempleado);
+        return view('empleados.edit', ['empleado'=>$empleado]);
     }
 
     /**
@@ -109,6 +116,20 @@ class EmpleadosController extends Controller
     public function update(Request $request, Empleado $empleado)
     {
         //
+        $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)
+            ->update([
+            'cedula' => $request->input('cedula'),
+            'nombre' => $request->input('nombre'),
+            'apellidos' => $request->input('apellidos'),
+            'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+            'direccion' => $request->input('direccion')
+            ]);
+
+            if($empleadoUpdate){
+                return redirect()->route(empleados.show, ['empleado'=>$empleado->idempleado])->with('success', 'Empleado editado correctamente');
+            }
+
+            return back()->withInput();
     }
 
     /**
