@@ -89,7 +89,7 @@ class EmpleadosController extends Controller
     public function show(Empleado $empleado)
     {
         //
-        $empleado = Empleado::find($empleado->id);
+        $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.show', ['empleado'=>$empleado]);
     }
 
