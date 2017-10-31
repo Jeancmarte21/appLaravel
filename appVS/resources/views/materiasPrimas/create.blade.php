@@ -33,7 +33,7 @@
         </div>
     </div>
             -->      
-                     <div class="form-group">
+                    <div class="form-group">
         <label class="col-xs-3 control-label">Categoria</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="size">
@@ -43,8 +43,25 @@
                <option value="">Pega</option>
             </select>
         </div>
-    </div>
+    </div> 
 
+   <!-- <div class="form-group">
+        <label class="col-xs-3 control-label">Categoria</label>
+        <div class="col-xs-5 selectContainer">
+    <div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option1" autocomplete="off">Tabaco
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option2" autocomplete="off">Saborizante
+  </label>
+  <label class="btn btn-secondary">
+    <input type="radio" name="options" id="option3" autocomplete="off">Pega
+  </label>
+</div>
+</div>
+</div>
+-->
     <div class="form-group">
         <label class="col-xs-3 control-label">% Aumento de Peso Humedecido</label>
         <div class="col-xs-5 inputGroupContainer">
