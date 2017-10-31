@@ -18,7 +18,7 @@
                     <fieldset>
 
                   
-                     {{!!Form::open(array('url'=>'/empleados.create','method' =>'POST'))   !!}}
+                     {{!!Form::open(array('url'=>'/empleados','method' =>'POST'))   !!}}
                                           {{ csrf_field()}}
                        <!-- <input type="hidden" name="_method" value="put"> -->
                 
