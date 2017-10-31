@@ -29,7 +29,7 @@ Route::resource('entradas', 'EntradasController');
 Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
 Route::resource('users', 'UsersController');
-Route::post('empleados.store', 'EmpleadosController@store');
+
 
 //});
 Auth::routes();

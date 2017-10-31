@@ -5,6 +5,8 @@ namespace appVS\Http\Controllers;
 use appVS\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
+use DB;
 
 class EmpleadosController extends Controller
 {
@@ -28,7 +30,7 @@ class EmpleadosController extends Controller
     public function create()
     {
         //
-        return view('empleados.create');
+        return view("empleados.create");
     }
 
     /**
@@ -40,15 +42,15 @@ class EmpleadosController extends Controller
     public function store(Request $request)
     {
         //
-       /* $empleado=new Empleado;
+    $empleado=new Empleado;
     $empleado->cedula=$request->get('cedula');
     $empleado->nombre=$request->get('nombre');
     $empleado->apellidos=$request->get('apellidos');
     $empleado->fecha_naci=$request->get('fecha_nacimiento');
     $empleado->direccion=$request->get('direccion');
     $empleado->save();
-    return Redirect::to('empleado.show');
-        */
+    return Redirect::to('empleados');
+    
         /*request()->validate([
             'cedula' => 'required|numeric',
             'nombre' => 'required|alpha',
@@ -61,7 +63,7 @@ class EmpleadosController extends Controller
 
         return redirect()->route('empleados.index');
         */
-           $empleado = Empleado::create([
+          /* $empleado = Empleado::create([
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
@@ -70,7 +72,7 @@ class EmpleadosController extends Controller
                 ]); 
             $empleado->save();
 
-           return back();
+           return back();*/
           // return redirect()->route('empleado.index');
        //if($empleado){
        //     return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
