@@ -6,6 +6,10 @@ use appVS\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+<<<<<<< HEAD
+=======
+//use appVS\Http\Requests\EmpleadoFormRequest;
+>>>>>>> 7138c401295e6ab7b622c55b28d4d9bf11fc4077
 use DB;
 
 class EmpleadosController extends Controller
@@ -17,9 +21,20 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
+<<<<<<< HEAD
        //
         $empleados = Empleado::all();
         return view('empleados.index', ['empleados'=> $empleados]);
+=======
+
+    }
+    public function index(Request $request)
+    {
+        
+            $empleados = Empleado::all();
+        return view('empleados.index', ['empleados'=> $empleados]);
+        
+>>>>>>> 7138c401295e6ab7b622c55b28d4d9bf11fc4077
     }
 
     /**
@@ -32,6 +47,7 @@ class EmpleadosController extends Controller
         //
         return view("empleados.create");
     }
+<<<<<<< HEAD
 
     /**
      * Store a newly created resource in storage.
@@ -40,6 +56,27 @@ class EmpleadosController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Empleado $empleados)
+=======
+    public function store (Request $request)
+    {
+      
+
+        $empelado=new Empleado;
+        $empleado->nombre=$request->get('nombre');
+        $empleado->apellidos=$request->get('apellidos');
+        $empleado->fecha_nacimiento=$request->get('fecha_nacimiento');
+        $empleado->direccion=$request->get('direccion');
+        $empleado->save();
+        return Redirect::to('empleados');
+    }
+    public function show($id)
+    {
+          $empleado = Empleado::find($empleado->idempleado);
+        return view('empleados.show', ['empleado'=>$empleado]);
+
+    }
+    public function edit($id)
+>>>>>>> 7138c401295e6ab7b622c55b28d4d9bf11fc4077
     {
         
 //$empleados ->empleados()->create($request->all());
