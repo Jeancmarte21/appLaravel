@@ -39,17 +39,21 @@ class EmpleadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Empleado $empleados)
     {
-        //
-    $empleado=new Empleado;
+        
+$empleados ->empleados()->create($request->all());
+$empleados ->save($empleados); 
+
+         /*return request()->all();*/
+    /*$empleado=new Empleado;
     $empleado->cedula=$request->get('cedula');
     $empleado->nombre=$request->get('nombre');
     $empleado->apellidos=$request->get('apellidos');
     $empleado->fecha_naci=$request->get('fecha_nacimiento');
     $empleado->direccion=$request->get('direccion');
     $empleado->save();
-    return Redirect::to('empleados');
+    return Redirect::to('empleados');*/
     
         /*request()->validate([
             'cedula' => 'required|numeric',
