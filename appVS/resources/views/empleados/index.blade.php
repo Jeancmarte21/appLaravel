@@ -22,5 +22,3 @@
 @endsection
 
 
-
-<!--<button type="button" class="list-group-item list-group-item-action">{{$empleado->nombre.' '.$empleado->apellidos}}<span class="badge badge-primary badge-pill"></span></button> -->

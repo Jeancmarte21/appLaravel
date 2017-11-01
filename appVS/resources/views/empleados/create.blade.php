@@ -2,14 +2,6 @@
 @section('title','Crear Empleado')
 @section('contenido')
 
-
-      
-        <!-- Main content -->
-        <section class="content">
-          
-          <div class="row">
-            <div class="col-md-12">
-             
  
     <div class="row">
         <div class="col-md-12">
@@ -18,7 +10,7 @@
                     <fieldset>
 
                   
-                     {{!!Form::open(array('url'=>'/empleados','method' =>'POST'))   !!}}
+                     {!!Form::open(array('url'=>'/empleados','method' =>'POST'))  !!}
                                           {{ csrf_field()}}
                        <!-- <input type="hidden" name="_method" value="put"> -->
                 
@@ -77,7 +69,7 @@
                    
                    
                    
-                   {{!! Form::close() !!}}
+                   {!! Form::close() !!}
                     </fieldset>
                 </form>
            
