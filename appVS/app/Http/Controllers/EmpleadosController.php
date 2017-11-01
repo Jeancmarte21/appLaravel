@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use appVS\Http\Requests;
 use appVS\Empleado;
 use Illuminate\Support\Facades\Redirect;
-use appVS\Http\Requests\EmpleadoFormRequest;
+//use appVS\Http\Requests\EmpleadoFormRequest;
 use DB;
 use Validator;
 use Auth;
@@ -22,14 +22,15 @@ class EmpleadosController extends Controller
     public function index(Request $request)
     {
         
-            return view('empleados.create');
+            $empleados = Empleado::all();
+        return view('empleados.index', ['empleados'=> $empleados]);
         
     }
     public function create()
     {
         return view("empleados.create");
     }
-    public function store (EmpleadoFormRequest $request)
+    public function store (Request $request)
     {
       
 
@@ -43,7 +44,9 @@ class EmpleadosController extends Controller
     }
     public function show($id)
     {
-        return view("empleados.show",["empleado"=>Empleado::findOrFail($id)]);
+          $empleado = Empleado::find($empleado->idempleado);
+        return view('empleados.show', ['empleado'=>$empleado]);
+
     }
     public function edit($id)
     {
