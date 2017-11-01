@@ -10,7 +10,7 @@
                     <fieldset>
 
                   
-                     {!!Form::open(array('url'=>'/empleados','method' =>'POST'))  !!}
+                     <Form method="POST" action="/empleados.store">
 
                                           {{ csrf_field()}}
                        <!-- <input type="hidden" name="_method" value="put"> -->
@@ -63,14 +63,14 @@
 
     <div class="form-group">
                             <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                                <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
                             </div>
                           </div>
                    
                    
                    
                    
-                  {!! Form::close() !!}
+                  </Form>
                     </fieldset>
                 </form>
            
@@ -80,6 +80,6 @@
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
-   
+    
 
 @endsection
