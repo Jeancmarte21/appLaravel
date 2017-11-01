@@ -2,6 +2,7 @@
 @section('title','Crear Empleado')
 @section('contenido')
 
+
  
     <div class="row">
         <div class="col-md-12">
@@ -31,12 +32,12 @@
 
                        
 
-                        <div class="form-group">
+                     <!--   <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
                             <div class="col-md-8">
                                 <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
                             </div>
-                        </div>
+                        </div>-->
 
                        
    <form method="post">

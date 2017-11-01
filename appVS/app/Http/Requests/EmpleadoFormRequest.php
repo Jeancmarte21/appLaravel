@@ -4,7 +4,7 @@ namespace appVS\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EmpleadoFromRequest extends FormRequest
+class EmpleadoFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class EmpleadoFromRequest extends FormRequest
     public function rules()//nombre de los objetos del formulario html
     {
         return [
-            'cedula'=>'required|max:13','nombre'=>'required|max:50', 'apellidos'=>'required|max:50', 'fecha_naci'=>'required|50','direccion'=>'max:256'
+            'cedula'=>'required|max:13','nombre'=>'required|max:50', 'apellidos'=>'required|max:50', 'fecha_nacimiento'=>'required|50','direccion'=>'max:256'
+        
         ];
     }
 }
