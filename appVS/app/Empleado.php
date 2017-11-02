@@ -13,7 +13,7 @@ class Empleado extends Model
     	'cedula',
     	'nombre',
     	'apellidos',
-        //'telefono',
+        'telefono',
     	'fecha_nacimiento',
     	'direccion'
     ];

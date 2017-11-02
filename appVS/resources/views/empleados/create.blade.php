@@ -21,12 +21,12 @@
           <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control">
         </div>
       </div>
-      <!--   <div class="form-group">
+        <div class="form-group">
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
       <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
       </div>
-      </div>-->
+      </div>
       <div class="form-group"> <!-- Date input -->
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
         <div class="col-md-8">
