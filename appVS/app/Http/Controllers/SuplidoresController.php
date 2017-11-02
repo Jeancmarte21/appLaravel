@@ -48,7 +48,8 @@ class SuplidoresController extends Controller
                 ]);
 
            $suplidor->save();
-           return back();
+           return back()->with('success', 'Suplidor creado correctamente');;
+
     }
 
     /**
@@ -71,7 +72,8 @@ class SuplidoresController extends Controller
      */
     public function edit(Suplidor $suplidor)
     {
-        //
+        $suplidor = Suplidor::find($suplidor->idsuplidor);
+        return view('suplidores.edit', ['suplidor'=>$suplidor]);
     }
 
     /**

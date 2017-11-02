@@ -29,9 +29,8 @@
 					<th>{{$suplidor->nombre}}</th>
 					<td>{{$suplidor->telefono}}</td>
 					<td>{{$suplidor->correo}}</td>
-					<th>{{$suplidor->direccion}}</th>
 					<th>{{$suplidor->pais}}</th>
-					
+					<th>{{$suplidor->direccion}}</th>
 				
 				</tr>
 		        

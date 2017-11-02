@@ -69,7 +69,7 @@ class EmpleadosController extends Controller
      */
     public function edit(Empleado $empleado)
     {
-        //
+    
         $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.edit', ['empleado'=>$empleado]);
     }
