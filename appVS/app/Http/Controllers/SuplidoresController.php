@@ -1,9 +1,9 @@
 <?php
 
 namespace appVS\Http\Controllers;
-
 use appVS\Suplidor;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SuplidoresController extends Controller
 {
@@ -16,6 +16,8 @@ class SuplidoresController extends Controller
     {
         $suplidores = Suplidor::all();
         return view('suplidores.index', ['suplidores' => $suplidores]);
+
+
     }
 
     /**
@@ -44,6 +46,9 @@ class SuplidoresController extends Controller
                 'pais' => $request->input('pais'),
                 'direccion' => $request->input('direccion'),
                 ]);
+
+           $suplidor->save();
+           return back();
     }
 
     /**
@@ -54,7 +59,8 @@ class SuplidoresController extends Controller
      */
     public function show(Suplidor $suplidor)
     {
-        //
+        $suplidor = Suplidor::find($suplidor->idsuplidor);
+        return view('suplidores.show', ['suplidor'=>$suplidor]);
     }
 
     /**
@@ -77,7 +83,18 @@ class SuplidoresController extends Controller
      */
     public function update(Request $request, Suplidor $suplidor)
     {
-        //
+        $suplidorUpdate = Suplidor::where('idsuplidor', $suplidor->idsuplidor)
+            ->update([
+            'nombre' => $request->input('nombre'),
+            'telefono' => $request->input('telefono'),
+            'correo' => $request->input('correo'),
+             'pais' => $request->input('pais'),
+            'direccion' => $request->input('direccion')
+            ]);
+            if($suplidorUpdate){
+                return redirect()->route(suplidores.show, ['suplidor'=>$suplidor->idsuplidor])->with('success', 'Suplidor editado correctamente');
+            }
+            return back()->withInput();
     }
 
     /**

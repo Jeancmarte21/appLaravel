@@ -8,6 +8,7 @@
     <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="/empleados">
+      
       <fieldset>
       {{ csrf_field()}}
 
@@ -66,6 +67,7 @@
           <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
         </div>
       </div>
+      
       </fieldset>
     </form>
   </div>

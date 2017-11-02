@@ -14,7 +14,7 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-       //
+       
         $empleados = Empleado::all();
         return view('empleados.index', ['empleados'=> $empleados]);
     }
@@ -45,8 +45,9 @@ class EmpleadosController extends Controller
                 'direccion' => $request->input('direccion')
                 ]); 
             $empleado->save();
-           return back();
-        
+            
+           return back()->with('success', 'Empleado creado correctamente');
+
         
     }
     /**
@@ -57,7 +58,6 @@ class EmpleadosController extends Controller
      */
     public function show(Empleado $empleado)
     {
-        //
         $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.show', ['empleado'=>$empleado]);
     }
@@ -82,7 +82,7 @@ class EmpleadosController extends Controller
      */
     public function update(Request $request, Empleado $empleado)
     {
-        //
+
         $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)
             ->update([
             'cedula' => $request->input('cedula'),

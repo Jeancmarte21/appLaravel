@@ -1,37 +1,41 @@
 @extends('layouts.admin')
-@section('title','Crear Suplidor')
+@section('title','Editar Suplidor')
 @section('contenido')
 
- <div class="row">
+
+     <!-- este es el form -->
+    <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="/suplidores">
+      
       <fieldset>
       {{ csrf_field()}}
-    <div class="form-group"> 
+
+ <div class="form-group"> 
 
         <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Empresa</label></span>
          <div class="col-md-8">
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder=""></div>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="John Deer" value="{{$suplidor->nombre}}"></div>
     </div>  
 
     <div class="form-group">
                              <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
                             <div class="col-md-8">
-                                <input id="telefono" name="telefono" type="text" placeholder="" class="form-control">
+                                <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control" value="{{$suplidor->telefono}}">
                             </div>
                         </div>  
 
      <div class="form-group">
                            <span class="col-md-1 col-md-offset-2 text-center"> <label for="full_name_id" class="control-label">Direccion</label></span>
                             <div class="col-md-8">
-                                <input id="direccion" name="direccion" type="Address" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control">
+                                <input id="direccion" name="direccion" type="Address" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="{{$suplidor->direccion}}">
                             </div>
                         </div>                  
                             
                             <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label ">Correo</label></span>
                             <div class="col-md-8">
-                                <input id="correo" name="correo" type="text" placeholder="@ejemplo.com" class="form-control">
+                                <input id="correo" name="correo" type="text" placeholder="@ejemplo.com" class="form-control" value="{{$suplidor->correo}}">
                             </div>
                         </div>
 
@@ -40,9 +44,9 @@
     <div class="form-group"> <!-- State Button -->
        <span class="col-md-1 col-md-offset-2 text-center"><label for="state_id" class="control-label">Pais</label></span>
          <div class="col-md-8">
-        <select class="form-control" id="pais" name="pais">
+        <select class="form-control" id="pais" value="{{$suplidor->pais}}" name="pais">
            
-            <option value="AF">Afganistán</option>
+<option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
 <option value="DE">Alemania</option>
 <option value="AD">Andorra</option>
@@ -279,10 +283,12 @@
         </select>  
         </div>
       </div>
+
+
+
+
+
       </fieldset>
     </form>
   </div>
 </div>
-
-
-@endsection
