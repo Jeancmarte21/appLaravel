@@ -1,75 +1,132 @@
 <?php
 
 namespace appVS\Http\Controllers;
-
-use Illuminate\Http\Request;
-
-use appVS\Http\Requests;
 use appVS\Empleado;
-use Illuminate\Support\Facades\Redirect;
-//use appVS\Http\Requests\EmpleadoFormRequest;
-use DB;
-use Validator;
-use Auth;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class EmpleadosController extends Controller
 {
-    public function __construct()
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-
-    }
-    public function index(Request $request)
-    {
-        
-            $empleados = Empleado::all();
+       //
+        $empleados = Empleado::all();
         return view('empleados.index', ['empleados'=> $empleados]);
-        
     }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        return view("empleados.create");
+        //
+        return view('empleados.create');
     }
-    public function store (Request $request)
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
     {
-      
-
-        $empelado=new Empleado;
-        $empleado->nombre=$request->get('nombre');
-        $empleado->apellidos=$request->get('apellidos');
-        $empleado->fecha_nacimiento=$request->get('fecha_nacimiento');
-        $empleado->direccion=$request->get('direccion');
-        $empleado->save();
-        return Redirect::to('empleados');
+        //
+       /* $empleado=new Empleado;
+    $empleado->cedula=$request->get('cedula');
+    $empleado->nombre=$request->get('nombre');
+    $empleado->apellidos=$request->get('apellidos');
+    $empleado->fecha_naci=$request->get('fecha_nacimiento');
+    $empleado->direccion=$request->get('direccion');
+    $empleado->save();
+    return Redirect::to('empleado.show');
+        */
+        /*request()->validate([
+            'cedula' => 'required|numeric',
+            'nombre' => 'required|alpha',
+            'apellidos' => 'required|alpha',
+            'fecha_nacimiento' => 'required|date',
+            'direccion' => 'alpha_dash'
+            ]);
+        Empleado::create($request->all());
+        return redirect()->route('empleados.index');
+        */
+           $empleado = Empleado::create([
+                'cedula' => $request->input('cedula'),
+                'nombre' => $request->input('nombre'),
+                'apellidos' => $request->input('apellidos'),
+                'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+                'direccion' => $request->input('direccion')
+                ]); 
+            $empleado->save();
+           return back();
+          // return redirect()->route('empleado.index');
+       //if($empleado){
+       //     return redirect()->route('empleados.show', ['empleado'=> $empleado->idempleado])->with('success', 'Empleado creado correctamente');
+       // }
+        //return back()->withInput()->with('errors', 'Error registrando empleado');
+        
     }
-    public function show($id)
+    /**
+     * Display the specified resource.
+     *
+     * @param  \appVS\Empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function show(Empleado $empleado)
     {
-          $empleado = Empleado::find($empleado->idempleado);
+        //
+        $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.show', ['empleado'=>$empleado]);
-
     }
-    public function edit($id)
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \appVS\Empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function edit(Empleado $empleado)
     {
-        return view("empleados.edit",["categoria"=>Empleado::findOrFail($id)]);
+        //
+        $empleado = Empleado::find($empleado->idempleado);
+        return view('empleados.edit', ['empleado'=>$empleado]);
     }
-    public function update(CategoriaFormRequest $request,$id)
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \appVS\Empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Empleado $empleado)
     {
-        $empelado=Empleado::findOrFail($id);
-        $empleado->nombre=$request->get('nombre');
-        $empleado->apellidos=$request->get('apellidos');
-        $empleado->fecha_nacimiento=$request->get('fecha_nacimiento');
-        $empleado->direccion=$request->get('direccion');
-        $empelado->update();
-        return Redirect::to('empleados');
+        //
+        $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)
+            ->update([
+            'cedula' => $request->input('cedula'),
+            'nombre' => $request->input('nombre'),
+            'apellidos' => $request->input('apellidos'),
+            'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+            'direccion' => $request->input('direccion')
+            ]);
+            if($empleadoUpdate){
+                return redirect()->route(empleados.show, ['empleado'=>$empleado->idempleado])->with('success', 'Empleado editado correctamente');
+            }
+            return back()->withInput();
     }
-    public function destroy($id)
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \appVS\Empleado  $empleado
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy(Empleado $empleado)
     {
-     
-      
+        //
     }
-
-
-
-
-
 }

@@ -1,5 +1,5 @@
 <?php
-
+#DAME % QUE VOY A SALIR DEL CURSO A SALUDAR A ALGUIEN XD ahha dale
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 
 Route::resource('empleados', 'EmpleadosController');
+#Route::post( 'empleados/create', 'EmpleadosController@create' );
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');
