@@ -16,7 +16,7 @@ class CreateMaquinaTable extends Migration
         Schema::create('maquina', function (Blueprint $table) {
             $table->increments('idmaquina');
             $table->string('nombre', 20)->collation('utf8_spanish_ci');
-            $table->tinyInt('produccion');
+            $table->tinyInteger('produccion');
             $table->timestamps();
         });
     }
