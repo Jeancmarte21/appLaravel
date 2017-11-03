@@ -24,10 +24,10 @@
 
 
 				<tr>
-					<td>{{$cigarro->idcigarro}}</td>
-					<th>{{$cigarro->nombre}}</th>
-					<td>{{$cigarro->tipo_cigarro}}</td>
-					<td>{{$cigarro->materiaPrima_idmateriaPrima}}</td>
+					<td>{{$cigarros->idcigarro}}</td>
+					<th>{{$cigarros->nombre}}</th>
+					<td>{{$cigarros->tipo_cigarro}}</td>
+					<td>{{$cigarros->materiaPrima_idmateriaPrima}}</td>
 					
 					
 				</tr>
