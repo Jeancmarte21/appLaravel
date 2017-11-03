@@ -15,11 +15,11 @@ class CreateSuplidorTable extends Migration
     {
         Schema::create('suplidor', function (Blueprint $table) {
             $table->increments('idsuplidor');
-            $table->string('nombre', 45);
-            $table->string('telefono', 12);
-            $table->string('correo', 40);
-            $table->longText('direccion');
-            $table->string('pais', 30);
+            $table->string('nombre', 45)->collation('utf8_spanish_ci');
+            $table->string('telefono', 12)->collation('utf8_spanish_ci')->nullable();
+            $table->string('correo', 40)->collation('utf8_spanish_ci')->nullable();
+            $table->longText('direccion')->collation('utf8_spanish_ci')->nullable();
+            $table->string('pais', 30)->collation('utf8_spanish_ci');
             $table->timestamps();
         });
     }

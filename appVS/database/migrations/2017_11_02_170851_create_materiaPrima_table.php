@@ -15,11 +15,11 @@ class CreateMateriaPrimaTable extends Migration
     {
         Schema::create('materiaPrima', function (Blueprint $table) {
             $table->increments('idmateriaPrima');
-            $table->string('nombre', 35);
-            $table->string('categoria', 25);
+            $table->string('nombre', 35)->collation('utf8_spanish_ci');
+            $table->string('categoria', 25)->collation('utf8_spanish_ci');
             $table->float('porcentaje_pesohumedo', 5,2);
             $table->float('existencia_minima', 7,2);
-            $table->float('existencia_real', 7,2);
+            $table->float('existencia_real', 7,2)->default(0);
             $table->timestamps();
         });
     }
