@@ -19,9 +19,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="categoria">
                 <option value="">Seleccione</option>
-                <option value="">Tabaco</option>
-               <option value="">Saborizante</option>
-               <option value="">Pega</option>
+                <option value="Tabaco">Tabaco</option>
+               <option value="Saborizante">Saborizante</option>
+               <option value="Pega">Pega</option>
             </select>
         </div>
     </div> 
