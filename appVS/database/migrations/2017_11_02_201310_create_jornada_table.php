@@ -16,9 +16,9 @@ class CreateJornadaTable extends Migration
         Schema::create('jornada', function (Blueprint $table) {
             $table->int('maquina_id')->unsigned();
             $table->int('empleado_id')->unsigned();
-            $table->float('hora_extra', 3,1);
-            #$table->float('extra', 7, 2);
-            $table->float('incentivo', 7,2);
+            $table->float('hora_extra', 3,1)->default(0);
+            $table->float('extra', 7, 2)->default(0);
+            $table->float('incentivo', 7,2)->default(0);
             $table->date('fecha');
             #$table->float('comida', 5, 2);
             $table->timestamps();

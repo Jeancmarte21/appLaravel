@@ -15,12 +15,12 @@ class CreateEmpleadoTable extends Migration
     {
         Schema::create('empleado', function (Blueprint $table) {
             $table->increments('idempleado');
-            $table->string('cedula', 13)->charset('utf8')->unique();
-            $table->string('nombre', 25)->charset('utf8');
-            $table->string('apellidos', 45)->charset('utf8');
+            $table->string('cedula', 13)->collation('utf8_spanish_ci')->unique();
+            $table->string('nombre', 25)->collation('utf8_spanish_ci');
+            $table->string('apellidos', 45)->collation('utf8_spanish_ci');
             $table->string('telefono', 12)->nullable();
             $table->date('fecha_nacimiento');
-            $table->longText('direccion')->charset('utf8')->nullable();
+            $table->longText('direccion')->collation('utf8_spanish_ci')->nullable();
             $table->timestamps();
         });
     }
