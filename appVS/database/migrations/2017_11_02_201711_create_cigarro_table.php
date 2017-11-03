@@ -16,7 +16,7 @@ class CreateCigarroTable extends Migration
         Schema::create('cigarro', function (Blueprint $table) {
             $table->increments('idcigarro');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
-            $table->$table->enum('tipo', ['Fumas', 'Vitolas']);
+            $table->enum('tipo', ['Fumas', 'Vitolas']);
             $table->integer('saborizante')->unsigned()->nullable();
             $table->timestamps();
 
