@@ -15,7 +15,7 @@ class CigarrosController extends Controller
     public function index()
     {
        $cigarros = Cigarro::all();
-        return view('cigarros.index');
+       return view('cigarros.index', ['cigarros'=> $cigarros]);
     }
 
     /**
@@ -51,9 +51,10 @@ class CigarrosController extends Controller
      * @param  \appVS\Cigarro  $cigarro
      * @return \Illuminate\Http\Response
      */
-    public function show(Cigarro $cigarro)
+    public function show($idcigarro)
     {
-        //
+        
+        return view("cigarros.show",["cigarros"=>Cigarro::findOrFail($idcigarro)]);
     }
 
     /**
@@ -62,9 +63,9 @@ class CigarrosController extends Controller
      * @param  \appVS\Cigarro  $cigarro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cigarro $cigarro)
+     public function edit($idcigarro)
     {
-        //
+        return view("cigarros.edit",["cigarro"=>Cigarro::findOrFail($idcigarro)]);
     }
 
     /**

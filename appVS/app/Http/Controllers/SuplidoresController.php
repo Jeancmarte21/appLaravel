@@ -60,8 +60,7 @@ class SuplidoresController extends Controller
      */
     public function show($idsuplidor)
     {
-        //$suplidor = Suplidor::find($suplidor->idsuplidor);
-        //return view('suplidores.show', ['suplidor'=>$suplidor]);
+        
         return view("suplidores.show",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
