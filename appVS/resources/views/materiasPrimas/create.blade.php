@@ -17,7 +17,7 @@
                     <div class="form-group">
         <label class="col-xs-3 control-label">Categoria</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="categoria">
+            <select class="form-control" name="categoria" name="categoria" required>
                 <option value="">Seleccione</option>
                 <option value="Tabaco">Tabaco</option>
                <option value="Saborizante">Saborizante</option>
