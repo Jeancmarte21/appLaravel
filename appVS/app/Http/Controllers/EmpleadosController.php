@@ -89,6 +89,7 @@ class EmpleadosController extends Controller
             'nombre' => $request->input('nombre'),
             'apellidos' => $request->input('apellidos'),
             'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+            'telefono' => $request->input('telefono'),
             'direccion' => $request->input('direccion')
             ]);
             if($empleadoUpdate){

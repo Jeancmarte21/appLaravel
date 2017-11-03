@@ -10,6 +10,12 @@
       <fieldset>
       {{ csrf_field()}}
       <div class="form-group">
+                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
+                            <div class="col-md-8">
+                                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
+                            </div>
+                        </div>
+      <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
         <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
