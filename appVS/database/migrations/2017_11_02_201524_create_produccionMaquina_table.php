@@ -15,10 +15,10 @@ class CreateProduccionMaquinaTable extends Migration
     {
         Schema::create('produccionMaquina', function (Blueprint $table) {
             $table->increments('idproduccionmaquina');
-            $table->int('maquina_id')->unsigned();
-            $table->int('cigarro_id')->unsigned();
-            $table->int('configuracion_id')->unsigned();
-            $table->int('cantidad');
+            $table->integer('maquina_id')->unsigned();
+            $table->integer('cigarro_id')->unsigned();
+            $table->integer('configuracion_id')->unsigned();
+            $table->integer('cantidad');
             $table->datetime('fecha')->unique();
             $table->timestamps();
 

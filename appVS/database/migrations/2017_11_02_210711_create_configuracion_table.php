@@ -15,7 +15,7 @@ class CreateConfiguracionTable extends Migration
     {
         Schema::create('configuracion', function (Blueprint $table) {
             $table->increments('idconfiguracion');
-            $table->int('cigarro_id')->unsigned();
+            $table->integer('cigarro_id')->unsigned();
             $table->string('nombre', 35)->collation('utf8_spanish_ci');
             $table->date('fecha');
             $table->timestamps();

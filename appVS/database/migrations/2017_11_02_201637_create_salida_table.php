@@ -14,7 +14,7 @@ class CreateSalidaTable extends Migration
     public function up()
     {
         Schema::create('salida', function (Blueprint $table) {
-            $table->int('materiaprima_id')->unsigned();
+            $table->integer('materiaprima_id')->unsigned();
             $table->float('cantidad', 7, 2);
             $table->timestamps();
 

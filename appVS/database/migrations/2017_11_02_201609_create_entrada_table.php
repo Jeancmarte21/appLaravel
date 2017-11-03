@@ -14,8 +14,8 @@ class CreateEntradaTable extends Migration
     public function up()
     {
         Schema::create('entrada', function (Blueprint $table) {
-            $table->int('suplidor_id')->unsigned();
-            $table->int('materiaprima_id')->unsigned();
+            $table->integer('suplidor_id')->unsigned();
+            $table->integer('materiaprima_id')->unsigned();
             $table->float('precio', 11, 2);
             $table->float('cantidad', 7, 2);
             $table->date('fecha');
