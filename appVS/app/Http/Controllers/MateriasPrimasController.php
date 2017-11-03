@@ -42,7 +42,7 @@ class MateriasPrimasController extends Controller
                 'categoria' => $request->input('categoria'),
                 'porcentaje_pesohumedo' => $request->input('porcentaje_pesohumedo'),
                 'existencia_minima' => $request->input('existencia_minima'),
-                'existencia_real' => $request->input('existencia_real'),
+                //'existencia_real' => $request->input('existencia_real'),
                 ]);
 
            $materiaPrima->save();

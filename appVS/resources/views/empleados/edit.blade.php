@@ -7,10 +7,11 @@
  
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="{{route('empleados.update', [$empleado->idempleado])}}">
       
       <fieldset>
       {{ csrf_field()}}
+      <input type="hidden" name="_method" value="put">
 
 <div class="form-group">
     <span class="col-md-1 col-md-offset-2 text-center"> 
@@ -22,7 +23,7 @@
                             type="text" 
                             placeholder="Cedula" 
                             class="form-control"
-                            value="{{$empleado->cedula}}"/>
+                            value="{{$empleado->cedula}}" disabled />
                                 </div>
                             </div>
       <div class="form-group">

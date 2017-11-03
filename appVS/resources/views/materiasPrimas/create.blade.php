@@ -4,7 +4,7 @@
 
    <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/materiasPrimas">
       <fieldset>
       {{ csrf_field()}}    
                     <div class="form-group"> 
@@ -45,7 +45,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
                
-                <input type="number" class="form-control" name="exitencia_minima" min="0" data-number-to-fixed="2" data-number-stepfactor="100" />
+                <input type="number" class="form-control" name="existencia_minima" min="0" data-number-to-fixed="2" data-number-stepfactor="100" />
                 <span class="input-group-addon">lbs</span>
 				
             </div>

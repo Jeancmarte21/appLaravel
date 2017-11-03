@@ -85,7 +85,6 @@ class EmpleadosController extends Controller
 
         $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)
             ->update([
-            'cedula' => $request->input('cedula'),
             'nombre' => $request->input('nombre'),
             'apellidos' => $request->input('apellidos'),
             'fecha_nacimiento' => $request->input('fecha_nacimiento'),
@@ -93,7 +92,7 @@ class EmpleadosController extends Controller
             'direccion' => $request->input('direccion')
             ]);
             if($empleadoUpdate){
-                return redirect()->route(empleados.show, ['empleado'=>$empleado->idempleado])->with('success', 'Empleado editado correctamente');
+                return redirect()->route('empleados.show', ['empleado'=>$empleado->idempleado])->with('success', 'Empleado editado correctamente');
             }
             return back()->withInput();
     }
