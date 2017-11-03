@@ -15,10 +15,10 @@
     </div>
                   
                 
-                     <div class="form-group">
-        <label class="col-xs-3 control-label">Sueldo:</label>
+                     <div class="form-group"> <!--Cambiar por radio Botton-->
+        <label class="col-xs-3 control-label">Pago por:</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="sueldo">
+            <select class="form-control" name="pago">
                 <option value="">Seleccione</option>
                 <option value="">Producción</option>
                <option value="">Salario Fijo</option>
