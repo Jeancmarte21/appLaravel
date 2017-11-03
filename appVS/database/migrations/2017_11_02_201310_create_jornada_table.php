@@ -14,8 +14,8 @@ class CreateJornadaTable extends Migration
     public function up()
     {
         Schema::create('jornada', function (Blueprint $table) {
-            $table->int('maquina_id')->unsigned();
-            $table->int('empleado_id')->unsigned();
+            $table->integer('maquina_id')->unsigned();
+            $table->integer('empleado_id')->unsigned();
             $table->float('hora_extra', 3,1)->default(0);
             $table->float('extra', 7, 2)->default(0);
             $table->float('incentivo', 7,2)->default(0);

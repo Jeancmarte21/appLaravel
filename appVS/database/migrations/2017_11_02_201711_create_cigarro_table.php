@@ -17,7 +17,7 @@ class CreateCigarroTable extends Migration
             $table->increments('idcigarro');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
             $table->$table->enum('tipo', ['Fumas', 'Vitolas']);
-            $table->int('saborizante')->unsigned()->nullable();
+            $table->integer('saborizante')->unsigned()->nullable();
             $table->timestamps();
 
             $table->foreign('saborizante')->references('idmateriaPrima')->on('materiaPrima');
