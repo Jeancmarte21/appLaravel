@@ -279,6 +279,12 @@
         </select>  
         </div>
       </div>
+      
+      <div class="form-group">
+        <div class="col-md-12 text-center">
+          <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
+        </div>
+      </div>
       </fieldset>
     </form>
   </div>

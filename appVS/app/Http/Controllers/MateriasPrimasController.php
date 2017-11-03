@@ -4,6 +4,7 @@ namespace appVS\Http\Controllers;
 
 use appVS\MateriaPrima;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MateriasPrimasController extends Controller
 {
@@ -43,6 +44,10 @@ class MateriasPrimasController extends Controller
                 'existencia_minima' => $request->input('existencia_minima'),
                 'existencia_real' => $request->input('existencia_real'),
                 ]);
+
+           $materiaPrima->save();
+            
+           return back()->with('success', 'Materia prima creada correctamente');
     }
 
     /**
@@ -53,7 +58,8 @@ class MateriasPrimasController extends Controller
      */
     public function show(MateriaPrima $materiaPrima)
     {
-        //
+        $materiaPrima = MateriaPrima::find($materiaPrima->idmateriaPrima);
+        return view('materiasPrimas.show', ['materiaPrima'=>$materiaPrima]);
     }
 
     /**
@@ -64,7 +70,8 @@ class MateriasPrimasController extends Controller
      */
     public function edit(MateriaPrima $materiaPrima)
     {
-        //
+        $materiaPrima = MateriaPrima::find($materiaPrima->idmateriaPrima);
+        return view('materiasPrimas.edit', ['materiaPrima'=>$materiaPrima]);
     }
 
     /**

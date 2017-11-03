@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Informacion Empleado')
+@section('title','Informacion Materia Prima')
 @section('contenido')
 
 
@@ -16,21 +16,20 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>Id</th>
-					<th>Cedula</th>
 					<th>Nombre</th>
-					<th>Apellidos</th>
-					<th>Telefono</th>
-					<th>Direccion</th>	
+					<th>Categoria</th>
+					<th>% Peso humedo</th>
+					<th>Existencia minima</th>	
 				</thead>
 
 			
 				<tr>
-					<td>{{$empleado->idempleado}}</td>
-					<th>{{$empleado->cedula}}</th>
-					<td>{{$empleado->nombre}}</td>
-					<td>{{$empleado->apellidos}}</td>
-					<th>{{$empleado->telefono}}</th>
-					<th>{{$empleado->direccion}}</th>
+					<td>{{$materiaPrima->idmateriaPrima}}</td>
+					<th>{{$materiaPrima->nombre}}</th>
+					<td>{{$materiaPrima->categoria}}</td>
+					<td>{{$materiaPrima->porcentaje_pesohumedo}}</td>
+					<th>{{$materiaPrima->existencia_minima}}</th>
+					
 					
 				</tr>
 		        
