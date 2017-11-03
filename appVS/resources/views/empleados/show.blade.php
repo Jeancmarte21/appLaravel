@@ -32,7 +32,6 @@
 					<th>{{$empleado->telefono}}</th>
 					<th>{{$empleado->direccion}}</th>
 					
-				
 				</tr>
 		        
 			

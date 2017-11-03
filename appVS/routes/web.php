@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 
 Route::resource('empleados', 'EmpleadosController');
-#Route::post( 'empleados/create', 'EmpleadosController@create' );
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');
