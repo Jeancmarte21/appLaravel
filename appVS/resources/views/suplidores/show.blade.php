@@ -23,6 +23,17 @@
 					<th>Pais</th>	
 				</thead>
 
+
+				<tr>
+					<td>{{$suplidor->idsuplidor}}</td>
+					<th>{{$suplidor->nombre}}</th>
+					<td>{{$suplidor->telefono}}</td>
+					<td>{{$suplidor->correo}}</td>
+					<th>{{$suplidor->direccion}}</th>
+					<th>{{$suplidor->pais}}</th>
+					
+				</tr>
+
 			</table>
 		</div>
 		

@@ -292,3 +292,5 @@
     </form>
   </div>
 </div>
+
+@endsection

@@ -1,5 +1,5 @@
 <?php
-#MANDAME PARA DONDE ES, XD, UE ESTOY EN CLASES, PON EL ERROR
+
 namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;

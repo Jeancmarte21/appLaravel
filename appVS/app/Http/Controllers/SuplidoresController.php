@@ -58,10 +58,11 @@ class SuplidoresController extends Controller
      * @param  \appVS\Suplidor  $suplidor
      * @return \Illuminate\Http\Response
      */
-    public function show(Suplidor $suplidor)
+    public function show($idsuplidor)
     {
-        $suplidor = Suplidor::find($suplidor->idsuplidor);
-        return view('suplidores.show', ['suplidor'=>$suplidor]);
+        //$suplidor = Suplidor::find($suplidor->idsuplidor);
+        //return view('suplidores.show', ['suplidor'=>$suplidor]);
+        return view("suplidores.show",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
     /**
@@ -70,10 +71,9 @@ class SuplidoresController extends Controller
      * @param  \appVS\Suplidor  $suplidor
      * @return \Illuminate\Http\Response
      */
-    public function edit(Suplidor $suplidor)
+    public function edit($idsuplidor)
     {
-        $suplidor = Suplidor::find($suplidor->idsuplidor);
-        return view('suplidores.edit', ['suplidor'=>$suplidor]);
+        return view("suplidores.edit",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
     /**
@@ -110,3 +110,5 @@ class SuplidoresController extends Controller
         //
     }
 }
+
+

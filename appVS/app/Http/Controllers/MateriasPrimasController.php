@@ -56,10 +56,9 @@ class MateriasPrimasController extends Controller
      * @param  \appVS\MateriaPrima  $materiaPrima
      * @return \Illuminate\Http\Response
      */
-    public function show(MateriaPrima $materiaPrima)
+    public function show($idmateriaPrima)
     {
-        $materiaPrima = MateriaPrima::find($materiaPrima->idmateriaPrima);
-        return view('materiasPrimas.show', ['materiaPrima'=>$materiaPrima]);
+        return view("materiasPrimas.show",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
     }
 
     /**
@@ -68,10 +67,9 @@ class MateriasPrimasController extends Controller
      * @param  \appVS\MateriaPrima  $materiaPrima
      * @return \Illuminate\Http\Response
      */
-    public function edit(MateriaPrima $materiaPrima)
+    public function edit($idmateriaPrima)
     {
-        $materiaPrima = MateriaPrima::find($materiaPrima->idmateriaPrima);
-        return view('materiasPrimas.edit', ['materiaPrima'=>$materiaPrima]);
+          return view("materiasPrimas.edit",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
     }
 
     /**
