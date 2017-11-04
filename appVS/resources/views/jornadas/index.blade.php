@@ -17,15 +17,30 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
+					
 					<th>Fecha</th>
 					<th>Empleado</th>
 					<th>Incentivo</th>
 					<th>Horas extras</th>
-					<th>Comida</th>
 					<th>Opciones</th>
 				</thead>
-             
+              @foreach ($jornadas as $jornada)
+				<tr>
+					
+					<td>{{ $jornada->fecha}}</td>
+					<!-- Falta aqui en nombre del empleado-->
+					<td>{{ $jornada->incentivo}}</td>
+					<td>{{ $jornada->hora_extra}}</td>
+					
+					<th>Opciones</th>
+					<td>
+						<a href="{{URL::action('JornadasController@edit',$jornada->empleado_id)}}"><button class="btn btn-info">Editar</button></a>
+                         <a href="" data-target="#modal-delete-{{$jornada->empleado_id}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+					</td>
+				</tr>
+				
+				@endforeach
+			</table>
 			</table>
 		</div>
 		
