@@ -4,6 +4,8 @@ namespace appVS\Http\Controllers;
 
 use appVS\Jornada;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use DB;
 
 class JornadasController extends Controller
 {
@@ -14,9 +16,16 @@ class JornadasController extends Controller
      */
     public function index()
     {
-        //
-        $jornadas = Jornada::all();
-        return view('jornadas.index');
+         if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $jornadas=DB::table('jornada')->where('fecha','LIKE','%'.$query.'%')
+            ->orderBy('idjornada','desc')
+            ->paginate(7);
+            return view('jornadas.index',["jornadas"=>$jornadas,"searchText"=>$query]);
+        }
+        //$jornadas = Jornada::all();
+        //return view('jornadas.index');
     }
 
     /**
@@ -43,6 +52,13 @@ class JornadasController extends Controller
                 'fecha' => $request->input('fecha'),
                 'comida' => $request->input('comida')
                 ]);
+
+       $jornada=new Jornada;
+        $jornada->incentivo=$request->get('incentivo');
+        $jornada->fecha=$request->get('fecha');
+        $jornada->comida=$request->get('comida');
+        $jornada->save();
+        return Redirect::to('jornadas');
     }
 
     /**

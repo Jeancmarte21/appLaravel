@@ -125,7 +125,7 @@
                <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
                 <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
                 <li><a href="/produccionesmaquinas/create"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
-                <li><a href="/jornadas/create"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
               </ul>
             </li>
