@@ -15,13 +15,16 @@ class Maquina extends Model
     	'produccion'
     ];
 
-    public function jornadas(){
-    	return $this->hasMany('appVS/Jornada');
+    public function empleados()
+    {
+        return $this->belongsToMany('appVS\Empleado', 'jornada')->withPivot('hora_extra', 'extra', 'incentivo', 'fecha')->withTimestamps();
     }
 
-    public function produccionMaquinas(){
-    	return $this->hasMany('appVS/ProduccionMaquina');
+    public function produccionmaquinas()
+    {
+        return $this->hasMany('appVS/ProduccionMaquina', 'maquina_id');
     }
+
 }
 
 

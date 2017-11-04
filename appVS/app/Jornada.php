@@ -10,19 +10,12 @@ class Jornada extends Model
     protected $table = 'Jornada';
 
     protected $fillable = [
-    	'maquina_idmaquina',
-    	'empleado_idempleado',
+    	'maquina_id',
+    	'empleado_id',
     	'hora_extra',
+        'extra',
     	'incentivo',
-    	'fecha',
-    	'comida',
+    	'fecha'
     ];
 
-    public function maquinas(){
-    	return $this->belongsTo('appVS/Maquina');
-    }
-
-        public function empleados(){
-    	return $this->belongsTo('appVS/Empleado');
-    }
 }

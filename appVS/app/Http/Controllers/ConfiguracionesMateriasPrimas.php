@@ -2,10 +2,10 @@
 
 namespace appVS\Http\Controllers;
 
-use appVS\Entrada;
+use appVS\ConfiguracionMateriaPrima;
 use Illuminate\Http\Request;
 
-class EntradasController extends Controller
+class ConfiguracionesMateriasPrimas extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,6 @@ class EntradasController extends Controller
     public function index()
     {
         //
-        return view('entradas.index');
     }
 
     /**
@@ -26,9 +25,6 @@ class EntradasController extends Controller
     public function create()
     {
         //
-        $suplidores = Suplidor::all();
-        $materiasprimas = MateriaPrima::all();
-        return view('entradas.create', ['suplidores' => $suplidores], ['materiasprimas'=>$materiasprimas]);
     }
 
     /**
@@ -39,21 +35,16 @@ class EntradasController extends Controller
      */
     public function store(Request $request)
     {
-        $entrada = Entrada::create([
-                'precio' => $request->input('precio'),
-                'cantidad' => $request->input('cantidad'),
-                'fecha' => $request->input('fecha')
-                ]);
-            
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \appVS\Entrada  $entrada
+     * @param  \appVS\ConfiguracionMateriaPrima  $configuracionMateriaPrima
      * @return \Illuminate\Http\Response
      */
-    public function show(Entrada $entrada)
+    public function show(ConfiguracionMateriaPrima $configuracionMateriaPrima)
     {
         //
     }
@@ -61,10 +52,10 @@ class EntradasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \appVS\Entrada  $entrada
+     * @param  \appVS\ConfiguracionMateriaPrima  $configuracionMateriaPrima
      * @return \Illuminate\Http\Response
      */
-    public function edit(Entrada $entrada)
+    public function edit(ConfiguracionMateriaPrima $configuracionMateriaPrima)
     {
         //
     }
@@ -73,10 +64,10 @@ class EntradasController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \appVS\Entrada  $entrada
+     * @param  \appVS\ConfiguracionMateriaPrima  $configuracionMateriaPrima
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Entrada $entrada)
+    public function update(Request $request, ConfiguracionMateriaPrima $configuracionMateriaPrima)
     {
         //
     }
@@ -84,10 +75,10 @@ class EntradasController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \appVS\Entrada  $entrada
+     * @param  \appVS\ConfiguracionMateriaPrima  $configuracionMateriaPrima
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Entrada $entrada)
+    public function destroy(ConfiguracionMateriaPrima $configuracionMateriaPrima)
     {
         //
     }

@@ -11,19 +11,20 @@ class Cigarro extends Model
 
     protected $fillable = [
     	'nombre',
-    	'tipo_cigarro',
-    	'materiaPrima_idmateriaPrima'
+    	'tipo',
+    	'saborizante'
     ];
 
     public function configuraciones(){
-    	return $this->hasMany('appVs\Configuracion');
+    	return $this->hasMany('appVs\Configuracion', 'cigarro_id');
     }
 
-    public function produccionMaquinas(){
-    	return $this->hasMany('appVs\ProduccionMaquina');
+    public function materiasprimas(){
+    	return $this->belongsTo('appVs\MateriaPrima', 'saborizante');
     }
 
-    public function materiasPrimas(){
-    	return $this->belongsToMany('appVs\MateriasPrimas');
+    public function produccionmaquinas()
+    {
+        return $this->hasMany('appVS/ProduccionMaquina', 'cigarro_id');
     }
 }

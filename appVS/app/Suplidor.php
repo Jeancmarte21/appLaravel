@@ -15,12 +15,12 @@ class Suplidor extends Model
     	'nombre',
     	'telefono',
     	'correo',
-    	'pais',
-    	'direccion'
+    	'direccion',
+        'pais'
     ];
 
-
-    	 public function entradas(){
-    	return $this->hasMany('appVs\Entrada');
+    public function materiasprimas()
+    {
+        return $this->belongsToMany('appVS\MateriaPrima', 'entrada')->withPivot('precio', 'cantidad', 'fecha')->withTimestamps();
     }
 }

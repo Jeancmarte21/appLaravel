@@ -4,17 +4,15 @@ namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Entrada extends Model
+class ConfiguracionMateriaPrima extends Model
 {
     //
-    protected $table = 'entrada';
+    protected $table = 'configuracionMateriaPrima';
 
     protected $fillable = [
-    	'suplidor_id',
     	'materiaprima_id',
-    	'precio',
+    	'configuracion_id',
     	'cantidad',
-    	'fecha'
+    	'envoltura'
     ];
-
 }

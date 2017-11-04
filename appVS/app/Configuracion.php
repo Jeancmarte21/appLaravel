@@ -11,12 +11,18 @@ class Configuracion extends Model
     protected $primaryKey='idconfiguracion';
 
     protected $fillable = [
-    	'cigarro_idcigarro',
+    	'cigarro_id',
     	'nombre',
     	'fecha',
     ];
 
-    public function cigarros(){
-    	return $this->belongsTo('appVs\Cigarro');
+    public function materiasprimas()
+    {
+        return $this->belongsToMany('appVS\MateriaPrima', 'configuracionMateriaPrima')->withPivot('cantidad', 'envoltura')->withTimestamps();
+    }
+
+    public function produccionmaquinas()
+    {
+        return $this->hasMany('appVS/ProduccionMaquina', 'configuracion_id');
     }
 }

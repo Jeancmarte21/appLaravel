@@ -17,19 +17,24 @@ class MateriaPrima extends Model
     	'existencia_real'
     ];
 
-    public function configuracionMateriasPrimas(){
-    	return $this->hasMany('appVs\Salida');
+    public function suplidores()
+    {
+        return $this->belongsToMany('appVS\Suplidor', 'entrada')->withPivot('precio', 'cantidad', 'fecha')->withTimestamps();
     }
 
-    public function salidas(){
-    	return $this->hasMany('appVs\ProduccionMaquina');
+    public function configuraciones()
+    {
+        return $this->belongsToMany('appVS\Configuracion', 'configuracionMateriaPrima')->withPivot('cantidad', 'envoltura')->withTimestamps();
     }
 
-    public function entradas(){
-    	return $this->hasMany('appVs\Entrada');
+    public function salidas()
+    {
+        return $this->hasMany('appVS/Salida', 'materiaprima_id');
     }
 
-    public function cigarros(){
-    	return $this->hasOne('appVs\Cigarro');
+    public function cigarros()
+    {
+        return $this->hasMany('appVS/Cigarro', 'saborizante');
     }
+
 }
