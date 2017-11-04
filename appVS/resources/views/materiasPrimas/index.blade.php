@@ -9,7 +9,7 @@
 	@foreach($materiasPrimas as $materiaPrima)
   		<li class="list-group-item">{{$materiaPrima->nombre}}
 
-  		<a href="/materiasPrimas/{{$materiaPrima->idmateriaPrima}}/edit" class="badge badge-success btn btn-success">Editar</a>
+  		<a href="/materiasPrimas/{{$materiaPrima->idmateriaPrima}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
   		<a href="/materiasPrimas/{{$materiaPrima->idmateriaPrima}}" class="badge badge-primary btn btn-primary">Ver</a>
 

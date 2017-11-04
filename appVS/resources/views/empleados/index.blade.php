@@ -10,7 +10,7 @@
 	@foreach($empleados as $empleado)
   		<li class="list-group-item">{{$empleado->nombre.' '.$empleado->apellidos}}
 
-  		<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge badge-success btn btn-success">Editar</a>
+  		<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
   		<a href="/empleados/{{$empleado->idempleado}}" class="badge badge-primary btn btn-primary">Ver</a>
 

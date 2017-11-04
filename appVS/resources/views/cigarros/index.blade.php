@@ -9,7 +9,7 @@
 	@foreach($cigarros as $cigarro)
   		<li class="list-group-item">{{$cigarro->nombre}}
 
-  		<a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-success">Editar</a>
+  		<a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
   		<a href="/cigarros/{{$cigarro->idcigarro}}" class="badge badge-primary btn btn-primary">Ver</a>
 

@@ -10,7 +10,7 @@
 	@foreach($suplidores as $suplidor)
   		<li class="list-group-item">{{$suplidor->nombre}}
 
-  		<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-success">Editar</a>
+  		<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
   		<a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-primary">Ver</a>
 
