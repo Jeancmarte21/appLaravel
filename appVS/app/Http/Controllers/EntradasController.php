@@ -48,6 +48,10 @@ class EntradasController extends Controller
                 'fecha' => $request->input('fecha'),
                 'suplidor_id' => $request->input('suplidor')
                 ]);
+        if($entrada){
+                return back()->with('success', 'Entrada registrada correctamente!');
+            }
+            return back()->withInput()->with('errors', 'Hubo algun error en registro de la entrada');
             
     }
 
