@@ -19,6 +19,9 @@
 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
+    <link rel="shortcut icon" href="{{ asset('css/estilos.css') }}">
+
+
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -62,7 +65,7 @@
           <ul class="sidebar-menu">
             <li class="header"></li>
             <li>
-              <a href="#">
+              <a href="/inicios">
                 <i class="fa fa-home"></i> <span>Inico</span>
               </a>
             </li>
