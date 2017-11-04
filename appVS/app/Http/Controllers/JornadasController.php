@@ -14,14 +14,14 @@ class JornadasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
          if ($request)
         {
             $query=trim($request->get('searchText'));
             $jornadas=DB::table('jornada')->where('fecha','LIKE','%'.$query.'%')
-            ->orderBy('idjornada','desc')
-            ->paginate(7);
+            ->orderBy('empleado_id','desc')
+            ->paginate(10);
             return view('jornadas.index',["jornadas"=>$jornadas,"searchText"=>$query]);
         }
         //$jornadas = Jornada::all();
