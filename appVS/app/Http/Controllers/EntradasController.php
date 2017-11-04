@@ -3,6 +3,8 @@
 namespace appVS\Http\Controllers;
 
 use appVS\Entrada;
+use appVS\Suplidor;
+use appVS\MateriaPrima;
 use Illuminate\Http\Request;
 
 class EntradasController extends Controller
@@ -28,7 +30,7 @@ class EntradasController extends Controller
         //
         $suplidores = Suplidor::all();
         $materiasprimas = MateriaPrima::all();
-        return view('entradas.create', ['suplidores' => $suplidores], ['materiasprimas'=>$materiasprimas]);
+        return view('entradas.create', ['suplidores' => $suplidores, 'materiasprimas'=>$materiasprimas]);
     }
 
     /**
@@ -40,9 +42,11 @@ class EntradasController extends Controller
     public function store(Request $request)
     {
         $entrada = Entrada::create([
+                'materiaprima_id' => $request->input('nombre'),
                 'precio' => $request->input('precio'),
                 'cantidad' => $request->input('cantidad'),
-                'fecha' => $request->input('fecha')
+                'fecha' => $request->input('fecha'),
+                'suplidor_id' => $request->input('suplidor')
                 ]);
             
     }

@@ -13,7 +13,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="nombre">
                 <option value="">Seleccione</option>
-                
+                @foreach($materiasprimas as $materiaprima)
+                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+              @endforeach
             </select>
         </div>
     </div>
@@ -56,7 +58,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="suplidor">
                 <option value="">Seleccione</option>
-                
+                @foreach($suplidores as $suplidor)
+                <option value="{{$suplidor->idsuplidor}}">{{$suplidor->nombre}}</option>
+              @endforeach
             </select>
         </div>
     </div>
