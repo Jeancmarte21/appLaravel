@@ -6,6 +6,7 @@ use appVS\Entrada;
 use appVS\Suplidor;
 use appVS\MateriaPrima;
 use Illuminate\Http\Request;
+use DB;
 
 class EntradasController extends Controller
 {
@@ -14,10 +15,19 @@ class EntradasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return view('entradas.index');
+        //return view('entradas.index');
+
+          if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $entradas=DB::table('entrada')->where('cantidad','LIKE','%'.$query.'%')
+            ->orderBy('fecha','desc')
+            ->paginate(10);
+            return view('entradas.index',["entradas"=>$entradas,"searchText"=>$query]);
+        }
+
     }
 
     /**

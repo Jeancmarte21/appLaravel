@@ -18,17 +18,17 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					
-					<th>Fecha</th>
-					<th>Empleado</th>
-					<th>Incentivo</th>
-					<th>Horas extras</th>
-					<th>Opciones</th>
+					<th>FECHA</th>
+					<th>EMPLEADO</th>
+					<th>INCENTIVO</th>
+					<th>HORAS EXTRAS</th>
+					<th>OPCIONES</th>
 				</thead>
-              @foreach ($jornadas as $jornada)
+            <!--  @foreach ($jornadas as $jornada)
 				<tr>
 					
 					<td>{{ $jornada->fecha}}</td>
-					<!-- Falta aqui en nombre del empleado-->
+					Falta aqui en nombre del empleado
 					<td>{{ $jornada->incentivo}}</td>
 					<td>{{ $jornada->hora_extra}}</td>
 					
@@ -39,7 +39,7 @@
 					</td>
 				</tr>
 				
-				@endforeach
+				@endforeach-->
 			</table>
 			</table>
 		</div>

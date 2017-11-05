@@ -15,12 +15,12 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>Id</th>
-					<th>Empresa</th>
-					<th>Telefono</th>
-					<th>Correo</th>
-					<th>Dirección</th>
-					<th>Pais</th>	
+					<th>ID</th>
+					<th>EMPRESA</th>
+					<th>TELEFONO</th>
+					<th>CORREO</th>
+					<th>DIRECCIÓN</th>
+					<th>PAIS</th>	
 				</thead>
 
 
