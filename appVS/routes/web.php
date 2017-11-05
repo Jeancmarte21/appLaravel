@@ -28,7 +28,7 @@ Route::resource('entradas', 'EntradasController');
 Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
 Route::resource('users', 'UsersController');
-Route::resource('inicios', 'iniciosController');
+Route::resource('inicio', 'iniciosController');
 
 
 //});

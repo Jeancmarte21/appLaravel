@@ -29,7 +29,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="/inicios" class="logo">
+        <a href="/inicio" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>V</b>S</span>
           <!-- logo for regular state and mobile devices -->
@@ -65,7 +65,7 @@
           <ul class="sidebar-menu">
             <li class="header"></li>
             <li>
-              <a href="/inicios">
+              <a href="/inicio">
                 <i class="fa fa-home"></i> <span>Inico</span>
               </a>
             </li>

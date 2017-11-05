@@ -24,6 +24,8 @@ class JornadasController extends Controller
             ->paginate(10);
             return view('jornadas.index',["jornadas"=>$jornadas,"searchText"=>$query]);
         }
+
+    
         //$jornadas = Jornada::all();
         //return view('jornadas.index');
     }
