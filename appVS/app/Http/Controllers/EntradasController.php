@@ -84,7 +84,7 @@ class EntradasController extends Controller
      */
     public function edit(Entrada $entrada)
     {
-        //
+       return view("entradas.edit",["entrada"=>Entrada::findOrFail($identrada)]);
     }
 
     /**

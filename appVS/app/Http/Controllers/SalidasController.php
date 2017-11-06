@@ -72,7 +72,7 @@ class SalidasController extends Controller
      */
     public function edit(Salida $salida)
     {
-        //
+        return view("salidas.edit",["salida"=>Salida::findOrFail($idsalida)]);
     }
 
     /**
