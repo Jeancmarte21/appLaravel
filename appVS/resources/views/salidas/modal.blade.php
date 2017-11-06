@@ -1,6 +1,6 @@
 <div class="modal fade modal-slide-in-right" aria-hidden="true"
-role="dialog" tabindex="-1" id="modal-delete-{{$jor->idjornada}}">
-	{{Form::Open(array('action'=>array('JornadasController@destroy',$jor->idjornada),'method'=>'delete'))}}
+role="dialog" tabindex="-1" id="modal-delete-{{$en->identrada}}">
+	{{Form::Open(array('action'=>array('SalidasController@destroy',$sa->idsalida),'method'=>'delete'))}}
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -8,10 +8,10 @@ role="dialog" tabindex="-1" id="modal-delete-{{$jor->idjornada}}">
 				aria-label="Close">
                      <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Eliminar Jornada</h4>
+                <h4 class="modal-title">Eliminar Salida</h4>
 			</div>
 			<div class="modal-body">
-				<p>Confirme si desea Eliminar la jornada</p>
+				<p>Confirme si desea Eliminar la salida</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

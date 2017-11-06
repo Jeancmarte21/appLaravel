@@ -103,8 +103,12 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Jornada $jornada)
+    public function destroy($idjornada)
     {
-        //
+       $jornada=Jornada::findOrFail($idjornada);
+        $jornada=delete();
+       
+
+        return Redirect::to('jornadas.index');
     }
 }
