@@ -6,7 +6,7 @@
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		@include('jornadas.search')
 		<h3><a href="/jornadas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA JORNADA</button></a></h3>
-		
+
 	</div>
 </div>
 
@@ -17,7 +17,7 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					
+
 					<th>FECHA</th>
 					<th>MAQUINA</th>
 					<th>EMPLEADO</th>
@@ -27,25 +27,25 @@
 				</thead>
             @foreach ($jornadas as $jornada)
 				<tr>
-					
+
 					<td>{{ $jornada->fecha}}</td>
 					<td>{{ $jornada->maquina_id}}</td>
 					<td>{{ $jornada->empleado_id}}</td>
 					<td>{{ $jornada->incentivo}}</td>
 					<td>{{ $jornada->hora_extra}}</td>
-					
-					
+
+
 					<td>
-						<a href="{{URL::action('JornadasController@edit',$jornada->empleado_id)}}"><button class="btn btn-info">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$jornada->empleado_id}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
+						<a href="{{URL::action('JornadasController@edit',$jornada->empleado_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
+                         <a href="" data-target="#modal-delete-{{$jornada->empleado_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
 					</td>
 				</tr>
-				
+
 				@endforeach
 			</table>
 			</table>
 		</div>
-		
+
 	</div>
 </div>
 
