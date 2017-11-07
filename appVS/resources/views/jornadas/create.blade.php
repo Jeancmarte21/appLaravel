@@ -10,7 +10,7 @@
                    <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="date"  id="example-date-input">
+           <input class="form-control" type="date"  id="example-date-input" name="fecha">
         </div>
     </div>
                               <div class="form-group">

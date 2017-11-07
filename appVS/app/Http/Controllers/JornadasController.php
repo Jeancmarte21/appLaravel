@@ -54,17 +54,15 @@ class JornadasController extends Controller
     public function store(Request $request)
     {
        $jornada = Jornada::create([
+                'maquina_id' => $request -> input('maquina'),
+                'empleado_id' => $request -> input('empleado'),
                 'incentivo' => $request->input('incentivo'),
                 'fecha' => $request->input('fecha'),
-                'comida' => $request->input('comida')
+                //'comida' => $request->input('comida')
                 ]);
-
-       $jornada=new Jornada;
-        $jornada->incentivo=$request->get('incentivo');
-        $jornada->fecha=$request->get('fecha');
-        $jornada->comida=$request->get('comida');
-        $jornada->save();
-        return Redirect::to('jornadas');
+       $jornada ->save();
+            
+        return back()->with('success', 'Jornada creado correctamente');
     }
 
     /**
