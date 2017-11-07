@@ -18,8 +18,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="maquina">
                 <option value="">Seleccione</option>
-                <option value="">Arenco</option>
-              <option value="">AMF</option>
+                @foreach($maquinas as $maquina)
+                <option value="{{$maquina->idmaquina}}">{{$maquina->nombre}}</option>
+              @endforeach
             </select>
         </div>
     </div>
@@ -29,8 +30,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="empleado">
                 <option value="">Seleccione</option>
-                <option value="">...</option>
-              <option value="">...</option>
+                @foreach($empleados as $empleado)
+                <option value="{{$empleado->idempleado}}">{{$empleado->nombre.' '.$empleado->apellidos}}</option>
+              @endforeach
             </select>
         </div>
     </div>

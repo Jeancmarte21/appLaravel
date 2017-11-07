@@ -3,6 +3,8 @@
 namespace appVS\Http\Controllers;
 
 use appVS\Jornada;
+use appVS\Empleado;
+use appVS\Maquina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use DB;
@@ -38,7 +40,9 @@ class JornadasController extends Controller
     public function create()
     {
         //
-        return view('jornadas.create');
+        $empleados = Empleado::all();
+        $maquinas = Maquina::all();
+        return view('jornadas.create', ['empleados' => $empleados, 'maquinas' => $maquinas]);
     }
 
     /**
