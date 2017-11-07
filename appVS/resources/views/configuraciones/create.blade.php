@@ -4,20 +4,21 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/configuracion">
       <fieldset>
       {{ csrf_field()}}
                    	
-                   	   <form class="navbar-form" role="search">
-      <div class=form-group>
-           <label class="col-xs-3 control-label">Cigarro</label>
-          <div class="col-xs-5 selectContainer">
-        <input type="text" class="form-control" placeholder="" name="cigarro">
-					  </div>
-					     <button type="submit" class="btn btn-default">Buscar</button>
-					  </div>
-     
-    </form>
+                   	   <div class="form-group">
+        <label class="col-xs-3 control-label">Cigarro</label>
+        <div class="col-xs-5 selectContainer">
+            <select class="form-control" name="cigarro">
+            <option value="">Seleccione</option>
+              @foreach($cigarros as $cigarro)
+                <option value="{{$cigarro->idcigarro}}">{{$cigarro->nombre}}</option>
+              @endforeach  
+            </select>
+        </div>
+    </div>
        
                
                    <div class="form-group">
@@ -25,10 +26,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="capa">
                 <option value="">Seleccione</option>
-                <option value="">Pennsylvania</option>
-                      <option value="">Connecticut Banda Sana</option>
-				      <option value="">Banda HVA</option>
-				            <option value="">Sumatra Banda</option>
+                @foreach($materiasprimas as $materiaprima)
+                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+              @endforeach
 			</select>
         </div>
     </div>
@@ -37,10 +37,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="capote">
                 <option value="">Seleccione</option>
-                <option value="">Pennsylvania</option>
-                      <option value="">Connecticut Banda Sana</option>
-				      <option value="">Banda HVA</option>
-				            <option value="">Sumatra Banda</option>
+                @foreach($materiasprimas as $materiaprima)
+                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+              @endforeach
 			</select>
         </div>
     </div>

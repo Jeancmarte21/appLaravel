@@ -3,6 +3,8 @@
 namespace appVS\Http\Controllers;
 
 use appVS\Configuracion;
+use appVS\Cigarro;
+use DB;
 use Illuminate\Http\Request;
 
 class ConfiguracionesController extends Controller
@@ -15,7 +17,6 @@ class ConfiguracionesController extends Controller
     public function index()
     {
         //
-        $configuraciones = Configuracion::all();
         return view('configuraciones.index');
     }
 
@@ -27,7 +28,10 @@ class ConfiguracionesController extends Controller
     public function create()
     {
         //
-        return  view('configuraciones.create');
+        $cigarros = Cigarro::all();
+        $configuraciones = Configuracion::all();
+        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Tabaco')->get();
+        return  view('configuraciones.create', ['configuraciones'=> $configuraciones, 'materiasprimas' => $materiasprimas, 'cigarros' => $cigarros]);
     }
 
     /**
@@ -39,7 +43,7 @@ class ConfiguracionesController extends Controller
     public function store(Request $request)
     {
        $configuracion = Configuracion::create([
-               
+                               
                 'nombre' => $request->input('nombre'),
                 'fecha' => $request->input('fecha')
                 ]);
