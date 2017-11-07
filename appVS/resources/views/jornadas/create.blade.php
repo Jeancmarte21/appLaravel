@@ -4,7 +4,7 @@
 
 <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/jornadas">
       <fieldset>
       {{ csrf_field()}}
                    <div class="form-group">
