@@ -11,6 +11,7 @@
 |
 */
 
+$app->configure('dompdf');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
@@ -26,6 +27,7 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
+$app->register(\Barryvdh\DomPDF\ServiceProvider::class);
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     appVS\Http\Kernel::class
