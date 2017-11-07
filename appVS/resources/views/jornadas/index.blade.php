@@ -19,27 +19,29 @@
 				<thead>
 					
 					<th>FECHA</th>
+					<th>MAQUINA</th>
 					<th>EMPLEADO</th>
 					<th>INCENTIVO</th>
 					<th>HORAS EXTRAS</th>
 					<th>OPCIONES</th>
 				</thead>
-            <!--  @foreach ($jornadas as $jornada)
+            @foreach ($jornadas as $jornada)
 				<tr>
 					
 					<td>{{ $jornada->fecha}}</td>
-					Falta aqui en nombre del empleado
+					<td>{{ $jornada->maquina_id}}</td>
+					<td>{{ $jornada->empleado_id}}</td>
 					<td>{{ $jornada->incentivo}}</td>
 					<td>{{ $jornada->hora_extra}}</td>
 					
-					<th>Opciones</th>
+					
 					<td>
 						<a href="{{URL::action('JornadasController@edit',$jornada->empleado_id)}}"><button class="btn btn-info">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$jornada->empleado_id}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>
 					</td>
 				</tr>
 				
-				@endforeach-->
+				@endforeach
 			</table>
 			</table>
 		</div>
