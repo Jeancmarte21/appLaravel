@@ -26,8 +26,8 @@
 				<tr>
 					<td>{{$cigarros->idcigarro}}</td>
 					<th>{{$cigarros->nombre}}</th>
-					<td>{{$cigarros->tipo_cigarro}}</td>
-					<td>{{$cigarros->materiaPrima_idmateriaPrima}}</td>
+					<td>{{$cigarros->tipo}}</td>
+					<td>{{$cigarros->saborizante}}</td>
 					
 					
 				</tr>

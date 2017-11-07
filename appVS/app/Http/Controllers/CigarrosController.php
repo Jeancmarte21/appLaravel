@@ -3,6 +3,8 @@
 namespace appVS\Http\Controllers;
 
 use appVS\Cigarro;
+use appVS\MateriaPrima;
+use DB;
 use Illuminate\Http\Request;
 
 class CigarrosController extends Controller
@@ -25,7 +27,8 @@ class CigarrosController extends Controller
      */
     public function create()
     {
-        return view('cigarros.create');
+        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        return view('cigarros.create', ['materiasprimas' => $materiasprimas]);
     }
 
     /**
@@ -39,10 +42,13 @@ class CigarrosController extends Controller
      $cigarro = Cigarro::create([
                 
                 'nombre' => $request->input('nombre'),
-                'tipo_cigarro' => $request->input('tipo_cigarro')
+                'tipo' => $request->input('tipo_cigarro'),
+                'saborizante' => $request->input('saborizante')
 
-                
-    ]);
+        ]);
+     $cigarro->save();
+            
+    return back()->with('success', 'Cigarro creado correctamente');
  }
 
     /**
