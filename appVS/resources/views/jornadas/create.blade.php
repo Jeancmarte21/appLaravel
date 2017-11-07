@@ -24,7 +24,7 @@
             </select>
         </div>
     </div>
-                 
+
                 <div class="form-group">
         <label class="col-xs-3 control-label">Empleado</label>
         <div class="col-xs-5 selectContainer">
@@ -36,36 +36,31 @@
             </select>
         </div>
     </div>
-                                                  
-                   
+
+
                      <div class="form-group">
         <label class="col-xs-3 control-label">Incentivo</label>
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
-               
-                <input type="number" class="form-control" name="incentivo" min="0"/>
+
+                <input type="number" class="form-control" name="incentivo" value="0" min="0" step="0.1"/>
                 <span class="input-group-addon">$</span>
-				
+
             </div>
         </div>
     </div>
-            
-                              
-           
+
+
+
          <div class="form-group">
         <label class="col-xs-3 control-label">Horas Extras</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="horas_extras" />
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="horas_extras" />
 			 </div>
 						</div>
-                    <div class="form-group">
-        <label class="col-xs-3 control-label">Comida</label>
-        <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="comida" />
-			 </div>
-						</div>
-                     
-              
+
+
+
       <div class="form-group">
         <div class="col-md-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
@@ -75,6 +70,6 @@
     </form>
   </div>
 </div>
-    
+
 
 @endsection
