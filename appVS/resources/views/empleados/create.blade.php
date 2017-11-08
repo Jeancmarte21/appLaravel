@@ -11,14 +11,11 @@
       {{ csrf_field()}}
 
 
-      <div class="form-group has-feedback">
+      <div class="form-group">
           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
             <div class="col-md-8">
-              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
                 <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control" pattern="[a-z][1-9]{1,13}" required>
             </div>
-            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
-
         </div>
 
 
