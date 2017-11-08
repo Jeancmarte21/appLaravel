@@ -8,6 +8,13 @@
       <fieldset>
       {{ csrf_field()}}
 
+      <div class="form-group">
+        <label class="col-xs-3 control-label">Nombre</label>
+        <div class="col-xs-5 selectContainer">
+           <input class="form-control" type="text"  id="configuracion-nombre" name="nombre">
+        </div>
+    </div>
+
                    	   <div class="form-group">
         <label class="col-xs-3 control-label">Cigarro</label>
         <div class="col-xs-5 selectContainer">
