@@ -11,7 +11,7 @@
                 <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="nombre">
+            <select class="form-control" name="nombre" required>
                 <option value="">Seleccione</option>
                 @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
@@ -24,7 +24,7 @@
                   <div class="form-group">
                  <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="date"  id="example-date-input" name="fecha">
+           <input class="form-control" type="date"  id="example-date-input" name="fecha" required>
         </div>
     </div>
 

@@ -21,7 +21,7 @@
 
     <link rel="shortcut icon" href="{{ asset('css/estilos.css') }}">
 
-  
+
 
 
   </head>
@@ -228,6 +228,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
+
 
   </body>
 </html>

@@ -10,13 +10,13 @@
                    <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="date"  id="example-date-input" name="fecha">
+           <input class="form-control" type="date"  id="example-date-input" name="fecha" required>
         </div>
     </div>
                               <div class="form-group">
         <label class="col-xs-3 control-label">Maquina</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="maquina">
+            <select class="form-control" name="maquina" required>
                 <option value="">Seleccione</option>
                 @foreach($maquinas as $maquina)
                 <option value="{{$maquina->idmaquina}}">{{$maquina->nombre}}</option>
@@ -28,7 +28,7 @@
                 <div class="form-group">
         <label class="col-xs-3 control-label">Empleado</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="empleado">
+            <select class="form-control" name="empleado" required>
                 <option value="">Seleccione</option>
                 @foreach($empleados as $empleado)
                 <option value="{{$empleado->idempleado}}">{{$empleado->nombre.' '.$empleado->apellidos}}</option>
