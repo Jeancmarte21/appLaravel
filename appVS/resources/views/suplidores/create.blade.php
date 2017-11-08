@@ -7,41 +7,45 @@
     <form class="form-horizontal" method="post" action="/suplidores">
       <fieldset>
       {{ csrf_field()}}
-    <div class="form-group"> 
+
+
+    <div class="form-group">
 
         <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Empresa</label></span>
          <div class="col-md-8">
-        <input type="text" class="form-control" id="nombre" name="nombre" placeholder=""></div>
-    </div>  
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="" required></div>
+    </div>
+
 
     <div class="form-group">
-                             <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
-                            <div class="col-md-8">
-                                <input id="telefono" name="telefono" type="text" placeholder="" class="form-control">
-                            </div>
-                        </div>  
+           <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
+          <div class="col-md-8">
+         <input id="telefono" name="telefono" type="text" placeholder="(000)-000-0000" class="form-control" required>
+  </div>
+</div>
+
 
      <div class="form-group">
                            <span class="col-md-1 col-md-offset-2 text-center"> <label for="full_name_id" class="control-label">Direccion</label></span>
                             <div class="col-md-8">
                                 <input id="direccion" name="direccion" type="Address" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control">
                             </div>
-                        </div>                  
-                            
+                        </div>
+
                             <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label ">Correo</label></span>
                             <div class="col-md-8">
-                                <input id="correo" name="correo" type="text" placeholder="@ejemplo.com" class="form-control">
+                                <input id="correo" name="correo" type="text" placeholder="correo@ejemplo.com" class="form-control" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                             </div>
                         </div>
 
-                               
-                            
+
+
     <div class="form-group"> <!-- State Button -->
        <span class="col-md-1 col-md-offset-2 text-center"><label for="state_id" class="control-label">Pais</label></span>
          <div class="col-md-8">
         <select class="form-control" id="pais" name="pais">
-           
+
             <option value="AF">Afganistán</option>
 <option value="AL">Albania</option>
 <option value="DE">Alemania</option>
@@ -276,10 +280,10 @@
 <option value="YU">Yugoslavia</option>
 <option value="ZM">Zambia</option>
 <option value="ZW">Zimbabue</option>
-        </select>  
+        </select>
         </div>
       </div>
-      
+
       <div class="form-group">
         <div class="col-md-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
@@ -289,6 +293,14 @@
     </form>
   </div>
 </div>
+
+<script>
+var input = document.getElementById('correo');
+
+input.oninvalid = function(event) {
+    event.target.setCustomValidity('El correo debe tener el siguiente formato. ej. correo@ejemplo.com');
+}
+</script>
 
 
 @endsection
