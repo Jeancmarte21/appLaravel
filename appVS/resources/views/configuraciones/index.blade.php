@@ -8,7 +8,7 @@
 <div class="list-group ">
 	
 	@foreach($configuraciones as $configuracion)
-  		<li class="list-group-item">{{$configuraciones->nombre}}
+  		<li class="list-group-item">{{$configuracion->nombre}}
 
   		<a href="/configuraciones/{{$configuracion->idconfiguracion}}/edit" class="badge badge- btn btn-info">Editar</a>
 

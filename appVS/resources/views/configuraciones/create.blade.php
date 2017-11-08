@@ -35,7 +35,7 @@
                    <div class="form-group">
         <label class="col-xs-3 control-label">Capote</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="capote">
+            <select class="form-control" name="capote" disabled>
                 <option value="">Seleccione</option>
                 @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
