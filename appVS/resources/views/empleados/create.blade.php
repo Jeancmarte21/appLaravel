@@ -6,39 +6,50 @@
 
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/empleados" data-toggle="validator">
       <fieldset>
       {{ csrf_field()}}
-      <div class="form-group">
+
+
+      <div class="form-group has-feedback">
           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
             <div class="col-md-8">
-                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
+              <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control" pattern="[a-z][1-9]{1,13}" required>
             </div>
+            <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
         </div>
+
+
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
-        <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control">
+        <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control" required>
         </div>
       </div>
+
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
-          <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control">
+          <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control" required>
         </div>
       </div>
+
         <div class="form-group">
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
-      <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
+      <input id="empleado-telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control">
       </div>
       </div>
+
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
         <div class="col-md-8">
           <input placeholder="Fecha nacimiento" class="form-control" type="date"  onfocus= '(this.type="date")' id="empleado-fechanac" name="fecha_nacimiento">
         </div>
       </div>
+
 
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-globe bigicon"></i></span>
@@ -56,6 +67,15 @@
     </form>
   </div>
 </div>
+
+
+        <script>
+        var input = document.getElementById('cedula');
+
+        input.oninvalid = function(event) {
+            event.target.setCustomValidity('La cedula deberia de estar compuesta de 13 caracteres. ej. 000-0000000-0');
+        }
+        </script>
 
 
 @endsection
