@@ -14,8 +14,8 @@
            <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="example-datetime-local-input" name="fecha">
         </div>
     </div>
-    
-   
+
+
 
 
 
@@ -29,7 +29,7 @@
             </select>
         </div>
     </div>
-                 
+
                 <div class="form-group">
         <label class="col-xs-3 control-label">Cigarro</label>
         <div class="col-xs-5 selectContainer">
@@ -51,16 +51,16 @@
             </select>
         </div>
     </div>
-             
-                  
-                    
+
+
+
          <div class="form-group">
         <label class="col-xs-3 control-label">Cantidad</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" / name="cantidad">
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" / name="cantidad">
        </div>
             </div>
-                   
+
               <div class="form-group">
         <div class="col-md-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
@@ -70,5 +70,5 @@
     </form>
   </div>
 </div>
-    
+
 @endsection

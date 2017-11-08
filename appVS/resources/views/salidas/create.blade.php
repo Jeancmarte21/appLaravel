@@ -7,7 +7,7 @@
     <form class="form-horizontal" method="post" action="/entradas">
       <fieldset>
       {{ csrf_field()}}
-                
+
                 <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
@@ -19,23 +19,23 @@
             </select>
         </div>
     </div>
-              
-          
-                  
+
+
+
                      <div class="form-group">
         <label class="col-xs-3 control-label">Cantidad</label>
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
-               
-                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" />
+
+                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
                 <span class="input-group-addon">lbs</span>
-				
+
             </div>
         </div>
     </div>
-                  
-                       
-       
+
+
+
       <div class="form-group">
         <div class="col-md-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>

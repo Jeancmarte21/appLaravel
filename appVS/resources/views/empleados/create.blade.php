@@ -3,18 +3,18 @@
 @section('contenido')
 
 <!-- este es el form -->
- 
+
     <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="/empleados">
       <fieldset>
       {{ csrf_field()}}
       <div class="form-group">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
-                            <div class="col-md-8">
-                                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
-                            </div>
-                        </div>
+          <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
+            <div class="col-md-8">
+                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control">
+            </div>
+        </div>
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
@@ -33,10 +33,10 @@
       <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control">
       </div>
       </div>
-      <div class="form-group"> <!-- Date input -->
+      <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
         <div class="col-md-8">
-          <input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus= '(this.type="date")' id="empleado-fechanac" name="fecha_nacimiento"> 
+          <input placeholder="Fecha nacimiento" class="form-control" type="date"  onfocus= '(this.type="date")' id="empleado-fechanac" name="fecha_nacimiento">
         </div>
       </div>
 
@@ -56,6 +56,6 @@
     </form>
   </div>
 </div>
-    
+
 
 @endsection
