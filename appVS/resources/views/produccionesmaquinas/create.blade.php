@@ -5,7 +5,7 @@
 
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/produccionesmaquinas">
       <fieldset>
       {{ csrf_field()}}
                    <div class="form-group">
@@ -24,8 +24,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="maquina">
                 <option value="">Seleccione</option>
-                <option value="">Arenco</option>
-              <option value="">AMF</option>
+                @foreach($maquinas as $maquina)
+                <option value="{{$maquina->idmaquina}}">{{$maquina->nombre}}</option>
+              @endforeach
             </select>
         </div>
     </div>
@@ -35,8 +36,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="cigarro">
                 <option value="">Seleccione</option>
-                <option value="">...</option>
-              <option value="">...</option>
+                @foreach($cigarros as $cigarro)
+                <option value="{{$cigarro->idcigarro}}">{{$cigarro->nombre}}</option>
+              @endforeach  
             </select>
         </div>
     </div>
@@ -46,9 +48,9 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="configuracion">
                 <option value="">Seleccione</option>
-                <option value="">...</option>
-              <option value="">...</option>
-            </select>
+                @foreach($cigarros as $cigarro)
+                <option value="{{$cigarro->idcigarro}}">{{$cigarro->nombre}}</option>
+              @endforeach  
         </div>
     </div>
 
