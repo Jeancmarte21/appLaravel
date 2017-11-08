@@ -51,6 +51,7 @@
                 @foreach($configuraciones as $configuracion)
                 <option value="{{$configuracion->idconfiguracion}}">{{$configuracion->nombre}}</option>
               @endforeach
+              </select>
         </div>
     </div>
 
@@ -59,7 +60,7 @@
          <div class="form-group">
         <label class="col-xs-3 control-label">Cantidad</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" / name="cantidad">
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="cantidad">
        </div>
             </div>
 
