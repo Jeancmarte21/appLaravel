@@ -7,14 +7,14 @@
     <form class="form-horizontal" method="post" action="/empleados">
       <fieldset>
       {{ csrf_field()}}
-                    <div class="form-group"> 
+                    <div class="form-group">
                  <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="text"  id="example-date-input" name="nombre">
+           <input class="form-control" type="text"  id="example-date-input" name="nombre" required>
         </div>
     </div>
-                  
-                
+
+
                      <div class="form-group"> <!--Cambiar por radio Botton-->
         <label class="col-xs-3 control-label">Pago por:</label>
         <div class="col-xs-5 selectContainer">
@@ -25,13 +25,13 @@
             </select>
         </div>
     </div>
-                  
-				
+
+
             </div>
         </div>
     </div>
-                   
-        
+
+
       <div class="form-group">
         <div class="col-md-12 text-center">
           <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
@@ -41,6 +41,6 @@
     </form>
   </div>
 </div>
-    
+
 
 @endsection

@@ -11,7 +11,7 @@
                 <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="nombre">
+            <select class="form-control" name="nombre" required>
                 <option value="">Seleccione</option>
                 @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
@@ -27,7 +27,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
 
-                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1" required/>
                 <span class="input-group-addon">lbs</span>
 
             </div>

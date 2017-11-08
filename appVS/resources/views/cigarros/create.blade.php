@@ -20,7 +20,7 @@
                     <div class="form-group">
         <label class="col-xs-3 control-label">Tipo cigarro</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="tipo_cigarro">
+            <select class="form-control" name="tipo_cigarro" required>
                 <option value="">Seleccione</option>
                 <option value="Fumas">Fumas</option>
                 <option value="Vitolas">Vitolas</option>
@@ -33,11 +33,12 @@
                     <div class="form-group">
         <label class="col-xs-3 control-label">Saborizante</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="saborizante">
+            <select class="form-control" name="saborizante" required>
             <option value="">Seleccione</option>
+            <option value="">Sin saborizante</option>
               @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
-              @endforeach  
+              @endforeach
             </select>
         </div>
     </div>
