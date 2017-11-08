@@ -48,8 +48,8 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="configuracion" required>
                 <option value="">Seleccione</option>
-                @foreach($cigarros as $cigarro)
-                <option value="{{$cigarro->idcigarro}}">{{$cigarro->nombre}}</option>
+                @foreach($configuraciones as $configuracion)
+                <option value="{{$configuracion->idconfiguracion}}">{{$configuracion->nombre}}</option>
               @endforeach
         </div>
     </div>

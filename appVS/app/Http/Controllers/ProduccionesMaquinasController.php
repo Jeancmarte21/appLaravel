@@ -4,6 +4,9 @@ namespace appVS\Http\Controllers;
 
 use appVS\ProduccionMaquina;
 use Illuminate\Http\Request;
+use appVS\Configuracion;
+use appVS\Maquina;
+use appVS\Cigarro;
 
 class ProduccionesMaquinasController extends Controller
 {
@@ -26,7 +29,10 @@ class ProduccionesMaquinasController extends Controller
     public function create()
     {
         //
-        return view('produccionesmaquinas.create');
+        $configuraciones = Configuracion::all();
+        $maquinas = Maquina::all();
+        $cigarros = Cigarro::all();
+        return view('produccionesmaquinas.create', ['configuraciones' => $configuraciones, 'maquinas' => $maquinas, 'cigarros' => $cigarros]);
     }
 
     /**
@@ -39,12 +45,15 @@ class ProduccionesMaquinasController extends Controller
     {
        
             $produccionMaquina = ProduccionMaquina::create([
-                'maquina_idmaquina' => $request->input('maquina_idmaquina'),
-                'cigarro_idcigarro' => $request->input('cigarro_idcigarro'),
-                'configuracion_idconfiguracion' => $request->input('configuracion_idconfiguracion'),
+                'maquina_id' => $request->input('maquina'),
+                'cigarro_id' => $request->input('cigarro'),
+                'configuracion_id' => $request->input('configuracion'),
                 'cantidad' => $request->input('cantidad'),
                 'fecha' => $request->input('fecha'),
                 ]);
+            $produccionMaquina->save();
+
+            return back()->with('success', 'Se ha creado la produccion');
     }
 
     /**
