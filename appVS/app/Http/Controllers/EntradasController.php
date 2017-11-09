@@ -22,7 +22,11 @@ class EntradasController extends Controller
           if ($request)
         {
             $query=trim($request->get('searchText'));
-            $entradas=DB::table('entrada')->where('cantidad','LIKE','%'.$query.'%')
+            $entradas=DB::table('entrada')
+            ->join('suplidor', 'entrada.suplidor_id', '=', 'suplidor.idsuplidor')
+            ->join('materiaPrima', 'entrada.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+            ->select('entrada.*', 'suplidor.nombre as suplidor', 'materiaPrima.nombre as matprim')
+            ->where('materiaPrima.nombre','LIKE','%'.$query.'%')
             ->orderBy('fecha','desc')
             ->paginate(10);
             return view('entradas.index',["entradas"=>$entradas,"searchText"=>$query]);
