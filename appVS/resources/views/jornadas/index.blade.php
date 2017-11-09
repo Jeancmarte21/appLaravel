@@ -25,12 +25,12 @@
 					<th>HORAS EXTRAS</th>
 					<th>OPCIONES</th>
 				</thead>
-            @foreach ($jornadas as $jornada)
+            @foreach ($jornad as $jornada)
 				<tr>
 
 					<td>{{ $jornada->fecha}}</td>
-					<td>{{ $jornada->maquina_id}}</td>
-					<td>{{ $jornada->empleado_id}}</td>
+					<td>{{ $jornada->maquina}}</td>
+					<td>{{ $jornada->nombre.' '.$jornada->apellidos}}</td>
 					<td>{{ $jornada->incentivo}}</td>
 					<td>{{ $jornada->hora_extra}}</td>
 
