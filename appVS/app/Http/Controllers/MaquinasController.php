@@ -42,8 +42,11 @@ class MaquinasController extends Controller
             $maquina = Maquina::create([
                
                 'nombre' => $request->input('nombre'),
-                'produccion' => $request->input('produccion')
+                'produccion' => $request->input('pago')
                 ]);
+            $maquina->save();
+
+            return back()->with('success', 'Maquina Registrada');
     }
 
     /**

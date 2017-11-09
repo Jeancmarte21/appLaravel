@@ -4,7 +4,7 @@
 
   <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/empleados">
+    <form class="form-horizontal" method="post" action="/maquinas">
       <fieldset>
       {{ csrf_field()}}
                     <div class="form-group">
@@ -20,8 +20,8 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="pago">
                 <option value="">Seleccione</option>
-                <option value="">Producción</option>
-               <option value="">Salario Fijo</option>
+                <option value="1">Producción</option>
+               <option value="0">Salario Fijo</option>
             </select>
         </div>
     </div>
