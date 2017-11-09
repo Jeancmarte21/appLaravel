@@ -32,7 +32,7 @@ class JornadasController extends Controller
             return view('jornadas.index',["jornadas"=>$jornadas,"searchText"=>$query, 'jornad' => $jornad]);
         }
 
-    
+
         //$jornadas = Jornada::all();
         //return view('jornadas.index');
     }
@@ -66,7 +66,7 @@ class JornadasController extends Controller
                 //'comida' => $request->input('comida')
                 ]);
        $jornada ->save();
-            
+
         return back()->with('success', 'Jornada creado correctamente');
     }
 
@@ -114,7 +114,7 @@ class JornadasController extends Controller
     {
        $jornada=Jornada::findOrFail($idjornada);
         $jornada=delete();
-       
+
 
         return Redirect::to('jornadas.index');
     }
