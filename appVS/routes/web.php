@@ -29,7 +29,7 @@ Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
 Route::resource('users', 'UsersController');
 Route::resource('inicio', 'iniciosController');
-
+Route::resource('salidas','SalidasController');
 
 //});
 Auth::routes();

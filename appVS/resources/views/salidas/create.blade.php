@@ -4,7 +4,7 @@
 
  <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/entradas">
+    <form class="form-horizontal" method="post" action="/salidas">
       <fieldset>
       {{ csrf_field()}}
 

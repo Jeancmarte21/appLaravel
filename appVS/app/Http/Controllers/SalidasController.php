@@ -4,6 +4,8 @@ namespace appVS\Http\Controllers;
 
 use appVS\Salida;
 use Illuminate\Http\Request;
+use appVS\MateriaPrima;
+use DB;
 
 class SalidasController extends Controller
 {
@@ -31,6 +33,8 @@ class SalidasController extends Controller
      */
     public function create()
     {
+        $materiasprimas =  MateriaPrima::all();
+        return view('salidas.create', ['materiasprimas'=> $materiasprimas]);
        
     }
 
@@ -42,11 +46,12 @@ class SalidasController extends Controller
      */
     public function store(Request $request)
     {
-        $salida = Entrada::create([
+        $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),
                 'cantidad' => $request->input('cantidad'),
-               
+                
                 ]);
+        $salida->save();
         if($salida){
                 return back()->with('success', 'Salida registrada correctamente!');
             }
