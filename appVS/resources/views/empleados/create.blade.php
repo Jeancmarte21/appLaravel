@@ -14,7 +14,7 @@
       <div class="form-group">
           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
             <div class="col-md-8">
-                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control" pattern="{1,13}" required>
+                <input id="cedula" name="cedula" type="text" placeholder="Cedula: 000-0000000-0" class="form-control" pattern="{1,13}" required>
             </div>
         </div>
 
@@ -22,14 +22,14 @@
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
-        <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombre" class="form-control" required>
+        <input id="empleado-nombre" name="nombre" type="text" placeholder="Nombres" class="form-control" required>
         </div>
       </div>
 
       <div class="form-group">
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
         <div class="col-md-8">
-          <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellido" class="form-control" required>
+          <input id="empleado-apellido" name="apellidos" type="text" placeholder="Apellidos" class="form-control" required>
         </div>
       </div>
 
