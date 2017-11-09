@@ -18,18 +18,16 @@ class JornadasController extends Controller
      */
     public function index(Request $request)
     {
-        $jornad = DB::table('jornada')
-            ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-            ->join('maquina', 'jornada.maquina_id', '=', 'maquina.idmaquina')
-            ->select('jornada.*', 'empleado.nombre', 'empleado.apellidos', 'maquina.nombre as maquina')
-            ->get();
+        
          if ($request)
         {
             $query=trim($request->get('searchText'));
-            $jornadas=DB::table('jornada')->where('fecha','LIKE','%'.$query.'%')
-            ->orderBy('empleado_id','desc')
+            $jornad=DB::table('jornada')->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
+            ->join('maquina', 'jornada.maquina_id', '=', 'maquina.idmaquina')
+            ->select('jornada.*', 'empleado.nombre', 'empleado.apellidos', 'maquina.nombre as maquina')->where('empleado.nombre','LIKE','%'.$query.'%')
+            ->orderBy('fecha','desc')
             ->paginate(10);
-            return view('jornadas.index',["jornadas"=>$jornadas,"searchText"=>$query, 'jornad' => $jornad]);
+            return view('jornadas.index',["jornad"=>$jornad,"searchText"=>$query]);
         }
 
 
