@@ -14,7 +14,7 @@ class EmpleadosController extends Controller
      */
     public function index()
     {
-       
+
         $empleados = Empleado::all();
         return view('empleados.index', ['empleados'=> $empleados]);
     }
@@ -36,19 +36,19 @@ class EmpleadosController extends Controller
      */
     public function store(Request $request)
     {
-       
+
            $empleado = Empleado::create([
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
                 'fecha_nacimiento' => $request->input('fecha_nacimiento'),
                 'direccion' => $request->input('direccion')
-                ]); 
+                ]);
             $empleado->save();
-            
+
            return back()->with('success', 'Empleado creado correctamente');
 
-        
+
     }
     /**
      * Display the specified resource.
@@ -69,7 +69,7 @@ class EmpleadosController extends Controller
      */
     public function edit(Empleado $empleado)
     {
-    
+
         $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.edit', ['empleado'=>$empleado]);
     }
@@ -102,8 +102,13 @@ class EmpleadosController extends Controller
      * @param  \appVS\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Empleado $empleado)
+    public function destroy($idempleado)
     {
-        //
+      $empleado=Empleado::findOrFail($idempleado);
+      $empleado->delete();
+
+      Flash::danger('El usuario'. $empleado->nombre. 'ha sido eliminado');
+      return redirect()->route('empleados.index');
+    
     }
 }
