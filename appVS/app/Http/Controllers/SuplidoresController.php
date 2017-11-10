@@ -82,9 +82,9 @@ class SuplidoresController extends Controller
      * @param  \appVS\Suplidor  $suplidor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Suplidor $suplidor)
+    public function update(Request $request, $suplidor)
     {
-        $suplidorUpdate = Suplidor::where('idsuplidor', $suplidor->idsuplidor)
+        $suplidorUpdate = Suplidor::find($suplidor)
             ->update([
             'nombre' => $request->input('nombre'),
             'telefono' => $request->input('telefono'),
@@ -93,9 +93,10 @@ class SuplidoresController extends Controller
             'direccion' => $request->input('direccion')
             ]);
             if($suplidorUpdate){
-                return redirect()->route(suplidores.show, ['suplidor'=>$suplidor->idsuplidor])->with('success', 'Suplidor editado correctamente');
+                return redirect()->route('suplidores.show', ['suplidor'=>$suplidor])->with('success', 'Suplidor editado correctamente');
             }
             return back()->withInput();
+            
     }
 
     /**

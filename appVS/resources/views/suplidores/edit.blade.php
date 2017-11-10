@@ -5,10 +5,11 @@
      <!-- este es el form -->
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/suplidores">
+    <form class="form-horizontal" method="post" action="{{route('suplidores.update', [$suplidor->idsuplidor])}}">
 
       <fieldset>
       {{ csrf_field()}}
+      <input type="hidden" name="_method" value="put">
 
  <div class="form-group">
 
