@@ -18,7 +18,7 @@
 					<th>ID</th>
 					<th>NOMBRE</th>
 					<th>TIPO CIGARRO</th>
-					<th>SABORIZANTE</th>
+					<th>AROMA</th>
 					
 				</thead>
 
@@ -27,9 +27,11 @@
 					<td>{{$cigarros->idcigarro}}</td>
 					<th>{{$cigarros->nombre}}</th>
 					<td>{{$cigarros->tipo}}</td>
+					@if($cigarros->saborizante != null)
 					<td>{{$cigarros->saborizante}}</td>
-					
-					
+					@else
+					<td>Sin Aroma</td>
+					@endif
 				</tr>
 
 			</table>

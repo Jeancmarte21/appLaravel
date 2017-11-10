@@ -16,6 +16,7 @@ class CreateSalidaTable extends Migration
         Schema::create('salida', function (Blueprint $table) {
             $table->integer('materiaprima_id')->unsigned();
             $table->float('cantidad', 7, 2);
+            $table->date('fecha');
             $table->timestamps();
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');

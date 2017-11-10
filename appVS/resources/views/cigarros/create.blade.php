@@ -31,11 +31,11 @@
 
 
                     <div class="form-group">
-        <label class="col-xs-3 control-label">Saborizante</label>
+        <label class="col-xs-3 control-label">Aroma</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="saborizante" required>
             <option value="">Seleccione</option>
-            <option value="">Sin saborizante</option>
+            <option value="">Sin Aroma</option>
               @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
               @endforeach

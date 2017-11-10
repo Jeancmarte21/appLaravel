@@ -16,7 +16,7 @@ class SalidasController extends Controller
      */
     public function index(Request $request)
     {
-          if ($request)
+       /*   if ($request)
         {
             $query=trim($request->get('searchText'));
             $salidas=DB::table('salida')->where('cantidad','LIKE','%'.$query.'%')
@@ -24,6 +24,19 @@ class SalidasController extends Controller
             ->paginate(10);
             return view('salidas.index',["salidas"=>$salidas,"searchText"=>$query]);
         }
+        */
+        if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $salidas = DB::table('salida')
+            ->join('materiaPrima', 'salida.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+            ->select('salida.*', 'materiaPrima.nombre')
+            ->where('materiaPrima.nombre', 'LIKE', '%'.$query.'%')
+            ->orderBy('materiaPrima.nombre', 'asc')
+            ->paginate(10);
+
+            return view('salidas.index', ['salidas'=>$salidas, 'searchText' => $query]);
+        }   
     }
 
     /**
@@ -49,7 +62,7 @@ class SalidasController extends Controller
         $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),
                 'cantidad' => $request->input('cantidad'),
-                
+                //'fecha' => date('Y-m-d')
                 ]);
         $salida->save();
         if($salida){

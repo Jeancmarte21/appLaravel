@@ -6,21 +6,19 @@
  
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/cigarros">
+    <form class="form-horizontal" method="post" action="{{route('cigarros.update', [$cigarro->idcigarro])}}">
       <fieldset>
       {{ csrf_field()}}	
-
+      <input type="hidden" name="_method" value="put">
 
  <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="nombre">
-                <option value="">Seleccione</option>
-                <option value="">...</option>
-                <option value="">...</option>
-                <option value="">...</option>
-                <option value="">...</option>
-            </select>
+           <input class="form-control" 
+                  type="text"  
+                  id="cigarro-nombre" 
+                  name="nombre"
+                  value="{{$cigarro->nombre}}"/>
         </div>
     </div>
                    	
@@ -28,9 +26,9 @@
         <label class="col-xs-3 control-label">Tipo cigarro</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="tipo_cigarro">
-                <option value="">Seleccione</option>
-                <option value="">Fumas</option>
-                <option value="">Vitolas</option>
+                <option value="{{$cigarro->tipo}}" selected>{{$cigarro->tipo}}</option>
+                <option value="Fumas">Fumas</option>
+                <option value="Vitolas">Vitolas</option>
             </select>
         </div>
     </div>
@@ -41,16 +39,11 @@
         <label class="col-xs-3 control-label">Saborizante</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="saborizante">
-                <option >Seleccione</option>
-                 <option value="">Free Aromatic</option>
-                  <option value="">Cherry</option>
-                <option value="">Grape</option>
-                 <option value="">Honey Bourbon</option>
-                <option value="">Honey</option>
-                <option value="">Honey Berry</option>
-                 <option value="">Natural</option>
-                
-                
+                <option value="">Sin Aroma</option>
+                <option value="{{$cigarro->saborizante}}" selected>{{$cigarro->aroma}}</option>
+              @foreach($materiasprimas as $materiaprima)
+                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+              @endforeach  
             </select>
         </div>
     </div>

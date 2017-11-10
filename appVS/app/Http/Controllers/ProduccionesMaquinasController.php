@@ -49,7 +49,8 @@ class ProduccionesMaquinasController extends Controller
                 'cigarro_id' => $request->input('cigarro'),
                 'configuracion_id' => $request->input('configuracion'),
                 'cantidad' => $request->input('cantidad'),
-                'fecha' => $request->input('fecha'),
+                //'fecha' => $request->input('fecha')
+                'fecha' => date('Y-m-d H:i:s')
                 ]);
             $produccionMaquina->save();
 

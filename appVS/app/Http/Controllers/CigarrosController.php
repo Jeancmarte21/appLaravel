@@ -59,8 +59,11 @@ class CigarrosController extends Controller
      */
     public function show($idcigarro)
     {
-        
-        return view("cigarros.show",["cigarros"=>Cigarro::findOrFail($idcigarro)]);
+        $cigarro = DB::table('cigarro')
+        ->join('materiaPrima', 'cigarro.saborizante', '=', 'materiaPrima.idmateriaPrima')
+        ->select('cigarro.*', 'materiaPrima.nombre as aroma')
+        ->where('idcigarro', '=', $idcigarro)->get();
+        return view("cigarros.show",["cigarros"=>$cigarro]);
     }
 
     /**
@@ -71,7 +74,12 @@ class CigarrosController extends Controller
      */
      public function edit($idcigarro)
     {
-        return view("cigarros.edit",["cigarro"=>Cigarro::findOrFail($idcigarro)]);
+        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        $cigarro = DB::table('cigarro')
+        ->join('materiaPrima', 'cigarro.saborizante', '=', 'materiaPrima.idmateriaPrima')
+        ->select('cigarro.*', 'materiaPrima.nombre as aroma')
+        ->where('idcigarro', '=', '$idcigarro')->get();
+        return view('cigarros.edit', ['cigarro'=> $cigarro, 'materiasprimas'=>$materiasprimas]);
     }
 
     /**
@@ -81,9 +89,19 @@ class CigarrosController extends Controller
      * @param  \appVS\Cigarro  $cigarro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Cigarro $cigarro)
+    public function update(Request $request, $cigarro)
     {
         //
+        $cigarroUpdate = Cigarro::find($cigarro)
+            ->update([
+                'nombre' => $request->input('nombre'),
+                'tipo' => $request->input('tipo_cigarro'),
+                'saborizante' => $request->input('saborizante')
+            ]);
+            if($cigarroUpdate){
+                return redirect()->route('cigarros.show', ['cigarros'=>$cigarro])->with('success', 'Cigarro editado correctamente');
+            }
+            return back()->withInput();
     }
 
     /**
