@@ -9,6 +9,8 @@
 	@foreach($materiasPrimas as $materiaPrima)
   		<li class="list-group-item">{{$materiaPrima->nombre}}
 
+  		<a href="/empleados/{{$materiaPrima->idmateriaPrima}}/modal"  class="badge badge-danger btn btn-danger" onclick="return confirm('Seguro que desea eliminarla?')">Eliminar</a>
+
   		<a href="/materiasPrimas/{{$materiaPrima->idmateriaPrima}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
   		<a href="/materiasPrimas/{{$materiaPrima->idmateriaPrima}}" class="badge badge-primary btn btn-primary">Ver</a>

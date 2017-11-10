@@ -58,6 +58,8 @@ class MateriasPrimasController extends Controller
      */
     public function show($idmateriaPrima)
     {
+        //$materiaprima = MateriaPrima::find($materiaPrima->idmateriaPrima);
+        //return view('materiasPrimas.show',['materiaPrima' => $materiaprima]);
         return view("materiasPrimas.show",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
     }
 
@@ -79,9 +81,20 @@ class MateriasPrimasController extends Controller
      * @param  \appVS\MateriaPrima  $materiaPrima
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, MateriaPrima $materiaPrima)
+    public function update(Request $request, $materiaPrima)
     {
         //
+        $matprimUpdate = MateriaPrima::find($materiaPrima)
+            ->update([
+            'nombre' => $request->input('nombre'),
+            'categoria' => $request->input('categoria'),
+            'porcentaje_pesohumedo' => $request->input('porcentaje_pesohumedo'),
+            'existencia_minima' => $request->input('existencia_minima')
+            ]);
+            if($matprimUpdate){
+                return redirect()->route('materiasPrimas.show', ['materiaPrima'=>$materiaPrima])->with('success', 'Materia Prima editada correctamente');
+            }
+            return back()->withInput();
     }
 
     /**

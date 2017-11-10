@@ -7,11 +7,11 @@
  
     <div class="row">
   <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/materiasPrimas">
+    <form class="form-horizontal" method="post" action="{{route('materiasPrimas.update', [$materiaPrima->idmateriaPrima])}}">
       
       <fieldset>
       {{ csrf_field()}}
-
+      <input type="hidden" name="_method" value="put">
 
 
 <div class="form-group"> 
@@ -25,10 +25,10 @@
         <label class="col-xs-3 control-label">Categoria</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="categoria" >
-                <option value="" value="{{$materiaPrima->categoria}}">Seleccione</option>
-                <option value="">Tabaco</option>
-               <option value="">Saborizante</option>
-               <option value="">Pega</option>
+                <option value="{{$materiaPrima->idmateriaPrima}}">{{$materiaPrima->categoria}}</option>
+                <option value="Tabaco">Tabaco</option>
+               <option value="Saborizante">Saborizante</option>
+               <option value="Pega">Pega</option>
             </select>
         </div>
     </div> 
