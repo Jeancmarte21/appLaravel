@@ -16,7 +16,7 @@ class MaquinasController extends Controller
     {
         //
         $maquinas = Maquina::all();
-        return view('maquinas.index');
+        return view('maquinas.index', ['maquinas'=>$maquinas]);
     }
 
     /**
@@ -58,6 +58,8 @@ class MaquinasController extends Controller
     public function show(Maquina $maquina)
     {
         //
+        $maquina = Maquina::find($maquina->idmaquina);
+        return view('maquinas.show', ['maquina'=>$maquina]);
     }
 
     /**
@@ -69,6 +71,8 @@ class MaquinasController extends Controller
     public function edit(Maquina $maquina)
     {
         //
+        $maquina = Maquina::find($maquina->idmaquina);
+        return view('maquinas.edit', ['maquina'=>$maquina]);
     }
 
     /**
@@ -81,6 +85,15 @@ class MaquinasController extends Controller
     public function update(Request $request, Maquina $maquina)
     {
         //
+        $maquinaUpdate = Maquina::where('idmaquina', $maquina->idmaquina)
+            ->update([
+            'nombre' => $request->input('nombre'),
+            'produccion' => $request->input('pago'),
+            ]);
+            if($maquinaUpdate){
+                return redirect()->route('maquinas.show', ['maquina'=>$maquina->idmaquina])->with('success', 'Maquina editada correctamente');
+            }
+            return back()->withInput();
     }
 
     /**
