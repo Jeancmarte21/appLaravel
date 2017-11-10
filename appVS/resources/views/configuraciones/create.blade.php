@@ -28,20 +28,28 @@
     </div>
 
 
-                   <div class="form-group">
-        <label class="col-xs-3 control-label">Capa</label>
-        <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="capa" id="capa">
-                <option value="">Seleccione</option>
-                @foreach($materiasprimas as $materiaprima)
-                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
-              @endforeach
-			</select>
-        </div>
-    </div>
+    <div class="form-group">
+<label class="col-xs-3 control-label">Capa</label>
+<div class="col-xs-3 selectContainer">
+<select class="form-control" name="capa" id="capa">
+ <option value="">Seleccione</option>
+ @foreach($materiasprimas as $materiaprima)
+ <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+@endforeach
+</select>
+</div>
+<div class="col-xs-2 inputGroupContainer">
+<div class="input-group">
+
+   <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+   <span class="input-group-addon">lbs</span>
+
+</div>
+</div>
+</div>
                    <div class="form-group">
         <label class="col-xs-3 control-label">Capote</label>
-        <div class="col-xs-5 selectContainer">
+        <div class="col-xs-3 selectContainer">
             <select class="form-control" name="capote" id="capote">
                 <option value="">Seleccione</option>
                 @foreach($materiasprimas as $materiaprima)
@@ -49,6 +57,14 @@
               @endforeach
 			</select>
         </div>
+        <div class="col-xs-2 inputGroupContainer">
+              <div class="input-group">
+
+                  <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+                  <span class="input-group-addon">lbs</span>
+
+              </div>
+          </div>
     </div>
 
     <div class="form-group">
@@ -57,15 +73,16 @@
             <select class="form-control" name="capote" id="capote">
                 <option value="3">Picadura</option>
       </select>
-      <div class="col-xs-1 inputGroupContainer">
-            <div class="input-group">
 
-                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
-                <span class="input-group-addon">lbs</span>
+        </div>
+        <div class="col-xs-2 inputGroupContainer">
+              <div class="input-group">
 
-            </div>
-        </div>
-        </div>
+                  <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+                  <span class="input-group-addon">lbs</span>
+
+              </div>
+          </div>
     </div>
 
                         <div class="form-group">

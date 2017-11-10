@@ -4,24 +4,24 @@
 
 
      <!-- este es el form -->
- 
+
     <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="{{route('empleados.update', [$empleado->idempleado])}}">
-      
+
       <fieldset>
       {{ csrf_field()}}
       <input type="hidden" name="_method" value="put">
 
 <div class="form-group">
-    <span class="col-md-1 col-md-offset-2 text-center"> 
+    <span class="col-md-1 col-md-offset-2 text-center">
         <i class="fa fa-credit-card"></i>
            </span>
                <div class="col-md-8">
-                   <input id="empleado-cedula" 
-                            name="cedula" 
-                            type="text" 
-                            placeholder="Cedula" 
+                   <input id="empleado-cedula"
+                            name="cedula"
+                            type="text"
+                            placeholder="Cedula"
                             class="form-control"
                             value="{{$empleado->cedula}}" disabled />
                                 </div>
@@ -51,7 +51,7 @@
         <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-calendar bigicon"></i></span>
         <div class="col-md-8">
           <input placeholder="Fecha nacimiento" class="form-control" type="text" onfocus= '(this.type="date")' id="empleado-fechanac" name="fecha_nacimiento"
-            value="{{$empleado->fecha_nacimiento}}"/> 
+            value="{{$empleado->fecha_nacimiento}}"/>
         </div>
       </div>
 
@@ -68,11 +68,11 @@
           <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
         </div>
       </div>
-      
+
       </fieldset>
     </form>
   </div>
 </div>
-    
+
 
 @endsection
