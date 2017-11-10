@@ -5,8 +5,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		
-		
+
+
 	</div>
 </div>
 
@@ -20,10 +20,10 @@
 					<th>NOMBRE</th>
 					<th>APELLIDOS</th>
 					<th>TELEFONO</th>
-					<th>DIRECCIÓN</th>	
+					<th>DIRECCIÓN</th>
 				</thead>
 
-			
+
 				<tr>
 					<td>{{$empleado->idempleado}}</td>
 					<th>{{$empleado->cedula}}</th>
@@ -31,14 +31,14 @@
 					<td>{{$empleado->apellidos}}</td>
 					<th>{{$empleado->telefono}}</th>
 					<th>{{$empleado->direccion}}</th>
-					
+
 				</tr>
-		        
-			
-              
+
+
+
 			</table>
 		</div>
-		
+
 	</div>
 </div>
 
