@@ -51,6 +51,23 @@
         </div>
     </div>
 
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Relleno</label>
+        <div class="col-xs-3 selectContainer">
+            <select class="form-control" name="capote" id="capote">
+                <option value="3">Picadura</option>
+      </select>
+      <div class="col-xs-1 inputGroupContainer">
+            <div class="input-group">
+
+                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+                <span class="input-group-addon">lbs</span>
+
+            </div>
+        </div>
+        </div>
+    </div>
+
                         <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
