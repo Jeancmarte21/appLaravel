@@ -62,7 +62,7 @@ class SalidasController extends Controller
         $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),
                 'cantidad' => $request->input('cantidad'),
-                //'fecha' => date('Y-m-d')
+                'fecha' => date('Y-m-d')
                 ]);
         $salida->save();
         if($salida){
