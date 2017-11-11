@@ -1,8 +1,11 @@
 <?php
 
 namespace appVS\Http\Controllers;
-
 use Illuminate\Http\Request;
+use appVS\HTTP\Request;
+use appVS\HTTP\Controllers\Controller;
+use appVS\User;
+
 
 class UsersController extends Controller
 {
@@ -34,12 +37,10 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $user = User::create([
-                
-                'nombre' => $request->input('nombre'),
-                'contrasena' => $request->input('contrasena'),
-                'tipo_usuario' => $request->input('tipo_usuario')
-                ]);
+
+        $user = new User($request->all());
+        $user= save();
+
     }
 
     /**

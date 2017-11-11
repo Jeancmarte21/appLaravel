@@ -1,5 +1,5 @@
 <?php
-#DAME % QUE VOY A SALIR DEL CURSO A SALUDAR A ALGUIEN XD ahha dale
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +31,7 @@ Route::resource('entradas','EntradasController');
 Route::resource('users', 'UsersController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
+
 
 //});
 Auth::routes();
