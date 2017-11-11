@@ -11,7 +11,7 @@
                    <div class="form-group">
         <label for="example-datetime-local-input" class="col-xs-3 control-label">Fecha & hora</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="datetime-local" value="T13:45:00" id="example-datetime-local-input" name="fecha" required>
+           <input class="form-control" type="datetime-local" value="T13:45:00" id="fecha" name="fecha" required>
         </div>
     </div>
 
@@ -60,7 +60,7 @@
          <div class="form-group">
         <label class="col-xs-3 control-label">Cantidad</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="cantidad">
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="cantidad" name="cantidad">
        </div>
             </div>
 

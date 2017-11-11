@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use appVS\Configuracion;
 use appVS\Maquina;
 use appVS\Cigarro;
+use DB;
 
 class ProduccionesMaquinasController extends Controller
 {
@@ -15,10 +16,22 @@ class ProduccionesMaquinasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        return view('produccionesmaquinas.index');
+      if ($request)
+     {
+         $query=trim($request->get('searchText'));
+         $produccionMaq=DB::table('produccionMaquina')
+         ->join('cigarro', 'produccionMaquina.cigarro_id', '=', 'cigarro.idcigarro')
+         ->join('maquina', 'produccionMaquina.maquina_id', '=', 'maquina.idmaquina')
+         ->join('configuracion','produccionMaquina.configuracion_id','=','configuracion.idconfiguracion')
+         ->select('produccionMaquina.*', 'cigarro.nombre', 'maquina.nombre as maquina','configuracion.nombre')->where('cigarro.nombre','LIKE','%'.$query.'%')
+         ->orderBy('maquina.nombre','desc')
+         ->paginate(10);
+         return view('produccionesMaquinas.index',["produccionMaq"=>$produccionMaq,"searchText"=>$query]);
+     }
+
+        //return view('produccionesmaquinas.index');
     }
 
     /**
@@ -43,7 +56,7 @@ class ProduccionesMaquinasController extends Controller
      */
     public function store(Request $request)
     {
-       
+
             $produccionMaquina = ProduccionMaquina::create([
                 'maquina_id' => $request->input('maquina'),
                 'cigarro_id' => $request->input('cigarro'),
