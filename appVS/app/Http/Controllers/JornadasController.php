@@ -18,7 +18,7 @@ class JornadasController extends Controller
      */
     public function index(Request $request)
     {
-        
+
          if ($request)
         {
             $query=trim($request->get('searchText'));
@@ -60,8 +60,9 @@ class JornadasController extends Controller
                 'maquina_id' => $request -> input('maquina'),
                 'empleado_id' => $request -> input('empleado'),
                 'incentivo' => $request->input('incentivo'),
+                'hora_extra' => $request->input('hora_extra'),
                 'fecha' => $request->input('fecha'),
-                //'comida' => $request->input('comida')
+                
                 ]);
        $jornada ->save();
 

@@ -55,7 +55,7 @@
          <div class="form-group">
         <label class="col-xs-3 control-label">Horas Extras</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="c1" name="horas_extras" />
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="hora_extra" name="hora_extra" />
 			 </div>
 						</div>
 
