@@ -21,6 +21,7 @@ class CreateEmpleadoTable extends Migration
             $table->string('telefono', 12)->nullable();
             $table->date('fecha_nacimiento');
             $table->longText('direccion')->collation('utf8_spanish_ci')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ class CreateEntradaTable extends Migration
             $table->float('precio', 11, 2);
             $table->float('cantidad', 7, 2);
             $table->date('fecha');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
