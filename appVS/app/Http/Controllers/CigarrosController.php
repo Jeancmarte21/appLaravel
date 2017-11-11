@@ -40,15 +40,18 @@ class CigarrosController extends Controller
     public function store(Request $request)
     {
      $cigarro = Cigarro::create([
-                
+
                 'nombre' => $request->input('nombre'),
                 'tipo' => $request->input('tipo_cigarro'),
                 'saborizante' => $request->input('saborizante')
 
         ]);
      $cigarro->save();
-            
-    return back()->with('success', 'Cigarro creado correctamente');
+
+     if($cigarro){
+         return redirect()->route('cigarros.show', ['cigarros'=>$cigarro])->with('success', 'Cigarro creado correctamente');
+     }
+     return back()->withInput();
  }
 
     /**
