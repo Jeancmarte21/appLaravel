@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		@include('produccionesmaquinas.search')
-		<h3><a href="/jornadas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA PRODUCCIÓN DE MAQUINA</button></a></h3>
+		<h3><a href="/produccionesmaquinas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA PRODUCCIÓN DE MAQUINA</button></a></h3>
 
 	</div>
 </div>
@@ -31,6 +31,7 @@
 
       <td>{{ $produccionMaquina->fecha}}</td>
       <td>{{ $produccionMaquina->maquina}}</td>
+      <td>{{ $produccionMaquina->nombre}}</td>
       <td>{{ $produccionMaquina->configuracion}}</td>
       <td>{{ $produccionMaquina->cantidad}}</td>
 

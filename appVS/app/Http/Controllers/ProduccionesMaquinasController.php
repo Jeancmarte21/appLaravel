@@ -25,7 +25,7 @@ class ProduccionesMaquinasController extends Controller
          ->join('cigarro', 'produccionMaquina.cigarro_id', '=', 'cigarro.idcigarro')
          ->join('maquina', 'produccionMaquina.maquina_id', '=', 'maquina.idmaquina')
          ->join('configuracion','produccionMaquina.configuracion_id','=','configuracion.idconfiguracion')
-         ->select('produccionMaquina.*', 'cigarro.nombre', 'maquina.nombre as maquina','configuracion.nombre')->where('cigarro.nombre','LIKE','%'.$query.'%')
+         ->select('produccionMaquina.*', 'cigarro.nombre', 'maquina.nombre as maquina','configuracion.nombre as configuracion')->where('cigarro.nombre','LIKE','%'.$query.'%')
          ->orderBy('maquina.nombre','desc')
          ->paginate(10);
          return view('produccionesMaquinas.index',["produccionMaq"=>$produccionMaq,"searchText"=>$query]);
