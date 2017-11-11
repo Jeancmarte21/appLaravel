@@ -11,10 +11,9 @@ class Salida extends Model
     protected $primaryKey = 'idsalida';
     protected $fillable = [
     	'materiaprima_id',
-    	'cantidad'
+    	'cantidad',
         'fecha'
     ];
-
     public function materiasprimas()
     {
         return $this->belongsTo('appVS/MateriaPrima', 'materiaprima_id');

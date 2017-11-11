@@ -8,6 +8,13 @@
       <fieldset>
       {{ csrf_field()}}
 
+      <div class="form-group">
+     <label class="col-xs-3 control-label">Fecha</label>
+<div class="col-xs-5 selectContainer">
+<input class="form-control" type="date"  id="fecha" name="fecha" required>
+</div>
+</div>
+
                 <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
         <div class="col-xs-5 selectContainer">
