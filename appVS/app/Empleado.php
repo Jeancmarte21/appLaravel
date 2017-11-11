@@ -18,9 +18,9 @@ class Empleado extends Model
     	'direccion'
     ];
     
-    public function maquinas()
+    public function jornadas()
     {
-        return $this->belongsToMany('appVS\Maquina', 'jornada')->withPivot('hora_extra', 'extra', 'incentivo', 'fecha')->withTimestamps();
+        return $this->hasMany('appVS/Jornada', 'empleado_id');
     }
 
 }

@@ -14,6 +14,7 @@ class CreateConfiguracionMateriaPrimaTable extends Migration
     public function up()
     {
         Schema::create('configuracionMateriaPrima', function (Blueprint $table) {
+            $table->increments('idconfiguracionmateriaprima');
             $table->integer('materiaprima_id')->unsigned();
             $table->integer('configuracion_id')->unsigned();
             $table->float('cantidad', 7,2);

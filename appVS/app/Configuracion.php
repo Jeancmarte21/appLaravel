@@ -16,13 +16,13 @@ class Configuracion extends Model
     	'fecha',
     ];
 
-    public function materiasprimas()
-    {
-        return $this->belongsToMany('appVS\MateriaPrima', 'configuracionMateriaPrima')->withPivot('cantidad', 'envoltura')->withTimestamps();
-    }
-
     public function produccionmaquinas()
     {
         return $this->hasMany('appVS/ProduccionMaquina', 'configuracion_id');
+    }
+
+    public function configuracionesmateriasprimas()
+    {
+        return $this->hasMany('appVS/ConfiguracionMateriaPrima', 'configuracion_id');
     }
 }

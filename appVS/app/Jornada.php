@@ -8,7 +8,7 @@ class Jornada extends Model
 {
     //
     protected $table = 'Jornada';
-
+    protected $primaryKey = 'idjornada';
     protected $fillable = [
     	'maquina_id',
     	'empleado_id',
@@ -18,4 +18,13 @@ class Jornada extends Model
     	'fecha'
     ];
 
+    public function maquinas()
+    {
+        return $this->belongsTo('appVS/Maquina', 'maquina_id');
+    }
+
+    public function empleados()
+    {
+        return $this->belongsTo('appVS/Empleado', 'empleado_id');
+    }
 }

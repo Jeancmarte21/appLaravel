@@ -8,13 +8,14 @@ class Salida extends Model
 {
     //
     protected $table = 'Salida';
-
+    protected $primaryKey = 'idsalida';
     protected $fillable = [
     	'materiaprima_id',
     	'cantidad'
+        'fecha'
     ];
 
-    public function salidas()
+    public function materiasprimas()
     {
         return $this->belongsTo('appVS/MateriaPrima', 'materiaprima_id');
     }

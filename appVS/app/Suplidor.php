@@ -19,8 +19,8 @@ class Suplidor extends Model
         'pais'
     ];
 
-    public function materiasprimas()
+    public function entradas()
     {
-        return $this->belongsToMany('appVS\MateriaPrima', 'entrada')->withPivot('precio', 'cantidad', 'fecha')->withTimestamps();
+        return $this->hasMany('appVS/Entrada', 'suplidor_id');
     }
 }

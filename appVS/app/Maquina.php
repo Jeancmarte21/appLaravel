@@ -15,9 +15,9 @@ class Maquina extends Model
     	'produccion'
     ];
 
-    public function empleados()
+    public function jornadas()
     {
-        return $this->belongsToMany('appVS\Empleado', 'jornada')->withPivot('hora_extra', 'extra', 'incentivo', 'fecha')->withTimestamps();
+        return $this->hasMany('appVS/Jornada', 'maquina_id');
     }
 
     public function produccionmaquinas()
