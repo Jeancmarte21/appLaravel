@@ -27,7 +27,7 @@
 					<th>{{$cigarros->nombre}}</th>
 					<td>{{$cigarros->tipo}}</td>
 					@if($cigarros->saborizante != null)
-					<td>{{$cigarros->saborizante}}</td>
+					<td>{{$cigarros->materiasprimas->nombre}}</td>
 					@else
 					<td>Sin Aroma</td>
 					@endif

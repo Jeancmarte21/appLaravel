@@ -59,10 +59,13 @@ class CigarrosController extends Controller
      */
     public function show($idcigarro)
     {
-        $cigarro = DB::table('cigarro')
+        /*$cigarro = DB::table('cigarro')
         ->join('materiaPrima', 'cigarro.saborizante', '=', 'materiaPrima.idmateriaPrima')
         ->select('cigarro.*', 'materiaPrima.nombre as aroma')
-        ->where('idcigarro', '=', $idcigarro)->get();
+        ->where('idcigarro', '=', $idcigarro)->get();*/
+
+        $cigarro = Cigarro::find($idcigarro);
+      //  $cigarro = Cigarro::find($idcigarro)->
         return view("cigarros.show",["cigarros"=>$cigarro]);
     }
 

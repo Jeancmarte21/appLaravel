@@ -20,7 +20,7 @@ class Cigarro extends Model
     }
 
     public function materiasprimas(){
-    	return $this->belongsTo('appVs\MateriaPrima', 'saborizante');
+    	return $this->belongsTo('appVS\MateriaPrima', 'saborizante');
     }
 
     public function produccionmaquinas()
