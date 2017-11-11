@@ -36,7 +36,7 @@
         <div class="form-group">
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
-      <input id="empleado-telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control">
+      <input id="telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control">
       </div>
       </div>
 
@@ -73,6 +73,8 @@
             event.target.setCustomValidity('La cedula deberia de estar compuesta de 13 caracteres. ej. 000-0000000-0');
         }
         </script>
+
+
 
 
 @endsection

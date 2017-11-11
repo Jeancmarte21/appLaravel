@@ -35,7 +35,7 @@
         <label class="col-xs-3 control-label">Precio</label>
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
-                <input type="number" class="form-control" name="precio" />
+                <input type="number" class="form-control" name="precio" min="0" data-number-to-fixed="2" data-number-stepfactor="100" n step="any" id="number" />
                 <span class="input-group-addon">$</span>
             </div>
         </div>
@@ -46,7 +46,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
 
-                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
+                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="any"/>
                 <span class="input-group-addon">lbs</span>
 
             </div>

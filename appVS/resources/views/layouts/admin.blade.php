@@ -228,6 +228,7 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
+    <script src="{{asset ('js/jquery.maskedinput.min.js') }}"
 
 
   </body>
