@@ -6,7 +6,7 @@
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		@include('salidas.search')
 		<h3><a href="/salidas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA SALIDA</button></a></h3>
-		
+
 	</div>
 </div>
 
@@ -18,14 +18,16 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>ID</th>
+					<th>FECHA</th>
 					<th>NOMBRE</th>
 					<th>CANTIDAD</th>
-					
+
 					<th>OPCIONES</th>
 				</thead>
 				@foreach ($salidas as $salida)
 				<tr>
 					<td>{{ $salida->materiaprima_id}}</td>
+					<td>{{ $salida->fecha}}</td>
 					<td>{{ $salida->nombre}}</td>
 					<td>{{ $salida->cantidad}}</td>
 
@@ -37,11 +39,11 @@
 				</tr>
 
 				@endforeach
-          
+
 			</table>
 			</table>
 		</div>
-		
+
 	</div>
 </div>
 
