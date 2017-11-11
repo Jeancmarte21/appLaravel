@@ -130,6 +130,20 @@
 
             <li class="treeview">
            <a href="#">
+             <i class="fa fa-random"></i>
+             <span>Gestion Configuraciones</span>
+              <i class="fa fa-angle-left pull-right"></i>
+           </a>
+           <ul class="treeview-menu">
+
+            <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+             <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
+
+           </ul>
+         </li>
+
+            <li class="treeview">
+           <a href="#">
              <i class="fa fa-wrench"></i>
              <span>Gestion Maquinas</span>
               <i class="fa fa-angle-left pull-right"></i>
@@ -137,7 +151,7 @@
            <ul class="treeview-menu">
 
             <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
-             <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Maquinas</a></li>
+             <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
 
            </ul>
          </li>
@@ -152,9 +166,7 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="/cigarros/create"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
-               <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
                 <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Registrar produccion maquina</a></li>
-                <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Configuracion produccion</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
               </ul>
