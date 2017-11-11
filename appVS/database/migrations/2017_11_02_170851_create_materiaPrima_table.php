@@ -17,9 +17,10 @@ class CreateMateriaPrimaTable extends Migration
             $table->increments('idmateriaPrima');
             $table->string('nombre', 35)->collation('utf8_spanish_ci');
             $table->enum('categoria', ['Tabaco', 'Saborizante', 'Pega']);
-            $table->float('porcentaje_pesohumedo', 5,2);
+            $table->float('porcentaje_pesohumedo', 5,2)->nullable();
             $table->float('existencia_minima', 7,2);
             $table->float('existencia_real', 7,2)->default(0);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

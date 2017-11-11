@@ -18,6 +18,7 @@ class CreateSalidaTable extends Migration
             $table->integer('materiaprima_id')->unsigned();
             $table->float('cantidad', 7, 2);
             $table->date('fecha');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');

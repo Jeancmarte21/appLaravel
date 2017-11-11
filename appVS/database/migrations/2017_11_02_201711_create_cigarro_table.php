@@ -18,6 +18,7 @@ class CreateCigarroTable extends Migration
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
             $table->enum('tipo', ['Fumas AMF', 'Fumas Arenco']);
             $table->integer('saborizante')->unsigned()->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('saborizante')->references('idmateriaPrima')->on('materiaPrima');

@@ -18,6 +18,7 @@ class CreateConfiguracionTable extends Migration
             $table->integer('cigarro_id')->unsigned();
             $table->string('nombre', 35)->collation('utf8_spanish_ci');
             $table->date('fecha');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('cigarro_id')->references('idcigarro')->on('cigarro');

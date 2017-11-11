@@ -20,6 +20,7 @@ class CreateProduccionMaquinaTable extends Migration
             $table->integer('configuracion_id')->unsigned();
             $table->integer('cantidad');
             $table->datetime('fecha')->unique();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('maquina_id')->references('idmaquina')->on('maquina');

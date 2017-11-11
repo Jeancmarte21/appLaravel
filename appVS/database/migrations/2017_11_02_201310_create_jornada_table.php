@@ -21,6 +21,7 @@ class CreateJornadaTable extends Migration
             $table->float('extra', 7, 2)->default(0);
             $table->float('incentivo', 7,2)->default(0);
             $table->date('fecha');
+            $table->softDeletes();
             #$table->float('comida', 5, 2);
             $table->timestamps();
 

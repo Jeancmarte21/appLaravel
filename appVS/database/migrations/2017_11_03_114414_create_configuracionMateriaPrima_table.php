@@ -19,6 +19,7 @@ class CreateConfiguracionMateriaPrimaTable extends Migration
             $table->integer('configuracion_id')->unsigned();
             $table->float('cantidad', 7,2);
             $table->tinyInteger('envoltura')->nullable();
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
