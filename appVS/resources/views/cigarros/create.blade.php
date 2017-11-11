@@ -22,8 +22,8 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="tipo_cigarro" required>
                 <option value="">Seleccione</option>
-                <option value="Fumas">Fumas</option>
-                <option value="Vitolas">Vitolas</option>
+                <option value="Fumas AMF">Fumas AMF</option>
+                <option value="Fumas Arenco">Fumas Arenco</option>
             </select>
         </div>
     </div>
