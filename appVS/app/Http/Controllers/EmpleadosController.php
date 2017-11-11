@@ -41,8 +41,8 @@ class EmpleadosController extends Controller
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
-                'fecha_nacimiento' => date('Y-m-d'),              
-//                'fecha_nacimiento' => $request->input('fecha_nacimiento'),
+                'fecha_nacimiento' => date('Y-m-d'),
+                'telefono' => $request->input('telefono'),
                 'direccion' => $request->input('direccion')
                 ]);
             $empleado->save();
@@ -110,6 +110,6 @@ class EmpleadosController extends Controller
 
       Flash::danger('El usuario'. $empleado->nombre. 'ha sido eliminado');
       return redirect()->route('empleados.index');
-    
+
     }
 }
