@@ -22,8 +22,7 @@
 					
 				</thead>
 
-
-				<tr>
+					<tr>
 					<td>{{$cigarros->idcigarro}}</td>
 					<th>{{$cigarros->nombre}}</th>
 					<td>{{$cigarros->tipo}}</td>
@@ -33,6 +32,7 @@
 					<td>Sin Aroma</td>
 					@endif
 				</tr>
+			
 
 			</table>
 		</div>
