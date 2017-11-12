@@ -21,12 +21,12 @@ class Entrada extends Model
 
     public function materiasprimas()
     {
-        return $this->belongsTo('appVS/MateriaPrima', 'materiaprima_id');
+        return $this->belongsTo('appVS\MateriaPrima', 'materiaprima_id');
     }
 
     public function suplidores()
     {
-        return $this->belongsTo('appVS/Suplidor', 'suplidor_id');
+        return $this->belongsTo('appVS\Suplidor', 'suplidor_id');
     }
 
 }

@@ -4,7 +4,6 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		@include('entradas.search')
 		<h3><a href="/entradas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA ENTRADA</button></a></h3>
 		
 	</div>
@@ -30,10 +29,10 @@
 				<tr>
 
 					<td>{{ $entry->fecha}}</td>
-					<td>{{ $entry->matprim}}</td>
+					<td>{{ $entry->materiasprimas->nombre}}</td>
 					<td>{{ $entry->precio}}</td>
 					<td>{{ $entry->cantidad}}</td>
-					<td>{{ $entry->suplidor}}</td>
+					<td>{{ $entry->suplidores->nombre}}</td>
 
 
 					<td>
@@ -57,6 +56,11 @@
 			</div>
 		</div>
 	</div>
+<form id="delete-form" action="{{ route('entradas.destroy',[$entry->identrada]) }}" 
+                method="POST" style="display: none;">
+                        <input type="hidden" name="_method" value="delete">
+                        {{ csrf_field() }}
+              </form>
 
 
 
