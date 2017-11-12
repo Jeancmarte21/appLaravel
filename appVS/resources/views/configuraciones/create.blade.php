@@ -10,14 +10,14 @@
 
       <div class="form-group">
         <label class="col-xs-3 control-label">Nombre</label>
-        <div class="col-xs-5 selectContainer">
+        <div class="col-xs-6 selectContainer">
            <input class="form-control" type="text"  id="configuracion-nombre" name="nombre">
         </div>
     </div>
 
                    	   <div class="form-group">
         <label class="col-xs-3 control-label">Cigarro</label>
-        <div class="col-xs-5 selectContainer">
+        <div class="col-xs-6 selectContainer">
             <select class="form-control" name="cigarro">
             <option value="">Seleccione</option>
               @foreach($cigarros as $cigarro)
@@ -38,7 +38,7 @@
 @endforeach
 </select>
 </div>
-<div class="col-xs-2 inputGroupContainer">
+<div class="col-xs-3 inputGroupContainer">
 <div class="input-group">
 
    <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
@@ -57,7 +57,7 @@
               @endforeach
 			</select>
         </div>
-        <div class="col-xs-2 inputGroupContainer">
+        <div class="col-xs-3 inputGroupContainer">
               <div class="input-group">
 
                   <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
@@ -75,7 +75,7 @@
       </select>
 
         </div>
-        <div class="col-xs-2 inputGroupContainer">
+        <div class="col-xs-3 inputGroupContainer">
               <div class="input-group">
 
                   <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" step="0.1"/>
@@ -87,7 +87,7 @@
 
                         <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
-        <div class="col-xs-5 selectContainer">
+        <div class="col-xs-6 selectContainer">
            <input class="form-control" type="date" id="fecha" name="fecha">
         </div>
     </div>
