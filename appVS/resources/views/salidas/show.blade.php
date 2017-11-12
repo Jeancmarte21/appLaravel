@@ -17,6 +17,7 @@
 					<th>MATERIA PRIMA</th>
 					<th>CANTIDAD</th>
 					<th>FECHA SALIDA</th>
+					<th>ELIMINAR</th>
 				</thead>
 
 
@@ -26,9 +27,18 @@
 					<td>{{$salida->cantidad.' Lbs'}}</td>
 					<td>{{$salida->fecha}}</td>
 
-				</tr>
 
 
+				<td>
+
+					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Salida?');
+																	if( result ){
+																					event.preventDefault();
+																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span></span></a>
+
+				</td>
+
+		</tr>
 
 			</table>
 		</div>
@@ -36,24 +46,7 @@
 	</div>
 </div>
 
-<div class="row">
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<a   
-              				href="#"
-              				class="btn btn-danger btn btn-md"
-			                  onclick="
-			                  var result = confirm('Esta seguro de eliminar esta Salida?');
-			                      if( result ){
-			                              event.preventDefault();
-			                              document.getElementById('delete-form').submit();
-			                      }
-			                          "
-                          >Eliminar</a>
-
-	</div>
-</div>
-
-<form id="delete-form" action="{{ route('salidas.destroy',[$salida->idsalida]) }}" 
+<form id="delete-form" action="{{ route('salidas.destroy',[$salida->idsalida]) }}"
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}
