@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class Suplidor extends Model
 {
-
+    use SoftDeletes;
     protected $table='suplidor';
     protected $primaryKey='idsuplidor';
     protected $dates = ['deleted_at'];

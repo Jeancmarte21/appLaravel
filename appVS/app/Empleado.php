@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Empleado extends Model
 {
     //
+    use SoftDeletes;
     protected $table = 'empleado';
     protected $primaryKey='idempleado';
     protected $dates = ['deleted_at'];
@@ -19,7 +20,7 @@ class Empleado extends Model
     	'fecha_nacimiento',
     	'direccion'
     ];
-    
+
     public function jornadas()
     {
         return $this->hasMany('appVS/Jornada', 'empleado_id');
