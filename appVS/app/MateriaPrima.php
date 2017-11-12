@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 class MateriaPrima extends Model
 {
+    use SoftDeletes;
     protected $table = 'materiaPrima';
     protected $primaryKey='idmateriaPrima';
     protected $dates = ['deleted_at'];
@@ -16,11 +17,6 @@ class MateriaPrima extends Model
     	'existencia_minima',
     	'existencia_real'
     ];
-
-    public function configuraciones()
-    {
-        return $this->belongsToMany('appVS\Configuracion', 'configuracionMateriaPrima')->withPivot('cantidad', 'envoltura')->withTimestamps();
-    }
 
     public function salidas()
     {
