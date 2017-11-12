@@ -5,6 +5,7 @@ namespace appVS\Http\Controllers;
 use appVS\Maquina;
 use Illuminate\Http\Request;
 
+
 class MaquinasController extends Controller
 {
     /**
@@ -12,6 +13,7 @@ class MaquinasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         //
@@ -105,5 +107,11 @@ class MaquinasController extends Controller
     public function destroy(Maquina $maquina)
     {
         //
+        $maquina = Maquina::find($maquina->idmaquina);
+        if($maquina->delete()){
+            return redirect()->route('maquinas.index')
+            ->with('success', 'Maquina borrada correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar la Maquina');
     }
 }
