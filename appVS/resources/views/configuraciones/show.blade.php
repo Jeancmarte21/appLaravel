@@ -30,10 +30,8 @@
 
 
 					<td>{{$configuracion->idconfiguracion}}</td>
-					<th>{{$configuracion->nombre}}</th>
-		@foreach(configuracion-> materiasprimas as config)
-					<td>{{$config->nombre}}</td>
-    @endforeach
+					<td>{{$configuracion->fecha}}</td>
+					<td>{{$configuracion->nombre}}</td>
 </tr>
 			</table>
 		</div>

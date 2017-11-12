@@ -27,6 +27,6 @@ class Cigarro extends Model
 
     public function produccionmaquinas()
     {
-        return $this->hasMany('appVS/ProduccionMaquina', 'cigarro_id');
+        return $this->hasMany('appVS\ProduccionMaquina', 'cigarro_id');
     }
 }

@@ -18,7 +18,7 @@ class ProduccionesMaquinasController extends Controller
      */
     public function index(Request $request)
     {
-      if ($request)
+     /* if ($request)
      {
          $query=trim($request->get('searchText'));
          $produccionMaq=DB::table('produccionMaquina')
@@ -32,6 +32,11 @@ class ProduccionesMaquinasController extends Controller
      }
 
         //return view('produccionesmaquinas.index');
+
+        */
+
+        $produccionMaq = ProduccionMaquina::all();
+        return view('produccionesmaquinas.index', ['produccionMaq' => $produccionMaq]);
     }
 
     /**
@@ -76,9 +81,13 @@ class ProduccionesMaquinasController extends Controller
      * @param  \appVS\ProduccionMaquina  $produccionMaquina
      * @return \Illuminate\Http\Response
      */
-    public function show(ProduccionMaquina $produccionMaquina)
+    public function show($produccionMaquina)
     {
         //
+        /*$produccionMaquina = ProduccionMaquina::find($produccionMaquina->idproduccionmaquina);
+        return view('produccionesmaquinas.show', ['produccionMaquina'=>$produccionMaquina]);
+        */
+        return view('produccionesmaquinas.show',['produccionMaquina'=>ProduccionMaquina::findOrFail($produccionMaquina)]);
     }
 
     /**
@@ -87,9 +96,13 @@ class ProduccionesMaquinasController extends Controller
      * @param  \appVS\ProduccionMaquina  $produccionMaquina
      * @return \Illuminate\Http\Response
      */
-    public function edit(ProduccionMaquina $produccionMaquina)
+    public function edit($produccionMaquina)
     {
         //
+        $configuraciones = Configuracion::all();
+        $maquinas = Maquina::all();
+        $cigarros = Cigarro::all();
+        return view('produccionesmaquinas.edit',['produccionesmaquinas'=>ProduccionMaquina::findOrFail($produccionMaquina), 'maquinas'=>$maquinas, 'configuraciones'=>$configuraciones, 'cigarros'=>$cigarros]);
     }
 
     /**
@@ -99,9 +112,21 @@ class ProduccionesMaquinasController extends Controller
      * @param  \appVS\ProduccionMaquina  $produccionMaquina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ProduccionMaquina $produccionMaquina)
+    public function update(Request $request, $produccionMaquina)
     {
         //
+        $prodmaqUpdate = ProduccionMaquina::find($produccionMaquina)
+            ->update([
+            'nombre' => $request->input('nombre'),
+            'telefono' => $request->input('telefono'),
+            'correo' => $request->input('correo'),
+             'pais' => $request->input('pais'),
+            'direccion' => $request->input('direccion')
+            ]);
+            if($prodmaqUpdate){
+                return redirect()->route('produccionesmaquinas.show', ['produccionMaquina'=>$produccionMaquina])->with('success', 'Produccion editada correctamente');
+            }
+            return back()->withInput()->with('errors', 'Hubo algun error en la editacion de esta Produccion');
     }
 
     /**
@@ -110,8 +135,14 @@ class ProduccionesMaquinasController extends Controller
      * @param  \appVS\ProduccionMaquina  $produccionMaquina
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idproduccionMaquina)
+    public function destroy($produccionMaquina)
     {
+        $prodmaq = ProduccionMaquina::find($produccionMaquina);
+        if($prodmaq->delete()){
+            return redirect()->route('produccionesmaquinas.index')
+            ->with('success', 'Produccion borrada correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar la Produccion');
       
     }
 }

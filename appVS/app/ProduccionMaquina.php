@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ProduccionMaquina extends Model
 {
     //
+    use SoftDeletes;
     protected $table = 'produccionMaquina';
     protected $primaryKey = 'idproduccionmaquina';
     protected $dates = ['deleted_at'];
@@ -20,17 +21,17 @@ class ProduccionMaquina extends Model
 
     public function maquinas()
     {
-        return $this->belongsTo('appVS/Maquina', 'maquina_id');
+        return $this->belongsTo('appVS\Maquina', 'maquina_id');
     }
 
     public function cigarros()
     {
-        return $this->belongsTo('appVS/Cigarro', 'cigarro_id');
+        return $this->belongsTo('appVS\Cigarro', 'cigarro_id');
     }
 
     public function configuraciones()
     {
-        return $this->belongsTo('appVS/Configuracion', 'configuracion_id');
+        return $this->belongsTo('appVS\Configuracion', 'configuracion_id');
     }
 
 }

@@ -21,12 +21,12 @@ class Maquina extends Model
 
     public function jornadas()
     {
-        return $this->hasMany('appVS/Jornada', 'maquina_id');
+        return $this->hasMany('appVS\Jornada', 'maquina_id');
     }
 
     public function produccionmaquinas()
     {
-        return $this->hasMany('appVS/ProduccionMaquina', 'maquina_id');
+        return $this->hasMany('appVS\ProduccionMaquina', 'maquina_id');
     }
 
 }

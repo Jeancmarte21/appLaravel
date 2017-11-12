@@ -19,7 +19,7 @@ class Configuracion extends Model
 
     public function produccionmaquinas()
     {
-        return $this->hasMany('appVS/ProduccionMaquina', 'configuracion_id');
+        return $this->hasMany('appVS\ProduccionMaquina', 'configuracion_id');
     }
 
     public function configuracionesmateriasprimas()
