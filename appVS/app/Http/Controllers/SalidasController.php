@@ -25,7 +25,7 @@ class SalidasController extends Controller
             return view('salidas.index',["salidas"=>$salidas,"searchText"=>$query]);
         }
         */
-        if ($request)
+       /* if ($request)
         {
             $query=trim($request->get('searchText'));
             $salidas = DB::table('salida')
@@ -37,6 +37,10 @@ class SalidasController extends Controller
 
             return view('salidas.index', ['salidas'=>$salidas, 'searchText' => $query]);
         }
+        */
+
+        $salidas = Salida::all();
+        return view('salidas.index', ['salidas' => $salidas]);
     }
 
     /**
@@ -80,6 +84,8 @@ class SalidasController extends Controller
     public function show(Salida $salida)
     {
         //
+        $salida = Salida::find($salida->idsalida);
+        return view('salidas.show', ['salida'=>$salida]);
     }
 
     /**
@@ -90,7 +96,9 @@ class SalidasController extends Controller
      */
     public function edit(Salida $salida)
     {
-        return view("salidas.edit",["salida"=>Salida::findOrFail($idsalida)]);
+        $salida = Salida::find($salida->idsalida);
+        $materiasprimas = MateriaPrima::all();
+        return view('salidas.edit',['salida'=>$salida, 'materiasprimas' => $materiasprimas]);
     }
 
     /**
@@ -103,6 +111,16 @@ class SalidasController extends Controller
     public function update(Request $request, Salida $salida)
     {
         //
+        $salidaUpdate = Salida::where('idsalida', $salida->idsalida)
+            ->update([
+            'materiaprima_id' => $request->input('nombre'),
+            'cantidad' => $request->input('cantidad'),
+            'fecha' => $request->input('fecha')
+            ]);
+        if($salidaUpdate){
+                return redirect()->route('salidas.show', ['salida'=>$salida])->with('success', 'Salida actualizada correctamente!');
+            }
+            return back()->withInput()->with('errors', 'Hubo algun error en registro de la salida');
     }
 
     /**
@@ -111,8 +129,14 @@ class SalidasController extends Controller
      * @param  \appVS\Salida  $salida
      * @return \Illuminate\Http\Response
      */
-    public function destroy($salida)
+    public function destroy(Salida $salida)
     {
+        $salidas = Salida::find($salida->idsalida);
+        if($salidas->delete()){
+            return redirect()->route('salidas.index')
+            ->with('success', 'Salida borrada correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar la Salida');
   
     }
 }

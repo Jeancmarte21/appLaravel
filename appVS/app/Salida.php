@@ -18,6 +18,6 @@ class Salida extends Model
     ];
     public function materiasprimas()
     {
-        return $this->belongsTo('appVS/MateriaPrima', 'materiaprima_id');
+        return $this->belongsTo('appVS\MateriaPrima', 'materiaprima_id');
     }
 }

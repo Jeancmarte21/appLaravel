@@ -4,7 +4,6 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		@include('salidas.search')
 		<h3><a href="/salidas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA SALIDA</button></a></h3>
 
 	</div>
@@ -26,28 +25,25 @@
 				</thead>
 				@foreach ($salidas as $salida)
 				<tr>
-					<td>{{ $salida->materiaprima_id}}</td>
+					<td>{{ $salida->idsalida}}</td>
 					<td>{{ $salida->fecha}}</td>
-					<td>{{ $salida->nombre}}</td>
+					<td>{{ $salida->materiasprimas->nombre}}</td>
 					<td>{{ $salida->cantidad}}</td>
 
 
 					<td>
-
-						<a href="{{URL::action('SalidasController@edit',$salida->materiaprima_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$salida->materiaprima_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
+						<a   
+              				href="/salidas/{{$salida->idsalida}}"
+              				class="badge badge-info btn btn-success">Ver</a>
+                         <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
 				</tr>
 
 				@endforeach
-
-			</table>
 			</table>
 		</div>
-
 	</div>
 </div>
-
 
 
 @endsection
