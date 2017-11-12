@@ -48,7 +48,11 @@ class SuplidoresController extends Controller
                 ]);
 
            $suplidor->save();
-           return back()->with('success', 'Suplidor creado correctamente');;
+    
+           if($suplidor){
+               return redirect()->route('suplidores.show', ['suplidor'=>$suplidor->idsuplidor])->with('success', 'Suplidor creado correctamente');
+           }
+           return back()->withInput();
 
     }
 
@@ -60,7 +64,7 @@ class SuplidoresController extends Controller
      */
     public function show($idsuplidor)
     {
-        
+
         return view("suplidores.show",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
@@ -96,7 +100,7 @@ class SuplidoresController extends Controller
                 return redirect()->route('suplidores.show', ['suplidor'=>$suplidor])->with('success', 'Suplidor editado correctamente');
             }
             return back()->withInput();
-            
+
     }
 
     /**
@@ -110,5 +114,3 @@ class SuplidoresController extends Controller
         //
     }
 }
-
-

@@ -27,6 +27,7 @@ class EmpleadosController extends Controller
     {
         //
         return view('empleados.create');
+
     }
     /**
      * Store a newly created resource in storage.
@@ -47,7 +48,12 @@ class EmpleadosController extends Controller
                 ]);
             $empleado->save();
 
-           return back()->with('success', 'Empleado creado correctamente');
+          
+
+           if($empleado){
+               return redirect()->route('empleados.show', ['empleado'=>$empleado->idempleado])->with('success', 'Empleado creado correctamente');
+           }
+           return back()->withInput();
 
 
     }

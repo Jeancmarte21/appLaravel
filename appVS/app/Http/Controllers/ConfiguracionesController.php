@@ -46,14 +46,17 @@ class ConfiguracionesController extends Controller
       //  $cigarro = Cigarro::find($request->input('cigarro'));
       //  if(strcmp($cigarro->tipo,'Vitolas') == 0)
        $configuracion = Configuracion::create([
-                'cigarro_id' => $request -> input('cigarro'),               
+                'cigarro_id' => $request -> input('cigarro'),
                 'nombre' => $request->input('nombre'),
                 'fecha' => $request->input('fecha')
                 ]);
        $configuracion->save();
-        
-           return back()->with('success', 'Se ha creado la configuracion correctamente');
-        
+
+       if($configuracion){
+           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion->idconfiguracion])->with('success', 'Configuracion creado correctamente');
+       }
+       return back()->withInput();
+
     }
 
     /**
@@ -64,7 +67,8 @@ class ConfiguracionesController extends Controller
      */
     public function show(Configuracion $configuracion)
     {
-        //
+      $configuracion = Configuracion::find($configuracion->idconfiguracion);
+      return view('configuraciones.show', ['configuracion'=>$configuracion]);
     }
 
     /**

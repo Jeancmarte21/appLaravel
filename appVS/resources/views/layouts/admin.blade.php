@@ -72,11 +72,36 @@
               </a>
             </li>
 
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-user"></i> <span> Gestion Usuarios</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="/configuracion/usuario"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                <li><a href="/configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+              </ul>
+            </li>
+
+            <li class="treeview">
+            <a href="#">
+              <i class="fa fa-user"></i>
+              <span>Gestion Empleados</span>
+               <i class="fa fa-angle-left pull-right"></i>
+            </a>
+            <ul class="treeview-menu">
+             <li><a href="/empleados/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+              <li><a href="/empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
+
+            </ul>
+          </li>
+
+
 
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i>
-                <span>Gestion suplidores</span>
+                <span>Gestion Suplidores</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -89,31 +114,48 @@
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Gestion materia prima</span>
+                <span>Gestion Materia Prima</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
 
                <li><a href="/materiasPrimas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+               <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
                 <li><a href="/entradas"><i class="fa fa-circle-o"></i> Entrada</a></li>
                  <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
                  <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
-                 <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
-              </ul>
-            </li>
-
-              <li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i>
-                <span>Gestion empleados</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-               <li><a href="/empleados/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="/empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
 
               </ul>
             </li>
+
+            <li class="treeview">
+           <a href="#">
+             <i class="fa fa-random"></i>
+             <span>Gestion Configuraciones</span>
+              <i class="fa fa-angle-left pull-right"></i>
+           </a>
+           <ul class="treeview-menu">
+
+            <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+             <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
+
+           </ul>
+         </li>
+
+            <li class="treeview">
+           <a href="#">
+             <i class="fa fa-wrench"></i>
+             <span>Gestion Maquinas</span>
+              <i class="fa fa-angle-left pull-right"></i>
+           </a>
+           <ul class="treeview-menu">
+
+            <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+             <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
+
+           </ul>
+         </li>
+
 
 
                <li class="treeview">
@@ -124,9 +166,7 @@
               </a>
               <ul class="treeview-menu">
                <li><a href="/cigarros/create"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
-               <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar maquina</a></li>
-                <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Configurar produccion</a></li>
-                <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Produccion maquina</a></li>
+                <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
               </ul>
@@ -134,17 +174,6 @@
 
 
 
-
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i> <span> Gestion usuarios</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="/configuracion/usuario"><i class="fa fa-circle-o"></i> Registrar</a></li>
-                <li><a href="/configuracion/usuario"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-              </ul>
-            </li>
 
               <li class="treeview">
               <a href="#">

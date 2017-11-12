@@ -40,15 +40,18 @@ class MaquinasController extends Controller
      */
     public function store(Request $request)
     {
-       
+
             $maquina = Maquina::create([
-               
+
                 'nombre' => $request->input('nombre'),
                 'produccion' => $request->input('pago')
                 ]);
             $maquina->save();
 
-            return back()->with('success', 'Maquina Registrada');
+  if($maquina){
+      return redirect()->route('maquinas.show', ['maquina'=>$maquina->idmaquina])->with('success', 'Maquina creada correctamente');
+        }
+        return back()->withInput();
     }
 
     /**
