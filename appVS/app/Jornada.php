@@ -3,12 +3,14 @@
 namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Jornada extends Model
 {
     //
     protected $table = 'Jornada';
     protected $primaryKey = 'idjornada';
+    protected $dates = ['deleted_at'];
     protected $fillable = [
     	'maquina_id',
     	'empleado_id',

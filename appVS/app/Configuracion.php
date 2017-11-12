@@ -3,13 +3,14 @@
 namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Configuracion extends Model
 {
     //
     protected $table = 'configuracion';
     protected $primaryKey='idconfiguracion';
-
+    protected $dates = ['deleted_at'];
     protected $fillable = [
     	'cigarro_id',
     	'nombre',

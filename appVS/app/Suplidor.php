@@ -3,12 +3,13 @@
 namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class Suplidor extends Model
 {
 
     protected $table='suplidor';
     protected $primaryKey='idsuplidor';
+    protected $dates = ['deleted_at'];
 
 
     protected $fillable=[

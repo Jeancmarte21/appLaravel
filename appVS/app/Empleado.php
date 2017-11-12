@@ -3,12 +3,14 @@
 namespace appVS;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Empleado extends Model
 {
     //
     protected $table = 'empleado';
     protected $primaryKey='idempleado';
+    protected $dates = ['deleted_at'];
     protected $fillable = [
     	'cedula',
     	'nombre',
