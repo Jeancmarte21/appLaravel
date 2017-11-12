@@ -17,7 +17,7 @@ class Cigarro extends Model
     ];
 
     public function configuraciones(){
-    	return $this->hasMany('appVs\Configuracion', 'cigarro_id');
+    	return $this->hasMany('appVS\Configuracion', 'cigarro_id');
     }
 
     public function materiasprimas(){

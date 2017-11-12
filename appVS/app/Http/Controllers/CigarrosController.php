@@ -116,8 +116,14 @@ class CigarrosController extends Controller
      * @param  \appVS\Cigarro  $cigarro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Cigarro $cigarro)
+    public function destroy($cigarro)
     {
         //
+        $cigarron = Cigarro::find($cigarro);
+        if($cigarron->delete()){
+            return redirect()->route('cigarros.index')
+            ->with('success', 'Cigarro borrado correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar el Cigarro');
     }
 }
