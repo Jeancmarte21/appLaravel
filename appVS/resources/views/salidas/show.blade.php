@@ -17,7 +17,7 @@
 					<th>MATERIA PRIMA</th>
 					<th>CANTIDAD</th>
 					<th>FECHA SALIDA</th>
-					<th>ELIMINAR</th>
+					<th>ACCION</th>
 				</thead>
 
 
@@ -34,7 +34,7 @@
 					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Salida?');
 																	if( result ){
 																					event.preventDefault();
-																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span></span></a>
+																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
 
 				</td>
 
