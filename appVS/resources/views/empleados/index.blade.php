@@ -28,7 +28,7 @@
 				<tr>
 					<td>{{ $empleado->idempleado}}</td>
 					<td>{{ $empleado->nombre}}</td>
-					<td>{{ $empleado->apellido}}</td>
+					<td>{{ $empleado->apellidos}}</td>
 
 
 					<td>
