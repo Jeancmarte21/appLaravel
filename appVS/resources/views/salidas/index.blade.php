@@ -32,10 +32,8 @@
 
 
 					<td>
-						<a   
-              				href="/salidas/{{$salida->idsalida}}"
-              				class="badge badge-info btn btn-success">Ver</a>
-                         <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<a href="/salidas/{{$salida->idsalida}}"class="badge badge-info btn btn-success">Ver</a>
+            <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
 				</tr>
 

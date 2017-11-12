@@ -17,10 +17,13 @@
 				<thead>
 					<th>ID</th>
 					<th>CEDULA</th>
-					<th>NOMBRE</th>
+					<th>NOMBRES</th>
 					<th>APELLIDOS</th>
 					<th>TELEFONO</th>
+					<th>FECHA NACIMIENTO</th>
 					<th>DIRECCIÓN</th>
+
+					<th>OPCIONES</th>
 				</thead>
 
 
@@ -30,7 +33,18 @@
 					<td>{{$empleado->nombre}}</td>
 					<td>{{$empleado->apellidos}}</td>
 					<th>{{$empleado->telefono}}</th>
+					<th>{{$empleado->fecha_nacimiento}}</th>
 					<th>{{$empleado->direccion}}</th>
+
+
+					<td>
+
+						<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Salida?');
+																		if( result ){
+																						event.preventDefault();
+																						document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
+					</td>
 
 				</tr>
 
@@ -42,5 +56,10 @@
 	</div>
 </div>
 
+<form id="delete-form" action="{{ route('empleados.destroy',[$empleado->idempleado]) }}"
+                method="POST" style="display: none;">
+                        <input type="hidden" name="_method" value="delete">
+                        {{ csrf_field() }}
+              </form>
 
 @endsection
