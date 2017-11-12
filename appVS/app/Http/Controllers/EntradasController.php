@@ -18,8 +18,9 @@ class EntradasController extends Controller
     public function index(Request $request)
     {
         //return view('entradas.index');
-
-          if ($request)
+        $entradas = Entrada::all();
+        return view('entradas.index', ['entradas' => $entradas]);
+      /*    if ($request)
         {
             $query=trim($request->get('searchText'));
             $entradas=DB::table('entrada')
@@ -31,7 +32,7 @@ class EntradasController extends Controller
             ->paginate(10);
             return view('entradas.index',["entradas"=>$entradas,"searchText"=>$query]);
         }
-
+        */
     }
 
     /**
@@ -112,7 +113,7 @@ class EntradasController extends Controller
     public function destroy(Entrada $entrada)
     {
         //
-        $entry = Entrada::find($entrada->idempleado);
+        $entry = Entrada::find($entrada->identrada);
         if($entry->delete()){
             return redirect()->route('entradas.index')
             ->with('success', 'Entrada borrada correctamente');
