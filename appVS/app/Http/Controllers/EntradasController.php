@@ -88,7 +88,7 @@ class EntradasController extends Controller
      */
     public function edit(Entrada $entrada)
     {
-       return view("entradas.edit",["entrada"=>Entrada::findOrFail($identrada)]);
+       return view("entradas.edit",["entrada"=>Entrada::findOrFail($entrada)]);
     }
 
     /**
@@ -112,5 +112,11 @@ class EntradasController extends Controller
     public function destroy(Entrada $entrada)
     {
         //
+        $entry = Entrada::find($entrada->idempleado);
+        if($entry->delete()){
+            return redirect()->route('entradas.index')
+            ->with('success', 'Entrada borrada correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar la Entrada');
     }
 }

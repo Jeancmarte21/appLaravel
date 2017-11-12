@@ -37,20 +37,26 @@
 
 
 					<td>
-						<a href="{{URL::action('EntradasController@edit',$entry->suplidor_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$entry->suplidor_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
+						<a   
+              				href="#"
+              				class="badge badge-danger btn btn-danger"
+			                  onclick="
+			                  var result = confirm('Are you sure you wish to delete this Cigarro?');
+			                      if( result ){
+			                              event.preventDefault();
+			                              document.getElementById('delete-form').submit();
+			                      }
+			                          "
+                          >Eliminar</a>
+                         <a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
 				</tr>
 
 				@endforeach
 			</table>
-			</table>
+			</div>
 		</div>
-		
 	</div>
-</div>
-
-
 
 
 

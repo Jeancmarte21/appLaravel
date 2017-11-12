@@ -109,13 +109,14 @@ class EmpleadosController extends Controller
      * @param  \appVS\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idempleado)
+    public function destroy(Empleado $empleado)
     {
-      $empleado=Empleado::findOrFail($idempleado);
-      $empleado->delete();
-
-      Flash::danger('El usuario'. $empleado->nombre. 'ha sido eliminado');
-      return redirect()->route('empleados.index');
+      $empleado = Empleado::find($empleado->idempleado);
+        if($empleado->delete()){
+            return redirect()->route('empleados.index')
+            ->with('success', 'Empleado borrado correctamente');
+        }
+        return back()->with('errors', 'No se pudo borrar el Empleado');
 
     }
 }
