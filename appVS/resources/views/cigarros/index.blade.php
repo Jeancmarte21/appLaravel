@@ -2,42 +2,42 @@
 @section('title','Cigarros')
 @section('contenido')
 
-<div class="card" style="width: 95rem;">
-	<div class="col-lg-12 col-md-9 col-xs-5">
-<div class="list-group ">
+<div class="row">
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+    <h3><a href="/cigarros/create"><button class="btn btn-primary btn btn-md">CREAR NUEVO CIGARRO</button></a></h3>
 
-	@foreach($cigarros as $cigarro)
-  		<li class="list-group-item">{{$cigarro->nombre}}
+  </div>
+</div>
 
-			<a
-              href="#"
-              class="badge badge-danger btn btn-danger"
-                  onclick="
-                  var result = confirm('Are you sure you wish to delete this Cigarro?');
-                      if( result ){
-                              event.preventDefault();
-                              document.getElementById('delete-form').submit();
-                      }
-                          "
-                          >
-                  Eliminar
-              </a>
 
-  		<a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-info">Editar</a>
 
-  		<a href="/cigarros/{{$cigarro->idcigarro}}" class="badge badge-primary btn btn-primary">Ver</a>
+<div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-condensed table-hover">
+        <thead>
+          <th>ID</th>
+          <th>NOMBRE</th>
+          <th>OPCIONES</th>
+          
+        </thead>
+          @foreach($cigarros as $cigarro)
+          <tr>
+          <td>{{$cigarro->idcigarro}}</td>
+          <td>{{$cigarro->nombre}}</td>
+          <td>{{$cigarro->tipo}}</td>
+          <td>  <a   
+                      href="/cigarros/{{$cigarro->idcigarro}}"
+                      class="badge badge-info btn btn-success">Ver</a>
+                         <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-info">Editar</a>
+          </td>
+        </tr>
 
-  		</li>
-  	@endforeach
-  	</div>
+        @endforeach
+        </table>
 </div>
 </div>
 	</div>
-  	 <form id="delete-form" action="{{ route('cigarros.destroy',[$cigarro->idcigarro]) }}" 
-                method="POST" style="display: none;">
-                        <input type="hidden" name="_method" value="delete">
-                        {{ csrf_field() }}
-              </form>
 
 
 @endsection

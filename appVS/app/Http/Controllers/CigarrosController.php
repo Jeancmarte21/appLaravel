@@ -69,7 +69,7 @@ class CigarrosController extends Controller
 
         $cigarro = Cigarro::find($idcigarro);
       //  $cigarro = Cigarro::find($idcigarro)->
-        return view("cigarros.show",["cigarros"=>$cigarro]);
+        return view("cigarros.show",["cigarro"=>$cigarro]);
     }
 
     /**

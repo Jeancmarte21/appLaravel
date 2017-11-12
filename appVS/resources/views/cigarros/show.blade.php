@@ -19,18 +19,27 @@
 					<th>NOMBRE</th>
 					<th>TIPO CIGARRO</th>
 					<th>AROMA</th>
+					<th>ACCION</th>
 					
 				</thead>
 
 					<tr>
-					<td>{{$cigarros->idcigarro}}</td>
-					<th>{{$cigarros->nombre}}</th>
-					<td>{{$cigarros->tipo}}</td>
-					@if($cigarros->saborizante != null)
-					<td>{{$cigarros->materiasprimas->nombre}}</td>
+					<td>{{$cigarro->idcigarro}}</td>
+					<th>{{$cigarro->nombre}}</th>
+					<td>{{$cigarro->tipo}}</td>
+					@if($cigarro->saborizante != null)
+					<td>{{$cigarro->materiasprimas->nombre}}</td>
 					@else
 					<td>Sin Aroma</td>
 					@endif
+					<td>
+
+					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar este Cigarro?');
+																	if( result ){
+																					event.preventDefault();
+																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
+				</td>
 				</tr>
 			
 
@@ -39,5 +48,11 @@
 		
 	</div>
 </div>
+
+ <form id="delete-form" action="{{ route('cigarros.destroy',[$cigarro->idcigarro]) }}" 
+                method="POST" style="display: none;">
+                        <input type="hidden" name="_method" value="delete">
+                        {{ csrf_field() }}
+              </form>
 
 @endsection
