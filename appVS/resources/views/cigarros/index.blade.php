@@ -19,16 +19,17 @@
           <th>ID</th>
           <th>NOMBRE</th>
           <th>OPCIONES</th>
-          
+
         </thead>
           @foreach($cigarros as $cigarro)
           <tr>
           <td>{{$cigarro->idcigarro}}</td>
           <td>{{$cigarro->nombre}}</td>
           <td>{{$cigarro->tipo}}</td>
-          <td>  <a   
-                      href="/cigarros/{{$cigarro->idcigarro}}"
-                      class="badge badge-info btn btn-success">Ver</a>
+          <td>
+
+            <a href="/cigarros/{{$cigarro->idcigarro}}"
+                      class="badge badge-info btn btn-primary">Ver</a>
                          <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-info">Editar</a>
           </td>
         </tr>

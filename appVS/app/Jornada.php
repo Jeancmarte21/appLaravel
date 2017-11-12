@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Jornada extends Model
 {
-    //
+    use SoftDeletes;
     protected $table = 'Jornada';
     protected $primaryKey = 'idjornada';
     protected $dates = ['deleted_at'];
@@ -22,11 +22,11 @@ class Jornada extends Model
 
     public function maquinas()
     {
-        return $this->belongsTo('appVS/Maquina', 'maquina_id');
+        return $this->belongsTo('appVS\Maquina', 'maquina_id');
     }
 
     public function empleados()
     {
-        return $this->belongsTo('appVS/Empleado', 'empleado_id');
+        return $this->belongsTo('appVS\Empleado', 'empleado_id');
     }
 }
