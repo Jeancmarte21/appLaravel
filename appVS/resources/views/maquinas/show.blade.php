@@ -18,6 +18,7 @@
 					<th>ID</th>
 					<th>NOMBRE</th>
 					<th>PAGA POR</th>
+					<th>ACCION</th>
 				</thead>
 
 
@@ -30,6 +31,14 @@
 					@if($maquina->produccion == 0)
 					<td>Salario Fijo</td>
 					@endif
+					<td>
+
+					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Maquina?');
+																	if( result ){
+																					event.preventDefault();
+																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
+				</td>
 
 				</tr>
 
@@ -40,6 +49,13 @@
 
 	</div>
 </div>
+</div>
+  	 <form id="delete-form" action="{{ route('maquinas.destroy',[$maquina->idmaquina]) }}" 
+                method="POST" style="display: none;">
+                        <input type="hidden" name="_method" value="delete">
+                        {{ csrf_field() }}
+              </form>
+
 
 
 @endsection

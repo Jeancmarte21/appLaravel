@@ -47,7 +47,10 @@ class MateriasPrimasController extends Controller
 
            $materiaPrima->save();
 
-           return back()->with('success', 'Materia prima creada correctamente');
+          if($materiaPrima){
+      return redirect()->route('materiasPrimas.show', ['materiaPrima'=>$materiaPrima->idmateriaprima])->with('success', 'Materia Prima creada correctamente');
+        }
+        return back()->withInput()->with('errors', 'Hubo un error al crear la Materia Prima');
     }
 
     /**

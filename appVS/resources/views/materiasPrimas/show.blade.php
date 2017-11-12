@@ -19,17 +19,25 @@
 					<th>NOMBRE</th>
 					<th>CATEGORIA</th>
 					<th>% PESO HUMEDO</th>
-					<th>EXISTENCIA MINIMA</th>	
+					<th>EXISTENCIA MINIMA</th>
+					<th>OPCIONES</th>	
 				</thead>
 
 			
 				<tr>
 					<td>{{$materiaPrima->idmateriaPrima}}</td>
-					<th>{{$materiaPrima->nombre}}</th>
+					<td>{{$materiaPrima->nombre}}</td>
 					<td>{{$materiaPrima->categoria}}</td>
 					<td>{{$materiaPrima->porcentaje_pesohumedo}}</td>
-					<th>{{$materiaPrima->existencia_minima}}</th>
-					
+					<td>{{$materiaPrima->existencia_minima}}</td>
+					<td>
+
+					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Materia Prima?');
+																	if( result ){
+																					event.preventDefault();
+																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
+				</td>
 					
 				</tr>
 		        
@@ -40,6 +48,11 @@
 		
 	</div>
 </div>
+ <form id="delete-form" action="{{ route('materiasPrimas.destroy',[$materiaPrima->idmateriaPrima]) }}"
+					 method="POST" style="display: none;">
+									 <input type="hidden" name="_method" value="delete">
+									 {{ csrf_field() }}
+				 </form>
 
 
 @endsection
