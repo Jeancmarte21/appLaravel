@@ -18,21 +18,19 @@ class EntradasController extends Controller
     public function index(Request $request)
     {
         //return view('entradas.index');
-        $entradas = Entrada::all();
-        return view('entradas.index', ['entradas' => $entradas]);
-      /*    if ($request)
+      $entradas = Entrada::all();
+     return view('entradas.index', ['entradas' => $entradas]);
+       /*   if ($request)
         {
             $query=trim($request->get('searchText'));
-            $entradas=DB::table('entrada')
-            ->join('suplidor', 'entrada.suplidor_id', '=', 'suplidor.idsuplidor')
-            ->join('materiaPrima', 'entrada.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
-            ->select('entrada.*', 'suplidor.nombre as suplidor', 'materiaPrima.nombre as matprim')
-            ->where('materiaPrima.nombre','LIKE','%'.$query.'%')
+            $entry=Entrada::all();
+            $entradas = $entry->materiasprimas->where('nombre', 'LIKE', '%'.query.'%')
             ->orderBy('fecha','desc')
             ->paginate(10);
-            return view('entradas.index',["entradas"=>$entradas,"searchText"=>$query]);
+            return view('entradas.index',['entradas'=>$entradas,'searchText'=>$query]);
         }
         */
+        
     }
 
     /**
