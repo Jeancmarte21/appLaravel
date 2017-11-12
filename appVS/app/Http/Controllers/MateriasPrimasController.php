@@ -46,7 +46,7 @@ class MateriasPrimasController extends Controller
                 ]);
 
            $materiaPrima->save();
-            
+
            return back()->with('success', 'Materia prima creada correctamente');
     }
 
@@ -103,8 +103,13 @@ class MateriasPrimasController extends Controller
      * @param  \appVS\MateriaPrima  $materiaPrima
      * @return \Illuminate\Http\Response
      */
-    public function destroy(MateriaPrima $materiaPrima)
+    public function destroy($materiaPrima)
     {
-        //
+      $materiaP = MateriaPrima::find($materiaPrima);
+      if($materiaP->delete()){
+          return redirect()->route('materiasPrimas.index')
+          ->with('success', 'Materia Prima borrada correctamente');
+      }
+      return back()->with('errors', 'No se pudo borrar la Materia Prima');
     }
 }
