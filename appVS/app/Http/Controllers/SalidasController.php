@@ -113,11 +113,6 @@ class SalidasController extends Controller
      */
     public function destroy($salida)
     {
-      $salid = Salida::find($salida);
-      if($salid->delete()){
-          return redirect()->route('salidas.index')
-          ->with('success', 'Salida borrada correctamente');
-      }
-      return back()->with('errors', 'No se pudo borrar la Salida');
+  
     }
 }

@@ -26,7 +26,7 @@
 					<th>OPCIONES</th>
 				</thead>
 
-        @foreach ($produccionMaq as $produccionMaquina)
+				@foreach ($produccionMaq as $produccionMaquina)
     <tr>
 
       <td>{{ $produccionMaquina->fecha}}</td>
@@ -38,8 +38,8 @@
 
   <td>
 
-   <a href="{{URL::action('ProduccionesMaquinasController@edit',$produccionMaquina->maquina_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
-                <a href="" data-target="#modal-delete-{{$produccionMaquina->maquina_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
+		<a href="{{URL::action('ProduccionesMaquinasController@edit',$produccionMaquina->maquina_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
+                 <a href="" data-target="#modal-delete-{{$produccionMaquina->maquina_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
  </td>
 
 </tr>
@@ -50,10 +50,6 @@
 
 </div>
 </div>
-<form id="delete-form" action="{{ route('produccionesmaquinas.destroy',[$produccionMaquina->idproduccionMaquina]) }}"
-					 method="POST" style="display: none;">
-									 <input type="hidden" name="_method" value="delete">
-									 {{ csrf_field() }}
-				 </form>
+
 
 @endsection
