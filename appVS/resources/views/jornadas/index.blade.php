@@ -4,7 +4,6 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		@include('jornadas.search')
 		<h3><a href="/jornadas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA JORNADA</button></a></h3>
 
 	</div>
@@ -19,25 +18,24 @@
 				<thead>
 
 					<th>FECHA</th>
-					<th>MAQUINA</th>
 					<th>EMPLEADO</th>
-					<th>INCENTIVO</th>
-					<th>HORAS EXTRAS</th>
 					<th>OPCIONES</th>
+
 				</thead>
-            @foreach ($jornad as $jornada)
+            @foreach ($jornadas as $jornada)
 				<tr>
 
 					<td>{{ $jornada->fecha}}</td>
-					<td>{{ $jornada->maquina}}</td>
-					<td>{{ $jornada->nombre.' '.$jornada->apellidos}}</td>
-					<td>{{ $jornada->incentivo}}</td>
-					<td>{{ $jornada->hora_extra}}</td>
+
+					<td>{{ $jornada->empleados->nombre}}</td>
+
 
 
 					<td>
-						<a href="{{URL::action('JornadasController@edit',$jornada->empleado_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
-                         <a href="" data-target="#modal-delete-{{$jornada->empleado_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
+						<a href="/jornadas/{{$jornada->idjornada}}"
+                      class="badge badge-info btn btn-primary">Ver</a>
+                         <a href="/jornadas/{{$jornada->idjornada}}/edit" class="badge badge-success btn btn-info">Editar</a>
+
 					</td>
 				</tr>
 

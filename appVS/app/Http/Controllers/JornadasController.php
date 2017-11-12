@@ -19,16 +19,17 @@ class JornadasController extends Controller
     public function index(Request $request)
     {
 
-         if ($request)
+
+      $jornadas = Jornada::all();
+      return view('jornadas.index', ['jornadas' => $jornadas]);
+        /* if ($request)
         {
-            $query=trim($request->get('searchText'));
+
             $jornad=DB::table('jornada')->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
             ->join('maquina', 'jornada.maquina_id', '=', 'maquina.idmaquina')
-            ->select('jornada.*', 'empleado.nombre', 'empleado.apellidos', 'maquina.nombre as maquina')->where('empleado.nombre','LIKE','%'.$query.'%')
-            ->orderBy('fecha','desc')
-            ->paginate(10);
-            return view('jornadas.index',["jornad"=>$jornad,"searchText"=>$query]);
-        }
+            ->select('jornada.*', 'empleado.nombre', 'empleado.apellidos', 'maquina.nombre as maquina')
+            return view('jornadas.index',["jornad"=>$jornad]);
+        }*/
 
 
         //$jornadas = Jornada::all();
@@ -62,11 +63,15 @@ class JornadasController extends Controller
                 'incentivo' => $request->input('incentivo'),
                 'hora_extra' => $request->input('hora_extra'),
                 'fecha' => $request->input('fecha'),
-                
+
                 ]);
        $jornada ->save();
 
-        return back()->with('success', 'Jornada creado correctamente');
+       if($jornada){
+               return back()->with('success', 'Jornada registrada correctamente!');
+           }
+           return back()->withInput()->with('errors', 'Hubo algun error en registro de la jornada');
+
     }
 
     /**
@@ -75,9 +80,9 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function show(Jornada $jornada)
+    public function show($idjornada)
     {
-        //
+        return view("jornadas.show",["jornada"=>Jornada::findOrFail($idjornada)]);
     }
 
     /**
@@ -86,10 +91,13 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Jornada $jornada)
-    {
-        //
-    }
+     public function edit(Jornada $jornada)
+     {
+         $jornada = Jornada::find($jornada->idjornada);
+         $maquinas= Maquina::all();
+         $empleados = Empleado::all();
+         return view('jornadas.edit',['jornada'=>$jornada, 'maquinas' => $maquinas, 'empleados' => $empleados]);
+     }
 
     /**
      * Update the specified resource in storage.
@@ -98,9 +106,21 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Jornada $jornada)
+    public function update(Request $request,$jornada)
     {
-        //
+      $jornadaUpdate = Jornada::find($jornada)
+          ->update([
+            'maquina_id' => $request -> input('maquina'),
+            'empleado_id' => $request -> input('empleado'),
+            'incentivo' => $request->input('incentivo'),
+            'hora_extra' => $request->input('hora_extra'),
+            'fecha' => $request->input('fecha'),
+
+          ]);
+          if($jornadaUpdate){
+              return redirect()->route('jornadas.show', ['jornada'=>$jornada])->with('success', 'Jornada editada correctamente');
+          }
+          return back()->withInput()->with('errors', 'Hubo algun error en registro de la Jornada');
     }
 
     /**
@@ -109,12 +129,13 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function destroy($idjornada)
+    public function destroy(Jornada $jornada)
     {
-       $jornada=Jornada::findOrFail($idjornada);
-        $jornada=delete();
-
-
-        return Redirect::to('jornadas.index');
+      $jornadas = Jornada::find($jornada->idjornada);
+      if($jornadas->delete()){
+          return redirect()->route('jornadas.index')
+          ->with('success', 'Jornada borrada correctamente');
+      }
+      return back()->with('errors', 'No se pudo borrar la Jornada');
     }
 }
