@@ -4,6 +4,7 @@ namespace appVS\Http\Controllers;
 use appVS\Suplidor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class SuplidoresController extends Controller
 {
@@ -27,8 +28,8 @@ class SuplidoresController extends Controller
      */
     public function create()
     {
-        //
-        return view('suplidores.create');
+      $suplidores =  Suplidor::all();
+      return view('suplidores.create', ['suplidores'=> $suplidores]);
     }
 
     /**
@@ -50,9 +51,10 @@ class SuplidoresController extends Controller
            $suplidor->save();
 
            if($suplidor){
-               return redirect()->route('suplidores.show', ['suplidor'=>$suplidor->idsuplidor])->with('success', 'Suplidor creado correctamente');
+               return back()->with('success', 'Suplidor registrado correctamente!');
            }
-           return back()->withInput();
+           return back()->withInput()->with('errors','Hubo algun error en registro de Suplidor');
+
 
     }
 
@@ -65,7 +67,7 @@ class SuplidoresController extends Controller
     public function show($idsuplidor)
     {
 
-        return view("suplidores.show",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
+      return view("suplidores.show",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
     /**
@@ -76,6 +78,7 @@ class SuplidoresController extends Controller
      */
     public function edit($idsuplidor)
     {
+
         return view("suplidores.edit",["suplidor"=>Suplidor::findOrFail($idsuplidor)]);
     }
 
@@ -99,7 +102,7 @@ class SuplidoresController extends Controller
             if($suplidorUpdate){
                 return redirect()->route('suplidores.show', ['suplidor'=>$suplidor])->with('success', 'Suplidor editado correctamente');
             }
-            return back()->withInput();
+            return back()->withInput()->with('errors', 'Hubo algun error en registro de Suplidor');
 
     }
 
