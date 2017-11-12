@@ -112,11 +112,6 @@ class ProduccionesMaquinasController extends Controller
      */
     public function destroy($idproduccionMaquina)
     {
-      $produccionMaq = ProduccionMaquina::find($produccionMaquina);
-      if($produccionMaq->delete()){
-          return redirect()->route('produccionesmaquinas.index')
-          ->with('success', 'Produccion borrada correctamente');
-      }
-      return back()->with('errors', 'No se pudo borrar la Produccion');
+      
     }
 }
