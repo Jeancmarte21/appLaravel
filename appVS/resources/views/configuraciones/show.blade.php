@@ -16,26 +16,25 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 					<th>ID</th>
+					<th>FECHA</th>
+					<th>NOMBRE</th>
 					<th>CIGARRO</th>
 					<th>CAPA</th>
 					<th>CAPOTE</th>
-					<th>FECHA</th>
+
 
 				</thead>
 
 
 				<tr>
+
+
 					<td>{{$configuracion->idconfiguracion}}</td>
-					<th>{{$configuracion->cigarro_idcigarro}}</th>
-					<td>{{$configuracion->capa}}</td>
-					<td>{{$configuracion->capote}}</td>
-					<td>{{$configuracion->fecha}}</td>
-
-
-				</tr>
-
-
-
+					<th>{{$configuracion->nombre}}</th>
+		@foreach(configuracion-> materiasprimas as config)
+					<td>{{$config->nombre}}</td>
+    @endforeach
+</tr>
 			</table>
 		</div>
 

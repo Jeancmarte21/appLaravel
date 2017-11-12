@@ -36,7 +36,7 @@ class SalidasController extends Controller
             ->paginate(10);
 
             return view('salidas.index', ['salidas'=>$salidas, 'searchText' => $query]);
-        }   
+        }
     }
 
     /**
@@ -48,7 +48,7 @@ class SalidasController extends Controller
     {
         $materiasprimas =  MateriaPrima::all();
         return view('salidas.create', ['materiasprimas'=> $materiasprimas]);
-       
+
     }
 
     /**
@@ -111,8 +111,13 @@ class SalidasController extends Controller
      * @param  \appVS\Salida  $salida
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Salida $salida)
+    public function destroy($salida)
     {
-        //
+      $salid = Salida::find($salida);
+      if($salid->delete()){
+          return redirect()->route('salidas.index')
+          ->with('success', 'Salida borrada correctamente');
+      }
+      return back()->with('errors', 'No se pudo borrar la Salida');
     }
 }

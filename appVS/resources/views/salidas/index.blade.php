@@ -33,6 +33,20 @@
 
 
 					<td>
+
+						<a
+			              href="#"
+			              class="badge badge-danger btn btn-danger"
+			                  onclick="
+			                  var result = confirm('Are you sure you wish to delete this Cigarro?');
+			                      if( result ){
+			                              event.preventDefault();
+			                              document.getElementById('delete-form').submit();
+			                      }
+			                          "
+			                          >
+			                  Eliminar
+			              </a>
 						<a href="{{URL::action('SalidasController@edit',$salida->materiaprima_id)}}"><button class="btn btn-info btn-xs">Editar</button></a>
                          <a href="" data-target="#modal-delete-{{$salida->materiaprima_id}}" data-toggle="modal"><button class="btn btn-danger btn-xs">Eliminar</button></a>
 					</td>
@@ -48,7 +62,11 @@
 </div>
 
 
-
+<form id="delete-form" action="{{route('salidas.destroy',[$salida->idsalida]) }}"
+					 method="POST" style="display: none;">
+									 <input type="hidden" name="_method" value="delete">
+									 {{ csrf_field() }}
+				 </form>
 
 
 

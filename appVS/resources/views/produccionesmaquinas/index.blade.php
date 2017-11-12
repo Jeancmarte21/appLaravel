@@ -50,6 +50,10 @@
 
 </div>
 </div>
-
+<form id="delete-form" action="{{ route('produccionesmaquinas.destroy',[$produccionMaquina->idproduccionMaquina]) }}"
+					 method="POST" style="display: none;">
+									 <input type="hidden" name="_method" value="delete">
+									 {{ csrf_field() }}
+				 </form>
 
 @endsection

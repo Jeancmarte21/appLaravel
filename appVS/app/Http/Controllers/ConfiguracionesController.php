@@ -65,10 +65,9 @@ class ConfiguracionesController extends Controller
      * @param  \appVS\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function show(Configuracion $configuracion)
+    public function show($idconfiguracion)
     {
-      $configuracion = Configuracion::find($configuracion->idconfiguracion);
-      return view('configuraciones.show', ['configuracion'=>$configuracion]);
+  return view("configuraciones.show",["configuracion"=>Configuracion::findOrFail($idconfiguracion)]);
     }
 
     /**
@@ -100,8 +99,13 @@ class ConfiguracionesController extends Controller
      * @param  \appVS\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Configuracion $configuracion)
+    public function destroy($configuracion)
     {
-        //
+      $config = Configuracion::find($configuracion);
+      if($config->delete()){
+          return redirect()->route('configuraciones.index')
+          ->with('success', 'Configuracion borrada!!');
+      }
+      return back()->with('errors', 'No se pudo borrar la configuracion');
     }
 }

@@ -5,11 +5,11 @@
 <div class="card" style="width: 95rem;">
 	<div class="col-lg-12 col-md-9 col-xs-5">
 <div class="list-group ">
-	
+
 	@foreach($cigarros as $cigarro)
   		<li class="list-group-item">{{$cigarro->nombre}}
 
-			<a   
+			<a
               href="#"
               class="badge badge-danger btn btn-danger"
                   onclick="

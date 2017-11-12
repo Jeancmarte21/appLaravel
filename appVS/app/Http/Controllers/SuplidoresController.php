@@ -48,7 +48,7 @@ class SuplidoresController extends Controller
                 ]);
 
            $suplidor->save();
-    
+
            if($suplidor){
                return redirect()->route('suplidores.show', ['suplidor'=>$suplidor->idsuplidor])->with('success', 'Suplidor creado correctamente');
            }
@@ -109,8 +109,13 @@ class SuplidoresController extends Controller
      * @param  \appVS\Suplidor  $suplidor
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Suplidor $suplidor)
+    public function destroy($suplidor)
     {
-        //
+      $sup = Suplidor::find($suplidor);
+      if($sup->delete()){
+          return redirect()->route('suplidores.index')
+          ->with('success', 'Suplidor borrado correctamente');
+      }
+      return back()->with('errors', 'No se pudo borrar el Suplidor');
     }
 }
