@@ -111,6 +111,22 @@
               </ul>
             </li>
 
+            <li class="treeview">
+           <a href="#">
+             <i class="fa fa-wrench"></i>
+             <span>Gestion Maquinas</span>
+              <i class="fa fa-angle-left pull-right"></i>
+           </a>
+           <ul class="treeview-menu">
+
+            <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+             <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
+
+           </ul>
+         </li>
+
+      
+
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
@@ -142,19 +158,7 @@
            </ul>
          </li>
 
-            <li class="treeview">
-           <a href="#">
-             <i class="fa fa-wrench"></i>
-             <span>Gestion Maquinas</span>
-              <i class="fa fa-angle-left pull-right"></i>
-           </a>
-           <ul class="treeview-menu">
 
-            <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
-             <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
-
-           </ul>
-         </li>
 
 
 

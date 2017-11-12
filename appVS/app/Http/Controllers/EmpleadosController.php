@@ -4,6 +4,7 @@ namespace appVS\Http\Controllers;
 use appVS\Empleado;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 class EmpleadosController extends Controller
 {
@@ -17,6 +18,8 @@ class EmpleadosController extends Controller
 
         $empleados = Empleado::all();
         return view('empleados.index', ['empleados'=> $empleados]);
+
+
     }
     /**
      * Show the form for creating a new resource.
@@ -25,8 +28,9 @@ class EmpleadosController extends Controller
      */
     public function create()
     {
-        //
-        return view('empleados.create');
+      $empleados =  Empleado::all();
+      return view('empleados.create', ['empleados'=> $empleados]);
+
 
     }
     /**
@@ -48,12 +52,14 @@ class EmpleadosController extends Controller
                 ]);
             $empleado->save();
 
-          
+
 
            if($empleado){
-               return redirect()->route('empleados.show', ['empleado'=>$empleado->idempleado])->with('success', 'Empleado creado correctamente');
+               return back()->with('success', 'Empleado registrado correctamente!');
            }
-           return back()->withInput();
+           return back()->withInput()->with('errors','Hubo algun error en registro de empleado');
+
+
 
 
     }
@@ -79,6 +85,8 @@ class EmpleadosController extends Controller
 
         $empleado = Empleado::find($empleado->idempleado);
         return view('empleados.edit', ['empleado'=>$empleado]);
+
+
     }
     /**
      * Update the specified resource in storage.
@@ -99,9 +107,11 @@ class EmpleadosController extends Controller
             'direccion' => $request->input('direccion')
             ]);
             if($empleadoUpdate){
-                return redirect()->route('empleados.show', ['empleado'=>$empleado->idempleado])->with('success', 'Empleado editado correctamente');
+                return redirect()->route('empleados.show', ['empleado'=>$empleado])->with('success', 'Empleado editado correctamente');
             }
-            return back()->withInput();
+            return back()->withInput()->with('errors', 'Hubo algun error en registro de Empleado');
+
+
     }
     /**
      * Remove the specified resource from storage.
