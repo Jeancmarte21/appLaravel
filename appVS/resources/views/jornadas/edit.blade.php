@@ -10,7 +10,7 @@
                    <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
-           <input class="form-control" type="date"  id="example-date-input" name="fecha" required>
+           <input class="form-control" type="date"  id="fecha" name="fecha"   value="{{$jornada->fecha}}" required>
         </div>
     </div>
                               <div class="form-group">
@@ -19,7 +19,7 @@
             <select class="form-control" name="maquina" required>
                 <option value="">Seleccione</option>
                 @foreach($maquinas as $maquina)
-                <option value="{{$maquina->idmaquina}}">{{$maquina->nombre}}</option>
+                <option value="{{$maquina->nombre}}">{{$maquina->nombre}}</option>
               @endforeach
             </select>
         </div>
@@ -43,7 +43,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
 
-                <input type="number" class="form-control" name="incentivo" value="0" min="0" step="0.1"/>
+                <input type="number" class="form-control" name="incentivo" value="0" min="0" step="0.1"   value="{{$jornada->incentivo}}"/>
                 <span class="input-group-addon">$</span>
 
             </div>
@@ -55,7 +55,7 @@
          <div class="form-group">
         <label class="col-xs-3 control-label">Horas Extras</label>
         <div class="col-xs-5 selectContainer">
-        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="hora_extra" name="hora_extra" />
+        <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="hora_extra" name="hora_extra"   value="{{$jornada->hora_extra}}"/>
 			 </div>
 						</div>
 
