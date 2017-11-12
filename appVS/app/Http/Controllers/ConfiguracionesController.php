@@ -52,7 +52,10 @@ class ConfiguracionesController extends Controller
                 ]);
        $configuracion->save();
 
-           return back()->with('success', 'Se ha creado la configuracion correctamente');
+       if($configuracion){
+           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion->idconfiguracion])->with('success', 'Configuracion creado correctamente');
+       }
+       return back()->withInput();
 
     }
 

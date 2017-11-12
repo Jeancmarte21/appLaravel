@@ -5,8 +5,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		
-		
+
+
 	</div>
 </div>
 
@@ -20,25 +20,25 @@
 					<th>CAPA</th>
 					<th>CAPOTE</th>
 					<th>FECHA</th>
-					
+
 				</thead>
 
-			
+
 				<tr>
 					<td>{{$configuracion->idconfiguracion}}</td>
 					<th>{{$configuracion->cigarro_idcigarro}}</th>
 					<td>{{$configuracion->capa}}</td>
 					<td>{{$configuracion->capote}}</td>
 					<td>{{$configuracion->fecha}}</td>
-					
-					
+
+
 				</tr>
-		        
-			
-              
+
+
+
 			</table>
 		</div>
-		
+
 	</div>
 </div>
 
