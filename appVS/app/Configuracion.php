@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Configuracion extends Model
 {
     //
+    use SoftDeletes;
     protected $table = 'configuracion';
     protected $primaryKey='idconfiguracion';
     protected $dates = ['deleted_at'];
@@ -24,6 +25,6 @@ class Configuracion extends Model
 
     public function configuracionesmateriasprimas()
     {
-        return $this->hasMany('appVS/ConfiguracionMateriaPrima', 'configuracion_id');
+        return $this->hasMany('appVS\ConfiguracionMateriaPrima', 'configuracion_id');
     }
 }

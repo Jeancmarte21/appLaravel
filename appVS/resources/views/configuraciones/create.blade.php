@@ -103,25 +103,4 @@
 </div>
 
 
-
-<script type="text/javascript">
-function comparar_textos() {
-	var capa = document.forms[0].elements[0].value;
-	var capote = document.forms[0].elements[1].value;
-	var tam_capa = capa.length;
-	var tam_capote = capote.length;
-	if (tam_capa != tam_capote) {
-		alert('los datos introducidos no son coincidentes');
-	} else {
-		for (n = 0; n < tam_capa; n++) {
-			if (capa.charAt(n) != capote.charAt(n)) {
-				alert('las cadenas introducidas no son coincidentes');
-			}
-		}
-	}
-}
-
-</script>
-
-
 @endsection

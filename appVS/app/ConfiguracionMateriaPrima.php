@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class ConfiguracionMateriaPrima extends Model
 {
     //
+    use SoftDeletes;
     protected $table = 'configuracionMateriaPrima';
     protected $primaryKey = 'idconfiguracionmateriaprima';
     protected $dates = ['deleted_at'];
@@ -20,11 +21,11 @@ class ConfiguracionMateriaPrima extends Model
 
     public function materiasprimas()
     {
-        return $this->belongsTo('appVS/MateriaPrima', 'materiaprima_id');
+        return $this->belongsTo('appVS\MateriaPrima', 'materiaprima_id');
     }
 
     public function configuraciones()
     {
-        return $this->belongsTo('appVS/Configuracion', 'configuracion_id');
+        return $this->belongsTo('appVS\Configuracion', 'configuracion_id');
     }
 }
