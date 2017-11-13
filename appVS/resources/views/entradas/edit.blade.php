@@ -50,7 +50,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
 
-                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" id="cantidad" />
+                <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" id="cantidad" value="{{$entrada->cantidad}}" />
                 <span class="input-group-addon" value="{{$entrada->cantidad}}">lbs</span>
 
             </div>

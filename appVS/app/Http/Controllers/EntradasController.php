@@ -30,7 +30,7 @@ class EntradasController extends Controller
             return view('entradas.index',['entradas'=>$entradas,'searchText'=>$query]);
         }
         */
-        
+
     }
 
     /**
@@ -65,7 +65,7 @@ class EntradasController extends Controller
                 return back()->with('success', 'Entrada registrada correctamente!');
             }
             return back()->withInput()->with('errors', 'Hubo algun error en registro de la entrada');
-            
+
     }
 
     /**
@@ -76,7 +76,8 @@ class EntradasController extends Controller
      */
     public function show(Entrada $entrada)
     {
-        //
+      $entrada = Entrada::find($entrada->identrada);
+      return view('entradas.show', ['entrada'=>$entrada]);
     }
 
     /**
@@ -87,7 +88,10 @@ class EntradasController extends Controller
      */
     public function edit(Entrada $entrada)
     {
-       return view("entradas.edit",["entrada"=>Entrada::findOrFail($entrada)]);
+      $entrada = Entrada::find($entrada->identrada);
+      $materiasprimas = MateriaPrima::all();
+      $suplidores = Suplidor::all();
+      return view('entradas.edit',['entrada'=>$entrada, 'materiasprimas' => $materiasprimas, 'suplidores' => $suplidores]);
     }
 
     /**
@@ -99,7 +103,18 @@ class EntradasController extends Controller
      */
     public function update(Request $request, Entrada $entrada)
     {
-        //
+      $entradaUpdate = Entrada::where('identrada', $entrada->identrada)
+          ->update([
+            'materiaprima_id' => $request->input('nombre'),
+            'precio' => $request->input('precio'),
+            'cantidad' => $request->input('cantidad'),
+            'fecha' => $request->input('fecha'),
+            'suplidor_id' => $request->input('suplidor')
+          ]);
+      if($entradaUpdate){
+              return redirect()->route('entradas.show', ['entrada'=>$entrada])->with('success', 'Entrada actualizada correctamente!');
+          }
+          return back()->withInput()->with('errors', 'Hubo algun error en registro de la Entrada');
     }
 
     /**
@@ -110,7 +125,7 @@ class EntradasController extends Controller
      */
     public function destroy(Entrada $entrada)
     {
-        //
+
         $entry = Entrada::find($entrada->identrada);
         if($entry->delete()){
             return redirect()->route('entradas.index')

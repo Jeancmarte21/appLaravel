@@ -6,7 +6,7 @@
     <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="{{route('salidas.update', [$salida->idsalida])}}">
-      
+
       <fieldset>
       {{ csrf_field()}}
       <input type="hidden" name="_method" value="put">
@@ -29,21 +29,21 @@
             </select>
         </div>
     </div>
-              
-          
-                  
+
+
+
                      <div class="form-group">
         <label class="col-xs-3 control-label">Cantidad</label>
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
-               
+
                 <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad" value="{{$salida->cantidad}}"/>
                 <span class="input-group-addon">lbs</span>
-				
+
             </div>
         </div>
     </div>
-            
+
 
 
 
@@ -52,11 +52,11 @@
           <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
         </div>
       </div>
-      
+
       </fieldset>
     </form>
   </div>
 </div>
-    
+
 
 @endsection
