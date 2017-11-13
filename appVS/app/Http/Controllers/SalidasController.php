@@ -137,6 +137,6 @@ class SalidasController extends Controller
             ->with('success', 'Salida borrada correctamente');
         }
         return back()->with('errors', 'No se pudo borrar la Salida');
-  
+
     }
 }

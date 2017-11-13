@@ -16,25 +16,24 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID<th>
+
 					<th>FECHA & HORA</th>
 					<th>MAQUINA</th>
-					<th>CIGARRO</th>
-          			<th>CANTIDAD</th>
+          <th>CANTIDAD</th>
 					<th>OPCIONES</th>
 				</thead>
 
 				@foreach ($produccionMaq as $produccionMaquina)
     	<tr>
-      <td>{{ $produccionMaquina->idproduccionmaquina}}</td>
+
       <td>{{ $produccionMaquina->fecha}}</td>
       <td>{{ $produccionMaquina->maquinas->nombre}}</td>
-      <td>{{ $produccionMaquina->cigarros->nombre}}</td>
-      <td>{{ $produccionMaquina->cantidad}}</td>
+			<td>{{ $produccionMaquina->cantidad}}</td>
+
 
 
 		<td>
-						<a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}" class="badge badge-info btn btn-success">Ver</a>
+						<a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}" class="badge badge-info btn btn-primary">Ver</a>
             <a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
 
