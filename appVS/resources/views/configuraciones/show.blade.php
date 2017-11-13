@@ -21,7 +21,7 @@
 					<th>CIGARRO</th>
 					<th>CAPA</th>
 					<th>CAPOTE</th>
-
+					<th>ACCION</th>
 
 				</thead>
 
@@ -32,12 +32,27 @@
 					<td>{{$configuracion->idconfiguracion}}</td>
 					<td>{{$configuracion->fecha}}</td>
 					<td>{{$configuracion->nombre}}</td>
-</tr>
+					<td>{{$configuracion->nombre}}</td>
+					<td></td>
+					<td></td>
+					<td><a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
+                          if( result ){
+                                  event.preventDefault();
+                                  document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+</td>
+</tr>	
 			</table>
 		</div>
 
 	</div>
 </div>
+
+<form id="delete-form" action="{{ route('configuraciones.destroy',[$configuracion->idconfiguracion]) }}"
+					 method="POST" style="display: none;">
+									 <input type="hidden" name="_method" value="delete">
+									 {{ csrf_field() }}
+				 </form>
+
 
 
 @endsection
