@@ -117,11 +117,12 @@ class ProduccionesMaquinasController extends Controller
         //
         $prodmaqUpdate = ProduccionMaquina::find($produccionMaquina)
             ->update([
-            'nombre' => $request->input('nombre'),
-            'telefono' => $request->input('telefono'),
-            'correo' => $request->input('correo'),
-             'pais' => $request->input('pais'),
-            'direccion' => $request->input('direccion')
+            'maquina_id' => $request->input('maquina'),
+            'cigarro_id' => $request->input('cigarro'),
+            'configuracion_id' => $request->input('configuracion'),
+            'cantidad' => $request->input('cantidad'),
+            'fecha' => $request->input('fecha')
+            //'fecha' => date('Y-m-d H:i:s')
             ]);
             if($prodmaqUpdate){
                 return redirect()->route('produccionesmaquinas.show', ['produccionMaquina'=>$produccionMaquina])->with('success', 'Produccion editada correctamente');
