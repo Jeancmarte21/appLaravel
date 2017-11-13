@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3><a href="/entradas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA ENTRADA</button></a></h3>
-		
+
 	</div>
 </div>
 
@@ -16,13 +16,12 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					
-					
+
+
 					<th>FECHA</th>
 					<th>MATERIA PRIMA</th>
-					<th>PRECIO</th>
-					<th>CANTIDAD</th>
-					<th>SUPLIDOR</th>
+					
+
 					<th>OPCIONES</th>
 				</thead>
           		@foreach ($entradas as $entry)
@@ -30,25 +29,14 @@
 
 					<td>{{ $entry->fecha}}</td>
 					<td>{{ $entry->materiasprimas->nombre}}</td>
-					<td>{{ $entry->precio}}</td>
-					<td>{{ $entry->cantidad}}</td>
-					<td>{{ $entry->suplidores->nombre}}</td>
+
 
 
 					<td>
-						<a   
-              				href="#"
-              				class="badge badge-danger btn btn-danger"
-			                  onclick="
-			                  var result = confirm('Are you sure you wish to delete this Cigarro?');
-			                      if( result ){
-			                              event.preventDefault();
-			                              document.getElementById('delete-form').submit();
-			                      }
-			                          "
-                          >Eliminar</a>
-                         <a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<a href="/entradas/{{$entry->identrada}}"class="badge badge-info btn btn-success">Ver</a>
+						<a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
+
 				</tr>
 
 				@endforeach
@@ -56,13 +44,6 @@
 			</div>
 		</div>
 	</div>
-<form id="delete-form" action="{{ route('entradas.destroy',[$entry->identrada]) }}" 
-                method="POST" style="display: none;">
-                        <input type="hidden" name="_method" value="delete">
-                        {{ csrf_field() }}
-              </form>
-
-
 
 
 @endsection
