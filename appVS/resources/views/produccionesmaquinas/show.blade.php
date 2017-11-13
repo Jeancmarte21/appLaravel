@@ -1,12 +1,12 @@
 @extends('layouts.admin')
-@section('title','Informacion Materia Prima')
+@section('title','Informacion Producción Maquina')
 @section('contenido')
 
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		
-		
+
+
 	</div>
 </div>
 
@@ -28,7 +28,7 @@
       <td>{{ $produccionMaquina->maquinas->nombre}}</td>
       <td>{{ $produccionMaquina->cigarros->nombre}}</td>
       <td>{{ $produccionMaquina->configuraciones->nombre}}</td>
-      <td>{{ $produccionMaquina->cantidad}}</td>	
+      <td>{{ $produccionMaquina->cantidad}}</td>
       <td>
 					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Produccion de Maquina?');
 																	if( result ){
@@ -36,11 +36,11 @@
 																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
 
 				</td>
-					
+
 				</tr>
 			</table>
 		</div>
-		
+
 	</div>
 </div>
  <form id="delete-form" action="{{ route('produccionesmaquinas.destroy',[$produccionMaquina->idproduccionmaquina]) }}"
