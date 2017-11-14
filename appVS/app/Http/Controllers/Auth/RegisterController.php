@@ -2,11 +2,12 @@
 
 namespace appVS\Http\Controllers\Auth;
 
+use appVS\Role;
 use appVS\User;
 use appVS\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use App\Role;
+//use App\Role;
 
 class RegisterController extends Controller
 {
@@ -61,9 +62,6 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \appVS\User
      */
-    protected function create(array $data)
-    {
-
 
 
 
@@ -80,4 +78,3 @@ protected function create(array $data)
   return $user;
 }
     }
-}

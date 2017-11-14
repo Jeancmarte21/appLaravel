@@ -14,6 +14,15 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+/*public function __construct(){
+
+$this->middleware('auth');
+$this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
+
+
+}*/
+
     public function index()
     {
         //

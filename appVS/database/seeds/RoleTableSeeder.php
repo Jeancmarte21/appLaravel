@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Role;
+use appVS\Role;
 
 
 class RoleTableSeeder extends Seeder

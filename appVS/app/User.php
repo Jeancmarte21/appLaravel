@@ -30,7 +30,7 @@ class User extends Authenticatable
     public function roles()
     {
     return $this
-        ->belongsToMany('AppVS\Role')
+        ->belongsToMany('appVS\Role')
         ->withTimestamps();
     }
 
