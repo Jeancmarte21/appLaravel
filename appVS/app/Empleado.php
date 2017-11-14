@@ -23,7 +23,7 @@ class Empleado extends Model
 
     public function jornadas()
     {
-        return $this->hasMany('appVS/Jornada', 'empleado_id');
+        return $this->hasMany('appVS\Jornada', 'empleado_id');
     }
 
 }

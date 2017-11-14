@@ -22,6 +22,6 @@ class Suplidor extends Model
 
     public function entradas()
     {
-        return $this->hasMany('appVS/Entrada', 'suplidor_id');
+        return $this->hasMany('appVS\Entrada', 'suplidor_id');
     }
 }

@@ -20,22 +20,22 @@ class MateriaPrima extends Model
 
     public function salidas()
     {
-        return $this->hasMany('appVS/Salida', 'materiaprima_id');
+        return $this->hasMany('appVS\Salida', 'materiaprima_id');
     }
 
     public function entradas()
     {
-        return $this->hasMany('appVS/Entrada', 'materiaprima_id');
+        return $this->hasMany('appVS\Entrada', 'materiaprima_id');
     }
 
     public function cigarros()
     {
-        return $this->hasMany('appVS/Cigarro', 'saborizante');
+        return $this->hasMany('appVS\Cigarro', 'saborizante');
     }
 
     public function configuracionesmateriasprimas()
     {
-        return $this->hasMany('appVS/ConfiguracionMateriaPrima', 'materiaprima_id');
+        return $this->hasMany('appVS\ConfiguracionMateriaPrima', 'materiaprima_id');
     }
 
 }
