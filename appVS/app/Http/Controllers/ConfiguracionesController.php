@@ -3,6 +3,7 @@
 namespace appVS\Http\Controllers;
 
 use appVS\Configuracion;
+use appVS\ConfiguracionMateriaPrima;
 use appVS\Cigarro;
 use DB;
 use Illuminate\Http\Request;
@@ -43,8 +44,8 @@ class ConfiguracionesController extends Controller
      */
     public function store(Request $request)
     {
-      //  $cigarro = Cigarro::find($request->input('cigarro'));
-      //  if(strcmp($cigarro->tipo,'Vitolas') == 0)
+        $cigarro = Cigarro::find($request->input('cigarro'));
+       if(strcmp($cigarro->tipo,'Fumas AMF') == 0)
        $configuracion = Configuracion::create([
                 'cigarro_id' => $request -> input('cigarro'),
                 'nombre' => $request->input('nombre'),
