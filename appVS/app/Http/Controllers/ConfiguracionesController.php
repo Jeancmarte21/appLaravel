@@ -45,7 +45,7 @@ class ConfiguracionesController extends Controller
     public function store(Request $request)
     {
         $cigarro = Cigarro::find($request->input('cigarro'));
-       if(strcmp($cigarro->tipo,'Fumas AMF') == 0)
+       if(strcmp($cigarro->tipo,'Fumas AMF') == 0){
        $configuracion = Configuracion::create([
                 'cigarro_id' => $request -> input('cigarro'),
                 'nombre' => $request->input('nombre'),
@@ -54,9 +54,59 @@ class ConfiguracionesController extends Controller
        $configuracion->save();
 
        if($configuracion){
-           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion->idconfiguracion])->with('success', 'Configuracion creado correctamente');
-       }
+            $confmat1 = ConfiguracionMateriaPrima::create([
+                'configuracion_id' => $configuracion->idconfiguracion,
+                'materiaprima_id'  => $request -> input('capa'),
+                'cantidad' =>         $request -> input('cantidadcapa'),
+                'envoltura' => 2
+                ]);
+            $confmat1->save();
+            $confmat2 = ConfiguracionMateriaPrima::create([
+                'configuracion_id' => $configuracion->idconfiguracion,
+                'materiaprima_id'  => $request -> input('capote'),
+                'cantidad' =>         $request -> input('cantidadcapote'),
+                'envoltura' => 1
+                ]);
+            $confmat2->save();
+            $confmat3 = ConfiguracionMateriaPrima::create([
+                'configuracion_id' => $configuracion->idconfiguracion,
+                'materiaprima_id'  => $request -> input('relleno'),
+                'cantidad' =>         $request -> input('cantidadrelleno'),
+                'envoltura' => 0
+                ]);
+            $confmat3->save();
+           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+        }
        return back()->withInput();
+        }
+
+        else {
+            $configuracion = Configuracion::create([
+                'cigarro_id' => $request -> input('cigarro'),
+                'nombre' => $request->input('nombre'),
+                'fecha' => $request->input('fecha')
+                ]);
+       $configuracion->save();
+
+       if($configuracion){
+            $confmat2 = ConfiguracionMateriaPrima::create([
+                'configuracion_id' => $configuracion->idconfiguracion,
+                'materiaprima_id'  => $request -> input('capote'),
+                'cantidad' =>         $request -> input('cantidadcapote'),
+                'envoltura' => 1
+                ]);
+            $confmat2->save();
+            $confmat3 = ConfiguracionMateriaPrima::create([
+                'configuracion_id' => $configuracion->idconfiguracion,
+                'materiaprima_id'  => $request -> input('relleno'),
+                'cantidad' =>         $request -> input('cantidadrelleno'),
+                'envoltura' => 0
+                ]);
+            $confmat3->save();
+           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+        }
+       return back()->withInput();
+        }
 
     }
 
@@ -66,9 +116,11 @@ class ConfiguracionesController extends Controller
      * @param  \appVS\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function show($idconfiguracion)
+    public function show(Configuracion $idconfiguracion)
     {
-  return view("configuraciones.show",["configuracion"=>Configuracion::findOrFail($idconfiguracion)]);
+        $idconfiguracion = Configuracion::find($idconfiguracion->idconfiguracion);
+        return view('configuraciones.show', ['configuracion'=>$idconfiguracion]);
+  //return view("configuraciones.show",["configuracion"=>Configuracion::findOrFail($idconfiguracion)]);
     }
 
     /**
