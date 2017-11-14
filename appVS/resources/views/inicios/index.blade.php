@@ -10,12 +10,12 @@
 
      <div class="login-box">
 <div class="login-logo">
-
+<img src="../img/logo.png" width="150" height="150" class="center-block img-responsive">
 </div><!-- /.login-logo -->
 <div class="login-box-body">
 
 
-<img src="../img/logo.png" width="150" height="150" class="center-block img-responsive">
+
 
 <form action="../../index2.html" method="post">
  <div class="form-group has-feedback">
