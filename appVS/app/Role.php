@@ -11,14 +11,14 @@ class Role extends Model
     	'name'
     ];
 
-    /*public function users()
+  public function users()
 	{
     	return $this
         ->belongsToMany('AppVS\User')
         ->withTimestamps();
-	}*/
+	}
 
-	public function users(){
+	  /*public function users(){
 		return $this->hasMany('AppVS\User');
-    }
+    }*/
 }
