@@ -262,9 +262,12 @@
                 @include('partials.success')
                   	<div class="row">
 	                  	<div class="col-md-12">
+                        @if(Auth::user()->role_id==3)
 		                          <!--Contenido-->
                               @yield('contenido')
 		                          <!--Fin Contenido-->
+
+                              @endif
                            </div>
                         </div>
 
