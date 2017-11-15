@@ -20,7 +20,7 @@
     <div class="form-group">
            <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
           <div class="col-md-8">
-         <input id="telefono" name="telefono" type="text" placeholder="(000)-000-0000" class="form-control" required>
+         <input id="telefono" name="telefono" type="text" placeholder="(000)-000-0000" class="form-control" data-mask="000-000-0000" required>
   </div>
 </div>
 

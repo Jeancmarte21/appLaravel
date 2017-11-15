@@ -35,7 +35,7 @@
         <label class="col-xs-3 control-label">Precio</label>
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
-                <input type="number" class="form-control" name="precio" min="0" data-number-to-fixed="2" data-number-stepfactor="100" n step="any" id="number" />
+                <input type="number" class="form-control" name="precio" min="0" data-number-to-fixed="2" data-number-stepfactor="100"  step="any" id="precio" />
                 <span class="input-group-addon">$</span>
             </div>
         </div>
@@ -75,5 +75,7 @@
     </form>
   </div>
 </div>
+
+
 
 @endsection
