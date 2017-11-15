@@ -116,11 +116,13 @@ class ConfiguracionesController extends Controller
      * @param  \appVS\Configuracion  $configuracion
      * @return \Illuminate\Http\Response
      */
-    public function show(Configuracion $configuracion)
+    public function show($configuracion)
     {
-        $configuracion = Configuracion::find($configuracion->idconfiguracion);
-        return view('configuraciones.show', ['configuracion'=>$configuracion]);
-  //return view("configuraciones.show",["configuracion"=>Configuracion::findOrFail($idconfiguracion)]);
+       // $configuracion = Configuracion::find($configuracion->idconfiguracion);
+       // return view('configuraciones.show', ['configuracion'=>$configuracion]);
+        $configuracion = Configuracion::find($configuracion);
+        $materiasprima = $configuracion->materiasprimas;
+        return view("configuraciones.show",['configuracion'=>$configuracion, 'materiasprimas'=> $materiasprima]);
     }
 
     /**
