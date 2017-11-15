@@ -2,7 +2,7 @@
 
 namespace appVS\Http\Controllers;
 use Illuminate\Http\Request;
-use appVS\HTTP\Request;
+//use appVS\HTTP\Request;
 use appVS\HTTP\Controllers\Controller;
 use appVS\User;
 

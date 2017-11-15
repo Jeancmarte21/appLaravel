@@ -17,7 +17,7 @@
     <th>ID</th>
     <th>NOMBRE</th>
     <th>CORREO</th>
-
+    <th>ROL</th>
     <th>ACCION</th>
   </thead>
 
@@ -26,7 +26,7 @@
   <td>{{$user->id}}</td>
   <td>{{$user->name}}</td>
   <td>{{$user->email}}</td>
-
+  <td>{{$user->roles[0]->name}}</td>
   <td>
 
 
