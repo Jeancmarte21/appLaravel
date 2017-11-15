@@ -33,9 +33,7 @@
 					<td>{{$configuracion->fecha}}</td>
 					<td>{{$configuracion->nombre}}</td>
 					<td>{{$configuracion->nombre}}</td>
-					@foreach($configuracion->materiasprimas as $intento)
-					<td>{{$intento->nombre}}</td>
-					@endforeach
+					<td>{{$materiasprimas[5]}}<td>
 					<td><a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
                           if( result ){
                                   event.preventDefault();

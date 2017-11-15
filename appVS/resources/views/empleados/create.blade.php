@@ -36,7 +36,7 @@
         <div class="form-group">
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
-      <input id="telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control">
+      <input id="telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control" data-inputmask="'mask': '999-999-9999'">
       </div>
       </div>
 
@@ -72,6 +72,7 @@
         input.oninvalid = function(event) {
             event.target.setCustomValidity('La cedula deberia de estar compuesta de 13 caracteres. ej. 000-0000000-0');
         }
+        $("#telefono").inputmask({"mask": "999-999-9999"});
         </script>
 
 
