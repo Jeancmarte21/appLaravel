@@ -2,7 +2,7 @@
 
 namespace appVS\Http\Controllers;
 use Illuminate\Http\Request;
-use appVS\HTTP\Request;
+//use appVS\HTTP\Request;
 use appVS\HTTP\Controllers\Controller;
 use appVS\User;
 
@@ -25,7 +25,8 @@ $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
 
     public function index()
     {
-        //
+      $users = User::orderBy('id','desc')->paginate(10);
+      return view('admin.users.index')->with('users', $users);
     }
 
     /**
@@ -58,9 +59,10 @@ $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+      $user = User::find($user->id);
+      return view('admin.users.show', ['user'=>$user]);
     }
 
     /**
@@ -92,8 +94,13 @@ $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+      $users = User::find($user->id);
+      if($users->delete()){
+          return redirect()->route('users.index')
+          ->with('success', 'Usuario borrado correctamente');
+      }
+      return back()->with('errors', 'No se pudo borrar el Usuario');
     }
 }

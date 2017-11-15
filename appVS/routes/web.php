@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 
 Route::resource('empleados', 'EmpleadosController');
-
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');
@@ -31,6 +30,8 @@ Route::resource('entradas','EntradasController');
 Route::resource('users', 'UsersController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
+
+
 
 
 //});
