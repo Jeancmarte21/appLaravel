@@ -36,7 +36,7 @@
         <div class="form-group">
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
-      <input id="telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control">
+      <input id="telefono" name="telefono" type="tel" placeholder="Telefono" class="form-control" data-mask="000-000-0000">
       </div>
       </div>
 
