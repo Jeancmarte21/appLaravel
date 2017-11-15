@@ -14,7 +14,7 @@
       <div class="form-group">
           <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-credit-card"></i></span>
             <div class="col-md-8">
-                <input id="cedula" name="cedula" type="text" placeholder="Cedula: 000-0000000-0" class="form-control" pattern="{1,13}" required>
+                <input id="cedula" name="cedula" type="text" placeholder="Cedula" class="form-control" pattern="{1,13}"  data-mask="000-0000000-0" required>
             </div>
         </div>
 

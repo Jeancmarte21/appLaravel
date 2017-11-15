@@ -52,7 +52,7 @@
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    <li><a href="{{ route('register') }}">Registrar</a></li>
                 @else
                 <li class="dropdown user user-menu">
 
@@ -262,12 +262,12 @@
                 @include('partials.success')
                   	<div class="row">
 	                  	<div class="col-md-12">
-                        @if(Auth::user()->role_id==3)
-		                          <!--Contenido-->
-                              @yield('contenido')
-		                          <!--Fin Contenido-->
 
-                              @endif
+
+                              @yield('contenido')
+
+
+
                            </div>
                         </div>
 
