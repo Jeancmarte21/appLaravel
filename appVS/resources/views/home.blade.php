@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-2">
-            <div class="panel panel-default">
+            <div class="">
                 <div class="login-logo">
                 <img src="../img/logo.png" width="350" class="center-block img-responsive">
                 </div><!-- /.login-logo -->

@@ -240,40 +240,17 @@
         <!-- Main content -->
         <section class="content">
 
-          <div class="row">
-            <div class="col-md-12">
-              <div class="box">
-                <div class="box-header with-border">
-                  <h3 class="box-title">  <center>@yield('title','Default')</center></h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn btn-box-tool"><a href="{{ url()->previous() }}">Atras</a><i class=""></i></button>
 
-                   <!-- <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-
-                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
-
-
-                  </div>
-                </div>
-                <!-- /.box-header -->
-                <div class="box-body">
 
                 @include('partials.errors')
                 @include('partials.success')
-                  	<div class="row">
-	                  	<div class="col-md-12">
+
 		                          <!--Contenido-->
                               @yield('contenido')
 		                          <!--Fin Contenido-->
-                           </div>
-                        </div>
 
-                  		</div>
-                  	</div><!-- /.row -->
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+
+
 
         </section><!-- /.content -->
       </div><!-- /.content-wrapper -->
