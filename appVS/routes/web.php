@@ -14,9 +14,9 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/', function () {
-    return view('auth/empleados');
-});
+//Route::get('/', function () {
+//    return view('auth/empleados');
+//});
 
 Route::group(['middleware' => 'MDusuarioadmin'], function() {
 });
