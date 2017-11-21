@@ -19,7 +19,7 @@
 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
-    <link rel="shortcut icon" href="{{ asset('css/estilos.css') }}">
+    
 
 
 

@@ -14,16 +14,6 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-//Route::get('/', function () {
-//    return view('auth/empleados');
-//});
-
-Route::group(['middleware' => 'MDusuarioadmin'], function() {
-});
-
-Route::group(['middleware' => 'MDusuarioadmin'], function() {
-});
-
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');
