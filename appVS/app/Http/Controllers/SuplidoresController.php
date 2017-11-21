@@ -18,7 +18,7 @@ class SuplidoresController extends Controller
          $this->middleware('auth');
      }
 
-    public function index()
+    public function index(Request $request)
     {
 
         $request->user()->authorizeRoles(['user', 'admin']);

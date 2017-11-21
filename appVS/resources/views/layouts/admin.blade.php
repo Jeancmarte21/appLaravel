@@ -19,7 +19,7 @@
 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
-    
+
 
 
 
@@ -102,7 +102,7 @@
                 <i class="fa fa-home"></i> <span>Inico</span>
               </a>
             </li>
-
+       @if(Auth::user()->role_id==1)
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-user"></i> <span> Gestion Usuarios</span>
@@ -113,6 +113,8 @@
                 <li><a href="/users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
               </ul>
             </li>
+
+        @endif
 
             <li class="treeview">
             <a href="#">
