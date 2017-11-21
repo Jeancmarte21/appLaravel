@@ -13,10 +13,16 @@ class MaquinasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
-    public function index()
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
+
+    public function index(Request $request)
     {
-        //
+        $request->user()->authorizeRoles(['user', 'admin']);
         $maquinas = Maquina::all();
         return view('maquinas.index', ['maquinas'=>$maquinas]);
     }

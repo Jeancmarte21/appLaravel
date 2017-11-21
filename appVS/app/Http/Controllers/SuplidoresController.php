@@ -13,8 +13,15 @@ class SuplidoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index()
     {
+
+        $request->user()->authorizeRoles(['user', 'admin']);
         $suplidores = Suplidor::all();
         return view('suplidores.index', ['suplidores' => $suplidores]);
 

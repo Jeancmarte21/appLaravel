@@ -15,21 +15,20 @@ class EntradasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index(Request $request)
     {
-        //return view('entradas.index');
-      $entradas = Entrada::all();
+
+
+     $request->user()->authorizeRoles(['user', 'admin']);  
+     $entradas = Entrada::all();
      return view('entradas.index', ['entradas' => $entradas]);
-       /*   if ($request)
-        {
-            $query=trim($request->get('searchText'));
-            $entry=Entrada::all();
-            $entradas = $entry->materiasprimas->where('nombre', 'LIKE', '%'.query.'%')
-            ->orderBy('fecha','desc')
-            ->paginate(10);
-            return view('entradas.index',['entradas'=>$entradas,'searchText'=>$query]);
-        }
-        */
+
 
     }
 

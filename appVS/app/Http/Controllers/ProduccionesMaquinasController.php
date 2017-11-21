@@ -16,8 +16,17 @@ class ProduccionesMaquinasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+
     public function index(Request $request)
     {
+
+  $request->user()->authorizeRoles(['user', 'admin']);
+
      /* if ($request)
      {
          $query=trim($request->get('searchText'));
@@ -144,6 +153,6 @@ class ProduccionesMaquinasController extends Controller
             ->with('success', 'Produccion borrada correctamente');
         }
         return back()->with('errors', 'No se pudo borrar la Produccion');
-      
+
     }
 }

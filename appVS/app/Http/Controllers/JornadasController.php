@@ -16,10 +16,16 @@ class JornadasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+     public function __construct()
+     {
+         $this->middleware('auth');
+     }
+     
     public function index(Request $request)
     {
 
-
+      $request->user()->authorizeRoles(['user', 'admin']);
       $jornadas = Jornada::all();
       return view('jornadas.index', ['jornadas' => $jornadas]);
         /* if ($request)
