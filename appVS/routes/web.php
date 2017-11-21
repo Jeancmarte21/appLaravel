@@ -14,9 +14,17 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-//Route::group(['prefix' => 'admin'], function() {
+Route::get('/', function () {
+    return view('auth/empleados');
+});
 
+Route::group(['middleware' => 'MDusuarioadmin'], function() {
+});
 
+Route::group(['middleware' => 'MDusuarioadmin'], function() {
+});
+
+Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
@@ -27,14 +35,9 @@ Route::resource('jornadas', 'JornadasController');
 Route::resource('entradas', 'EntradasController');
 Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
-Route::resource('users', 'UsersController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
 
 
-
-
-//});
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('/home');
