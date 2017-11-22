@@ -52,12 +52,13 @@
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    <li><a href="{{ route('register') }}">Register</a></li>
+                    
+                    <li><a href="{{ route('register') }}">Registrar</a></li>
                 @else
                 <li class="dropdown user user-menu">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <small class="bg-green">Online</small>  {{ Auth::user()->name }} <span class="caret"></span>
+                    <small class="bg-green">online</small>  {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
 
                   <ul class="dropdown-menu" role="menu">

@@ -52,12 +52,13 @@
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
+                    
                     <li><a href="{{ route('register') }}">Registrar</a></li>
                 @else
                 <li class="dropdown user user-menu">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <small class="bg-green">Online</small>  {{ Auth::user()->name }} <span class="caret"></span>
+                    <small class="bg-green">online</small>  {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
@@ -102,7 +103,7 @@
                 <i class="fa fa-home"></i> <span>Inico</span>
               </a>
             </li>
-       @if(Auth::user()->role_id==1)
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-user"></i> <span> Gestion Usuarios</span>
@@ -114,7 +115,7 @@
               </ul>
             </li>
 
-        @endif
+
 
             <li class="treeview">
             <a href="#">

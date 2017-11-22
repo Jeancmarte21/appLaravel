@@ -4,6 +4,8 @@ namespace appVS;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use appVS\Notifications\MyResetPassword;
 
 class User extends Authenticatable
 {
@@ -17,6 +19,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name', 'email', 'password',
     ];
+
+
+public function sendPasswordResetNotification($token)
+{
+    $this->notify(new MyResetPassword($token));
+}
 
     /**
      * The attributes that should be hidden for arrays.
@@ -64,9 +72,4 @@ public function hasRole($role)
     return false;
 }
 
-
-
-  /*  public function role(){
-        return $this->belongsTo('AppVS\Role');
-    }*/
 }
