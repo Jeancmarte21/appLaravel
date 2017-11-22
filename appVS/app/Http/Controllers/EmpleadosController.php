@@ -3,6 +3,8 @@
 namespace appVS\Http\Controllers;
 use appVS\Empleado;
 use Illuminate\Http\Request;
+use appVS\Http\Requests;
+use appVS\Http\Requests\StoreEmpleado;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
@@ -47,7 +49,7 @@ class EmpleadosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEmpleado $request)
     {
 
            $empleado = Empleado::create([
