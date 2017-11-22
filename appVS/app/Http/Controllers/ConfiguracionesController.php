@@ -128,8 +128,8 @@ class ConfiguracionesController extends Controller
        // $configuracion = Configuracion::find($configuracion->idconfiguracion);
        // return view('configuraciones.show', ['configuracion'=>$configuracion]);
         $configuracion = Configuracion::find($configuracion);
-        $materiasprima = $configuracion->materiasprimas;
-        return view("configuraciones.show",['configuracion'=>$configuracion, 'materiasprimas'=> $materiasprima]);
+        //$materiasprima = $configuracion->materiasprimas;
+        return view("configuraciones.show",['configuracion'=>$configuracion]);
     }
 
     /**

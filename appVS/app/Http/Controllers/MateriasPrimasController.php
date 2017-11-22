@@ -71,7 +71,9 @@ class MateriasPrimasController extends Controller
     {
         //$materiaprima = MateriaPrima::find($materiaPrima->idmateriaPrima);
         //return view('materiasPrimas.show',['materiaPrima' => $materiaprima]);
-        return view("materiasPrimas.show",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
+        $empleado = MateriaPrima::find($idmateriaPrima);
+        return view('materiasPrimas.show', ['materiaPrima'=>$empleado]);
+       // return view("materiasPrimas.show",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
     }
 
     /**
