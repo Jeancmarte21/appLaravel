@@ -23,7 +23,7 @@
                             type="text"
                             placeholder="Cedula"
                             class="form-control"
-                            value="{{$empleado->cedula}}" disabled />
+                            value="{{$empleado->cedula}}"/>
                                 </div>
                             </div>
       <div class="form-group">

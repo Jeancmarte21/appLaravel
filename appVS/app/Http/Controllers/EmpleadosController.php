@@ -3,10 +3,9 @@
 namespace appVS\Http\Controllers;
 use appVS\Empleado;
 use Illuminate\Http\Request;
-use appVS\Http\Requests;
 use appVS\Http\Requests\StoreEmpleado;
+use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
-use DB;
 
 class EmpleadosController extends Controller
 {
@@ -105,11 +104,12 @@ class EmpleadosController extends Controller
      * @param  \appVS\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(UpdateEmpleado $request, Empleado $empleado)
     {
 
         $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)
             ->update([
+            'cedula' => $request->input('cedula'),
             'nombre' => $request->input('nombre'),
             'apellidos' => $request->input('apellidos'),
             'fecha_nacimiento' => $request->input('fecha_nacimiento'),
