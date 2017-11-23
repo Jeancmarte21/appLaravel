@@ -25,7 +25,7 @@
         <label class="col-xs-3 control-label">Categoria</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="categoria" >
-                <option value="{{$materiaPrima->idmateriaPrima}}">{{$materiaPrima->categoria}}</option>
+                <option value="{{$materiaPrima->categoria}}">{{$materiaPrima->categoria}}</option>
                 <option value="Tabaco">Tabaco</option>
                <option value="Saborizante">Saborizante</option>
                <option value="Pega">Pega</option>

@@ -20,8 +20,8 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="pago">
                 <option value="">Seleccione</option>
-                <option value="1">Producción</option>
-               <option value="0">Salario Fijo</option>
+                <option value=1>Producción</option>
+               <option value=0>Salario Fijo</option>
             </select>
         </div>
     </div>
