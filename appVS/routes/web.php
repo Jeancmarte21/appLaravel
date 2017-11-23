@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('register');
 });
 Route::post('register','UsersController@store');
-Route::get('/admin.users.index','UsersController@index');
+Route::get('/admin.users.show','UsersController@index');
 Route::get('/downloadPDF/{id}','UsersController@downloadPDF');
 
 Route::resource('users', 'UsersController');

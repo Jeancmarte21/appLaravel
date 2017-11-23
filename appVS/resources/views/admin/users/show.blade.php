@@ -30,11 +30,12 @@
   <td>
 
 
-
-<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar este Usuario?');
+<a href="{{action('UsersController@downloadPDF', $user->id)}}" class="btn btn-primary btn-xs">PDF</a>
+<a href="#" class="btn btn-danger btn btn-xs" onclick=" var result = confirm('Esta seguro de eliminar este Usuario?');
             if( result ){
             event.preventDefault();
            document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
   </td>
   </tr>
 

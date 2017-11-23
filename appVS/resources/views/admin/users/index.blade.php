@@ -32,7 +32,7 @@
 
     <a href="/users/{{$user->id}}"
               class="badge badge-info btn btn-primary">Ver</a>
-							<a href="{{action('UsersController@downloadPDF', $user->id)}}">PDF</a>
+							
 
   </tr>
 

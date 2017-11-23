@@ -115,6 +115,6 @@ public function __construct()
     public function downloadPDF($id){
      $user = User::find($id);
      $pdf = PDF::loadView('admin.users.pdf', compact('user'));
-     return $pdf->download('invoice.pdf');
+     return $pdf->download('usuarios.pdf');
    }
 }
