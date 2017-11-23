@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Crear Maquina')
+@section('title','Editar Maquina')
 @section('contenido')
 
   <div class="row">
@@ -23,8 +23,12 @@
                      <div class="form-group"> <!--Cambiar por radio Botton-->
         <label class="col-xs-3 control-label">Pago por:</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="pago" value="{{$maquina->nombre}}" selected>
-                <option value="">Seleccione</option>
+            <select class="form-control" name="pago">
+            @if($maquina->produccion == 1) 
+                <option value=1>Producción</option>
+            @else
+                <option value=0>Salario Fijo</option>
+            @endif
                 <option value="1">Producción</option>
                <option value="0">Salario Fijo</option>
             </select>
@@ -39,7 +43,7 @@
 
       <div class="form-group">
         <div class="col-md-12 text-center">
-          <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
+          <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
         </div>
       </div>
       </fieldset>

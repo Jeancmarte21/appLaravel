@@ -4,6 +4,7 @@ namespace appVS\Http\Controllers;
 
 use appVS\Maquina;
 use Illuminate\Http\Request;
+use appVS\Http\Requests\StoreMaquinaRequest;
 
 
 class MaquinasController extends Controller
@@ -44,7 +45,7 @@ class MaquinasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMaquinaRequest $request)
     {
 
             $maquina = Maquina::create([
@@ -93,7 +94,7 @@ class MaquinasController extends Controller
      * @param  \appVS\Maquina  $maquina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Maquina $maquina)
+    public function update(StoreMaquinaRequest $request, Maquina $maquina)
     {
         //
         $maquinaUpdate = Maquina::where('idmaquina', $maquina->idmaquina)
