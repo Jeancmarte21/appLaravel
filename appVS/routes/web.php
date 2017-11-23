@@ -14,11 +14,16 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+
+Route::get('/', function () {
+    return view('register');
+});
+Route::post('register','UsersController@store');
+Route::get('/admin.users.index','UsersController@index');
+Route::get('/downloadPDF/{id}','UsersController@downloadPDF');
+
 Route::resource('users', 'UsersController');
-
 Route::resource('empleados', 'EmpleadosController');
-
-
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 //use appVS\HTTP\Request;
 use appVS\HTTP\Controllers\Controller;
 use appVS\User;
+use PDF;
 
 
 class UsersController extends Controller
@@ -30,7 +31,7 @@ public function __construct()
 
     public function index(Request $request)
     {
-      
+
       $request->user()->authorizeRoles(['user','admin']);
       $users = User::orderBy('id','desc')->paginate(10);
       return view('admin.users.index')->with('users', $users);
@@ -110,4 +111,10 @@ public function __construct()
       }
       return back()->with('errors', 'No se pudo borrar el Usuario');
     }
+
+    public function downloadPDF($id){
+     $user = User::find($id);
+     $pdf = PDF::loadView('admin.users.pdf', compact('user'));
+     return $pdf->download('invoice.pdf');
+   }
 }
