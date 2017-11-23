@@ -4,7 +4,7 @@ namespace appVS\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSuplidorRequest extends FormRequest
+class UpdateEmpleadoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,11 @@ class StoreSuplidorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|max:45', 
-            'telefono'=>'regex:/[0-9]{3}-[0-9]{3}-[0-9]{4}/', 
-            'correo'=>'max:40|email', 
-            'pais'=>'required|alpha|max:30', 
+            'cedula'=>'required|Rule::unique('empleado')->ignore($empleado->cedula, 'cedula')|regex:/[0-9]{3}-[0-9]{7}-[0-9]{1}/',
+            'nombre'=>'required|alpha|max:25', 
+            'apellidos'=>'required|alpha|max:50', 
+            'fecha_nacimiento'=>'required|date|before:01/01/2005',
+            'telefono'=>'regex:/8[0-9]{2}-[0-9]{3}-[0-9]{4}/',
             'direccion'=>'max:256'
         ];
     }
