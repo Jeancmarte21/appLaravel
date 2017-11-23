@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreEmpleado;
 use Illuminate\Foundation\Http\UpdateEmpleadoRequest;
 use Illuminate\Support\Facades\Auth;
-use PDF;
+//use PDF;
 
 class EmpleadosController extends Controller
 {
@@ -141,6 +141,6 @@ class EmpleadosController extends Controller
 
     }
 
-  
+
 
 }
