@@ -4,7 +4,7 @@ namespace appVS\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreSuplidorRequest extends FormRequest
+class StoreMateriaPrimaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,11 +24,10 @@ class StoreSuplidorRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|max:45', 
-            'telefono'=>'regex:/[0-9]{3}-[0-9]{3}-[0-9]{4}/', 
-            'correo'=>'max:40|email', 
-            'pais'=>'required|alpha|max:30', 
-            'direccion'=>'max:256'
+            'nombre' => 'required|max:35',
+                'categoria' => 'required|alpha|max:12',
+                'porcentaje_pesohumedo' => "required_if:categoria,==,Tabaco|numeric|nullable",
+                'existencia_minima' => 'required|numeric'
         ];
     }
 }

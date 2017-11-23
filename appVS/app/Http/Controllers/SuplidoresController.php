@@ -3,6 +3,7 @@
 namespace appVS\Http\Controllers;
 use appVS\Suplidor;
 use Illuminate\Http\Request;
+use appVS\Http\Requests\StoreSuplidorRequest;
 use Illuminate\Support\Facades\Auth;
 use DB;
 
@@ -45,7 +46,7 @@ class SuplidoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSuplidorRequest $request)
     {
        $suplidor = Suplidor::create([
                 'nombre' => $request->input('nombre'),
@@ -96,7 +97,7 @@ class SuplidoresController extends Controller
      * @param  \appVS\Suplidor  $suplidor
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $suplidor)
+    public function update(StoreSuplidorRequest $request, $suplidor)
     {
         $suplidorUpdate = Suplidor::find($suplidor)
             ->update([

@@ -5,6 +5,7 @@ namespace appVS\Http\Controllers;
 use appVS\MateriaPrima;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use appVS\Http\Requests\StoreMateriaPrimaRequest;
 
 class MateriasPrimasController extends Controller
 {
@@ -43,7 +44,7 @@ class MateriasPrimasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreMateriaPrimaRequest $request)
     {
         $materiaPrima = MateriaPrima::create([
                 'nombre' => $request->input('nombre'),
@@ -83,8 +84,9 @@ class MateriasPrimasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($idmateriaPrima)
-    {
-          return view("materiasPrimas.edit",["materiaPrima"=>MateriaPrima::findOrFail($idmateriaPrima)]);
+    {     
+        $materiaprima = MateriaPrima::find($idmateriaPrima);
+        return view("materiasPrimas.edit",["materiaPrima"=> $materiaprima]);
     }
 
     /**
@@ -94,7 +96,7 @@ class MateriasPrimasController extends Controller
      * @param  \appVS\MateriaPrima  $materiaPrima
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $materiaPrima)
+    public function update(StoreMateriaPrimaRequest $request, $materiaPrima)
     {
         //
         $matprimUpdate = MateriaPrima::find($materiaPrima)
