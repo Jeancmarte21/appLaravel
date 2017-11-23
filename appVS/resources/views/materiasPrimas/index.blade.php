@@ -29,7 +29,7 @@
 						<a   
               				href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}"
               				class="badge badge-info btn btn-success">Ver</a>
-                         <a href="/salidas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-info">Editar</a>
+                         <a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
 				</tr>
 
