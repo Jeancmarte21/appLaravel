@@ -162,7 +162,8 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class, Collective\Html\HtmlServiceProvider::class,
+        Illuminate\View\ViewServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,Barryvdh\DomPDF\ServiceProvider::class,
 
         /*
          * Package Service Providers...
@@ -176,7 +177,7 @@ return [
         // appVS\Providers\BroadcastServiceProvider::class,
         appVS\Providers\EventServiceProvider::class,
         appVS\Providers\RouteServiceProvider::class,
-        
+
 
     ],
 

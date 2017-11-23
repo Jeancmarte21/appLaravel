@@ -15,7 +15,10 @@ Route::get('/', function () {
 });
 
 Route::resource('users', 'UsersController');
+
 Route::resource('empleados', 'EmpleadosController');
+
+
 Route::resource('suplidores','SuplidoresController');
 Route::resource('cigarros' , 'CigarrosController');
 Route::resource('materiasPrimas', 'MateriasPrimasController');

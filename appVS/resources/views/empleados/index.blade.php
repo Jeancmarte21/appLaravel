@@ -32,9 +32,10 @@
 
 
 					<td>
-            <a href="/empleados/{{$empleado->idempleado}}" class="badge badge-primary btn btn-primary">Ver</a>
-						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge badge-success btn btn-info">Editar</a>
+            <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-primary">Ver</a>
+						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-info">Editar</a>
 
+						
 					</td>
 				</tr>
 

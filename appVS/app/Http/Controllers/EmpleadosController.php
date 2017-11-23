@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreEmpleado;
 use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
+use PDF;
 
 class EmpleadosController extends Controller
 {
@@ -139,4 +140,7 @@ class EmpleadosController extends Controller
         return back()->with('errors', 'No se pudo borrar el Empleado');
 
     }
+
+  
+
 }
