@@ -26,7 +26,7 @@ class StoreCigarroRequest extends FormRequest
         return [
             'nombre'=>'required|max:45',
             'tipo_cigarro'=>'required|max:13', 
-            'saborizante'=>'required|numeric|exists:materiaPrima,idmateriaPrima'
+            'saborizante'=>'nullable|numeric|exists:materiaPrima,idmateriaPrima'
         ];
     }
 }

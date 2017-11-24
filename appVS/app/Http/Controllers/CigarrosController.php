@@ -89,11 +89,8 @@ class CigarrosController extends Controller
      */
      public function edit($idcigarro)
     {
-        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
-        $cigarro = DB::table('cigarro')
-        ->join('materiaPrima', 'cigarro.saborizante', '=', 'materiaPrima.idmateriaPrima')
-        ->select('cigarro.*', 'materiaPrima.nombre as aroma')
-        ->where('idcigarro', '=', '$idcigarro')->get();
+        $materiasprimas = MateriaPrima::where('categoria', 'like', 'Saborizante')->get();
+        $cigarro = Cigarro::find($idcigarro);
         return view('cigarros.edit', ['cigarro'=> $cigarro, 'materiasprimas'=>$materiasprimas]);
     }
 

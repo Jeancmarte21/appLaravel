@@ -27,8 +27,8 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="tipo_cigarro">
                 <option value="{{$cigarro->tipo}}" selected>{{$cigarro->tipo}}</option>
-                <option value="Fumas">Fumas</option>
-                <option value="Vitolas">Vitolas</option>
+                <option value="Fumas AMF">Fumas AMF</option>
+                <option value="Fumas Arenco">Fumas Arenco</option>
             </select>
         </div>
     </div>
@@ -40,7 +40,7 @@
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="saborizante">
                 <option value="">Sin Aroma</option>
-                <option value="{{$cigarro->saborizante}}" selected>{{$cigarro->aroma}}</option>
+                <option value="{{$cigarro->saborizante}}" selected>{{$cigarro->materiasprimas->nombre}}</option>
               @foreach($materiasprimas as $materiaprima)
                 <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
               @endforeach  
