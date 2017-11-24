@@ -5,6 +5,7 @@ namespace appVS\Http\Controllers;
 use appVS\Salida;
 use Illuminate\Http\Request;
 use appVS\MateriaPrima;
+use appVS\Http\Requests\StoreSalidaRequest;
 use DB;
 
 class SalidasController extends Controller
@@ -69,7 +70,7 @@ class SalidasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSalidaRequest $request)
     {
         $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),
@@ -116,7 +117,7 @@ class SalidasController extends Controller
      * @param  \appVS\Salida  $salida
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Salida $salida)
+    public function update(StoreSalidaRequest $request, Salida $salida)
     {
         //
         $salidaUpdate = Salida::where('idsalida', $salida->idsalida)

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use appVS\Configuracion;
 use appVS\Maquina;
 use appVS\Cigarro;
+use appVS\Http\Requests\StoreProduccionMaquinaRequest;
 use DB;
 
 class ProduccionesMaquinasController extends Controller
@@ -68,7 +69,7 @@ class ProduccionesMaquinasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProduccionMaquinaRequest $request)
     {
 
             $produccionMaquina = ProduccionMaquina::create([
@@ -121,7 +122,7 @@ class ProduccionesMaquinasController extends Controller
      * @param  \appVS\ProduccionMaquina  $produccionMaquina
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $produccionMaquina)
+    public function update(StoreProduccionMaquinaRequest $request, $produccionMaquina)
     {
         //
         $prodmaqUpdate = ProduccionMaquina::find($produccionMaquina)
