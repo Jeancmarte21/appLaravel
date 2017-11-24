@@ -6,6 +6,7 @@ use appVS\MateriaPrima;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use appVS\Http\Requests\StoreMateriaPrimaRequest;
+use PDF;
 
 class MateriasPrimasController extends Controller
 {
@@ -84,7 +85,7 @@ class MateriasPrimasController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($idmateriaPrima)
-    {     
+    {
         $materiaprima = MateriaPrima::find($idmateriaPrima);
         return view("materiasPrimas.edit",["materiaPrima"=> $materiaprima]);
     }
@@ -127,4 +128,11 @@ class MateriasPrimasController extends Controller
       }
       return back()->with('errors', 'No se pudo borrar la Materia Prima');
     }
+
+    public function downloadPDF(){
+
+     $materiaPrima =MateriaPrima::all();
+     $pdf = PDF::loadView('materiasPrimas.pdf', compact('materiaPrima'));
+     return $pdf->download('materia_prima.pdf');
+   }
 }
