@@ -4,7 +4,7 @@ namespace appVS\Http\Controllers;
 use appVS\Empleado;
 use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreEmpleado;
-use Illuminate\Foundation\Http\UpdateEmpleadoRequest;
+use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
 //use PDF;
 
@@ -105,7 +105,7 @@ class EmpleadosController extends Controller
      * @param  \appVS\Empleado  $empleado
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEmpleadoRequest $request, Empleado $empleado)
+    public function update(UpdateEmpleado $request, Empleado $empleado)
     {
 
         $empleadoUpdate = Empleado::where('idempleado', $empleado->idempleado)

@@ -4,7 +4,7 @@ namespace appVS\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreEntradaRequest extends FormRequest
+class StoreEntradasRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreEntradaRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,11 +24,7 @@ class StoreEntradaRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|numeric|exists:materiaPrima,idmateriaPrima',
-                'precio' => 'required|numeric|max:13',
-                'cantidad' => 'required|numeric|max:13',
-                'fecha' => 'required|date|date_equals:today', 
-                'suplidor' => 'required|numeric|exists:suplidor,idsuplidor'
+            //
         ];
     }
 }

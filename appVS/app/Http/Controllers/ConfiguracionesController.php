@@ -7,6 +7,7 @@ use appVS\ConfiguracionMateriaPrima;
 use appVS\Cigarro;
 use DB;
 use Illuminate\Http\Request;
+use appVS\Http\Requests\StoreConfiguracionRequest;
 
 class ConfiguracionesController extends Controller
 {
@@ -49,7 +50,7 @@ class ConfiguracionesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreConfiguracionRequest $request)
     {
         $cigarro = Cigarro::find($request->input('cigarro'));
        if(strcmp($cigarro->tipo,'Fumas AMF') == 0){

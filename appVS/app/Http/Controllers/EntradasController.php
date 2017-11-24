@@ -6,6 +6,7 @@ use appVS\Entrada;
 use appVS\Suplidor;
 use appVS\MateriaPrima;
 use Illuminate\Http\Request;
+use appVS\Http\Requests\StoreEntradaRequest;
 use DB;
 
 class EntradasController extends Controller
@@ -51,7 +52,7 @@ class EntradasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEntradaRequest $request)
     {
         $entrada = Entrada::create([
                 'materiaprima_id' => $request->input('nombre'),
@@ -85,7 +86,7 @@ class EntradasController extends Controller
      * @param  \appVS\Entrada  $entrada
      * @return \Illuminate\Http\Response
      */
-    public function edit(Entrada $entrada)
+    public function edit(StoreEntradaRequest $entrada)
     {
       $entrada = Entrada::find($entrada->identrada);
       $materiasprimas = MateriaPrima::all();
