@@ -25,8 +25,8 @@ class StoreEntradaRequest extends FormRequest
     {
         return [
             'nombre' => 'required|numeric|exists:materiaPrima,idmateriaPrima',
-                'precio' => 'required|numeric|max:13',
-                'cantidad' => 'required|numeric|max:13',
+                'precio' => 'required|numeric',
+                'cantidad' => 'required|numeric',
                 'fecha' => 'required|date|date_equals:today', 
                 'suplidor' => 'required|numeric|exists:suplidor,idsuplidor'
         ];

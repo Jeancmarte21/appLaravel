@@ -27,4 +27,8 @@ class Configuracion extends Model
     {
         return $this->hasMany('appVS\ConfiguracionMateriaPrima', 'configuracion_id');
     }
+
+    public function cigarros(){
+        return $this->belongsTo('appVS\Cigarro', 'cigarro_id');
+    }
 }

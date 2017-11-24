@@ -59,7 +59,7 @@
             <select class="form-control" name="suplidor">
                 <option value="">Seleccione</option>
                 @foreach($suplidores as $suplidor)
-                <option value="{{$suplidor->id}}">{{$suplidor->nombre}}</option>
+                <option value="{{$suplidor->idsuplidor}}">{{$suplidor->nombre}}</option>
               @endforeach
             </select>
         </div>

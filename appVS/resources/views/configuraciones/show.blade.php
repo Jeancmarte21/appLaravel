@@ -32,6 +32,7 @@
 					<td>{{$configuracion->idconfiguracion}}</td>
 					<td>{{$configuracion->fecha}}</td>
 					<td>{{$configuracion->nombre}}</td>
+					<td>{{$configuracion->cigarros->nombre}}</td>
 					@foreach($configuracion->configuracionesmateriasprimas as $confi)
 					<td>{{$confi->materiasprimas->nombre}}</td>
 					@endforeach
