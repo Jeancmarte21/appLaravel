@@ -37,7 +37,7 @@
 
 				@endforeach
 				</table>
-				<h3 ALIGN=right><a href="{{action('MateriasPrimasController@downloadPDF')}}" ><button class="btn btn-danger btn-xs">Generar Reporte PDF</button></a></h3>
+				<h3 ALIGN=right><a href="{{action('MateriasPrimasController@downloadPDF')}}" ><button class="btn btn-default btn-xs">Generar Reporte PDF</button></a></h3>
   	</div>
 </div>
 </div>

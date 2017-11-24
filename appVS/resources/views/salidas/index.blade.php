@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/salidas/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVA SALIDA</button></a></h3>
+		<h3><a href="/salidas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA SALIDA</button></a></h3>
 
 	</div>
 </div>
@@ -16,19 +16,19 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th  ALIGN=center>ID</th>
-					<th  ALIGN=center>FECHA</th>
-					<th  ALIGN=center>NOMBRE</th>
-					<th  ALIGN=center>CANTIDAD</th>
+					<th>ID</th>
+					<th>FECHA</th>
+					<th>NOMBRE</th>
+					<th>CANTIDAD</th>
 
-					<th  ALIGN=center>OPCIONES</th>
+					<th>OPCIONES</th>
 				</thead>
 				@foreach ($salidas as $salida)
 				<tr>
-					<td  ALIGN=center>{{ $salida->idsalida}}</td>
-					<td  ALIGN=center>{{ $salida->fecha}}</td>
-					<td  ALIGN=center>{{ $salida->materiasprimas->nombre}}</td>
-					<td  ALIGN=center>{{ $salida->cantidad}}</td>
+					<td>{{ $salida->idsalida}}</td>
+					<td>{{ $salida->fecha}}</td>
+					<td>{{ $salida->materiasprimas->nombre}}</td>
+					<td>{{ $salida->cantidad}}</td>
 
 
 					<td>

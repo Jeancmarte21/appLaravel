@@ -1,4 +1,4 @@
-  ALIGN=center@extends('layouts.admin')
+@extends('layouts.admin')
 @section('title','Informacion Suplidor')
 @section('contenido')
 
@@ -15,22 +15,22 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th  ALIGN=center>ID</th>
-					<th  ALIGN=center>NOMBRE</th>
-					<th  ALIGN=center>TELEFONO</th>
-					<th  ALIGN=center>CORREO</th>
-					<th  ALIGN=center>DIRECCIÓN</th>
+					<th>ID</th>
+					<th>NOMBRE</th>
+					<th>TELEFONO</th>
+					<th>CORREO</th>
+					<th>DIRECCIÓN</th>
 
-					<th  ALIGN=center>OPCIONES</th>
+					<th>OPCIONES</th>
 				</thead>
 
 
 				<tr>
-					<td  ALIGN=center>{{$suplidor->idsuplidor}}</td>
-					<td  ALIGN=center>{{$suplidor->nombre}}</td>
-					<th  ALIGN=center>{{$suplidor->telefono}}</th>
-					<th  ALIGN=center>{{$suplidor->correo}}</th>
-					<th  ALIGN=center>{{$suplidor->direccion}}</th>
+					<td>{{$suplidor->idsuplidor}}</td>
+					<td>{{$suplidor->nombre}}</td>
+					<th>{{$suplidor->telefono}}</th>
+					<th>{{$suplidor->correo}}</th>
+					<th>{{$suplidor->direccion}}</th>
 
 
 					<td>

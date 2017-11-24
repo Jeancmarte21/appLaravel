@@ -15,21 +15,21 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th  ALIGN=center>FECHA</th>
-					<th  ALIGN=center>MAQUINA</th>
-					<th  ALIGN=center>EMPLEADO</th>
-					<th  ALIGN=center>INCENTIVO</th>
-					<th  ALIGN=center>HORAS EXTRAS</th>
-					<th  ALIGN=center>OPCIONES</th>
+					<th>FECHA</th>
+					<th>MAQUINA</th>
+					<th>EMPLEADO</th>
+					<th>INCENTIVO</th>
+					<th>HORAS EXTRAS</th>
+					<th>OPCIONES</th>
 				</thead>
 
 
 				<tr>
-					<td  ALIGN=center>{{ $jornada->fecha}}</td>
-					<td  ALIGN=center>{{ $jornada->maquinas->nombre}}</td>
-					<td  ALIGN=center>{{ $jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</td>
-					<td  ALIGN=center>{{ $jornada->incentivo}}</td>
-					<td  ALIGN=center>{{ $jornada->hora_extra}}</td>
+					<td>{{ $jornada->fecha}}</td>
+					<td>{{ $jornada->maquinas->nombre}}</td>
+					<td>{{ $jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</td>
+					<td>{{ $jornada->incentivo}}</td>
+					<td>{{ $jornada->hora_extra}}</td>
 
 
 

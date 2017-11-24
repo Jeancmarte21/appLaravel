@@ -15,19 +15,19 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th  ALIGN=center>ID</th>
-					<th  ALIGN=center>MATERIA PRIMA</th>
-					<th  ALIGN=center>CANTIDAD</th>
-					<th  ALIGN=center>FECHA SALIDA</th>
-					<th  ALIGN=center>ACCION</th>
+					<th>ID</th>
+					<th>MATERIA PRIMA</th>
+					<th>CANTIDAD</th>
+					<th>FECHA SALIDA</th>
+					<th>ACCION</th>
 				</thead>
 
 
 				<tr>
-					<td  ALIGN=center>{{$salida->idsalida}}</td>
-					<td  ALIGN=center>{{$salida->materiasprimas->nombre}}</td>
-					<td  ALIGN=center>{{$salida->cantidad.' Lbs'}}</td>
-					<td  ALIGN=center>{{$salida->fecha}}</td>
+					<td>{{$salida->idsalida}}</td>
+					<td>{{$salida->materiasprimas->nombre}}</td>
+					<td>{{$salida->cantidad.' Lbs'}}</td>
+					<td>{{$salida->fecha}}</td>
 
 
 

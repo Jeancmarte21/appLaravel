@@ -15,16 +15,16 @@
 <table class="table">
   <thead>
 
-    <th  ALIGN=center>NOMBRE</th>
+    <th>NOMBRE</th>
 
 
-    <th  ALIGN=center>ACCION</th>
+    <th>ACCION</th>
   </thead>
 
   @foreach($users as $user)
   <tr>
 
-  <td  ALIGN=center>{{$user->name}}</td>
+  <td>{{$user->name}}</td>
 
 
   <td>

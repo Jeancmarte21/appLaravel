@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/jornadas/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVA JORNADA</button></a></h3>
+		<h3><a href="/jornadas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA JORNADA</button></a></h3>
 
 	</div>
 </div>
@@ -17,17 +17,17 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 
-					<th  ALIGN=center>FECHA</th>
-					<th  ALIGN=center>EMPLEADO</th>
-					<th  ALIGN=center>OPCIONES</th>
+					<th>FECHA</th>
+					<th>EMPLEADO</th>
+					<th>OPCIONES</th>
 
 				</thead>
             @foreach ($jornadas as $jornada)
 				<tr>
 
-					<td  ALIGN=center>{{ $jornada->fecha}}</td>
+					<td>{{ $jornada->fecha}}</td>
 
-					<td  ALIGN=center>{{ $jornada->empleados->nombre}}</td>
+					<td>{{ $jornada->empleados->nombre}}</td>
 
 
 
