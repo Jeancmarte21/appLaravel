@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/empleados/create"><button class="btn btn-primary btn btn-md">CREAR NUEVO EMPLEADO</button></a></h3>
+		<h3><a href="/empleados/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVO EMPLEADO</button></a></h3>
 
 	</div>
 </div>
@@ -35,7 +35,7 @@
             <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-primary">Ver</a>
 						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-info">Editar</a>
 
-						
+
 					</td>
 				</tr>
 
