@@ -14,11 +14,13 @@ table, th, td {
 
     <h1 ALIGN=center>Reporte Información de Usuario</h1><br><br><br>
     <table style="width:100%">
+
+
       <tr>
         <th ALIGN=center>ID</th>
         <th ALIGN=center>Nombre</th>
         <th ALIGN=center>Correo</th>
-        <th ALIGN=center>Role</th>
+        <th ALIGN=center>Rol</th>
       </tr>
 
       <tr>

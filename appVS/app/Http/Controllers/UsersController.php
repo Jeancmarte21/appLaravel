@@ -33,6 +33,7 @@ public function __construct()
     {
 
       $request->user()->authorizeRoles(['user','admin']);
+
       $users = User::orderBy('id','desc')->paginate(10);
       return view('admin.users.index')->with('users', $users);
     }
@@ -113,6 +114,7 @@ public function __construct()
     }
 
     public function downloadPDF($id){
+
      $user = User::find($id);
      $pdf = PDF::loadView('admin.users.pdf', compact('user'));
      return $pdf->download('usuarios.pdf');

@@ -32,13 +32,13 @@
 
     <a href="/users/{{$user->id}}"
               class="badge badge-info btn btn-primary">Ver</a>
-							
+
 
   </tr>
 
   @endforeach
 
-
+<a href="{{action('UsersController@downloadPDF', $user->id)}}" class="btn btn-primary btn-xs">Generar Reporte PDF</a>
 </table>
 
 </div>

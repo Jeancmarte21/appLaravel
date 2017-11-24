@@ -30,7 +30,7 @@
   <td>
 
 
-<a href="{{action('UsersController@downloadPDF', $user->id)}}" class="btn btn-primary btn-xs">PDF</a>
+
 <a href="#" class="btn btn-danger btn btn-xs" onclick=" var result = confirm('Esta seguro de eliminar este Usuario?');
             if( result ){
             event.preventDefault();
