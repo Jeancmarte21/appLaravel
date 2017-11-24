@@ -7,6 +7,7 @@ use appVS\Empleado;
 use appVS\Maquina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use appVS\Http\Requests\StoreJornadaRequest;
 use DB;
 
 class JornadasController extends Controller
@@ -61,7 +62,7 @@ class JornadasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreJornadaRequest $request)
     {
        $jornada = Jornada::create([
                 'maquina_id' => $request -> input('maquina'),
@@ -112,7 +113,7 @@ class JornadasController extends Controller
      * @param  \appVS\Jornada  $jornada
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$jornada)
+    public function update(StoreJornadaRequest $request,$jornada)
     {
       $jornadaUpdate = Jornada::find($jornada)
           ->update([

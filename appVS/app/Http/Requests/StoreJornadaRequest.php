@@ -4,7 +4,7 @@ namespace appVS\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CigarroFormRequest extends FormRequest
+class StoreJornadaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,11 @@ class CigarroFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre'=>'required|max:50','tipo_cigarro'=>'required|max:50', 'materiaPrima_idmateriaPrima'=>'required|max:50'
+                'maquina' => 'required|numeric|exists:maquina,idmaquina',
+                'empleado' => 'required|numeric|exists:empleado,idempleado',
+                'incentivo' => 'nullable|digits_between:1,3',
+                'hora_extra' => 'nullable|digits:1',
+                'fecha' => 'required|date',
         ];
     }
 }
