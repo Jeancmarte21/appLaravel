@@ -54,6 +54,7 @@
                     <li><a href="{{ route('login') }}">Login</a></li>
 
                     <li><a href="{{ route('register') }}">Registrar</a></li>
+                
                 @else
                 <li class="dropdown user user-menu">
 
@@ -63,7 +64,7 @@
 
                   <ul class="dropdown-menu" role="menu">
                     <li><a>Estado:<small class="bg-green">online</small> </a></li>
-                    
+
                       <li>
                           <a href="{{ route('logout') }}"
                               onclick="event.preventDefault();
@@ -112,6 +113,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+
+                <li><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Registrar</a></li>
 
                 <li><a href="/users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
               </ul>

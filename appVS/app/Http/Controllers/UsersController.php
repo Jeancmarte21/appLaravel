@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 //use appVS\HTTP\Request;
 use appVS\HTTP\Controllers\Controller;
 use appVS\User;
-use PDF;
+
 
 
 class UsersController extends Controller
@@ -113,10 +113,5 @@ public function __construct()
       return back()->with('errors', 'No se pudo borrar el Usuario');
     }
 
-    public function downloadPDF(){
 
-     $user = User::all();
-     $pdf = PDF::loadView('admin.users.pdf', compact('user'));
-     return $pdf->download('usuarios.pdf');
-   }
 }
