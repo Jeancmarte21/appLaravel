@@ -37,7 +37,7 @@
             <option value="">Seleccione</option>
             <option value="">Sin Aroma</option>
               @foreach($materiasprimas as $materiaprima)
-                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
+                <option value={{$materiaprima->idmateriaPrima}}>{{$materiaprima->nombre}}</option>
               @endforeach
             </select>
         </div>

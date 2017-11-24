@@ -6,6 +6,7 @@ use appVS\Cigarro;
 use appVS\MateriaPrima;
 use DB;
 use Illuminate\Http\Request;
+use appVS\Http\Requests\StoreCigarroRequest;
 
 class CigarrosController extends Controller
 {
@@ -45,7 +46,7 @@ class CigarrosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCigarroRequest $request)
     {
      $cigarro = Cigarro::create([
 
@@ -103,7 +104,7 @@ class CigarrosController extends Controller
      * @param  \appVS\Cigarro  $cigarro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $cigarro)
+    public function update(StoreCigarroRequest $request, $cigarro)
     {
         //
         $cigarroUpdate = Cigarro::find($cigarro)
