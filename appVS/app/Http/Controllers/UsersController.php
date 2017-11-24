@@ -113,9 +113,9 @@ public function __construct()
       return back()->with('errors', 'No se pudo borrar el Usuario');
     }
 
-    public function downloadPDF($id){
+    public function downloadPDF(){
 
-     $user = User::find($id);
+     $user = User::all();
      $pdf = PDF::loadView('admin.users.pdf', compact('user'));
      return $pdf->download('usuarios.pdf');
    }

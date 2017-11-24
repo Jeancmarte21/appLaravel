@@ -38,7 +38,7 @@
 
   @endforeach
 
-<a href="{{action('UsersController@downloadPDF', $user->id)}}" class="btn btn-primary btn-xs">Generar Reporte PDF</a>
+<a href="{{action('UsersController@downloadPDF')}}" class="btn btn-primary btn-xs">Generar Reporte PDF</a>
 </table>
 
 </div>

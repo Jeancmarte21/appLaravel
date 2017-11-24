@@ -1,4 +1,5 @@
 <!-- pdf.blade.php -->
+<?php $fecha = date('d-m-Y');?>
 <!DOCTYPE html>
 <html>
 <style>
@@ -21,34 +22,17 @@ table, th, td {
         <th ALIGN=center>Nombre</th>
         <th ALIGN=center>Correo</th>
         <th ALIGN=center>Rol</th>
+        <th ALIGN=center>{{$fecha}}</th>
       </tr>
-
+      @foreach($user as $usuario)
       <tr>
-        <td ALIGN=center>{{$user->id}}</td>
-        <td ALIGN=center>{{$user->name}}</td>
-        <td ALIGN=center>{{$user->email}}</td>
-        <td ALIGN=center>{{$user->roles[0]->name}}</td>
+        <td ALIGN=center>{{$usuario->id}}</td>
+        <td ALIGN=center>{{$usuario->name}}</td>
+        <td ALIGN=center>{{$usuario->email}}</td>
+        <td ALIGN=center>{{$usuario->roles[0]->name}}</td>
       </tr>
-
+      @endforeach
     </table>
   </body>
 </html>
 
-
-<table style="width:100%">
-  <tr>
-    <th>Firstname</th>
-    <th>Lastname</th>
-    <th>Age</th>
-  </tr>
-  <tr>
-    <td>Jill</td>
-    <td>Smith</td>
-    <td>50</td>
-  </tr>
-  <tr>
-    <td>Eve</td>
-    <td>Jackson</td>
-    <td>94</td>
-  </tr>
-</table>
