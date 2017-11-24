@@ -5,8 +5,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		
-		
+
+
 	</div>
 </div>
 
@@ -15,22 +15,22 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>TIPO CIGARRO</th>
-					<th>AROMA</th>
-					<th>ACCION</th>
-					
+					<th  ALIGN=center>ID</th>
+					<th  ALIGN=center>NOMBRE</th>
+					<th  ALIGN=center>TIPO CIGARRO</th>
+					<th  ALIGN=center>AROMA</th>
+					<th  ALIGN=center>ACCION</th>
+
 				</thead>
 
 					<tr>
-					<td>{{$cigarro->idcigarro}}</td>
-					<th>{{$cigarro->nombre}}</th>
-					<td>{{$cigarro->tipo}}</td>
+					<td  ALIGN=center>{{$cigarro->idcigarro}}</td>
+					<th  ALIGN=center>{{$cigarro->nombre}}</th>
+					<td  ALIGN=center>{{$cigarro->tipo}}</td>
 					@if($cigarro->saborizante != null)
-					<td>{{$cigarro->materiasprimas->nombre}}</td>
+					<td  ALIGN=center>{{$cigarro->materiasprimas->nombre}}</td>
 					@else
-					<td>Sin Aroma</td>
+					<td  ALIGN=center>Sin Aroma</td>
 					@endif
 					<td>
 
@@ -41,15 +41,15 @@
 
 				</td>
 				</tr>
-			
+
 
 			</table>
 		</div>
-		
+
 	</div>
 </div>
 
- <form id="delete-form" action="{{ route('cigarros.destroy',[$cigarro->idcigarro]) }}" 
+ <form id="delete-form" action="{{ route('cigarros.destroy',[$cigarro->idcigarro]) }}"
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}

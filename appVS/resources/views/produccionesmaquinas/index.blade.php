@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/produccionesmaquinas/create"><button class="btn btn-primary btn btn-md">CREAR NUEVA PRODUCCIÓN DE MAQUINA</button></a></h3>
+		<h3><a href="/produccionesmaquinas/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVA PRODUCCIÓN DE MAQUINA</button></a></h3>
 
 	</div>
 </div>
@@ -17,18 +17,18 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 
-					<th>FECHA & HORA</th>
-					<th>MAQUINA</th>
-          <th>CANTIDAD</th>
-					<th>OPCIONES</th>
+					<th  ALIGN=center>FECHA & HORA</th>
+					<th  ALIGN=center>MAQUINA</th>
+          <th  ALIGN=center>CANTIDAD</th>
+					<th  ALIGN=center>OPCIONES</th>
 				</thead>
 
 				@foreach ($produccionMaq as $produccionMaquina)
     	<tr>
 
-      <td>{{ $produccionMaquina->fecha}}</td>
-      <td>{{ $produccionMaquina->maquinas->nombre}}</td>
-			<td>{{ $produccionMaquina->cantidad}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->fecha}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->maquinas->nombre}}</td>
+			<td  ALIGN=center>{{ $produccionMaquina->cantidad}}</td>
 
 
 

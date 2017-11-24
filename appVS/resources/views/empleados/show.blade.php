@@ -15,26 +15,26 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>CEDULA</th>
-					<th>NOMBRES</th>
-					<th>APELLIDOS</th>
-					<th>TELEFONO</th>
-					<th>FECHA NACIMIENTO</th>
-					<th>DIRECCIÓN</th>
+					<th  ALIGN=center>ID</th>
+					<th  ALIGN=center>CEDULA</th>
+					<th  ALIGN=center>NOMBRES</th>
+					<th  ALIGN=center>APELLIDOS</th>
+					<th  ALIGN=center>TELEFONO</th>
+					<th  ALIGN=center>FECHA NACIMIENTO</th>
+					<th  ALIGN=center>DIRECCIÓN</th>
 
 					<th>OPCIONES</th>
 				</thead>
 
 
 				<tr>
-					<td>{{$empleado->idempleado}}</td>
-					<th>{{$empleado->cedula}}</th>
-					<td>{{$empleado->nombre}}</td>
-					<td>{{$empleado->apellidos}}</td>
-					<th>{{$empleado->telefono}}</th>
-					<th>{{$empleado->fecha_nacimiento}}</th>
-					<th>{{$empleado->direccion}}</th>
+					<td  ALIGN=center>{{$empleado->idempleado}}</td>
+					<th  ALIGN=center>{{$empleado->cedula}}</th>
+					<td  ALIGN=center>{{$empleado->nombre}}</td>
+					<td  ALIGN=center>{{$empleado->apellidos}}</td>
+					<th  ALIGN=center>{{$empleado->telefono}}</th>
+					<th  ALIGN=center>{{$empleado->fecha_nacimiento}}</th>
+					<th  ALIGN=center>{{$empleado->direccion}}</th>
 
 
 					<td>

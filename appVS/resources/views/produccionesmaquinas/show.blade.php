@@ -15,20 +15,20 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>FECHA & HORA</th>
-					<th>MAQUINA</th>
-					<th>CIGARRO</th>
-					<th>CONFIGURACIÓN</th>
+					<th  ALIGN=center>FECHA & HORA</th>
+					<th  ALIGN=center>MAQUINA</th>
+					<th  ALIGN=center>CIGARRO</th>
+					<th  ALIGN=center>CONFIGURACIÓN</th>
           			<th>CANTIDAD</th>
 					<th>OPCIONES</th>
 				</thead>
     <tr>
 
-      <td>{{ $produccionMaquina->fecha}}</td>
-      <td>{{ $produccionMaquina->maquinas->nombre}}</td>
-      <td>{{ $produccionMaquina->cigarros->nombre}}</td>
-      <td>{{ $produccionMaquina->configuraciones->nombre}}</td>
-      <td>{{ $produccionMaquina->cantidad}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->fecha}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->maquinas->nombre}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->cigarros->nombre}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->configuraciones->nombre}}</td>
+      <td  ALIGN=center>{{ $produccionMaquina->cantidad}}</td>
       <td>
 					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Produccion de Maquina?');
 																	if( result ){

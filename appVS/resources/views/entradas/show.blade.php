@@ -14,24 +14,24 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-          <th>FECHA ENTRADA</th>
-					<th>MATERIA PRIMA</th>
-          <th>PRECIO</th>
-					<th>CANTIDAD</th>
-          <th>SUPLIDOR</th>
+					<th  ALIGN=center>ID</th>
+          <th  ALIGN=center>FECHA ENTRADA</th>
+					<th  ALIGN=center>MATERIA PRIMA</th>
+          <th  ALIGN=center>PRECIO</th>
+					<th  ALIGN=center>CANTIDAD</th>
+          <th  ALIGN=center>SUPLIDOR</th>
 
 					<th>ACCION</th>
 				</thead>
 
 
         <tr>
-          <td>{{ $entrada->identrada}}</td>
-					<td>{{ $entrada->fecha}}</td>
-					<td>{{ $entrada->materiasprimas->nombre}}</td>
-					<td>{{ $entrada->precio}}</td>
-					<td>{{ $entrada->cantidad}}</td>
-					<td>{{ $entrada->suplidores->nombre}}</td>
+          <td  ALIGN=center>{{ $entrada->identrada}}</td>
+					<td  ALIGN=center>{{ $entrada->fecha}}</td>
+					<td  ALIGN=center>{{ $entrada->materiasprimas->nombre}}</td>
+					<td  ALIGN=center>{{ $entrada->precio}}</td>
+					<td  ALIGN=center>{{ $entrada->cantidad}}</td>
+					<td  ALIGN=center>{{ $entrada->suplidores->nombre}}</td>
 
 
 
