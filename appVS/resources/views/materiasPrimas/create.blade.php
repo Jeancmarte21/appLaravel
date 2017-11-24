@@ -31,7 +31,7 @@
         <div class="col-xs-5 inputGroupContainer">
             <div class="input-group">
 
-                <input type="number" class="form-control" name="porcentaje_pesohumedo" min="0" data-number-to-fixed="2" data-number-stepfactor="100" step="0.1"/>
+                <input type="number" class="form-control" name="porcentaje_pesohumedo" value="0" min="0" data-number-to-fixed="2" data-number-stepfactor="100" step="0.1"/>
                 <span class="input-group-addon">%</span>
 
             </div>

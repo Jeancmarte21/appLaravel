@@ -14,7 +14,7 @@ table, th, td {
   <body>
 
   <div><h2 ALIGN=center>EMPRESAS VICTOR SINCLAIR DOM.</h2>
-  <h3  ALIGN=center><strong>Reporte de Materia Prima</strong></h3></div><br>
+  <h3  ALIGN=center><strong>Reporte de Suplidores</strong></h3></div><br>
   <div><h4 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h4></div><br><br>
 
     <table style="width:100%">
@@ -23,18 +23,18 @@ table, th, td {
       <tr>
         <th ALIGN=center>ID</th>
         <th ALIGN=center>NOMBRE</th>
-        <th ALIGN=center>CATEGORIA</th>
-        <th ALIGN=center>% PESO HUMEDO</th>
-        <th ALIGN=center>EXISTENCIA MINIMA</th>
+        <th ALIGN=center>TELEFONO</th>
+        <th ALIGN=center>CORREO</th>
+        <th ALIGN=center>DIRECCION</th>
 
       </tr>
-      @foreach($materiaPrima as $materiaP)
+      @foreach($suplidor as $sup)
       <tr>
-        <td ALIGN=center>{{$materiaP->idmateriaPrima}}</td>
-        <td ALIGN=center>{{$materiaP->nombre}}</td>
-        <td ALIGN=center>{{$materiaP->categoria}}</td>
-        <td ALIGN=center>{{$materiaP->porcentaje_pesohumedo}}</td>
-        <td ALIGN=center>{{$materiaP->existencia_minima}}</td>
+        <td ALIGN=center>{{$sup->idsuplidor}}</td>
+        <td ALIGN=center>{{$sup->nombre}}</td>
+        <td ALIGN=center>{{$sup->telefono}}</td>
+        <td ALIGN=center>{{$sup->correo}}</td>
+        <td ALIGN=center>{{$sup->direccion}}</td>
       </tr>
       @endforeach
     </table>

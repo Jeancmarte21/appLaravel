@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreSuplidorRequest;
 use Illuminate\Support\Facades\Auth;
 use DB;
+use PDF;
 
 class SuplidoresController extends Controller
 {
@@ -129,4 +130,11 @@ class SuplidoresController extends Controller
       }
       return back()->with('errors', 'No se pudo borrar el Suplidor');
     }
+
+    public function downloadPDF(){
+
+     $suplidor =Suplidor::all();
+     $pdf = PDF::loadView('suplidores.pdf', compact('suplidor'));
+     return $pdf->download('suplidor.pdf');
+   }
 }

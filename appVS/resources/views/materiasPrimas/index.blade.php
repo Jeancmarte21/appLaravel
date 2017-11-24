@@ -4,10 +4,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/materiasPrimas/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVA</button></a></h3>
-
-
-
+		<h3><a href="/materiasPrimas/create"><button class="btn btn-primary btn btn-xs">Crear Nueva Materia Prima</button></a></h3>
+    
 	</div>
 </div>
 
@@ -37,7 +35,7 @@
 
 				@endforeach
 				</table>
-				<h3 ALIGN=right><a href="{{action('MateriasPrimasController@downloadPDF')}}" ><button class="btn btn-default btn-xs">Generar Reporte PDF</button></a></h3>
+<h3 ALIGN=right><a href="{{action('MateriasPrimasController@downloadPDF')}}" ><button class="btn btn-danger btn-xs">Generar Reporte PDF</button></a></h3>
   	</div>
 </div>
 </div>

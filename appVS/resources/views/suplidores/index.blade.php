@@ -36,6 +36,7 @@
 
 				@endforeach
 			</table>
+			<h3 ALIGN=right><a href="{{action('SuplidoresController@downloadPDF')}}" ><button class="btn btn-danger btn-xs">Generar Reporte PDF</button></a></h3>
 		</div>
 	</div>
 </div>

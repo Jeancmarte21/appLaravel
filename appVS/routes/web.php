@@ -14,12 +14,12 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/admin.users.index','UsersController@index');
-Route::get('/downloadPDF','UsersController@downloadPDF');
-
+/*Rutas PDF*/
 Route::get('/materiasPrimas.index','MateriasPrimasController@index');
 Route::get('/downloadPDF','MateriasPrimasController@downloadPDF');
 
+Route::get('/suplidores.index','SuplidoresController@index');
+Route::get('/downloadPDF','SuplidoresController@downloadPDF');
 
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');
