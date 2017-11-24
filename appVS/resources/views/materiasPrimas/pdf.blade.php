@@ -14,7 +14,7 @@ table, th, td {
   <body>
 
     <h1 ALIGN=center>Reporte De Materia Prima</h1><br><br><br>
-  <div ALIGN=left><span>Fecha:</span>  {{$fecha}}</div><br><br>
+  <div ALIGN=left><span><strong>Fecha:</strong></span>  {{$fecha}}</div><br><br>
     <table style="width:100%">
 
 
@@ -30,6 +30,7 @@ table, th, td {
       <tr>
         <td ALIGN=center>{{$materiaP->idmateriaPrima}}</td>
         <td ALIGN=center>{{$materiaP->nombre}}</td>
+        <td ALIGN=center>{{$materiaP->categoria}}</td>
         <td ALIGN=center>{{$materiaP->porcentaje_pesohumedo}}</td>
         <td ALIGN=center>{{$materiaP->existencia_minima}}</td>
       </tr>
