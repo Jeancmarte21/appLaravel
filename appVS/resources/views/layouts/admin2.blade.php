@@ -52,7 +52,7 @@
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
-                    
+
                     <li><a href="{{ route('register') }}">Registrar</a></li>
                 @else
                 <li class="dropdown user user-menu">
@@ -110,6 +110,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+
+                <li><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Registrar</a></li>
 
                 <li><a href="/users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
               </ul>
