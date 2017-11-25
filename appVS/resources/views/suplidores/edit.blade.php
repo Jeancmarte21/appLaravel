@@ -21,7 +21,7 @@
     <div class="form-group">
                              <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Telefono</label></span>
                             <div class="col-md-8">
-                                <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control" value="{{$suplidor->telefono}}">
+                                <input id="telefono" name="telefono" type="text" placeholder="Telefono" class="form-control" value="{{$suplidor->telefono}}" data-mask="000-000-0000" required>
                             </div>
                         </div>
 
@@ -35,7 +35,7 @@
                             <div class="form-group">
                             <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label ">Correo</label></span>
                             <div class="col-md-8">
-                                <input id="correo" name="correo" type="text" placeholder="@ejemplo.com" class="form-control" value="{{$suplidor->correo}}">
+                                <input id="correo" name="correo" type="text" placeholder="@ejemplo.com" class="form-control" value="{{$suplidor->correo}}" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
                             </div>
                         </div>
 
