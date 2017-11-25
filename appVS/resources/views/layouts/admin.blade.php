@@ -54,7 +54,7 @@
                     <li><a href="{{ route('login') }}">Login</a></li>
 
                     <li><a href="{{ route('register') }}">Registrar</a></li>
-                
+
                 @else
                 <li class="dropdown user user-menu">
 
@@ -290,10 +290,10 @@
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
       <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 1.0.0
-        </div>
-        <strong>Copyright &copy;.</strong> All rights reserved.
+        <div class="login-logo">
+        <img src="../img/logo.png" width="70" class="center-block img-responsive">
+        </div><!-- /.login-logo -->
+<p ALIGN=center ><strong>Copyright &copy; Victor Sinclair.All rights reserved.</strong></p>
       </footer>
 
 
