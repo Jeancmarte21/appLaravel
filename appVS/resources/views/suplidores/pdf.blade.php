@@ -12,10 +12,13 @@ table, th, td {
     <title></title>
   </head>
   <body>
+    <div><h4 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h4></div>
+  <div ALIGN=center>
+  <img src="./img/logo copia.ico" width="100" alt="logo"/>
+  </div>
 
   <div><h2 ALIGN=center>EMPRESAS VICTOR SINCLAIR DOM.</h2>
   <h3  ALIGN=center><strong>Reporte de Suplidores</strong></h3></div><br>
-  <div><h4 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h4></div><br><br>
 
     <table style="width:100%">
 
