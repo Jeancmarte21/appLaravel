@@ -41,6 +41,8 @@
 
 				@endforeach
 			</table>
+			<h3 ALIGN=right><a href="{{action('EmpleadosController@downloadPDF')}}" ><button class="btn btn-danger btn-xs">Generar Reporte PDF</button></a></h3>
+		</div>
 		</div>
 	</div>
 </div>

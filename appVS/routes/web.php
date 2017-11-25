@@ -19,7 +19,10 @@ Route::get('/materiasPrimas.index','MateriasPrimasController@index');
 Route::get('/downloadPDF','MateriasPrimasController@downloadPDF');
 
 Route::get('/suplidores.index','SuplidoresController@index');
-Route::get('/downloadPDF','SuplidoresController@downloadPDF');
+Route::get('/suplidoresdownloadPDF','SuplidoresController@downloadPDF');
+
+Route::get('/empleados.index','EmpleadosController@index');
+Route::get('/empleadosdownloadPDF','EmpleadosController@downloadPDF');
 
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');

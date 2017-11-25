@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreEmpleado;
 use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
-//use PDF;
+use PDF;
 
 class EmpleadosController extends Controller
 {
@@ -140,7 +140,12 @@ class EmpleadosController extends Controller
         return back()->with('errors', 'No se pudo borrar el Empleado');
 
     }
+    public function downloadPDF(){
 
+     $empleado =Empleado::all();
+     $pdf = PDF::loadView('empleados.pdf', compact('empleado'));
+     return $pdf->download('empleados.pdf');
+   }
 
 
 }

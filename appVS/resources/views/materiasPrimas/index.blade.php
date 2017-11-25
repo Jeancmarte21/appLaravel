@@ -5,7 +5,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 		<h3><a href="/materiasPrimas/create"><button class="btn btn-primary btn btn-xs">Crear Nueva Materia Prima</button></a></h3>
-    
+
 	</div>
 </div>
 
