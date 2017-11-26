@@ -4,7 +4,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/empleados/create"><button class="btn btn-primary btn btn-xs">CREAR NUEVO EMPLEADO</button></a></h3>
+
+		<h3><a href="/empleados/create"><button class="btn btn-primary btn btn-xs"><i class="fa fa-user-plus" aria-hidden="true"></i>  CREAR NUEVO EMPLEADO</button></a></h3>
 
 	</div>
 </div>
@@ -41,7 +42,7 @@
 
 				@endforeach
 			</table>
-			<h3 ALIGN=right><a href="{{action('EmpleadosController@downloadPDF')}}" ><button class="btn btn-danger btn-xs">Generar Reporte PDF</button></a></h3>
+			<h3 ALIGN=right><a href="{{action('EmpleadosController@downloadPDF')}}" ><button class="btn btn-danger btn-xs"><i class="fa fa-clipboard" aria-hidden="true"></i>  Generar Reporte PDF</button></a></h3>
 		</div>
 		</div>
 	</div>
