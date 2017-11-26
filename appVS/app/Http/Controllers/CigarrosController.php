@@ -26,7 +26,8 @@ class CigarrosController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'admin']);
        $cigarros = Cigarro::all();
-       return view('cigarros.index', ['cigarros'=> $cigarros]);
+       $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+       return view('cigarros.index', ['cigarros'=> $cigarros, 'materiasprimas' => $materiasprimas]);
     }
 
     /**
