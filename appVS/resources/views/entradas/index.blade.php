@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3><a href="/entradas/create"><button class="btn btn-primary  btn btn-xs">CREAR NUEVA ENTRADA</button></a></h3>
+		<h3><a href="/entradas/create"><button class="btn btn-primary  btn btn-xs"><i class="fa fa-plus" aria-hidden="true"></i>  CREAR NUEVA ENTRADA</button></a></h3>
 
 	</div>
 </div>
