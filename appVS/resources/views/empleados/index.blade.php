@@ -5,13 +5,10 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
-		<h3><a href="/empleados/create"><button class="btn btn-primary btn btn-xs"><i class="fa fa-user-plus" aria-hidden="true"></i>  CREAR NUEVO EMPLEADO</button></a></h3>
+		@include('empleados.create')
 
 	</div>
 </div>
-
-
-
 
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
