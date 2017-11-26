@@ -158,7 +158,7 @@
            </a>
            <ul class="treeview-menu">
 
-      
+
              <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
 
            </ul>
@@ -174,7 +174,6 @@
               </a>
               <ul class="treeview-menu">
 
-               <li><a href="/materiasPrimas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
                <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
                 <li><a href="/entradas"><i class="fa fa-circle-o"></i> Entrada</a></li>
                  <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
@@ -208,7 +207,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="/cigarros/create"><i class="fa fa-circle-o"></i> Registrar cigarro</a></li>
+            
                 <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>

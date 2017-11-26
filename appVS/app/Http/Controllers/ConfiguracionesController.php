@@ -22,12 +22,14 @@ class ConfiguracionesController extends Controller
          $this->middleware('auth');
      }
 
-     
+
     public function index(Request $request)
     {
         $request->user()->authorizeRoles(['user', 'admin']);
+        $cigarros = Cigarro::all();
+        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Tabaco')->get();
         $configuraciones = Configuracion::all();
-        return view('configuraciones.index', ['configuraciones'=> $configuraciones]);
+        return view('configuraciones.index', ['configuraciones'=> $configuraciones,'materiasprimas' => $materiasprimas, 'cigarros' => $cigarros]);
     }
 
     /**
@@ -37,7 +39,6 @@ class ConfiguracionesController extends Controller
      */
     public function create()
     {
-        //
         $cigarros = Cigarro::all();
         $configuraciones = Configuracion::all();
         $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Tabaco')->get();

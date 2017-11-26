@@ -22,13 +22,15 @@ class JornadasController extends Controller
      {
          $this->middleware('auth');
      }
-     
+
     public function index(Request $request)
     {
 
       $request->user()->authorizeRoles(['user', 'admin']);
+      $empleados = Empleado::all();
+      $maquinas = Maquina::all();
       $jornadas = Jornada::all();
-      return view('jornadas.index', ['jornadas' => $jornadas]);
+      return view('jornadas.index', ['jornadas' => $jornadas,'empleados' => $empleados, 'maquinas' => $maquinas]);
         /* if ($request)
         {
 

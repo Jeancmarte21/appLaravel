@@ -44,9 +44,11 @@ class ProduccionesMaquinasController extends Controller
         //return view('produccionesmaquinas.index');
 
         */
-
+        $configuraciones = Configuracion::all();
+        $maquinas = Maquina::all();
+        $cigarros = Cigarro::all();
         $produccionMaq = ProduccionMaquina::all();
-        return view('produccionesmaquinas.index', ['produccionMaq' => $produccionMaq]);
+        return view('produccionesmaquinas.index', ['produccionMaq' => $produccionMaq, 'configuraciones' => $configuraciones, 'maquinas' => $maquinas, 'cigarros' => $cigarros]);
     }
 
     /**

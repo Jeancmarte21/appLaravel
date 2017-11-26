@@ -20,7 +20,7 @@ class SalidasController extends Controller
      {
          $this->middleware('auth');
      }
-     
+
     public function index(Request $request)
     {
 
@@ -48,8 +48,10 @@ class SalidasController extends Controller
         }
         */
 
+
         $salidas = Salida::all();
-        return view('salidas.index', ['salidas' => $salidas]);
+        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        return view('salidas.index', ['salidas'=> $salidas, 'materiasprimas' => $materiasprimas]);
     }
 
     /**

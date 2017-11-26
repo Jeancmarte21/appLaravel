@@ -26,9 +26,11 @@ class EntradasController extends Controller
     {
 
 
-     $request->user()->authorizeRoles(['user', 'admin']);  
+     $request->user()->authorizeRoles(['user', 'admin']);
      $entradas = Entrada::all();
-     return view('entradas.index', ['entradas' => $entradas]);
+     $suplidores = Suplidor::all();
+     $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+     return view('entradas.index', ['entradas'=> $entradas, 'materiasprimas' => $materiasprimas,'suplidores' => $suplidores]);
 
 
     }
