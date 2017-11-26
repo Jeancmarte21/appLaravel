@@ -19,6 +19,14 @@
                 </div>
             </div>
         </div>
+        <div id="my-dash">
+        <div id="chart">
+        </div>
+        <div id="control">
+        </div>
+    </div>
+
+    <?= Lava::render('Dashboard', 'Donuts', 'my-dash'); ?>
     </div>
 </div>
 @endsection
