@@ -190,7 +190,6 @@
            </a>
            <ul class="treeview-menu">
 
-            <li><a href="/configuraciones/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
              <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
 
            </ul>
@@ -207,7 +206,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-            
+
                 <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
