@@ -1,14 +1,31 @@
-@extends('layouts.admin')
-@section('title','Crear Suplidor')
-@section('contenido')
+<div class="right_col" role="main">
+  <!--<div class="">-->
+    <div class="page-title">
 
- <div class="row">
-  <div class="col-md-12">
-    <form class="form-horizontal" method="post" action="/suplidores">
-      <fieldset>
-      {{ csrf_field()}}
+      <div class="clearfix"></div>
 
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
 
+          <form class="form-horizontal" method="post" action="/suplidores" data-toggle="validator">
+
+            {{ csrf_field()}}
+
+            <h3>   <button  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-user-plus" aria-hidden="true"></i> Crear Suplidor</button></h3>
+
+                <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title" id="myModalLabel">Crear Suplidor</h4>
+                      </div>
+                      <div class="modal-body">
+                          <form class="form-horizontal form-label-left input_mask">
     <div class="form-group">
 
         <span class="col-md-1 col-md-offset-2 text-center"><label for="full_name_id" class="control-label">Empresa</label></span>
@@ -284,15 +301,29 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <div class="col-md-12 text-center">
-          <button type="submit" class="btn btn-primary btn-lg ">Registrar</button>
+                                  <div class="modal-footer">
+                                       <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+
+                                       <button type="submit" class="btn btn-primary">Registrar</button>
+                                       <div class="form-group">
+
+                                     </div>
+                                   </form>
+                      </div>
+                      </div>
+                    </div>
+                      </div>
+                      </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </div>
         </div>
       </div>
-      </fieldset>
-    </form>
-  </div>
-</div>
 
 <script>
 var input = document.getElementById('correo');
@@ -301,6 +332,3 @@ input.oninvalid = function(event) {
     event.target.setCustomValidity('El correo debe tener el siguiente formato. ej. correo@ejemplo.com');
 }
 </script>
-
-
-@endsection
