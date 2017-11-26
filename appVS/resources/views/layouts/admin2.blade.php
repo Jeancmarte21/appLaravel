@@ -259,9 +259,9 @@
       </div><!-- /.content-wrapper -->
       <!--Fin-Contenido-->
       <footer class="main-footer">
-        <div class="login-logo">
+
         <img src="../img/logo.png" width="70" class="center-block img-responsive">
-        </div><!-- /.login-logo -->
+
       <!--  <p ALIGN=center ><strong>Copyright &copy; Victor Sinclair.All rights reserved.</strong></p>-->
       </footer>
 
@@ -274,6 +274,5 @@
     <script src="{{asset('js/app.min.js')}}"></script>
     <script src="{{asset ('js/jquery.maskedinput.min.js') }}"></script>
     <script src="{{asset ('plugins/mask/src/jquery.mask.js') }}"></script>
-    <script src="{{asset('js/node_modules/chart.js/Chart.min.js')}}"></script>
-   <script src="{{asset('js/node_modules/angular-chart.js/dist/angular-chart.min.js')}}"></script>
+    
 </html>
