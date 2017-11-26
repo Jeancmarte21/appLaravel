@@ -23,7 +23,7 @@
                             type="text"
                             placeholder="Cedula"
                             class="form-control"
-                            value="{{$empleado->cedula}}" pattern="{1,13}"  data-mask="000-0000000-0" required/>
+                            value="{{$empleado->cedula}}"/>
                                 </div>
                             </div>
       <div class="form-group">
@@ -44,7 +44,7 @@
       <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
       <div class="col-md-8">
       <input id="empleado-telefono" name="telefono" type="text" placeholder="Telefono" class="form-control"
-      value="{{$empleado->telefono}}" data-mask="000-000-0000"/>
+      value="{{$empleado->telefono}}"/>
       </div>
       </div>
       <div class="form-group"> <!-- Date input -->
