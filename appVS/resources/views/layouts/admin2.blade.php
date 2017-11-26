@@ -124,7 +124,7 @@
                <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
-             <li><a href="/empleados/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+
               <li><a href="/empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
 
             </ul>
@@ -139,7 +139,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="/suplidores/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+
                 <li><a href="/suplidores"><i class="fa fa-circle-o"></i> Suplidores</a></li>
 
               </ul>
@@ -153,7 +153,7 @@
            </a>
            <ul class="treeview-menu">
 
-            <li><a href="/maquinas/create"><i class="fa fa-circle-o"></i> Registrar</a></li>
+          
              <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
 
            </ul>
