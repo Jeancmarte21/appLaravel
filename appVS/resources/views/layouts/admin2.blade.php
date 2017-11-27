@@ -119,7 +119,7 @@
 
             <li class="treeview">
             <a href="#">
-              <i class="fa fa-user"></i>
+              <i class="fa fa-users"></i>
               <span>Gestion Empleados</span>
                <i class="fa fa-angle-left pull-right"></i>
             </a>
@@ -134,7 +134,7 @@
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-users"></i>
+                <i class="fa fa-truck" aria-hidden="true"></i>
                 <span>Gestion Suplidores</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
@@ -147,7 +147,7 @@
 
             <li class="treeview">
            <a href="#">
-             <i class="fa fa-wrench"></i>
+            <i class="fa fa-cog" aria-hidden="true"></i>
              <span>Gestion Maquinas</span>
               <i class="fa fa-angle-left pull-right"></i>
            </a>
