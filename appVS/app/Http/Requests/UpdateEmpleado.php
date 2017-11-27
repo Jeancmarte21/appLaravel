@@ -25,9 +25,9 @@ class UpdateEmpleado extends FormRequest
     public function rules()
     {
         return [
-            'cedula'=>"Rule::unique('empleado')->ignore($empleado->idempleado, 'idempleado')",
-            'nombre'=>'required|alpha|max:25', 
-            'apellidos'=>'required|alpha|max:50', 
+            'cedula'=> Rule::unique('empleado')->ignore($this->cedula, 'cedula'),
+            'nombre'=>'required|max:25', 
+            'apellidos'=>'required|max:50', 
             'fecha_nacimiento'=>'required|date|before:01/01/2005',
             'telefono'=>'regex:/8[0-9]{2}-[0-9]{3}-[0-9]{4}/',
             'direccion'=>'max:256'
