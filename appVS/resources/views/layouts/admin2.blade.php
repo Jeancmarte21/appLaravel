@@ -100,7 +100,7 @@
             <li class="header"></li>
             <li>
               <a href="/home">
-                <i class="fa fa-home"></i> <span>Inico</span>
+              <i class="fa fa-tachometer" aria-hidden="true"></i> <span>Tablero</span>
               </a>
             </li>
 
