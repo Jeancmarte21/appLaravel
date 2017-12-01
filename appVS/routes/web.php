@@ -23,6 +23,8 @@ Route::get('/suplidoresdownloadPDF','SuplidoresController@downloadPDF');
 
 Route::get('/empleados.index','EmpleadosController@index');
 Route::get('/empleadosdownloadPDF','EmpleadosController@downloadPDF');
+/*Rutas PDF*/
+
 
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');

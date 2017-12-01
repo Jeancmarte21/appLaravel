@@ -250,7 +250,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title">  <center>@yield('title','Default')</center></h3>
+                  <h3 class="box-title"> @yield('title','Default')</h3>
                   <div class="box-tools pull-right">
                     <!-- <button class="btn btn-box-tool"><a href="{{ url()->previous() }}">Atras</a><i class=""></i></button>
 
