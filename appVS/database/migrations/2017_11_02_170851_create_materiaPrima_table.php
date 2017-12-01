@@ -20,6 +20,7 @@ class CreateMateriaPrimaTable extends Migration
             $table->float('porcentaje_pesohumedo', 5,2)->nullable();
             $table->float('existencia_minima', 7,2);
             $table->float('existencia_real', 7,2)->default(0);
+            $table->float('costo', 11, 2)->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

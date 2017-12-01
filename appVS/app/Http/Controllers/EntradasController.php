@@ -29,7 +29,7 @@ class EntradasController extends Controller
      $request->user()->authorizeRoles(['user', 'admin']);
      $entradas = Entrada::all();
      $suplidores = Suplidor::all();
-     $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+     $materiasprimas = MateriaPrima::all();
      return view('entradas.index', ['entradas'=> $entradas, 'materiasprimas' => $materiasprimas,'suplidores' => $suplidores]);
 
 
@@ -60,10 +60,14 @@ class EntradasController extends Controller
                 'materiaprima_id' => $request->input('nombre'),
                 'precio' => $request->input('precio'),
                 'cantidad' => $request->input('cantidad'),
-                'fecha' => $request->input('fecha'),
+                'fecha' => date('Y-m-d'),
                 'suplidor_id' => $request->input('suplidor')
                 ]);
         if($entrada){
+                $matprimUpdate = MateriaPrima::find($entrada->materiaprima_id)
+                ->update([
+                'existencia_real' => $matprimUpdate->existencia_real + $entrada->cantidad,
+            ]);
                 return back()->with('success', 'Entrada registrada correctamente!');
             }
             return back()->withInput()->with('errors', 'Hubo algun error en registro de la entrada');
