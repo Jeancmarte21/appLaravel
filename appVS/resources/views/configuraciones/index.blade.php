@@ -1,4 +1,4 @@
- class="text-center"
+
 @extends('layouts.admin')
 @section('title','Configuraciones')
 @section('contenido')
