@@ -109,7 +109,7 @@
 
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-user"></i> <span> Gestion Usuarios</span>
+                <i class="fa fa-user"></i> <span> Gestión Usuarios</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -125,7 +125,7 @@
             <li class="treeview">
             <a href="#">
               <i class="fa fa-users"></i>
-              <span>Gestion Empleados</span>
+              <span>Gestión Empleados</span>
                <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">
@@ -140,7 +140,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-truck" aria-hidden="true"></i>
-                <span>Gestion Suplidores</span>
+                <span>Gestión Suplidores</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -153,7 +153,7 @@
             <li class="treeview">
            <a href="#">
              <i class="fa fa-cog" aria-hidden="true"></i>
-             <span>Gestion Maquinas</span>
+             <span>Gestión Maquinas</span>
               <i class="fa fa-angle-left pull-right"></i>
            </a>
            <ul class="treeview-menu">
@@ -169,7 +169,7 @@
               <li class="treeview">
               <a href="#">
                 <i class="fa fa-th"></i>
-                <span>Gestion Materia Prima</span>
+                <span>Gestión Materia Prima</span>
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
@@ -185,7 +185,7 @@
             <li class="treeview">
            <a href="#">
              <i class="fa fa-random"></i>
-             <span>Gestion Configuraciones</span>
+             <span>Gestión Configuraciones</span>
               <i class="fa fa-angle-left pull-right"></i>
            </a>
            <ul class="treeview-menu">
