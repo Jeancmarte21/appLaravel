@@ -1,4 +1,4 @@
-
+ class="text-center"
 @extends('layouts.admin')
 @section('title','Configuraciones')
 @section('contenido')
@@ -17,21 +17,23 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-condensed table-hover">
         <thead>
-          <th>ID</th>
-          <th>NOMBRE</th>
-          <th>OPCIONES</th>
+          <th class="text-center">ID</th>
+          <th class="text-center">NOMBRE</th>
+          <th class="text-center">OPCIONES</th>
 
         </thead>
         @foreach($configuraciones as $configuracion)
           <tr>
-          <td>{{$configuracion->idconfiguracion}}</td>
-          <td>{{$configuracion->nombre}}</td>
+          <td class="text-center">{{$configuracion->idconfiguracion}}</td>
+          <td class="text-center">{{$configuracion->nombre}}</td>
           <td>
 
-						<a href="/configuraciones/{{$configuracion->idconfiguracion}}/edit" class="badge badge- btn btn-info">Editar</a>
 
-						<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="badge badge-primary btn btn-primary">Ver</a>
+<div class="text-center">
+						<a href="/configuraciones/{{$configuracion->idconfiguracion}}/edit" class="badge badge- btn btn-primary">Editar</a>
 
+						<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="badge badge-primary btn btn-info">Ver</a>
+</div>
           </td>
         </tr>
 

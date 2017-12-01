@@ -17,20 +17,20 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRE</th>
 
-					<th>OPCIONES</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 				@foreach ($materiasPrimas as $materiaprima)
 				<tr>
-					<td>{{ $materiaprima->idmateriaPrima}}</td>
-					<td>{{ $materiaprima->nombre}}</td>
+					<td class="text-center">{{ $materiaprima->idmateriaPrima}}</td>
+					<td class="text-center">{{ $materiaprima->nombre}}</td>
 					<td>
-						<a
-              				href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}"
-              				class="badge badge-info btn btn-success">Ver</a>
-                         <a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<div class="text-center">
+						<a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}"class="badge badge-info btn btn-info">Ver</a>
+            <a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+					</div>
 					</td>
 				</tr>
 

@@ -14,23 +14,24 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRE</th>
 
 
 
-					<th>OPCIONES</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 				@foreach ($suplidores as $suplidor)
 				<tr>
-					<td>{{ $suplidor->idsuplidor}}</td>
-					<td>{{ $suplidor->nombre}}</td>
+					<td class="text-center">{{ $suplidor->idsuplidor}}</td>
+					<td class="text-center">{{ $suplidor->nombre}}</td>
 
 
 					<td>
-            <a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-primary">Ver</a>
+						<div class="text-center">
+            <a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-primary ">Ver</a>
 						<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-info">Editar</a>
-
+</div>
 					</td>
 				</tr>
 

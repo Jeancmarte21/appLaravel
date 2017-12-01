@@ -14,24 +14,24 @@
 		<div class="table-responsive">
 <table class="table">
   <thead>
-    <th>ID</th>
-    <th>NOMBRE</th>
-    <th>CORREO</th>
-    <th>ROL</th>
-    <th>ACCION</th>
+    <th class="text-center">ID</th>
+    <th class="text-center">NOMBRE</th>
+    <th class="text-center">CORREO</th>
+    <th class="text-center">ROL</th>
+    <th class="text-center">ACCION</th>
   </thead>
 
 
   <tr>
-  <td>{{$user->id}}</td>
-  <td>{{$user->name}}</td>
-  <td>{{$user->email}}</td>
-  <td>{{$user->roles[0]->name}}</td>
+  <td class="text-center">{{$user->id}}</td>
+  <td class="text-center">{{$user->name}}</td>
+  <td class="text-center">{{$user->email}}</td>
+  <td class="text-center">{{$user->roles[0]->name}}</td>
   <td>
 
 
 
-<a href="#" class="btn btn-danger btn btn-xs" onclick=" var result = confirm('Esta seguro de eliminar este Usuario?');
+<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar este Usuario?');
             if( result ){
             event.preventDefault();
            document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>

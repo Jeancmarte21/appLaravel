@@ -18,24 +18,27 @@
 				<thead>
 
 
-					<th>FECHA</th>
-					<th>MATERIA PRIMA</th>
+					<th class="text-center">FECHA</th>
+					<th class="text-center">MATERIA PRIMA</th>
 
 
-					<th>OPCIONES</th>
+					<th 	 <div class="text-center">OPCIONES</th>
 				</thead>
           		@foreach ($entradas as $entry)
 				<tr>
 
-					<td>{{ $entry->fecha}}</td>
-					<td>{{ $entry->materiasprimas->nombre}}</td>
+					<td class="text-center">{{ $entry->fecha}}</td>
+					<td class="text-center">{{ $entry->materiasprimas->nombre}}</td>
 
 
 
 					<td>
+      <div class="text-center">
 
-						<a href="/entradas/{{$entry->identrada}}"class="badge badge-info btn btn-primary">Ver</a>
-						<a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-info">Editar</a>
+
+						<a href="/entradas/{{$entry->identrada}}"class="badge badge-info btn btn-info">Ver</a>
+						<a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+						  </div>
 					</td>
 
 				</tr>

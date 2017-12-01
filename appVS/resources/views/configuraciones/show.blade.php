@@ -15,13 +15,13 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>FECHA</th>
-					<th>NOMBRE</th>
-					<th>CIGARRO</th>
-					<th>CAPA</th>
-					<th>CAPOTE</th>
-					<th>ACCION</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">FECHA</th>
+					<th class="text-center">NOMBRE</th>
+					<th class="text-center">CIGARRO</th>
+					<th class="text-center">CAPA</th>
+					<th class="text-center">CAPOTE</th>
+					<th class="text-center">ACCION</th>
 
 				</thead>
 
@@ -29,19 +29,19 @@
 				<tr>
 
 
-					<td>{{$configuracion->idconfiguracion}}</td>
-					<td>{{$configuracion->fecha}}</td>
-					<td>{{$configuracion->nombre}}</td>
-					<td>{{$configuracion->cigarros->nombre}}</td>
+					<td class="text-center">{{$configuracion->idconfiguracion}}</td>
+					<td class="text-center">{{$configuracion->fecha}}</td>
+					<td class="text-center">{{$configuracion->nombre}}</td>
+					<td class="text-center">{{$configuracion->cigarros->nombre}}</td>
 					@foreach($configuracion->configuracionesmateriasprimas as $confi)
-					<td>{{$confi->materiasprimas->nombre}}</td>
+					<td class="text-center">{{$confi->materiasprimas->nombre}}</td>
 					@endforeach
-					<td><a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
+					<td><a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
                           if( result ){
                                   event.preventDefault();
                                   document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
 </td>
-</tr>	
+</tr>
 			</table>
 		</div>
 

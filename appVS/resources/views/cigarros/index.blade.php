@@ -15,21 +15,23 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-condensed table-hover">
         <thead>
-          <th>ID</th>
-          <th>NOMBRE</th>
-          <th>OPCIONES</th>
+          <th class="text-center">ID</th>
+          <th class="text-center">NOMBRE</th>
+          <th class="text-center">OPCIONES</th>
 
         </thead>
           @foreach($cigarros as $cigarro)
           <tr>
-          <td>{{$cigarro->idcigarro}}</td>
-          <td>{{$cigarro->nombre}}</td>
-          <td>{{$cigarro->tipo}}</td>
+          <td class="text-center">{{$cigarro->idcigarro}}</td>
+          <td class="text-center"{{$cigarro->nombre}}</td>
+          <td class="text-center">{{$cigarro->tipo}}</td>
           <td>
+            
+           <div class="text-center">
 
-            <a href="/cigarros/{{$cigarro->idcigarro}}"
-                      class="badge badge-info btn btn-primary">Ver</a>
-                         <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-info">Editar</a>
+            <a href="/cigarros/{{$cigarro->idcigarro}}" class="badge badge-info btn btn-info">Ver</a>
+           <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+           </div>
           </td>
         </tr>
 

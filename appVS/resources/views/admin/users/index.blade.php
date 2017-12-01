@@ -15,23 +15,23 @@
 <table class="table">
   <thead>
 
-    <th>NOMBRE</th>
+    <th class="text-center">NOMBRE</th>
 
 
-    <th>ACCION</th>
+    <th class="text-center">ACCION</th>
   </thead>
 
   @foreach($users as $user)
   <tr>
 
-  <td>{{$user->name}}</td>
+  <td class="text-center">{{$user->name}}</td>
 
 
   <td>
 
 
     <a href="/users/{{$user->id}}"
-              class="badge badge-info btn btn-primary">Ver</a>
+              class="badge badge-info btn btn-info btn-block">Ver</a>
 
 
   </tr>

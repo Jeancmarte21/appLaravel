@@ -15,25 +15,26 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRES</th>
-					<th>APELLIDOS</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRES</th>
+					<th class="text-center">APELLIDOS</th>
 
 
-					<th>OPCIONES</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 				@foreach ($empleados as $empleado)
 				<tr>
-					<td>{{ $empleado->idempleado}}</td>
-					<td>{{ $empleado->nombre}}</td>
-					<td>{{ $empleado->apellidos}}</td>
+					<td class="text-center">{{ $empleado->idempleado}}</td>
+					<td class="text-center">{{ $empleado->nombre}}</td>
+					<td class="text-center">{{ $empleado->apellidos}}</td>
 
 
 					<td>
-            <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-primary">Ver</a>
-						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-info">Editar</a>
+						<div class="text-center">
+            <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-info">Ver</a>
+						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-primary">Editar</a>
 
-
+					</div>
 					</td>
 				</tr>
 

@@ -17,25 +17,28 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 
-					<th>FECHA</th>
-					<th>EMPLEADO</th>
-					<th>OPCIONES</th>
+					<th class="text-center">FECHA</th>
+					<th class="text-center">EMPLEADO</th>
+					<th class="text-center">OPCIONES</th>
 
 				</thead>
             @foreach ($jornadas as $jornada)
 				<tr>
 
-					<td>{{ $jornada->fecha}}</td>
+					<td class="text-center">{{ $jornada->fecha}}</td>
 
-					<td>{{ $jornada->empleados->nombre}}</td>
+					<td class="text-center">{{ $jornada->empleados->nombre}}</td>
 
 
 
 					<td>
-						<a href="/jornadas/{{$jornada->idjornada}}"
-                      class="badge badge-info btn btn-primary">Ver</a>
-                         <a href="/jornadas/{{$jornada->idjornada}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<div class="text-center">
 
+
+						<a href="/jornadas/{{$jornada->idjornada}}"
+                      class="badge badge-info btn btn-info">Ver</a>
+                         <a href="/jornadas/{{$jornada->idjornada}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+          </div>
 					</td>
 				</tr>
 

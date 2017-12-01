@@ -54,14 +54,17 @@
                     <li><a href="{{ route('login') }}">Login</a></li>
 
                     <li><a href="{{ route('register') }}">Registrar</a></li>
+
                 @else
                 <li class="dropdown user user-menu">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                    <small class="bg-green">online</small>  {{ Auth::user()->name }} <span class="caret"></span>
+                   {{ Auth::user()->name }} <span class="caret"></span>
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
+                    <li><a>Estado:<small class="bg-green">online</small> </a></li>
+
                       <li>
                           <a href="{{ route('logout') }}"
                               onclick="event.preventDefault();

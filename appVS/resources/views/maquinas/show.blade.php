@@ -15,25 +15,25 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>PAGA POR</th>
-					<th>ACCION</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRE</th>
+					<th class="text-center">PAGA POR</th>
+					<th class="text-center">ACCION</th>
 				</thead>
 
 
 				<tr>
-					<td>{{$maquina->idmaquina}}</td>
-					<td>{{$maquina->nombre}}</td>
-					@if($maquina->produccion == 1) 
-					<td>Produccion</td>
+					<td class="text-center">{{$maquina->idmaquina}}</td>
+					<td class="text-center">{{$maquina->nombre}}</td>
+					@if($maquina->produccion == 1)
+					<td class="text-center">Produccion</td>
 					@endif
 					@if($maquina->produccion == 0)
-					<td>Salario Fijo</td>
+					<td class="text-center"> Salario Fijo</td>
 					@endif
 					<td>
 
-					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Maquina?');
+					<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar esta Maquina?');
 																	if( result ){
 																					event.preventDefault();
 																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
@@ -50,7 +50,7 @@
 	</div>
 </div>
 </div>
-  	 <form id="delete-form" action="{{ route('maquinas.destroy',[$maquina->idmaquina]) }}" 
+  	 <form id="delete-form" action="{{ route('maquinas.destroy',[$maquina->idmaquina]) }}"
                 method="POST" style="display: none;">
                         <input type="hidden" name="_method" value="delete">
                         {{ csrf_field() }}

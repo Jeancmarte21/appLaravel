@@ -5,8 +5,8 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		
-		
+
+
 	</div>
 </div>
 
@@ -15,37 +15,37 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>CATEGORIA</th>
-					<th>% PESO HUMEDO</th>
-					<th>EXISTENCIA MINIMA</th>
-					<th>OPCIONES</th>	
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRE</th>
+					<th class="text-center">CATEGORIA</th>
+					<th class="text-center">% PESO HUMEDO</th>
+					<th class="text-center">EXISTENCIA MINIMA</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 
-			
+
 				<tr>
-					<td>{{$materiaPrima->idmateriaPrima}}</td>
-					<td>{{$materiaPrima->nombre}}</td>
-					<td>{{$materiaPrima->categoria}}</td>
-					<td>{{$materiaPrima->porcentaje_pesohumedo}}</td>
-					<td>{{$materiaPrima->existencia_minima}}</td>
+					<td class="text-center">{{$materiaPrima->idmateriaPrima}}</td>
+					<td class="text-center">{{$materiaPrima->nombre}}</td>
+					<td class="text-center">{{$materiaPrima->categoria}}</td>
+					<td class="text-center">{{$materiaPrima->porcentaje_pesohumedo}}</td>
+					<td class="text-center">{{$materiaPrima->existencia_minima}}</td>
 					<td>
 
-					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Materia Prima?');
+					<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar esta Materia Prima?');
 																	if( result ){
 																					event.preventDefault();
 																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
 
 				</td>
-					
+
 				</tr>
-		        
-			
-              
+
+
+
 			</table>
 		</div>
-		
+
 	</div>
 </div>
  <form id="delete-form" action="{{ route('materiasPrimas.destroy',[$materiaPrima->idmateriaPrima]) }}"

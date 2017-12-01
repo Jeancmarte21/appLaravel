@@ -15,25 +15,28 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>MATERIA PRIMA</th>
-					<th>CANTIDAD</th>
-					<th>FECHA SALIDA</th>
-					<th>ACCION</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">MATERIA PRIMA</th>
+					<th class="text-center">CANTIDAD</th>
+					<th class="text-center">FECHA SALIDA</th>
+					<th class="text-center">ACCION</th>
 				</thead>
 
 
 				<tr>
-					<td>{{$salida->idsalida}}</td>
-					<td>{{$salida->materiasprimas->nombre}}</td>
-					<td>{{$salida->cantidad.' Lbs'}}</td>
-					<td>{{$salida->fecha}}</td>
+					<td class="text-center">{{$salida->idsalida}}</td>
+					<td class="text-center">{{$salida->materiasprimas->nombre}}</td>
+					<td class="text-center">{{$salida->cantidad.' Lbs'}}</td>
+					<td class="text-center">{{$salida->fecha}}</td>
 
 
 
 				<td>
 
-					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Salida?');
+
+
+
+					<a href="#" class="btn btn-danger btn btn-xs btn-block class="text-center"" onclick=" var result = confirm('Esta seguro de eliminar esta Salida?');
 																	if( result ){
 																					event.preventDefault();
 																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>

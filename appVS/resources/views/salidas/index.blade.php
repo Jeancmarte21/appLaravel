@@ -15,24 +15,28 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>FECHA</th>
-					<th>NOMBRE</th>
-					<th>CANTIDAD</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">FECHA</th>
+					<th class="text-center">NOMBRE</th>
+					<th class="text-center">CANTIDAD</th>
 
-					<th>OPCIONES</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 				@foreach ($salidas as $salida)
 				<tr>
-					<td>{{ $salida->idsalida}}</td>
-					<td>{{ $salida->fecha}}</td>
-					<td>{{ $salida->materiasprimas->nombre}}</td>
-					<td>{{ $salida->cantidad}}</td>
+					<td class="text-center">{{ $salida->idsalida}}</td>
+					<td class="text-center">{{ $salida->fecha}}</td>
+					<td class="text-center">{{ $salida->materiasprimas->nombre}}</td>
+					<td class="text-center">{{ $salida->cantidad}}</td>
 
 
 					<td>
-						<a href="/salidas/{{$salida->idsalida}}"class="badge badge-info btn btn-success">Ver</a>
-            <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<div class="text-center">
+
+
+						<a href="/salidas/{{$salida->idsalida}}"class="badge badge-info btn btn-info">Ver</a>
+            <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+					</div>
 					</td>
 				</tr>
 

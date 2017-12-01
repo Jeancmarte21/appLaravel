@@ -15,27 +15,27 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-					<th>NOMBRE</th>
-					<th>TELEFONO</th>
-					<th>CORREO</th>
-					<th>DIRECCIÓN</th>
+					<th class="text-center">ID</th>
+					<th class="text-center">NOMBRE</th>
+					<th class="text-center">TELEFONO</th>
+					<th class="text-center">CORREO</th>
+					<th class="text-center">DIRECCIÓN</th>
 
-					<th>OPCIONES</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 
 
 				<tr>
-					<td>{{$suplidor->idsuplidor}}</td>
-					<td>{{$suplidor->nombre}}</td>
-					<th>{{$suplidor->telefono}}</th>
-					<th>{{$suplidor->correo}}</th>
-					<th>{{$suplidor->direccion}}</th>
+					<td class="text-center">{{$suplidor->idsuplidor}}</td>
+					<td class="text-center">{{$suplidor->nombre}}</td>
+					<th class="text-center">{{$suplidor->telefono}}</th>
+					<th class="text-center">{{$suplidor->correo}}</th>
+					<th class="text-center">{{$suplidor->direccion}}</th>
 
 
 					<td>
 
-						<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar este Suplidor?');
+						<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar este Suplidor?');
 																		if( result ){
 																						event.preventDefault();
 																						document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>

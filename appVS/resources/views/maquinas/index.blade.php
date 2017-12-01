@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+ class="text-center"@extends('layouts.admin')
 @section('title','Maquinas')
 @section('contenido')
 
@@ -13,29 +13,31 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-condensed table-hover">
         <thead>
-          <th>ID</th>
-          <th>NOMBRE</th>
-          <th>PAGA POR</th>
+          <th class="text-center">ID</th>
+          <th class="text-center">NOMBRE</th>
+          <th class="text-center">PAGA POR</th>
 
-          <th>OPCIONES</th>
+          <th class="text-center">OPCIONES</th>
         </thead>
         @foreach ($maquinas as $maquina)
         <tr>
-          <td>{{$maquina->idmaquina}}</td>
-          <td>{{$maquina->nombre}}</td>
+          <td class="text-center">{{$maquina->idmaquina}}</td>
+          <td class="text-center">{{$maquina->nombre}}</td>
           @if($maquina->produccion == 1)
-          <td>Produccion</td>
+          <td class="text-center">Produccion</td>
           @endif
           @if($maquina->produccion == 0)
-          <td>Salario Fijo</td>
+          <td class="text-center">Salario Fijo</td>
           @endif
 
 
           <td>
-            <a
-                      href="/maquinas/{{$maquina->idmaquina}}"
-                      class="badge badge-info btn btn-success">Ver</a>
-                         <a href="/maquinas/{{$maquina->idmaquina}}/edit" class="badge badge-success btn btn-info">Editar</a>
+            <div class="text-center">
+
+
+            <a href="/maquinas/{{$maquina->idmaquina}}"class="badge badge-info btn btn-info">Ver</a>
+            <a href="/maquinas/{{$maquina->idmaquina}}/edit" class="badge badge-info btn btn-primary">Editar</a>
+</div>
           </td>
         </tr>
 

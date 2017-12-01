@@ -14,24 +14,24 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>ID</th>
-          <th>FECHA ENTRADA</th>
-					<th>MATERIA PRIMA</th>
-          <th>PRECIO</th>
-					<th>CANTIDAD</th>
-          <th>SUPLIDOR</th>
+					<th class="text-center">ID</th>
+          <th class="text-center">FECHA ENTRADA</th>
+					<th class="text-center">MATERIA PRIMA</th>
+          <th class="text-center">PRECIO</th>
+					<th class="text-center">CANTIDAD</th>
+          <th class="text-center">SUPLIDOR</th>
 
-					<th>ACCION</th>
+					<th "text-center">ACCION</th>
 				</thead>
 
 
         <tr>
-          <td>{{ $entrada->identrada}}</td>
-					<td>{{ $entrada->fecha}}</td>
-					<td>{{ $entrada->materiasprimas->nombre}}</td>
-					<td>{{ $entrada->precio}}</td>
-					<td>{{ $entrada->cantidad}}</td>
-					<td>{{ $entrada->suplidores->nombre}}</td>
+          <td class="text-center">{{ $entrada->identrada}}</td>
+					<td class="text-center">{{ $entrada->fecha}}</td>
+					<td class="text-center">{{ $entrada->materiasprimas->nombre}}</td>
+					<td class="text-center">{{ $entrada->precio}}</td>
+					<td class="text-center">{{ $entrada->cantidad}}</td>
+					<td class="text-center">{{ $entrada->suplidores->nombre}}</td>
 
 
 

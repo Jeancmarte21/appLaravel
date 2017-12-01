@@ -15,27 +15,27 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>FECHA</th>
-					<th>MAQUINA</th>
-					<th>EMPLEADO</th>
-					<th>INCENTIVO</th>
-					<th>HORAS EXTRAS</th>
-					<th>OPCIONES</th>
+					<th class="text-center" class="text-center">FECHA</th>
+					<th class="text-center" class="text-center">MAQUINA</th>
+					<th class="text-center" class="text-center">EMPLEADO</th>
+					<th class="text-center" class="text-center">INCENTIVO</th>
+					<th class="text-center" class="text-center">HORAS EXTRAS</th>
+					<th class="text-center" class="text-center">OPCIONES</th>
 				</thead>
 
 
 				<tr>
-					<td>{{ $jornada->fecha}}</td>
-					<td>{{ $jornada->maquinas->nombre}}</td>
-					<td>{{ $jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</td>
-					<td>{{ $jornada->incentivo}}</td>
-					<td>{{ $jornada->hora_extra}}</td>
+					<td class="text-center">{{ $jornada->fecha}}</td>
+					<td class="text-center">{{ $jornada->maquinas->nombre}}</td>
+					<td class="text-center">{{ $jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</td>
+					<td class="text-center">{{ $jornada->incentivo}}</td>
+					<td class="text-center">{{ $jornada->hora_extra}}</td>
 
 
 
 					<td>
 
-					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Jornada?');
+					<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar esta Jornada?');
 					if( result ){
 							event.preventDefault();
 							document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>

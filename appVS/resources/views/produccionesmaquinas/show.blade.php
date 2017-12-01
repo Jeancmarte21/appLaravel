@@ -15,25 +15,27 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th>FECHA & HORA</th>
-					<th>MAQUINA</th>
-					<th>CIGARRO</th>
-					<th>CONFIGURACIÓN</th>
-          			<th>CANTIDAD</th>
-					<th>OPCIONES</th>
+					<th class="text-center">FECHA & HORA</th>
+					<th class="text-center">MAQUINA</th>
+					<th class="text-center">CIGARRO</th>
+					<th class="text-center">CONFIGURACIÓN</th>
+          <th class="text-center">CANTIDAD</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
     <tr>
 
-      <td>{{ $produccionMaquina->fecha}}</td>
-      <td>{{ $produccionMaquina->maquinas->nombre}}</td>
-      <td>{{ $produccionMaquina->cigarros->nombre}}</td>
-      <td>{{ $produccionMaquina->configuraciones->nombre}}</td>
-      <td>{{ $produccionMaquina->cantidad}}</td>
+      <td class="text-center">{{ $produccionMaquina->fecha}}</td>
+      <td class="text-center">{{ $produccionMaquina->maquinas->nombre}}</td>
+      <td class="text-center">{{ $produccionMaquina->cigarros->nombre}}</td>
+      <td class="text-center">{{ $produccionMaquina->configuraciones->nombre}}</td>
+      <td class="text-center">{{ $produccionMaquina->cantidad}}</td>
       <td>
-					<a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Produccion de Maquina?');
-																	if( result ){
-																					event.preventDefault();
-																					document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
+
+
+			<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar esta Produccion de Maquina?');
+					if( result ){
+												event.preventDefault();
+												document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>
 
 				</td>
 

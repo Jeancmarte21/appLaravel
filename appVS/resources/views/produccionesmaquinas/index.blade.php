@@ -17,25 +17,27 @@
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
 
-					<th>FECHA & HORA</th>
-					<th>MAQUINA</th>
-          <th>CANTIDAD</th>
-					<th>OPCIONES</th>
+					<th class="text-center">FECHA & HORA</th>
+					<th class="text-center">MAQUINA</th>
+          <th class="text-center">CANTIDAD</th>
+					<th class="text-center">OPCIONES</th>
 				</thead>
 
 				@foreach ($produccionMaq as $produccionMaquina)
     	<tr>
 
-      <td>{{ $produccionMaquina->fecha}}</td>
-      <td>{{ $produccionMaquina->maquinas->nombre}}</td>
-			<td>{{ $produccionMaquina->cantidad}}</td>
+      <td class="text-center">{{ $produccionMaquina->fecha}}</td>
+      <td class="text-center">{{ $produccionMaquina->maquinas->nombre}}</td>
+			<td class="text-center">{{ $produccionMaquina->cantidad}}</td>
 
 
 
 		<td>
+			<div class="text-center">
 						<a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}" class="badge badge-info btn btn-primary">Ver</a>
             <a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}/edit" class="badge badge-success btn btn-info">Editar</a>
 					</td>
+				</div>
 
 </tr>
 @endforeach
