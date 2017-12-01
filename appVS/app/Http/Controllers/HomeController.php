@@ -5,6 +5,7 @@ namespace appVS\Http\Controllers;
 use Illuminate\Http\Request;
 use Khill\Lavacharts\Laravel\LavachartsFacade as Lava;
 
+
 class HomeController extends Controller
 {
     public function __construct()
@@ -38,6 +39,11 @@ class HomeController extends Controller
         $control = Lava::ControlWrapper($filter, 'control');
         $chart   = Lava::ChartWrapper($pieChart, 'chart');
         Lava::Dashboard('Donuts')->bind($control, $chart);
+
+
+
+
+
 
         return view('home');
     }

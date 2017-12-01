@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col-xs-12 col-md-6 col-md-offset-2">
             <div class="">
-                
+
 
                 <div class="panel-body">
                     @if (session('status'))
