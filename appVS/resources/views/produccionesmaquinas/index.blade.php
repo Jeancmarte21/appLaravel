@@ -34,8 +34,8 @@
 
 		<td>
 			<div class="text-center">
-						<a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}" class="badge badge-info btn btn-primary">Ver</a>
-            <a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						<a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}" class="badge badge-info btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+            <a href="/produccionesmaquinas/{{ $produccionMaquina->idproduccionmaquina}}/edit" class="badge badge-success btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 					</td>
 				</div>
 

@@ -35,8 +35,8 @@
             <div class="text-center">
 
 
-            <a href="/maquinas/{{$maquina->idmaquina}}"class="badge badge-info btn btn-info">Ver</a>
-            <a href="/maquinas/{{$maquina->idmaquina}}/edit" class="badge badge-info btn btn-primary">Editar</a>
+            <a href="/maquinas/{{$maquina->idmaquina}}"class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+            <a href="/maquinas/{{$maquina->idmaquina}}/edit" class="badge badge-info btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 </div>
           </td>
         </tr>
