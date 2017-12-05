@@ -20,7 +20,6 @@
 					<th class="text-center">TELEFONO</th>
 					<th class="text-center">CORREO</th>
 					<th class="text-center">DIRECCIÓN</th>
-					<th class="text-center">PAIS</th>
 
 					<th class="text-center">OPCIONES</th>
 				</thead>
@@ -32,7 +31,6 @@
 					<th class="text-center">{{$suplidor->telefono}}</th>
 					<th class="text-center">{{$suplidor->correo}}</th>
 					<th class="text-center">{{$suplidor->direccion}}</th>
-					<th class="text-center">{{$suplidor->pais}}</th>
 
 
 					<td>
