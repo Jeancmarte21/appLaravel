@@ -64,9 +64,10 @@ class EntradasController extends Controller
                 'suplidor_id' => $request->input('suplidor')
                 ]);
         if($entrada){
-                $matprimUpdate = MateriaPrima::find($request->input('nombre'))
+                $matprimUpdate = MateriaPrima::find($entrada->materiaprima_id)
                 ->update([
-                'existencia_real' => $matprimUpdate->existencia_real + $entrada->cantidad
+                'existencia_real' => $entrada->materiasprimas->existencia_real + $entrada->cantidad,
+                'costo' => $entrada->precio
                         ]);
                 return back()->with('success', 'Entrada registrada correctamente!');
             }
