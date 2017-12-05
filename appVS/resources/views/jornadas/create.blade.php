@@ -60,6 +60,14 @@
     </div>
 
 
+    <div class="form-group">
+<label class="col-xs-3 control-label">Pago del dia</label>
+<div class="col-xs-5 inputGroupContainer">
+<label class="radio-inline"><input type="radio" name="optradio">Doble</label>
+</div>
+</div>
+
+
                      <div class="form-group">
         <label class="col-xs-3 control-label">Incentivo</label>
         <div class="col-xs-5 inputGroupContainer">

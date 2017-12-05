@@ -30,6 +30,8 @@ class JornadasController extends Controller
       $empleados = Empleado::all();
       $maquinas = Maquina::all();
       $jornadas = Jornada::all();
+
+
       return view('jornadas.index', ['jornadas' => $jornadas,'empleados' => $empleados, 'maquinas' => $maquinas]);
         /* if ($request)
         {
