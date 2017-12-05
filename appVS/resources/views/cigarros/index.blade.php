@@ -23,14 +23,13 @@
           @foreach($cigarros as $cigarro)
           <tr>
           <td class="text-center">{{$cigarro->idcigarro}}</td>
-          <td class="text-center"{{$cigarro->nombre}}</td>
-          <td class="text-center">{{$cigarro->tipo}}</td>
+          <td class="text-center">{{$cigarro->nombre}}</td>
           <td>
-            
+
            <div class="text-center">
 
-            <a href="/cigarros/{{$cigarro->idcigarro}}" class="badge badge-info btn btn-info">Ver</a>
-           <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+            <a href="/cigarros/{{$cigarro->idcigarro}}" class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+           <a href="/cigarros/{{$cigarro->idcigarro}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
            </div>
           </td>
         </tr>

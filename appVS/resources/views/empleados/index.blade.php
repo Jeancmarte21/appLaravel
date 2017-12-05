@@ -5,6 +5,7 @@
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
+		@include('empleados.search')
 		@include('empleados.create')
 
 	</div>
@@ -31,8 +32,8 @@
 
 					<td>
 						<div class="text-center">
-            <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-info">Ver</a>
-						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-primary">Editar</a>
+            <a href="/empleados/{{$empleado->idempleado}}" class="badge btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+						<a href="/empleados/{{$empleado->idempleado}}/edit" class="badge  btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 
 					</div>
 					</td>

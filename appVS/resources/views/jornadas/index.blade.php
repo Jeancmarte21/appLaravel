@@ -4,6 +4,7 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+
 		@include('jornadas.create')
 
 	</div>
@@ -36,8 +37,8 @@
 
 
 						<a href="/jornadas/{{$jornada->idjornada}}"
-                      class="badge badge-info btn btn-info">Ver</a>
-                         <a href="/jornadas/{{$jornada->idjornada}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+                      class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+                         <a href="/jornadas/{{$jornada->idjornada}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
           </div>
 					</td>
 				</tr>

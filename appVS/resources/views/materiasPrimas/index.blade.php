@@ -28,8 +28,8 @@
 					<td class="text-center">{{ $materiaprima->nombre}}</td>
 					<td>
 						<div class="text-center">
-						<a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}"class="badge badge-info btn btn-info">Ver</a>
-            <a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+						<a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}"class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+            <a href="/materiasPrimas/{{$materiaprima->idmateriaPrima}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 					</div>
 					</td>
 				</tr>

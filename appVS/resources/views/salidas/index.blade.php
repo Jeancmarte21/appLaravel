@@ -34,8 +34,8 @@
 						<div class="text-center">
 
 
-						<a href="/salidas/{{$salida->idsalida}}"class="badge badge-info btn btn-info">Ver</a>
-            <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+						<a href="/salidas/{{$salida->idsalida}}"class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+            <a href="/salidas/{{$salida->idsalida}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 					</div>
 					</td>
 				</tr>

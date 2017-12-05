@@ -36,8 +36,8 @@
       <div class="text-center">
 
 
-						<a href="/entradas/{{$entry->identrada}}"class="badge badge-info btn btn-info">Ver</a>
-						<a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-primary">Editar</a>
+						<a href="/entradas/{{$entry->identrada}}"class="badge badge-info btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+						<a href="/entradas/{{$entry->identrada}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 						  </div>
 					</td>
 
