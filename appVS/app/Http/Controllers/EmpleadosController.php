@@ -7,6 +7,7 @@ use appVS\Http\Requests\StoreEmpleado;
 use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
 use PDF;
+use DB;
 
 class EmpleadosController extends Controller
 {
@@ -24,6 +25,15 @@ class EmpleadosController extends Controller
     public function index(Request $request)
     {
       $request->user()->authorizeRoles(['user', 'admin']);
+
+      if ($request)
+      {
+          $query=trim($request->get('searchText'));
+          $empleados=DB::table('empleado')->where('nombre','LIKE','%'.$query.'%')
+          ->orderBy('idempleado','desc')
+          ->paginate(7);
+          return view('empleados.index',["empleados"=>$empleados,"searchText"=>$query]);
+      }
 
 
         $empleados = Empleado::paginate(5);

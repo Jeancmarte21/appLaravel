@@ -26,7 +26,7 @@ class StoreJornadaRequest extends FormRequest
         return [
                 'maquina' => 'required|numeric|exists:maquina,idmaquina',
                 'empleado' => 'required|numeric|exists:empleado,idempleado',
-                'incentivo' => 'nullable|digits_between:1,3',
+                'incentivo' => 'nullable|numeric',
                 'hora_extra' => 'nullable|digits:1',
                 'fecha' => 'required|date',
         ];
