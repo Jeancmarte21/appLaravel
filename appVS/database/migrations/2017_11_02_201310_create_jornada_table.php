@@ -22,7 +22,7 @@ class CreateJornadaTable extends Migration
             $table->float('incentivo', 7,2)->default(0);
             $table->date('fecha');
             $table->softDeletes();
-            #$table->float('comida', 5, 2);
+            $table->tinyInt('jornada_doble')->default(0);
             $table->timestamps();
 
             $table->foreign('maquina_id')->references('idmaquina')->on('maquina');
