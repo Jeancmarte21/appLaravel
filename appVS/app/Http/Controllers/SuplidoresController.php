@@ -25,6 +25,16 @@ class SuplidoresController extends Controller
 
         $request->user()->authorizeRoles(['user', 'admin']);
         $suplidores = Suplidor::all();
+
+        if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $suplidores=DB::table('suplidor')->where('nombre','LIKE','%'.$query.'%')
+            ->orderBy('idsuplidor','desc')
+            ->paginate(7);
+            return view('suplidores.index',["suplidores"=>$suplidores,"searchText"=>$query]);
+        }
+
         return view('suplidores.index', ['suplidores' => $suplidores]);
 
 

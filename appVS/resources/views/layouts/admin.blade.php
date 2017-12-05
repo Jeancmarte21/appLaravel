@@ -289,7 +289,6 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
 
-        <img src="../img/logo.png" width="70" class="center-block img-responsive">
 
 <p ALIGN=center ><strong>Copyright &copy; Victor Sinclair.All rights reserved.</strong></p>
       </footer>
