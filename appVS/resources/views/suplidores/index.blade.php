@@ -30,7 +30,7 @@
 					<td>
 						<div class="text-center">
             <a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-primary ">Ver</a>
-						<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-info">Editar</a>
+						@include('suplidores.edit')
 </div>
 					</td>
 				</tr>
