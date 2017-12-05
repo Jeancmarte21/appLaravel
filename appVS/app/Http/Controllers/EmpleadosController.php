@@ -26,7 +26,7 @@ class EmpleadosController extends Controller
       $request->user()->authorizeRoles(['user', 'admin']);
 
 
-        $empleados = Empleado::all();
+        $empleados = Empleado::paginate(5);
         return view('empleados.index', ['empleados'=> $empleados]);
 
 
