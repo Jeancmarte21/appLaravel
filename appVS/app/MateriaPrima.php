@@ -15,6 +15,7 @@ class MateriaPrima extends Model
     	'categoria',
     	'porcentaje_pesohumedo',
     	'existencia_minima',
+        'costo',
     	'existencia_real'
     ];
 
