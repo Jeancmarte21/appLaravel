@@ -74,7 +74,7 @@ class JornadasController extends Controller
                 'incentivo' => $request->input('incentivo'),
                 'hora_extra' => $request->input('hora_extra'),
                 'fecha' => $request->input('fecha'),
-
+                'jornada_doble' => $request->input('jornada_doble')
                 ]);
        $jornada ->save();
 

@@ -157,5 +157,12 @@ class EmpleadosController extends Controller
      return $pdf->download('empleados.pdf');
    }
 
+   public function nomina(){
+
+     $empleado = Empleados::has('jornadas')->whereBetween('fecha', []);
+     $pdf = PDF::loadView('empleados.pdf', compact('empleado'));
+     return $pdf->download('empleados.pdf');
+   }
+
 
 }
