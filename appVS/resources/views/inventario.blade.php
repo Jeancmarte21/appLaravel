@@ -36,7 +36,7 @@
 				<td></td>
 				<td></td>
 				<th class="text-right">Total</th>
-				<td class="text-center">{{$acumulado}}</td>
+				<td class="text-center">{{$total[0]}}</td>
 				</tr>	
 
 

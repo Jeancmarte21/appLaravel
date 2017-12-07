@@ -16,6 +16,7 @@ Route::get('/', function () {
 
 
 Route::get('/inventarios','MateriasPrimasController@inventario');
+Route::get('/nomina','EmpleadosController@nomina');
 /*Rutas PDF*/
 Route::get('/materiasPrimas.index','MateriasPrimasController@index');
 Route::get('/downloadPDF','MateriasPrimasController@downloadPDF');

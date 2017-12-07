@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use appVS\Http\Requests\StoreMateriaPrimaRequest;
 use PDF;
+use DB;
 
 class MateriasPrimasController extends Controller
 {
@@ -139,7 +140,10 @@ class MateriasPrimasController extends Controller
    public function inventario(){
 
      $materiasPrimas =MateriaPrima::paginate(5);
-     return view('inventario', ['materiasPrimas' => $materiasPrimas]);
+     $acumulado = DB::table('materiaPrima')
+                ->select(DB::raw('SUM(costo*existencia_real) as acum'))
+                ->get();
+     return view('inventario', ['materiasPrimas' => $materiasPrimas, 'total' => $acumulado->pluck('acum')]);
      
    }
 }
