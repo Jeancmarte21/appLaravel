@@ -135,4 +135,11 @@ class MateriasPrimasController extends Controller
      $pdf = PDF::loadView('materiasPrimas.pdf', compact('materiaPrima'));
      return $pdf->download('materia_prima.pdf');
    }
+
+   public function inventario(){
+
+     $materiasPrimas =MateriaPrima::paginate(5);
+     return view('inventario', ['materiasPrimas' => $materiasPrimas]);
+     
+   }
 }

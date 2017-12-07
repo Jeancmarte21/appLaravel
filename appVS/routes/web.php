@@ -14,6 +14,8 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+
+Route::get('/inventarios','MateriasPrimasController@inventario');
 /*Rutas PDF*/
 Route::get('/materiasPrimas.index','MateriasPrimasController@index');
 Route::get('/downloadPDF','MateriasPrimasController@downloadPDF');
