@@ -31,8 +31,8 @@
 
 					<td>
 						<div class="text-center">
-            <a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-primary "><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
-						<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-info"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
+            <a href="/suplidores/{{$suplidor->idsuplidor}}" class="badge badge-primary btn btn-info "><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+						<a href="/suplidores/{{$suplidor->idsuplidor}}/edit" class="badge badge-success btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 </div>
 					</td>
 				</tr>

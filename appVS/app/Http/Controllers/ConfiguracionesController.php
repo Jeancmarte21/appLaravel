@@ -5,6 +5,7 @@ namespace appVS\Http\Controllers;
 use appVS\Configuracion;
 use appVS\ConfiguracionMateriaPrima;
 use appVS\Cigarro;
+use appVS\MateriaPrima;
 use DB;
 use Illuminate\Http\Request;
 use appVS\Http\Requests\StoreConfiguracionRequest;
@@ -142,7 +143,12 @@ class ConfiguracionesController extends Controller
      */
     public function edit(Configuracion $configuracion)
     {
-        //
+      $Configuracion = Configuracion::find($configuracion->idconfiguracion);
+      $cigarros = Cigarro::all();
+      $materiasprimas = MateriaPrima::all();
+
+       return view('configuraciones.edit',['configuracion'=>$configuracion, 'cigarros' => $cigarros, 'materiasprimas' => $materiasprimas]);
+
     }
 
     /**
@@ -154,7 +160,20 @@ class ConfiguracionesController extends Controller
      */
     public function update(Request $request, Configuracion $configuracion)
     {
-        //
+        $configuracionUpdate = Configuracion::find($configuracion)
+          ->update([
+            'fecha' => $request->input('fecha'),
+            'nombre' => $request -> input('nombre'),
+            'cigarro_id' => $request -> input('cigarro'),
+
+
+
+        ]);
+
+        if($configuracionUpdate){
+            return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion])->with('success', 'Configuracion editada correctamente');
+        }
+        return back()->withInput()->with('errors', 'Hubo algun error en registro de la Configuracion');
     }
 
     /**

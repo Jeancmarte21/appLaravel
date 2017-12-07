@@ -30,9 +30,11 @@
 
 
 <div class="text-center">
+
+	<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="badge badge-primary btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
 						<a href="/configuraciones/{{$configuracion->idconfiguracion}}/edit" class="badge badge- btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
 
-						<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="badge badge-primary btn btn-info"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+
 </div>
           </td>
         </tr>
