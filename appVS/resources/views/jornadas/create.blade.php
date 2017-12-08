@@ -63,7 +63,8 @@
     <div class="form-group">
 <label class="col-xs-3 control-label">Pago del dia</label>
 <div class="col-xs-5 inputGroupContainer">
-<label class="radio-inline"><input type="radio" name="jornada_doble">Doble</label>
+<label class="radio-inline"><input type="radio" name="jornada_doble" value"0">Doble</label>
+<label class="radio-inline"><input type="radio" name="jornada_regular" value"1">Normal</label>
 </div>
 </div>
 
