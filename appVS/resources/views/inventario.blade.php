@@ -37,11 +37,13 @@
 				<td></td>
 				<th class="text-right">Total</th>
 				<td class="text-center">{{$total[0]}}</td>
-				</tr>	
+				</tr>
 
 
 			</table>
 			{{ $materiasPrimas->links() }}
+
+			<h3 ALIGN=right><a href="{{action('MateriasPrimasController@idownloadPDF')}}" ><button class="btn btn-danger btn-xs"><i class="fa fa-clipboard" aria-hidden="true"></i>  Generar Reporte PDF</button></a></h3>
 		</div>
 
 	</div>

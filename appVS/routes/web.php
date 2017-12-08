@@ -1,22 +1,10 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Route::get('/', function () {
     return view('auth/login');
 });
 
 
-Route::get('/inventarios','MateriasPrimasController@inventario');
-Route::get('/nomina','EmpleadosController@nomina');
 /*Rutas PDF*/
 Route::get('/materiasPrimas.index','MateriasPrimasController@index');
 Route::get('/downloadPDF','MateriasPrimasController@downloadPDF');
@@ -26,8 +14,13 @@ Route::get('/suplidoresdownloadPDF','SuplidoresController@downloadPDF');
 
 Route::get('/empleados.index','EmpleadosController@index');
 Route::get('/empleadosdownloadPDF','EmpleadosController@downloadPDF');
+
+Route::get('/inventarios.index','MateriasPrimasController@inventario');
+Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
 /*Rutas PDF*/
 
+Route::get('/nomina','EmpleadosController@nomina');
+Route::get('/inventarios','MateriasPrimasController@inventario');
 
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');

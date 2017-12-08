@@ -37,7 +37,7 @@
 
 <td>
 
-  <a href="#" class="btn btn-danger btn btn-md" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
+  <a href="#" class="btn btn-danger btn btn-xs" onclick=" var result = confirm('Esta seguro de eliminar esta Entrada?');
                           if( result ){
                                   event.preventDefault();
                                   document.getElementById('delete-form').submit();}"> <i class="fa fa-trash"></i> <span>ELIMINAR</span></a>

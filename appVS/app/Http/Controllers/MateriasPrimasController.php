@@ -137,13 +137,24 @@ class MateriasPrimasController extends Controller
      return $pdf->download('materia_prima.pdf');
    }
 
+   public function idownloadPDF(){
+
+    $materiasPrimas =MateriaPrima::all();
+    $acumulado = DB::table('materiaPrima')
+               ->select(DB::raw('SUM(costo*existencia_real) as acum'))
+               ->get();
+    $total = $acumulado->pluck('acum');
+    $pdf = PDF::loadView('inventarioPDF', compact('materiasPrimas','total'));
+    return $pdf->download('inventario.pdf');
+  }
+
    public function inventario(){
 
-     $materiasPrimas =MateriaPrima::paginate(5);
+     $materiasPrimas =MateriaPrima::paginate(10);
      $acumulado = DB::table('materiaPrima')
                 ->select(DB::raw('SUM(costo*existencia_real) as acum'))
                 ->get();
      return view('inventario', ['materiasPrimas' => $materiasPrimas, 'total' => $acumulado->pluck('acum')]);
-     
+
    }
 }
