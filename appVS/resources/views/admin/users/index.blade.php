@@ -28,12 +28,8 @@
 
 
   <td>
-
-
     <a href="/users/{{$user->id}}"
               class="badge badge-info btn btn-info btn-block">Ver</a>
-
-
   </tr>
 
   @endforeach

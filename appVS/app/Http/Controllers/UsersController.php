@@ -32,7 +32,7 @@ public function __construct()
     public function index(Request $request)
     {
 
-      $request->user()->authorizeRoles(['user','admin']);
+    //  $request->user()->authorizeRoles(['user','admin']);
 
       $users = User::orderBy('id','desc')->paginate(10);
       return view('admin.users.index')->with('users', $users);

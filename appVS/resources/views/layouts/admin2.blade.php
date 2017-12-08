@@ -261,7 +261,7 @@
       <!--Fin-Contenido-->
       <footer class="main-footer">
 
-    
+
 
         <p ALIGN=center ><strong>Copyright &copy; Victor Sinclair.All rights reserved.</strong></p>
       </footer>
