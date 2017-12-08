@@ -85,7 +85,7 @@ class ConfiguracionesController extends Controller
                 'envoltura' => 0
                 ]);
             $confmat3->save();
-           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+           return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
        return back()->withInput();
         }

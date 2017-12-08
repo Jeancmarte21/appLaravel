@@ -56,7 +56,7 @@ class MaquinasController extends Controller
             $maquina->save();
 
   if($maquina){
-      return redirect()->route('maquinas.show', ['maquina'=>$maquina->idmaquina])->with('success', 'Maquina creada correctamente');
+      return redirect()->route('maquinas.index', ['maquina'=>$maquina->idmaquina])->with('success', 'Maquina creada correctamente');
         }
         return back()->withInput();
     }

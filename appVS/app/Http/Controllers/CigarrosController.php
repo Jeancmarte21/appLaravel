@@ -59,7 +59,7 @@ class CigarrosController extends Controller
      $cigarro->save();
 
      if($cigarro){
-         return redirect()->route('cigarros.show', ['cigarros'=>$cigarro])->with('success', 'Cigarro creado correctamente');
+         return redirect()->route('cigarros.index', ['cigarros'=>$cigarro])->with('success', 'Cigarro creado correctamente');
      }
      return back()->withInput();
  }

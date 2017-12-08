@@ -17,7 +17,7 @@ class Jornada extends Model
     	'hora_extra',
         'extra',
     	'incentivo',
-        'jornada_doble'
+        'jornada_doble',
     	'fecha'
     ];
 
