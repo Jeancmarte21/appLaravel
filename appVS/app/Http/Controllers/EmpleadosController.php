@@ -159,9 +159,8 @@ class EmpleadosController extends Controller
 
    public function nomina(){
 
-     $empleado = Empleados::has('jornadas')->whereBetween('fecha', []);
-     $pdf = PDF::loadView('empleados.pdf', compact('empleado'));
-     return $pdf->download('empleados.pdf');
+     $empleados = Empleado::has('jornadas')->whereBetween('fecha', ['12-07-2017','12-08-2017']);
+     return view('nomina', ['empleados' => $empleados]);
    }
 
 

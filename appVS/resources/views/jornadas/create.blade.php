@@ -61,10 +61,12 @@
 
 
     <div class="form-group">
-<label class="col-xs-3 control-label">Pago del dia</label>
-<div class="col-xs-5 inputGroupContainer">
-<label class="radio-inline"><input type="radio" name="jornada_doble" value"0">Doble</label>
-<label class="radio-inline"><input type="radio" name="jornada_regular" value"1">Normal</label>
+<label class="col-xs-3 control-label">Dia Doble:</label>
+<div class="col-xs-5 selectContainer">
+            <select class="form-control" name="jornada_doble" required>
+                <option value=0>No</option>
+                <option value=1>Si</option>
+            </select>
 </div>
 </div>
 
