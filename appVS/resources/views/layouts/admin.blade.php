@@ -90,153 +90,138 @@
           </nav>
 
       </header>
+      <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar">
+              <!-- sidebar: style can be found in sidebar.less -->
+              <section class="sidebar">
+                <!-- Sidebar user panel -->
 
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu">
+                  <li class="header"></li>
+                  <li>
+                    <a href="/home">
+                    <i class="fa fa-tachometer" aria-hidden="true"></i> <span>Tablero</span>
+                    </a>
+                  </li>
 
-<!-- Left side column. contains the logo and sidebar -->
-      <aside class="main-sidebar">
-        <!-- sidebar: style can be found in sidebar.less -->
-        <section class="sidebar">
-          <!-- Sidebar user panel -->
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-user"></i> <span> Gestión Usuarios</span>
+                      <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
 
-          <!-- sidebar menu: : style can be found in sidebar.less -->
-          <ul class="sidebar-menu">
-            <li class="header"></li>
-            <li>
-              <a href="/home">
-              <i class="fa fa-tachometer" aria-hidden="true"></i> <span>Tablero</span>
-              </a>
-            </li>
+                      <li><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Registrar</a></li>
 
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-user"></i> <span> Gestión Usuarios</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
+                      <li><a href="/users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
+                    </ul>
+                  </li>
 
-                <li><a href="{{ route('register') }}"><i class="fa fa-circle-o"></i> Registrar</a></li>
+                  <li class="treeview">
+                  <a href="#">
+                    <i class="fa fa-users"></i>
+                    <span>Gestión Empleados</span>
+                     <i class="fa fa-angle-left pull-right"></i>
+                  </a>
+                  <ul class="treeview-menu">
 
-                <li><a href="/users"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-              </ul>
-            </li>
+                    <li><a href="/empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
 
-
-
-            <li class="treeview">
-            <a href="#">
-              <i class="fa fa-users"></i>
-              <span>Gestión Empleados</span>
-               <i class="fa fa-angle-left pull-right"></i>
-            </a>
-            <ul class="treeview-menu">
-
-              <li><a href="/empleados"><i class="fa fa-circle-o"></i> Empleados</a></li>
-
-            </ul>
-          </li>
+                  </ul>
+                </li>
 
 
 
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-truck" aria-hidden="true"></i>
-                <span>Gestión Suplidores</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
+                  <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-truck" aria-hidden="true"></i>
+                      <span>Gestión Suplidores</span>
+                       <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
 
-                <li><a href="/suplidores"><i class="fa fa-circle-o"></i> Suplidores</a></li>
+                      <li><a href="/suplidores"><i class="fa fa-circle-o"></i> Suplidores</a></li>
 
-              </ul>
-            </li>
+                    </ul>
+                  </li>
 
-            <li class="treeview">
-           <a href="#">
-             <i class="fa fa-cog" aria-hidden="true"></i>
-             <span>Gestión Maquinas</span>
-              <i class="fa fa-angle-left pull-right"></i>
-           </a>
-           <ul class="treeview-menu">
-
-
-             <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
-
-           </ul>
-         </li>
+                  <li class="treeview">
+                 <a href="#">
+                  <i class="fa fa-cog" aria-hidden="true"></i>
+                   <span>Gestión Maquinas</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                 </a>
+                 <ul class="treeview-menu">
 
 
+                   <li><a href="/maquinas"><i class="fa fa-circle-o"></i> Maquinas</a></li>
 
-              <li class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Gestión Materia Prima</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-
-               <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
-                <li><a href="/entradas"><i class="fa fa-circle-o"></i> Entrada</a></li>
-                 <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
-                 <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
-
-              </ul>
-            </li>
-
-            <li class="treeview">
-           <a href="#">
-             <i class="fa fa-random"></i>
-             <span>Gestión Configuraciones</span>
-              <i class="fa fa-angle-left pull-right"></i>
-           </a>
-           <ul class="treeview-menu">
-
-             <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
-
-           </ul>
-         </li>
+                 </ul>
+               </li>
 
 
 
+                    <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-th"></i>
+                      <span>Gestión Materia Prima</span>
+                       <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+
+                     <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
+                      <li><a href="/entradas"><i class="fa fa-circle-o"></i> Entrada</a></li>
+                       <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
+                       <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
+
+                    </ul>
+                  </li>
 
 
-               <li class="treeview">
-              <a href="#">
-                <i class="fa fa-tasks"></i>
-                <span>Producción</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
+                     <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-tasks"></i>
+                      <span>Producción</span>
+                       <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
 
-                <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
-                <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
-                <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
-              </ul>
-            </li>
+                      <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
+                      <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
+                      <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
+                      <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
+
+
+
+                    </ul>
+                  </li>
 
 
 
 
-              <li class="treeview">
-              <a href="#">
-                <i class="fa fa-print"></i>
-                <span>Reportes</span>
-               <!-- <small class="label pull-right bg-green">xlsx</small>-->
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
-               <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
-                <li><a href="nomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
-              </ul>
-            </li>
+                    <li class="treeview">
+                    <a href="#">
+                      <i class="fa fa-print"></i>
+                      <span>Reportes</span>
+                     <!-- <small class="label pull-right bg-green">xlsx</small>-->
+                       <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                     <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
+                     <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
+                      <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Reporte nomina</a></li>
+                    </ul>
+                  </li>
 
 
 
 
-          </ul>
-        </section>
-        <!-- /.sidebar -->
-      </aside>
+                </ul>
+              </section>
+              <!-- /.sidebar -->
+            </aside>
+
 
 
        <!--Contenido-->

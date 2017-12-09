@@ -180,22 +180,6 @@
               </ul>
             </li>
 
-            <li class="treeview">
-           <a href="#">
-             <i class="fa fa-random"></i>
-             <span>Gestión Configuraciones</span>
-              <i class="fa fa-angle-left pull-right"></i>
-           </a>
-           <ul class="treeview-menu">
-
-             <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
-
-           </ul>
-         </li>
-
-
-
-
 
                <li class="treeview">
               <a href="#">
@@ -205,9 +189,13 @@
               </a>
               <ul class="treeview-menu">
 
+                <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
+                <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
+                <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
-                <li><a href="/cigarros"><i class="fa fa-circle-o"></i> Cigarros</a></li>
+
+
               </ul>
             </li>
 
