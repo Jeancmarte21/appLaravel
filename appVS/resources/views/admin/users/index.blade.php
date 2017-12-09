@@ -29,7 +29,7 @@
 
   <td>
     <a href="/users/{{$user->id}}"
-              class="badge badge-info btn btn-info btn-block">Ver</a>
+              class="badge badge-info btn btn-info btn-block"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
   </tr>
 
   @endforeach
