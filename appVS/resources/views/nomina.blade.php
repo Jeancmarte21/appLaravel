@@ -24,7 +24,11 @@
 
 					<th>OPCIONES</th>
 				</thead>
-				<h1>$empleado</h1>
+				@foreach($empleados as $empleado)
+				<tr>
+					<td>{{$empleado->jornadas}}</td>
+				</tr>
+				@endforeach
 			</table>
 		</div>
 

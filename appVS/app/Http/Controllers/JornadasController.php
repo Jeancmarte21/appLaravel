@@ -149,4 +149,16 @@ class JornadasController extends Controller
       }
       return back()->with('errors', 'No se pudo borrar la Jornada');
     }
+
+    public function nomina(){
+
+    // $empleado = Empleado::has('jornadas')->whereBetween('fecha', ['12-08-2017', '12-10-2017'])->tosql();
+    //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get(); 
+    //$empleado = Empleado::whereHas('jornadas', function($q){
+    //$q->whereBetween('fecha', ['2017-12-01', '2017-12-31']);})->get();
+      $jornadas = Jornada::whereBetween('fecha',['2017-12-01', '2017-12-31'])
+                          ->groupBy('empleado_id')
+                          ->get();
+     return view('nomina', ['jornadas'=>$jornadas]);
+   }
 }
