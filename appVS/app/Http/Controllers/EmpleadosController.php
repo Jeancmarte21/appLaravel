@@ -159,8 +159,8 @@ class EmpleadosController extends Controller
 
    public function nomina(){
 
-     $empleados = Empleado::all();
-     return view('nomina', ['empleados' => $empleados]);
+     $empleado = die(Empleado::has('jornadas')->whereBetween('fecha', ['12-08-2017', '12-10-2017'])->tosql());
+     return view('nomina', ['empleado' => $empleado]);
    }
 
 

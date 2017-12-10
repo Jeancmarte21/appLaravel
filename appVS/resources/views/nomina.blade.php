@@ -24,16 +24,7 @@
 
 					<th>OPCIONES</th>
 				</thead>
-
-				@foreach ($empleados as $empleado)
-				@foreach($empleado->jornadas as $jornada)
-				<tr>
-				<td class="text-center">{{$empleado->nombre}}</td>
-				<td class="text-center">{{$jornada->fecha}}</td>	
-				</tr>
-				@endforeach
-				@endforeach
-
+				<h1>$empleado</h1>
 			</table>
 		</div>
 
