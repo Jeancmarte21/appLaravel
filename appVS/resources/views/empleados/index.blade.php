@@ -2,6 +2,7 @@
 @section('title','Empleados')
 @section('contenido')
 
+
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
@@ -40,13 +41,16 @@
 				</tr>
 
 				@endforeach
+
 			</table>
-			{{ $empleados->links() }}
+			{{$empleados->links() }}
 			<h3 ALIGN=right><a href="{{action('EmpleadosController@downloadPDF')}}" ><button class="btn btn-danger btn-xs"><i class="fa fa-clipboard" aria-hidden="true"></i>  Generar Reporte PDF</button></a></h3>
 		</div>
 		</div>
 	</div>
 </div>
+
+
 
 
 

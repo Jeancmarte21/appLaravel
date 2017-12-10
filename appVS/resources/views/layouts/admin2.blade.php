@@ -193,7 +193,7 @@
                 <li><a href="/configuraciones"><i class="fa fa-circle-o"></i> Configuraciones</a></li>
                 <li><a href="/jornadas"><i class="fa fa-circle-o"></i> Jornada</a></li>
                 <li><a href="/produccionesmaquinas"><i class="fa fa-circle-o"></i> Producción maquina</a></li>
-                
+
 
 
               </ul>
@@ -261,7 +261,8 @@
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset('js/app.min.js')}}"></script>
-    <script src="{{asset ('js/jquery.maskedinput.min.js') }}"
+    <script src="{{asset ('js/jquery.maskedinput.min.js') }}"></script>
+    <script src="{{asset('js/Chart.bundle.min.js')}}"></script>
 
 
   </body>

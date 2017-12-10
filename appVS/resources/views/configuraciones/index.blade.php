@@ -19,7 +19,7 @@
         <thead>
           <th class="text-center">ID</th>
           <th class="text-center">NOMBRE</th>
-          <th class="text-center">OPCIONES</th>
+          <th class="text-center">ACCION</th>
 
         </thead>
         @foreach($configuraciones as $configuracion)

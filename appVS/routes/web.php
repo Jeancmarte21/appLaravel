@@ -22,6 +22,7 @@ Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
 Route::get('/nomina','EmpleadosController@nomina');
 Route::get('/inventarios','MateriasPrimasController@inventario');
 
+
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');

@@ -287,6 +287,7 @@
     <script src="{{asset('js/app.min.js')}}"></script>
     <script src="{{asset ('js/jquery.maskedinput.min.js') }}"></script>
     <script src="{{asset ('plugins/mask/src/jquery.mask.js') }}"></script>
+    <script src="{{asset('js/Chart.bundle.min.js')}}"></script>
 
 
   </body>

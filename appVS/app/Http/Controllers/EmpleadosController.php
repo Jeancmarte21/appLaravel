@@ -8,6 +8,7 @@ use appVS\Http\Requests\UpdateEmpleado;
 use Illuminate\Support\Facades\Auth;
 use PDF;
 use DB;
+use Charts;
 
 class EmpleadosController extends Controller
 {
