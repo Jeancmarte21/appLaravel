@@ -8,25 +8,43 @@
 
 	</div>
 </div>
-
+<?php $cont = 0;?>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th class="text-center">ID</th>
-					<th class="text-center" >CEDULA</th>
-					<th class="text-center">NOMBRES</th>
-					<th class="text-center">APELLIDOS</th>
-					<th class="text-center">TELEFONO</th>
-					<th class="text-center">FECHA NACIMIENTO</th>
-					<th class="text-center">DIRECCIÓN</th>
-
-					<th>OPCIONES</th>
+					<th class="text-center"></th>
+					<th class="text-center" >Nombre</th>
+					<th class="text-center">SALARIO</th>
+					<th class="text-center">INCENT</th>
+					<th class="text-center">LIC</th>
+					<th class="text-center">EXTRA</th>
+					<th class="text-center">BRUTO</th>
+					<th class="text-center">SEG</th>
+					<th class="text-center">TSS</th>
+					<th class="text-center">AFS</th>
+					<th class="text-center">AGUA</th>
+					<th class="text-center">DESC</th>
+					<th class="text-center">NETO</th>
 				</thead>
-				@foreach($empleados as $empleado)
+
+				@foreach($jornadas as $jornada)
 				<tr>
-					<td>{{$empleado->jornadas}}</td>
+					<?php $cont++;?>
+					<td>{{$cont}}</td>
+					<td>{{$jornada->nombre.' '.$jornada->apellidos}}</td>
+					<td>{{$jornada->salario}}</td>
+					<td>{{$jornada->incent}}</td>
+					<td></td>
+					<td>{{$jornada->extra}}</td>
+					<td>{{$jornada->salario + $jornada->incent + $jornada->extra}}</td>
+					<td></td>
+					<td>{{$jornada->incent}}</td>
+					<td>{{$jornada->incent}}</td>
+					<td>{{$jornada->incent}}</td>
+					<td>{{$jornada->incent}}</td>
+					<td>{{$jornada->incent}}</td>
 				</tr>
 				@endforeach
 			</table>

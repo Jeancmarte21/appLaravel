@@ -156,9 +156,13 @@ class JornadasController extends Controller
     //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get(); 
     //$empleado = Empleado::whereHas('jornadas', function($q){
     //$q->whereBetween('fecha', ['2017-12-01', '2017-12-31']);})->get();
-      $jornadas = Jornada::whereBetween('fecha',['2017-12-01', '2017-12-31'])
-                          ->groupBy('empleado_id')
-                          ->get();
+     // $jornadas = Jornada::whereBetween('fecha',['2017-12-01', '2017-12-31'])->get();
+      $jornadas= DB::table('jornada')
+                  ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
+                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos', DB::raw('SUM(jornada.incentivo) as incent, count(jornada.idjornada)*200 as salario, sum(jornada.extra) as extra'))
+                  ->whereBetween('fecha',['2017-12-01', '2017-12-31'])
+                  ->groupBy('jornada.empleado_id')
+                  ->get();
      return view('nomina', ['jornadas'=>$jornadas]);
    }
 }
