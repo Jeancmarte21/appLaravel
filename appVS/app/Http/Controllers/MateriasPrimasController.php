@@ -3,6 +3,11 @@
 namespace appVS\Http\Controllers;
 
 use appVS\MateriaPrima;
+use appVS\Salida;
+use appVS\Cigarro;
+use appVS\ProduccionMaquina;
+use appVS\Maquina;
+use appVS\Configuracion;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use appVS\Http\Requests\StoreMateriaPrimaRequest;
@@ -157,4 +162,20 @@ class MateriasPrimasController extends Controller
      return view('inventario', ['materiasPrimas' => $materiasPrimas, 'total' => $acumulado->pluck('acum')]);
 
    }
+public function rendimiento(){
+
+$salidas = Salida::all();
+$materiasprimas =  MateriaPrima::all();
+$produccionesmaquinas = ProduccionMaquina::all();
+$cigarros = Cigarro::all();
+$configuraciones = Configuracion::all();
+$maquinas = Maquina::all();
+
+return view('rendimiento', ['materiasprimas' => $materiasprimas,'salidas' =>$salidas,'produccionesmaquinas'=>$produccionesmaquinas,'cigarros'=>$cigarros,'configuraciones'=>$configuraciones,'maquinas'=>$maquinas]);
+
+
+
+}
+
+
 }

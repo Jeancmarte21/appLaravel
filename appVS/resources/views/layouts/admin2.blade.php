@@ -210,7 +210,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="compras/proveedor"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
+               <li><a href="/rendimiento"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
                <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
                 <li><a href="/prenomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
               </ul>

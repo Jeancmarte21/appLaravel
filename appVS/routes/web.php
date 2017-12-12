@@ -22,6 +22,7 @@ Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
 Route::get('/prenomina','JornadasController@prenomina');
 Route::post('/nomina', 'JornadasController@nomina');
 Route::get('/inventarios','MateriasPrimasController@inventario');
+Route::get('/rendimiento','MateriasPrimasController@rendimiento');
 
 
 Route::resource('users', 'UsersController');
