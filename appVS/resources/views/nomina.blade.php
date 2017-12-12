@@ -8,9 +8,11 @@
 
 	</div>
 </div>
-<?php $cont = 0;?>
+<?php $cont = 0;
+	$fecha = date('D, d \d\e F \d\e\l Y');?>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	<div><h5 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h5></div>
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>

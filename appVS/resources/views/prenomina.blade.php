@@ -13,7 +13,7 @@
 	<div class="container">
     	<div class='col-md-5'>	
       		<div class="form-group">
-     			<label class="col-xs-3 control-label">Fecha</label>
+     			<label class="col-xs-3 control-label">Fecha desde:</label>
 				<div class="col-xs-6 selectContainer">
 					<input class="form-control" type="date"  id="example-date-input" name="fecha_desde" required>
 				</div>
@@ -22,7 +22,7 @@
 
 		<div class='col-md-5'>
 			<div class="form-group">
-				<label class="col-xs-3 control-label">Fecha</label>
+				<label class="col-xs-3 control-label">Fecha hasta:</label>
 				<div class="col-xs-6 selectContainer">
 					<input class="form-control" type="date"  id="example-date-input" name="fecha_hasta" required>
 				</div>
