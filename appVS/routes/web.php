@@ -20,6 +20,7 @@ Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
 /*Rutas PDF*/
 
 Route::get('/prenomina','JornadasController@prenomina');
+Route::post('/nomina', 'JornadasController@nomina');
 Route::get('/inventarios','MateriasPrimasController@inventario');
 
 

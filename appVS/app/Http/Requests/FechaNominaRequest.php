@@ -25,7 +25,7 @@ class FechaNominaRequest extends FormRequest
     {
         return [
             'fecha_desde' => 'required|date',
-            'fecha_hasta' => 'required|date'
+            'fecha_hasta' => 'required|date_equals:today'
         ];
     }
 }

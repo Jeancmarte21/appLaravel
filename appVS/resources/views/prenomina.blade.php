@@ -7,9 +7,9 @@
 	</div>
 </div>
 
-{{ csrf_field()}}
-		<form class="form-horizontal" method="post" action="{{ route('jornadas.nomina')}}">
 
+		<form class="form-horizontal" method="post" action="/nomina">
+{{ csrf_field()}}
 	<div class="container">
     	<div class='col-md-5'>	
       		<div class="form-group">
