@@ -8,6 +8,7 @@ use appVS\Maquina;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use appVS\Http\Requests\StoreJornadaRequest;
+use appVS\Http\Requests\FechaNominaRequest;
 use DB;
 
 class JornadasController extends Controller
@@ -150,7 +151,7 @@ class JornadasController extends Controller
       return back()->with('errors', 'No se pudo borrar la Jornada');
     }
 
-    public function nomina(){
+    public function nomina(FechaNominaRequest $request){
 
     // $empleado = Empleado::has('jornadas')->whereBetween('fecha', ['12-08-2017', '12-10-2017'])->tosql();
     //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get(); 

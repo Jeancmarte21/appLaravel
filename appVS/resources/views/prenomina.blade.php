@@ -4,46 +4,39 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-
-
 	</div>
 </div>
 
+{{ csrf_field()}}
+		<form class="form-horizontal" method="post" action="{{ route('jornadas.nomina')}}">
+
 	<div class="container">
-    <div class='col-md-5'>
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker6'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
+    	<div class='col-md-5'>	
+      		<div class="form-group">
+     			<label class="col-xs-3 control-label">Fecha</label>
+				<div class="col-xs-6 selectContainer">
+					<input class="form-control" type="date"  id="example-date-input" name="fecha_desde" required>
+				</div>
+			</div>
+		</div>
+
+		<div class='col-md-5'>
+			<div class="form-group">
+				<label class="col-xs-3 control-label">Fecha</label>
+				<div class="col-xs-6 selectContainer">
+					<input class="form-control" type="date"  id="example-date-input" name="fecha_hasta" required>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group">
+        <div class="col-xs-11 text-center">
+          <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
         </div>
     </div>
-    <div class='col-md-5'>
-        <div class="form-group">
-            <div class='input-group date' id='datetimepicker7'>
-                <input type='text' class="form-control" />
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $(function () {
-        $('#datetimepicker6').datetimepicker();
-        $('#datetimepicker7').datetimepicker({
-            useCurrent: false //Important! See issue #1075
-        });
-        $("#datetimepicker6").on("dp.change", function (e) {
-            $('#datetimepicker7').data("DateTimePicker").minDate(e.date);
-        });
-        $("#datetimepicker7").on("dp.change", function (e) {
-            $('#datetimepicker6').data("DateTimePicker").maxDate(e.date);
-        });
-    });
-</script>
+</form>
+
+
 
 @endsection
