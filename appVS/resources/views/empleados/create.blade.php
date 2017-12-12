@@ -69,7 +69,7 @@
                             <div class="form-group">
                               <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-globe bigicon"></i></span>
                               <div class="col-md-8">
-                                <input id="empleado-direccion" name="direccion" type="number" placeholder="Direccion" class="form-control">
+                                <input id="empleado-direccion" name="direccion" type="text" placeholder="Direccion" class="form-control">
                               </div>
                             </div>
 
