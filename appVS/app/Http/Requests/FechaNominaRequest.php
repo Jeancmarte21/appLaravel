@@ -25,7 +25,7 @@ class FechaNominaRequest extends FormRequest
     {
         return [
             'fecha_desde' => 'required|date|different:fecha_hasta',
-            'fecha_hasta' => 'required|after:fecha_desde|before:tomorrow'
+            'fecha_hasta' => 'required|after:fecha_desde'
         ];
     }
 }
