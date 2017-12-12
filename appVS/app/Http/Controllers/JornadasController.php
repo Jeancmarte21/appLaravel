@@ -162,7 +162,12 @@ class JornadasController extends Controller
                   ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos', DB::raw('SUM(jornada.incentivo) as incent, count(jornada.idjornada)*200 as salario, sum(jornada.extra) as extra'))
                   ->whereBetween('fecha',['2017-12-01', '2017-12-31'])
                   ->groupBy('jornada.empleado_id')
+                  ->orderBy('empleado.nombre')
                   ->get();
      return view('nomina', ['jornadas'=>$jornadas]);
+   }
+
+   public function prenomina(){
+    return view('prenomina');
    }
 }
