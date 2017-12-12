@@ -69,9 +69,27 @@
                             <div class="form-group">
                               <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-globe bigicon"></i></span>
                               <div class="col-md-8">
-                                <input id="empleado-direccion" name="direccion" type="text" placeholder="Direccion" class="form-control">
+                                <input id="empleado-direccion" name="direccion" type="number" placeholder="Direccion" class="form-control">
                               </div>
                             </div>
+
+                            <div class="form-group">
+                              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-money" aria-hidden="true"></i></span>
+                              <div class="col-md-8">
+                                <input id="salario_dia" name="salario_dia" type="number" placeholder="Salario por día" class="form-control value="0" min="0" step="0.1">
+                              </div>
+                            </div>
+
+                            <div class="form-group">
+                              <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-money" aria-hidden="true"></i></span>
+                              <div class="col-md-8">
+                                <input id="salario_hora" name="salario_hora" type="number" placeholder="Salario por hora" class="form-control value="0" min="0" step="0.1">
+                              </div>
+                            </div>
+
+
+
+
 
                             <div class="modal-footer">
                                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
