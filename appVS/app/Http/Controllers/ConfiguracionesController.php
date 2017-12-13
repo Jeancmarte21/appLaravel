@@ -2,6 +2,9 @@
 
 namespace appVS\Http\Controllers;
 
+use appVS\Salida;
+use appVS\ProduccionMaquina;
+use appVS\Maquina;
 use appVS\Configuracion;
 use appVS\ConfiguracionMateriaPrima;
 use appVS\Cigarro;
@@ -191,4 +194,23 @@ class ConfiguracionesController extends Controller
       }
       return back()->with('errors', 'No se pudo borrar la configuracion');
     }
+
+
+    public function rendimiento(){
+
+    $salidas = Salida::all();
+    $materiasprimas =  MateriaPrima::all();
+    $produccionesmaquinas = ProduccionMaquina::all();
+    $cigarros = Cigarro::all();
+    $configuraciones = Configuracion::all();
+    $maquinas = Maquina::all();
+
+    return view('rendimiento', ['materiasprimas' => $materiasprimas,
+    'salidas' => $salidas,'produccionesmaquinas' => $produccionesmaquinas,
+    'cigarros' => $cigarros,'configuraciones' => $configuraciones,
+    'maquinas' => $maquinas]);
+
+    }
+
+
 }

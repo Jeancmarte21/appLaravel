@@ -162,20 +162,5 @@ class MateriasPrimasController extends Controller
      return view('inventario', ['materiasPrimas' => $materiasPrimas, 'total' => $acumulado->pluck('acum')]);
 
    }
-public function rendimiento(){
-
-$salidas = Salida::all();
-$materiasprimas =  MateriaPrima::all();
-$produccionesmaquinas = ProduccionMaquina::all();
-$cigarros = Cigarro::all();
-$configuraciones = Configuracion::all();
-$maquinas = Maquina::all();
-
-return view('rendimiento', ['materiasprimas' => $materiasprimas,'salidas' =>$salidas,'produccionesmaquinas'=>$produccionesmaquinas,'cigarros'=>$cigarros,'configuraciones'=>$configuraciones,'maquinas'=>$maquinas]);
-
-
-
-}
-
 
 }
