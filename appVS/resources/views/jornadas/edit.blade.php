@@ -5,8 +5,10 @@
 <div class="row">
   <div class="col-md-12">
     <form class="form-horizontal" method="post" action="{{route('jornadas.update', [$jornada->idjornada])}}">
+      
       <fieldset>
-      {{ csrf_field()}}
+        {{ csrf_field()}}
+        <input type="hidden" name="_method" value="put">
                    <div class="form-group">
         <label class="col-xs-3 control-label">Fecha</label>
         <div class="col-xs-5 selectContainer">
@@ -16,8 +18,8 @@
                               <div class="form-group">
         <label class="col-xs-3 control-label">Maquina</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="maquina" required>
-                <option value="">Seleccione</option>
+            <select class="form-control" name="maquina">
+                <option value="{{$jornada->maquina}}">{{$jornada->maquinas->nombre}}</option>
                 @foreach($maquinas as $maquina)
                 <option value="{{$maquina->nombre}}">{{$maquina->nombre}}</option>
               @endforeach
@@ -28,8 +30,8 @@
                 <div class="form-group">
         <label class="col-xs-3 control-label">Empleado</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="empleado" required>
-                <option value="">Seleccione</option>
+            <select class="form-control" name="empleado" disabled>
+                <option value="{{$jornada->idempleado}}">{{$jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</option>
                 @foreach($empleados as $empleado)
                 <option value="{{$empleado->idempleado}}">{{$empleado->nombre.' '.$empleado->apellidos}}</option>
               @endforeach
