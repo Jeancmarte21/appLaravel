@@ -166,7 +166,7 @@ class ProduccionesMaquinasController extends Controller
                         ->join('maquina', 'produccionMaquina.maquina_id', '=', 'maquina.idmaquina')
                         ->join('jornada', 'produccionMaquina.maquina_id', '=', 'jornada.maquina_id')
                         ->select('ProduccionMaquina.maquina_id', DB::raw('SUM(produccionMaquina.cantidad) as produccion'))
-                        ->where('maquina.produccion', '=', 0)
+                        ->where('maquina.produccion', '=', 1)
                         ->groupBy('ProduccionMaquina.maquina_id')
                         ->get();
         return back()->with('errors', 'No se pudo borrar la Produccion');

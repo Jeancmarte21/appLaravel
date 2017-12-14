@@ -18,7 +18,9 @@ class Empleado extends Model
     	'apellidos',
         'telefono',
     	'fecha_nacimiento',
-    	'direccion'
+    	'direccion',
+        'salario_dia',
+        'salario_hora'
     ];
 
     public function jornadas()
