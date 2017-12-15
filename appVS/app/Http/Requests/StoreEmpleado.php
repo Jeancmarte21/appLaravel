@@ -29,7 +29,9 @@ class StoreEmpleado extends FormRequest
             'apellidos'=>'required|max:50', 
             'fecha_nacimiento'=>'required|date|before:01/01/2005',
             'telefono'=>'regex:/8[0-9]{2}-[0-9]{3}-[0-9]{4}/',
-            'direccion'=>'max:256'
+            'direccion'=>'max:256',
+            'salario_dia' => 'required|numeric',
+            'salario_hora' => 'required|numeric'
         ];
     }
 }

@@ -67,9 +67,11 @@ class EmpleadosController extends Controller
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
-                'fecha_nacimiento' => date('Y-m-d'),
+                'fecha_nacimiento' => input('fecha_nacimiento'),
                 'telefono' => $request->input('telefono'),
-                'direccion' => $request->input('direccion')
+                'direccion' => $request->input('direccion'),
+                'salario_dia' => $request->input('salario_dia'),
+                'salario_hora' => $request->input('salario_hora')
                 ]);
             $empleado->save();
 
@@ -126,7 +128,9 @@ class EmpleadosController extends Controller
             'apellidos' => $request->input('apellidos'),
             'fecha_nacimiento' => $request->input('fecha_nacimiento'),
             'telefono' => $request->input('telefono'),
-            'direccion' => $request->input('direccion')
+            'direccion' => $request->input('direccion'),
+            'salario_dia' => $request->input('salario_dia'),
+            'salario_hora' => $request->input('salario_hora')
             ]);
             if($empleadoUpdate){
                 return redirect()->route('empleados.show', ['empleado'=>$empleado])->with('success', 'Empleado editado correctamente');

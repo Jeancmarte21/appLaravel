@@ -22,20 +22,22 @@
 					<th class="text-center">TELEFONO</th>
 					<th class="text-center">FECHA NACIMIENTO</th>
 					<th class="text-center">DIRECCIÓN</th>
-
+					<th class="text-center">SALARIO DIA</th>
+					<th class="text-center">SALARIO HORA</th>
 					<th>OPCIONES</th>
 				</thead>
 
 
 				<tr>
 					<td class="text-center">{{$empleado->idempleado}}</td>
-					<th class="text-center">{{$empleado->cedula}}</th>
+					<td class="text-center">{{$empleado->cedula}}</td>
 					<td class="text-center">{{$empleado->nombre}}</td>
 					<td class="text-center">{{$empleado->apellidos}}</td>
-					<th class="text-center">{{$empleado->telefono}}</th>
-					<th class="text-center">{{$empleado->fecha_nacimiento}}</th>
-					<th class="text-center">{{$empleado->direccion}}</th>
-
+					<td class="text-center">{{$empleado->telefono}}</td>
+					<td class="text-center">{{$empleado->fecha_nacimiento}}</td>
+					<td class="text-center">{{$empleado->direccion}}</td>
+					<td class="text-center">{{$empleado->salario_dia}}</td>
+					<td class="text-center">{{$empleado->salario_hora}}</td>
 
 					<td>
 
