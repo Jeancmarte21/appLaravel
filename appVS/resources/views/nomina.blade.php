@@ -8,7 +8,8 @@
 
 	</div>
 </div>
-<?php $cont = 0;
+<?php $cont = 0; $salario_acum = 0; $incent_acum = 0; $extra_acum = 0;
+	$tss_acum =0; $afs_acum = 0; $agua_acum = 0; $desc_acum = 0; $bruto_acum = 0; $neto_acum = 0;
 	$fecha = date('D, d \d\e F \d\e\l Y');
 	$semana = date('W');?>
 <div class="row">
@@ -34,7 +35,8 @@
 
 				@foreach($jornadas as $jornada)
 				<tr>
-					<?php $cont++;?>
+					<?php $cont++; $salario_acum += $jornada->salario; $incent_acum += $jornada->incent; $extra_acum += $jornada->extra; $tss_acum += $jornada->tss; $afs_acum += $jornada->afs; $agua_acum += 13; $desc_acum += $jornada->tss + $jornada->afs + 13; $bruto_acum += $jornada->salario + $jornada->incent + $jornada->extra ; $neto_acum += ($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13) ;?>
+
 					<td>{{$cont}}</td>
 					<td>{{$jornada->nombre.' '.$jornada->apellidos}}</td>
 					<td>{{$jornada->salario}}</td>
@@ -50,6 +52,21 @@
 					<td>{{($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13)}}</td>
 				</tr>
 				@endforeach
+				<tr>
+				<td></td>
+				<td align="right"><strong>TOTAL</strong></td>
+				<td>{{$salario_acum}}</td>
+				<td>{{$incent_acum}}</td>
+				<td></td>
+				<td>{{$extra_acum}}</td>
+				<td>{{$bruto_acum}}</td>
+				<td></td>
+				<td>{{$tss_acum}}</td>
+				<td>{{$afs_acum}}</td>
+				<td>{{$agua_acum}}</td>
+				<td>{{$desc_acum}}</td>
+				<td>{{$neto_acum}}</td>
+				</tr>
 			</table>
 		</div>
 
