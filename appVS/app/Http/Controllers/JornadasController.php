@@ -69,13 +69,15 @@ class JornadasController extends Controller
      */
     public function store(StoreJornadaRequest $request)
     {
+      $empleado = Empleado::find($request->input('empleado'));
        $jornada = Jornada::create([
                 'maquina_id' => $request -> input('maquina'),
                 'empleado_id' => $request -> input('empleado'),
                 'incentivo' => $request->input('incentivo'),
                 'hora_extra' => $request->input('hora_extra'),
                 'fecha' => $request->input('fecha'),
-                'jornada_doble' => $request->input('jornada_doble')
+                'jornada_doble' => $request->input('jornada_doble'),
+                'extra' => ($request->input('hora_extra') * $empleado->salario_hora) + ($request->input('jornada_doble') * $empleado->salario_dia)  
                 ]);
        $jornada ->save();
 
@@ -126,6 +128,7 @@ class JornadasController extends Controller
             'incentivo' => $request->input('incentivo'),
             'hora_extra' => $request->input('hora_extra'),
             'fecha' => $request->input('fecha'),
+            'jornada_doble' => $request->input('jornada_doble')
 
           ]);
           if($jornadaUpdate){
@@ -161,7 +164,12 @@ class JornadasController extends Controller
       $fecha_hasta = $request->input('fecha_hasta');
       $jornadas= DB::table('jornada')
                   ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos', DB::raw('SUM(jornada.incentivo) as incent, count(jornada.idjornada)*200 as salario, sum(jornada.extra) as extra'))
+                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos', 
+                              DB::raw('SUM(jornada.incentivo) as incent, 
+                              count(jornada.idjornada)*empleado.salario_dia as salario, 
+                              sum(jornada.extra) as extra, 
+                              round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss, 
+                              round((count(jornada.idjornada)*empleado.salario_dia*3.04) / 100, 0) as afs'))
                   ->whereBetween('fecha',[$fecha_desde, $fecha_hasta])
                   ->groupBy('jornada.empleado_id')
                   ->orderBy('empleado.nombre')

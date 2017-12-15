@@ -36,6 +36,15 @@
         </div>
     </div>
 
+          <div class="form-group">
+          <label class="col-xs-3 control-label">Dia Doble:</label>
+          <div class="col-xs-5 selectContainer">
+                      <select class="form-control" name="jornada_doble" required>
+                          <option value=0>No</option>
+                          <option value=2>Si</option>
+                      </select>
+          </div>
+          </div>
 
                      <div class="form-group">
         <label class="col-xs-3 control-label">Incentivo</label>

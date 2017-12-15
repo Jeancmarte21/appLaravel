@@ -9,10 +9,11 @@
 	</div>
 </div>
 <?php $cont = 0;
-	$fecha = date('D, d \d\e F \d\e\l Y');?>
+	$fecha = date('D, d \d\e F \d\e\l Y');
+	$semana = date('W');?>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	<div><h5 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h5></div>
+	<div><h5 align="right"><span>S-</span>  {{$semana}}</h5><h5 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h5></div>
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
@@ -42,11 +43,11 @@
 					<td>{{$jornada->extra}}</td>
 					<td>{{$jornada->salario + $jornada->incent + $jornada->extra}}</td>
 					<td></td>
-					<td>{{$jornada->incent}}</td>
-					<td>{{$jornada->incent}}</td>
-					<td>{{$jornada->incent}}</td>
-					<td>{{$jornada->incent}}</td>
-					<td>{{$jornada->incent}}</td>
+					<td>{{$jornada->tss}}</td>
+					<td>{{$jornada->afs}}</td>
+					<td>13</td>
+					<td>{{$jornada->tss + $jornada->afs + 13}}</td>
+					<td>{{($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13)}}</td>
 				</tr>
 				@endforeach
 			</table>
