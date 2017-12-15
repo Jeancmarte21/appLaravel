@@ -13,7 +13,10 @@ class CreateMateriaPrimaTable extends Migration
      */
     public function up()
     {
-        Schema::create('materiaPrima', function (Blueprint $table) {
+        
+
+        if(!Schema::hasTable('materiaPrima')){
+            Schema::create('materiaPrima', function (Blueprint $table) {
             $table->increments('idmateriaPrima');
             $table->string('nombre', 35)->collation('utf8_spanish_ci');
             $table->enum('categoria', ['Tabaco', 'Saborizante', 'Pega']);
@@ -24,6 +27,7 @@ class CreateMateriaPrimaTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+         }
     }
 
     /**

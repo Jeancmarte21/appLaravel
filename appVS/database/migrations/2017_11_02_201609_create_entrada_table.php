@@ -13,7 +13,9 @@ class CreateEntradaTable extends Migration
      */
     public function up()
     {
-        Schema::create('entrada', function (Blueprint $table) {
+        
+        if(!Schema::hasTable('entrada')){
+            Schema::create('entrada', function (Blueprint $table) {
             $table->increments('identrada');
             $table->integer('suplidor_id')->unsigned();
             $table->integer('materiaprima_id')->unsigned();
@@ -26,6 +28,7 @@ class CreateEntradaTable extends Migration
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
             $table->foreign('suplidor_id')->references('idsuplidor')->on('suplidor');
         });
+         }
     }
 
     /**

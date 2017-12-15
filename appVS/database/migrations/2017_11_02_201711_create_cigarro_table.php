@@ -13,7 +13,9 @@ class CreateCigarroTable extends Migration
      */
     public function up()
     {
-        Schema::create('cigarro', function (Blueprint $table) {
+
+        if(!Schema::hasTable('cigarro')){
+            Schema::create('cigarro', function (Blueprint $table) {
             $table->increments('idcigarro');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
             $table->enum('tipo', ['Fumas AMF', 'Fumas Arenco']);
@@ -23,6 +25,8 @@ class CreateCigarroTable extends Migration
 
             $table->foreign('saborizante')->references('idmateriaPrima')->on('materiaPrima');
         });
+         }
+
     }
 
     /**

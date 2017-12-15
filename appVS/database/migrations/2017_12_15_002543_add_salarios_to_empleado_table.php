@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRolesTable extends Migration
+class AddSalariosToEmpleadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,10 @@ class CreateRolesTable extends Migration
      */
     public function up()
     {
-
-        if(!Schema::hasTable('roles')){
-            Schema::create('roles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
+        Schema::table('empleado', function (Blueprint $table) {
+            $table->float('salario_dia', 11, 2)->after('direccion');
+            $table->float('salario_hora', 11, 2)->after('salario_dia');
         });
-         }
-
     }
 
     /**
@@ -31,6 +26,8 @@ class CreateRolesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::table('empleado', function (Blueprint $table) {
+            //
+        });
     }
 }

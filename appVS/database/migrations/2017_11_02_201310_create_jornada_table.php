@@ -13,7 +13,9 @@ class CreateJornadaTable extends Migration
      */
     public function up()
     {
-        Schema::create('jornada', function (Blueprint $table) {
+
+        if(!Schema::hasTable('jornada')){
+            Schema::create('jornada', function (Blueprint $table) {
             $table->increments('idjornada');
             $table->integer('maquina_id')->unsigned();
             $table->integer('empleado_id')->unsigned();
@@ -28,6 +30,7 @@ class CreateJornadaTable extends Migration
             $table->foreign('maquina_id')->references('idmaquina')->on('maquina');
             $table->foreign('empleado_id')->references('idempleado')->on('empleado');
         });
+         }
     }
 
     /**

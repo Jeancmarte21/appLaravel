@@ -13,13 +13,17 @@ class CreateMaquinaTable extends Migration
      */
     public function up()
     {
-        Schema::create('maquina', function (Blueprint $table) {
+        
+
+        if(!Schema::hasTable('maquina')){
+            Schema::create('maquina', function (Blueprint $table) {
             $table->increments('idmaquina');
             $table->string('nombre', 20)->collation('utf8_spanish_ci');
             $table->tinyInteger('produccion');
             $table->softDeletes();
             $table->timestamps();
         });
+         }
     }
 
     /**

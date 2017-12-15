@@ -13,7 +13,10 @@ class CreateSalidaTable extends Migration
      */
     public function up()
     {
-        Schema::create('salida', function (Blueprint $table) {
+        
+
+        if(!Schema::hasTable('salida')){
+            Schema::create('salida', function (Blueprint $table) {
             $table->increments('idsalida');
             $table->integer('materiaprima_id')->unsigned();
             $table->float('cantidad', 7, 2);
@@ -23,6 +26,8 @@ class CreateSalidaTable extends Migration
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
         });
+         }
+
     }
 
     /**
