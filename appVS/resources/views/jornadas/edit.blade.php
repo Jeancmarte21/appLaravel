@@ -19,7 +19,7 @@
         <label class="col-xs-3 control-label">Maquina</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="maquina">
-                <option value="{{$jornada->maquina}}">{{$jornada->maquinas->nombre}}</option>
+                <option value="{{$jornada->maquina_id}}" selected>{{$jornada->maquinas->nombre}}</option>
                 @foreach($maquinas as $maquina)
                 <option value="{{$maquina->nombre}}">{{$maquina->nombre}}</option>
               @endforeach
@@ -30,11 +30,8 @@
                 <div class="form-group">
         <label class="col-xs-3 control-label">Empleado</label>
         <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="empleado" disabled>
-                <option value="{{$jornada->idempleado}}">{{$jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</option>
-                @foreach($empleados as $empleado)
-                <option value="{{$empleado->idempleado}}">{{$empleado->nombre.' '.$empleado->apellidos}}</option>
-              @endforeach
+            <select class="form-control" name="empleado">
+                <option value="{{$jornada->empleado_id}}" selected>{{$jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</option>
             </select>
         </div>
     </div>

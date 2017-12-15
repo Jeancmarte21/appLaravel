@@ -107,8 +107,7 @@ class JornadasController extends Controller
      {
          $jornada = Jornada::find($jornada->idjornada);
          $maquinas= Maquina::all();
-         $empleados = Empleado::all();
-         return view('jornadas.edit',['jornada'=>$jornada, 'maquinas' => $maquinas, 'empleados' => $empleados]);
+         return view('jornadas.edit',['jornada'=>$jornada, 'maquinas' => $maquinas]);
      }
 
     /**
