@@ -18,9 +18,9 @@
 				</thead>
 					@foreach ($configuraciones as $confi)
 				<tr>
-					<td class="text-center">{{$confi->fecha}}</td>
-					<td class="text-center">{{$confi->nombre}}</td>
-					<td class="text-center">{{$confi->cigarros->nombre}}</td>
+
+		
+
 
 
 

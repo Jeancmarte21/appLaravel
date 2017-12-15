@@ -196,7 +196,7 @@ class ConfiguracionesController extends Controller
     }
 
 
-    public function rendimiento(){
+    public function rendimiento(Request $request){
 
     $salidas = Salida::all();
     $materiasprimas =  MateriaPrima::all();
@@ -205,10 +205,13 @@ class ConfiguracionesController extends Controller
     $configuraciones = Configuracion::all();
     $maquinas = Maquina::all();
 
-    return view('rendimiento', ['materiasprimas' => $materiasprimas,
-    'salidas' => $salidas,'produccionesmaquinas' => $produccionesmaquinas,
-    'cigarros' => $cigarros,'configuraciones' => $configuraciones,
-    'maquinas' => $maquinas]);
+    $configuraciones= DB::table('configuracion')
+                ->join('produccionMaquina', 'configuracion.produccionMaquina_id',
+                '=', 'produccionMaquina.idproduccionmaquina')
+                ->select('configuracion.produccionMaquina_id','produccionMaquina.cantidad');
+
+return view('rendimiento', ['produccionesmaquinas' => $produccionesmaquinas,
+    'configuraciones' => $configuraciones]);
 
     }
 
