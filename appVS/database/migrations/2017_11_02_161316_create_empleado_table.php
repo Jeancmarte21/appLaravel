@@ -13,7 +13,10 @@ class CreateEmpleadoTable extends Migration
      */
     public function up()
     {
-        Schema::create('empleado', function (Blueprint $table) {
+        
+
+        if(!Schema::hasTable('empleado')){
+            Schema::create('empleado', function (Blueprint $table) {
             $table->increments('idempleado');
             $table->string('cedula', 13)->collation('utf8_spanish_ci')->unique();
             $table->string('nombre', 25)->collation('utf8_spanish_ci');
@@ -21,11 +24,10 @@ class CreateEmpleadoTable extends Migration
             $table->string('telefono', 12)->nullable();
             $table->date('fecha_nacimiento');
             $table->longText('direccion')->collation('utf8_spanish_ci')->nullable();
-            $table->float('salario_dia');
-            $table->float('salario_hora');
             $table->softDeletes();
             $table->timestamps();
         });
+         }
     }
 
     /**
