@@ -22,8 +22,6 @@
 
 
 
-
-
   </head>
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
@@ -237,9 +235,9 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"> @yield('title','Default')</h3>
                   <div class="box-tools pull-right">
-                    <!-- <button class="btn btn-box-tool"><a href="{{ url()->previous() }}">Atras</a><i class=""></i></button>
+                  <button class="btn btn-box-tool"><a href="{{ url()->previous() }}"><i class="fa fa-arrow-left" aria-hidden="true"></i> Atras</a></button>
 
-                   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                <!--   <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
 
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>-->
 

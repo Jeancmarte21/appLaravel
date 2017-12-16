@@ -5,8 +5,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Inicio de Sesion</div>
+            <div class="panel">
+                <div class="panel-heading text-center">Inicio de Sesion
+
+                  <div ALIGN=center>
+                  <img src="../img/logo.png" width="250"  class=img-responsive   alt="logo"/>
+                  </div></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('login') }}">

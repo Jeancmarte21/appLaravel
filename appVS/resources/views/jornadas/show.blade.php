@@ -15,13 +15,13 @@
 		<div class="table-responsive">
 			<table class="table table-striped table-bordered table-condensed table-hover">
 				<thead>
-					<th class="text-center" class="text-center">FECHA</th>
-					<th class="text-center" class="text-center">MAQUINA</th>
-					<th class="text-center" class="text-center">EMPLEADO</th>
-					<th class="text-center" class="text-center">DIA DOBLE</th>
-					<th class="text-center" class="text-center">INCENTIVO</th>
-					<th class="text-center" class="text-center">HORAS EXTRAS</th>
-					<th class="text-center" class="text-center">OPCIONES</th>
+					<th  class="text-center">FECHA</th>
+					<th  class="text-center">MAQUINA</th>
+					<th  class="text-center">EMPLEADO</th>
+					<th  class="text-center">DIA DOBLE</th>
+					<th  class="text-center">INCENTIVO</th>
+					<th  class="text-center">HORAS EXTRAS</th>
+					<th  class="text-center">OPCIONES</th>
 				</thead>
 
 
