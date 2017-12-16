@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','Listado de Salidas')
+@section('title','Detalles de la Jornada')
 @section('contenido')
 
 
@@ -18,6 +18,7 @@
 					<th class="text-center" class="text-center">FECHA</th>
 					<th class="text-center" class="text-center">MAQUINA</th>
 					<th class="text-center" class="text-center">EMPLEADO</th>
+					<th class="text-center" class="text-center">DIA DOBLE</th>
 					<th class="text-center" class="text-center">INCENTIVO</th>
 					<th class="text-center" class="text-center">HORAS EXTRAS</th>
 					<th class="text-center" class="text-center">OPCIONES</th>
@@ -28,6 +29,11 @@
 					<td class="text-center">{{ $jornada->fecha}}</td>
 					<td class="text-center">{{ $jornada->maquinas->nombre}}</td>
 					<td class="text-center">{{ $jornada->empleados->nombre.' '.$jornada->empleados->apellidos}}</td>
+					@if($jornada->jornada_doble == 2)
+					<td class="text-center">Si</td>
+					@else
+					<td class="text-center">No</td>
+					@endif
 					<td class="text-center">{{ $jornada->incentivo}}</td>
 					<td class="text-center">{{ $jornada->hora_extra}}</td>
 
