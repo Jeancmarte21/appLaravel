@@ -50,7 +50,7 @@ class SalidasController extends Controller
 
 
         $salidas = Salida::all();
-        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        $materiasprimas = MateriaPrima::all();
         return view('salidas.index', ['salidas'=> $salidas, 'materiasprimas' => $materiasprimas]);
     }
 
