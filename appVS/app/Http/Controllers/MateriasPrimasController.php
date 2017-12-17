@@ -32,6 +32,17 @@ class MateriasPrimasController extends Controller
 
         $request->user()->authorizeRoles(['user', 'admin']);
         $materiasPrimas= MateriaPrima::all();
+
+        if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $materiasPrimas=DB::table('materiaPrima')->where('nombre','LIKE','%'.$query.'%')
+            ->orderBy('idmateriaPrima','desc')
+            ->paginate(7);
+            return view('materiasPrimas.index',["materiasPrimas"=>$materiasPrimas,"searchText"=>$query]);
+        }
+
+
         return view('materiasPrimas.index', ['materiasPrimas' => $materiasPrimas]);
     }
 
