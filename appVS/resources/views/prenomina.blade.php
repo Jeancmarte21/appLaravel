@@ -11,7 +11,7 @@
 		<form class="form-horizontal" method="post" action="/nomina">
 {{ csrf_field()}}
 	<div class="container">
-    	<div class='col-md-5'>	
+    	<div class='col-md-5'>
       		<div class="form-group">
      			<label class="col-xs-3 control-label">Fecha desde:</label>
 				<div class="col-xs-6 selectContainer">

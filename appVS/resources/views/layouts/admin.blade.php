@@ -51,7 +51,7 @@
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
   @else
-                
+
 
 
                 <li class="dropdown user user-menu">
@@ -171,7 +171,7 @@
                      <li><a href="/materiasPrimas"><i class="fa fa-circle-o"></i> Materia prima</a></li>
                       <li><a href="/entradas"><i class="fa fa-circle-o"></i> Entrada</a></li>
                        <li><a href="/salidas/"><i class="fa fa-circle-o"></i> Salida</a></li>
-                       <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
+
 
                     </ul>
                   </li>
@@ -206,9 +206,11 @@
                        <i class="fa fa-angle-left pull-right"></i>
                     </a>
                     <ul class="treeview-menu">
+                        <li><a href="/prenomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
+                      <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
                      <li><a href="/rendimiento"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
                      <li><a href="compras/ingreso"><i class="fa fa-circle-o"></i> Costo unitario</a></li>
-                      <li><a href="/prenomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
+
                     </ul>
                   </li>
 

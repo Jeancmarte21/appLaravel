@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Redirect;
 use appVS\Http\Requests\StoreJornadaRequest;
 use appVS\Http\Requests\FechaNominaRequest;
 use DB;
+use PDF;
 
 class JornadasController extends Controller
 {
@@ -77,7 +78,7 @@ class JornadasController extends Controller
                 'hora_extra' => $request->input('hora_extra'),
                 'fecha' => $request->input('fecha'),
                 'jornada_doble' => $request->input('jornada_doble'),
-                'extra' => ($request->input('hora_extra') * $empleado->salario_hora) + ($request->input('jornada_doble') * $empleado->salario_dia)  
+                'extra' => ($request->input('hora_extra') * $empleado->salario_hora) + ($request->input('jornada_doble') * $empleado->salario_dia)
                 ]);
        $jornada ->save();
 
@@ -156,7 +157,7 @@ class JornadasController extends Controller
     public function nomina(FechaNominaRequest $request){
 
     // $empleado = Empleado::has('jornadas')->whereBetween('fecha', ['12-08-2017', '12-10-2017'])->tosql();
-    //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get(); 
+    //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get();
     //$empleado = Empleado::whereHas('jornadas', function($q){
     //$q->whereBetween('fecha', ['2017-12-01', '2017-12-31']);})->get();
      // $jornadas = Jornada::whereBetween('fecha',['2017-12-01', '2017-12-31'])->get();
@@ -164,11 +165,11 @@ class JornadasController extends Controller
       $fecha_hasta = $request->input('fecha_hasta');
       $jornadas= DB::table('jornada')
                   ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos', 
-                              DB::raw('SUM(jornada.incentivo) as incent, 
-                              count(jornada.idjornada)*empleado.salario_dia as salario, 
-                              sum(jornada.extra) as extra, 
-                              round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss, 
+                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos',
+                              DB::raw('SUM(jornada.incentivo) as incent,
+                              count(jornada.idjornada)*empleado.salario_dia as salario,
+                              sum(jornada.extra) as extra,
+                              round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss,
                               round((count(jornada.idjornada)*empleado.salario_dia*3.04) / 100, 0) as afs'))
                   ->whereBetween('fecha',[$fecha_desde, $fecha_hasta])
                   ->groupBy('jornada.empleado_id')
@@ -180,4 +181,28 @@ class JornadasController extends Controller
    public function prenomina(){
     return view('prenomina');
    }
+
+   public function downloadPDF(Request $request){
+
+    $jornadas = Jornada::all();
+  //  $fecha_desde = $request->input('fecha_desde');
+  //  $fecha_hasta = $request->input('fecha_hasta');
+    $jornadas= DB::table('jornada')
+                ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
+                ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos',
+                            DB::raw('SUM(jornada.incentivo) as incent,
+                            count(jornada.idjornada)*empleado.salario_dia as salario,
+                            sum(jornada.extra) as extra,
+                            round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss,
+                            round((count(jornada.idjornada)*empleado.salario_dia*3.04) / 100, 0) as afs'))
+              //  ->whereBetween('fecha',[$fecha_desde, $fecha_hasta])
+                ->groupBy('jornada.empleado_id')
+                ->orderBy('empleado.nombre')
+                ->get();
+
+    $pdf = PDF::loadView('nominaPDF', compact('jornadas'));
+    return $pdf->download('nomina.pdf');
+   }
+
+
 }

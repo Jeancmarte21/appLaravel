@@ -35,7 +35,12 @@
 
 				@foreach($jornadas as $jornada)
 				<tr>
-					<?php $cont++; $salario_acum += $jornada->salario; $incent_acum += $jornada->incent; $extra_acum += $jornada->extra; $tss_acum += $jornada->tss; $afs_acum += $jornada->afs; $agua_acum += 13; $desc_acum += $jornada->tss + $jornada->afs + 13; $bruto_acum += $jornada->salario + $jornada->incent + $jornada->extra ; $neto_acum += ($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13) ;?>
+					<?php $cont++; $salario_acum += $jornada->salario;
+					$incent_acum += $jornada->incent;
+					$extra_acum += $jornada->extra; $tss_acum += $jornada->tss;
+					$afs_acum += $jornada->afs; $agua_acum += 13; $desc_acum += $jornada->tss + $jornada->afs + 13;
+					$bruto_acum += $jornada->salario + $jornada->incent + $jornada->extra ;
+					$neto_acum += ($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13) ;?>
 
 					<td>{{$cont}}</td>
 					<td>{{$jornada->nombre.' '.$jornada->apellidos}}</td>
@@ -52,22 +57,9 @@
 					<td>{{($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13)}}</td>
 				</tr>
 				@endforeach
-				<tr>
-				<td></td>
-				<td align="right"><strong>TOTAL</strong></td>
-				<td>{{$salario_acum}}</td>
-				<td>{{$incent_acum}}</td>
-				<td></td>
-				<td>{{$extra_acum}}</td>
-				<td>{{$bruto_acum}}</td>
-				<td></td>
-				<td>{{$tss_acum}}</td>
-				<td>{{$afs_acum}}</td>
-				<td>{{$agua_acum}}</td>
-				<td>{{$desc_acum}}</td>
-				<td>{{$neto_acum}}</td>
-				</tr>
+
 			</table>
+			<h3 ALIGN=right><a href="{{action('JornadasController@downloadPDF')}}" ><button class="btn btn-danger btn-xs"><i class="fa fa-clipboard" aria-hidden="true"></i>  Generar Reporte PDF</button></a></h3>
 		</div>
 
 	</div>

@@ -17,11 +17,13 @@ Route::get('/empleadosdownloadPDF','EmpleadosController@downloadPDF');
 
 Route::get('/inventarios.index','MateriasPrimasController@inventario');
 Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
+
+Route::get('/nominas.index','JornadasController@nomina');
+Route::get('/nominasdownloadPDF','JornadasController@downloadPDF');
 /*Rutas PDF*/
 
 
 Route::post('/nomina', 'JornadasController@nomina');
-
 Route::get('/prenomina','JornadasController@prenomina');
 Route::get('/inventarios','MateriasPrimasController@inventario');
 Route::get('/rendimiento','ConfiguracionesController@rendimiento');
