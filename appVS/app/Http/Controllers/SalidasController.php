@@ -25,29 +25,6 @@ class SalidasController extends Controller
     {
 
         $request->user()->authorizeRoles(['user', 'admin']);
-       /*   if ($request)
-        {
-            $query=trim($request->get('searchText'));
-            $salidas=DB::table('salida')->where('cantidad','LIKE','%'.$query.'%')
-            ->orderBy('fecha','desc')
-            ->paginate(10);
-            return view('salidas.index',["salidas"=>$salidas,"searchText"=>$query]);
-        }
-        */
-       /* if ($request)
-        {
-            $query=trim($request->get('searchText'));
-            $salidas = DB::table('salida')
-            ->join('materiaPrima', 'salida.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
-            ->select('salida.*', 'materiaPrima.nombre')
-            ->where('materiaPrima.nombre', 'LIKE', '%'.$query.'%')
-            ->orderBy('materiaPrima.nombre', 'asc')
-            ->paginate(10);
-
-            return view('salidas.index', ['salidas'=>$salidas, 'searchText' => $query]);
-        }
-        */
-
 
         $salidas = Salida::all();
         $materiasprimas = MateriaPrima::all();
@@ -74,6 +51,10 @@ class SalidasController extends Controller
      */
     public function store(StoreSalidaRequest $request)
     {
+        $inventario = MateriaPrima::find($request->input('nombre'));
+        if($inventario->existencia_real < $request->input('cantidad')){
+          return back()->withInput()->with('error', 'Cantidad de Salida a Produccion Excede la existencia de esta materia prima en inventario');
+        }
         $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),
                 'cantidad' => $request->input('cantidad'),
