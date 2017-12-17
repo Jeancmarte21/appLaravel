@@ -1,12 +1,12 @@
-@extends('layouts.admin2')
+@extends('layouts.admin3')
 @section('contenido')
-@section('title','Inicio de Sesion')
+@section('title','Login')
 
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel">
-                <div class="panel-heading text-center">Inicio de Sesion
+                <div class="panel-heading text-center">
 
                   <div ALIGN=center>
                   <img src="../img/logo.png" width="250"  class=img-responsive   alt="logo"/>
@@ -71,4 +71,5 @@
         </div>
     </div>
 </div>
+
 @endsection
