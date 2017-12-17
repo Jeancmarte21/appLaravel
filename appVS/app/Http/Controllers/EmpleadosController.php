@@ -67,7 +67,7 @@ class EmpleadosController extends Controller
                 'cedula' => $request->input('cedula'),
                 'nombre' => $request->input('nombre'),
                 'apellidos' => $request->input('apellidos'),
-                'fecha_nacimiento' => input('fecha_nacimiento'),
+                'fecha_nacimiento' => $request->input('fecha_nacimiento'),
                 'telefono' => $request->input('telefono'),
                 'direccion' => $request->input('direccion'),
                 'salario_dia' => $request->input('salario_dia'),

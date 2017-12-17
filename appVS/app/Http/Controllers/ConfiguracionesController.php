@@ -198,22 +198,23 @@ class ConfiguracionesController extends Controller
 
     public function rendimiento(Request $request){
 
-    $salidas = Salida::all();
-    $materiasprimas =  MateriaPrima::all();
-    $produccionesmaquinas = ProduccionMaquina::all();
-    $cigarros = Cigarro::all();
-    $configuraciones = Configuracion::all();
-    $maquinas = Maquina::all();
+    $today = date('Y-m-d H:i:s');
+    $configuraciones= DB::table('produccionMaquina')
+                ->join('configuracion', 'produccionMaquina.configuracion_id', '=', 'configuracion.idconfiguracion')
+                ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
+                ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
+                ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+                ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras, SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad), 0) as rendimiento, TIMESTAMPDIFF(week, produccionMaquina.fecha,'$today') as semana"))
+                ->where([
+                    ['cigarro.tipo', 'like', 'Fumas AMF'],
+                    ['configuracionMateriaPrima.envoltura', '>=', '1'],
+                    ])
+                ->whereBetween('produccionMaquina.fecha', ['2017-12-01 00:00:01', '2017-12-31 23:59:00'])
+                ->groupBy('semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')
+                ->get();
 
-    $configuraciones= DB::table('configuracion')
-                ->join('produccionMaquina', 'configuracion.produccionMaquina_id',
-                '=', 'produccionMaquina.idproduccionmaquina')
-                ->select('configuracion.produccionMaquina_id','produccionMaquina.cantidad');
-
-return view('rendimiento', ['produccionesmaquinas' => $produccionesmaquinas,
-    'configuraciones' => $configuraciones]);
-
-    }
+return view('rendimiento', ['configuraciones' => $configuraciones]);
+}
 
 
 }
