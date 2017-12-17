@@ -32,9 +32,7 @@
 
         <!-- Logo -->
         <a href="/home" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>V</b>S</span>
-          <!-- logo for regular state and mobile devices -->
+
           <span class="logo-lg"><b>Victor Sinclair</b></span>
         </a>
 
@@ -60,7 +58,7 @@
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
-                    <li><a>Estado:<small class="bg-green">online</small> </a></li>
+
 
                       <li>
                           <a href="{{ route('logout') }}"

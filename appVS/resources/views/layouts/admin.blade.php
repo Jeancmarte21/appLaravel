@@ -61,7 +61,7 @@
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
-                    <li><a>Estado:<small class="bg-green">online</small> </a></li>
+                    
 
                       <li>
                           <a href="{{ route('logout') }}"
