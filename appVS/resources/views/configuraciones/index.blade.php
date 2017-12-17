@@ -31,7 +31,7 @@
 
 <div class="text-center">
 
-	<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="badge badge-primary btn btn-info btn-block"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+	<a href="/configuraciones/{{$configuracion->idconfiguracion}}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
 
 
 </div>

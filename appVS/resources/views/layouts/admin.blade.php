@@ -50,10 +50,10 @@
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
+  @else
+                
 
-                    <li><a href="{{ route('register') }}">Registrar</a></li>
 
-                @else
                 <li class="dropdown user user-menu">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -61,7 +61,7 @@
                   </a>
 
                   <ul class="dropdown-menu" role="menu">
-                    
+
 
                       <li>
                           <a href="{{ route('logout') }}"

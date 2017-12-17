@@ -29,28 +29,21 @@
 
 
       <header class="main-header">
-
-        <!-- Logo -->
         <a href="/home" class="logo">
 
           <span class="logo-lg"><b>Victor Sinclair</b></span>
         </a>
 
-
-          <!-- Header Navbar: style can be found in header.less -->
           <nav class="navbar navbar-static-top navbar-inverse" role="navigation">
-            <!-- Sidebar toggle button-->
 
-
-            <!-- Navbar Right Menu -->
             <div class="navbar-custom-menu">
               <ul class="nav navbar-nav">
                 @guest
                     <li><a href="{{ route('login') }}">Login</a></li>
+    @else
+                
 
-                    <li><a href="{{ route('register') }}">Registrar</a></li>
 
-                @else
                 <li class="dropdown user user-menu">
 
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

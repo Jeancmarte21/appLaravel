@@ -28,8 +28,10 @@
 
 
   <td>
+		<div class="text-center">
     <a href="/users/{{$user->id}}"
-              class="badge badge-info btn btn-info btn-block"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+              class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Ver</a>
+						</div>
   </tr>
 
   @endforeach
