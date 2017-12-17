@@ -28,26 +28,23 @@ class ProduccionesMaquinasController extends Controller
 
   $request->user()->authorizeRoles(['user', 'admin']);
 
-     /* if ($request)
-     {
-         $query=trim($request->get('searchText'));
-         $produccionMaq=DB::table('produccionMaquina')
-         ->join('cigarro', 'produccionMaquina.cigarro_id', '=', 'cigarro.idcigarro')
-         ->join('maquina', 'produccionMaquina.maquina_id', '=', 'maquina.idmaquina')
-         ->join('configuracion','produccionMaquina.configuracion_id','=','configuracion.idconfiguracion')
-         ->select('produccionMaquina.*', 'cigarro.nombre', 'maquina.nombre as maquina','configuracion.nombre as configuracion')->where('cigarro.nombre','LIKE','%'.$query.'%')
-         ->orderBy('maquina.nombre','desc')
-         ->paginate(10);
-         return view('produccionesMaquinas.index',["produccionMaq"=>$produccionMaq,"searchText"=>$query]);
-     }
-
-        //return view('produccionesmaquinas.index');
-
-        */
         $configuraciones = Configuracion::all();
         $maquinas = Maquina::all();
         $cigarros = Cigarro::all();
         $produccionMaq = ProduccionMaquina::all();
+
+        if ($request)
+        {
+            $query=trim($request->get('searchText'));
+            $produccionesmaquinas=DB::table('produccionMaquina')
+            ->join('maquina', 'produccionMaquina.maquina_id', '=', 'maquina.idmaquina')
+            ->select('produccionMaquina.maquina_id','maquina.nombre')
+            ->where('maquina.nombre','LIKE','%'.$query.'%')
+            ->orderBy('idproduccionmaquina','desc')
+            ->paginate(7);
+            return view('produccionesmaquinas.index',['produccionMaq' => $produccionMaq,'configuraciones' => $configuraciones, 'maquinas' => $maquinas,'cigarros' => $cigarros,"searchText"=>$query]);
+        }
+
         return view('produccionesmaquinas.index', ['produccionMaq' => $produccionMaq, 'configuraciones' => $configuraciones, 'maquinas' => $maquinas, 'cigarros' => $cigarros]);
     }
 
