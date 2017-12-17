@@ -198,19 +198,19 @@ class ConfiguracionesController extends Controller
 
     public function rendimiento(Request $request){
 
-    $today = date('Y-m-d H:i:s');
+    //$today = date('Y-m-d H:i:s');
     $configuraciones= DB::table('produccionMaquina')
                 ->join('configuracion', 'produccionMaquina.configuracion_id', '=', 'configuracion.idconfiguracion')
                 ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
                 ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
                 ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
-                ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras, SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad), 0) as rendimiento, TIMESTAMPDIFF(week, produccionMaquina.fecha,'$today') as semana"))
+                ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras, SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad), 0) as rendimiento, EXTRACT(WEEK from produccionMaquina.fecha) as semana, EXTRACT(MONTH from produccionMaquina.fecha) as mes"))
                 ->where([
                     ['cigarro.tipo', 'like', 'Fumas AMF'],
                     ['configuracionMateriaPrima.envoltura', '>=', '1'],
                     ])
-                ->whereBetween('produccionMaquina.fecha', ['2017-12-01 00:00:01', '2017-12-31 23:59:00'])
-                ->groupBy('semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')
+                ->whereBetween('produccionMaquina.fecha', ['2017-10-01 00:00:01', '2017-12-31 23:59:00'])
+                ->groupBy('mes','semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')
                 ->get();
 
 return view('rendimiento', ['configuraciones' => $configuraciones]);
