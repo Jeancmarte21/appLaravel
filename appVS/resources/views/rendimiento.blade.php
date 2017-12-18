@@ -14,7 +14,7 @@
 			<div class="table-responsive">
 		<?php $mes=-1; $semana = -1; ?>
 			<table class="table table-striped table-bordered table-condensed table-hover">
-				<tr>
+			<thead>
 					<th class="text-center">MES</th>
 					<th class="text-center">SEMANA</th>
 					<th class="text-center">TABACO</th>
@@ -23,7 +23,7 @@
 					<th class="text-center">RENDIMIENTO (UND)</th>
           <th class="text-center">ENVOLTURA</th>
 
-				</tr>
+					</thead>
 					@foreach ($configuraciones as $confi)
 
 				<tr>

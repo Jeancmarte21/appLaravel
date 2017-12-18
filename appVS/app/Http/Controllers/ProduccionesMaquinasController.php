@@ -169,4 +169,15 @@ class ProduccionesMaquinasController extends Controller
         return back()->with('errors', 'No se pudo borrar la Produccion');
 
     }
+
+
+ public function costoUnitario(Request $request)
+    {
+
+        $produccionesmaquinas=ProduccionMaquina::all();
+
+    return view('costoUnitario',['produccionesmaquinas' => $produccionesmaquinas]);
+
+
+  }
 }
