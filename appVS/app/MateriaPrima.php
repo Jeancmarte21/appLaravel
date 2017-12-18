@@ -15,8 +15,9 @@ class MateriaPrima extends Model
     	'categoria',
     	'porcentaje_pesohumedo',
     	'existencia_minima',
-        'costo',
-    	'existencia_real'
+      'costo',
+    	'existencia_real',
+      'existencia_produccion'
     ];
 
     public function salidas()
@@ -27,11 +28,6 @@ class MateriaPrima extends Model
     public function entradas()
     {
         return $this->hasMany('appVS\Entrada', 'materiaprima_id');
-    }
-
-    public function cigarros()
-    {
-        return $this->hasMany('appVS\Cigarro', 'saborizante');
     }
 
     public function configuracionesmateriasprimas()

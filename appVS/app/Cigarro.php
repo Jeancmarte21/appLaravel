@@ -14,17 +14,14 @@ class Cigarro extends Model
     protected $fillable = [
     	'nombre',
     	'tipo',
-    	'saborizante'
+
     ];
 
     public function configuraciones(){
     	return $this->hasMany('appVS\Configuracion', 'cigarro_id');
     }
 
-    public function materiasprimas(){
-    	return $this->belongsTo('appVS\MateriaPrima', 'saborizante');
-    }
-
+  
     public function produccionmaquinas()
     {
         return $this->hasMany('appVS\ProduccionMaquina', 'cigarro_id');
