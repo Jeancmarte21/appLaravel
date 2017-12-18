@@ -21,8 +21,6 @@ class CreateCigarroTable extends Migration
             $table->enum('tipo', ['Fumas AMF', 'Fumas Arenco']);
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign('saborizante')->references('idmateriaPrima')->on('materiaPrima');
         });
          
 
