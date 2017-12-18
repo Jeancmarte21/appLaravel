@@ -30,12 +30,12 @@
     <div class="form-group">
 
 
-                   <div class="form-group">
+                  <!-- <div class="form-group">
         <label for="example-datetime-local-input" class="col-xs-3 control-label">Fecha & hora</label>
         <div class="col-xs-5 selectContainer">
            <input class="form-control" type="datetime-local" value="T13:45:00" id="fecha" name="fecha" required>
         </div>
-    </div>
+    </div>-->
 
 
 
