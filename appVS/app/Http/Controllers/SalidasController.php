@@ -62,6 +62,11 @@ class SalidasController extends Controller
                 ]);
         $salida->save();
         if($salida){
+                $matprimUpdate = MateriaPrima::find($salida->materiaprima_id)
+                ->update([
+                'existencia_real' => $salida->materiasprimas->existencia_real - $salida->cantidad,
+                'existencia_produccion' => $salida->materiasprimas->existencia_produccion + $salida->cantidad,
+                        ]);
                 return back()->with('success', 'Salida registrada correctamente!');
             }
             return back()->withInput()->with('errors', 'Hubo algun error en registro de la salida');
@@ -124,6 +129,11 @@ class SalidasController extends Controller
     public function destroy(Salida $salida)
     {
         $salidas = Salida::find($salida->idsalida);
+        $matprimUpdate = MateriaPrima::find($salidas->materiaprima_id)
+                ->update([
+                'existencia_real' => $salidas->materiasprimas->existencia_real + $salida->cantidad,
+                'existencia_produccion' => $salidas->materiasprimas->existencia_produccion - $salidas->cantidad,
+                        ]);
         if($salidas->delete()){
             return redirect()->route('salidas.index')
             ->with('success', 'Salida borrada correctamente');

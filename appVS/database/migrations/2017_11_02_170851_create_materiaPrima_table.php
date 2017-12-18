@@ -15,7 +15,7 @@ class CreateMateriaPrimaTable extends Migration
     {
         
 
-        
+            if(!Schema::hasTable('materiaPrima')){
             Schema::create('materiaPrima', function (Blueprint $table) {
             $table->increments('idmateriaPrima');
             $table->string('nombre', 35)->collation('utf8_spanish_ci');
@@ -28,6 +28,7 @@ class CreateMateriaPrimaTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+        }
          
     }
 

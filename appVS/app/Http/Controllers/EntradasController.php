@@ -68,6 +68,7 @@ class EntradasController extends Controller
                 $matprimUpdate = MateriaPrima::find($entrada->materiaprima_id)
                 ->update([
                 'existencia_real' => $entrada->materiasprimas->existencia_real + $entrada->cantidad,
+                'costo_ant' => $entrada->materiasprimas->costo,
                 'costo' => ($entrada->materiasprimas->costo + $entrada->precio * $enabler)/2
                         ]);
                 return back()->with('success', 'Entrada registrada correctamente!');
@@ -135,6 +136,11 @@ class EntradasController extends Controller
     {
 
         $entry = Entrada::find($entrada->identrada);
+                $matprimUpdate = MateriaPrima::find($entrada->materiaprima_id)
+                ->update([
+                'existencia_real' => $entry->materiasprimas->existencia_real - $entry->cantidad,
+                'costo' => $entry->materiasprimas->costo_ant
+                        ]);
         if($entry->delete()){
             return redirect()->route('entradas.index')
             ->with('success', 'Entrada borrada correctamente');

@@ -15,7 +15,7 @@ class CreateEmpleadoTable extends Migration
     {
         
 
-        
+            if(!Schema::hasTable('empleado')){
             Schema::create('empleado', function (Blueprint $table) {
             $table->increments('idempleado');
             $table->string('cedula', 13)->collation('utf8_spanish_ci')->unique();
@@ -29,6 +29,7 @@ class CreateEmpleadoTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
+        }
     }
 
     /**

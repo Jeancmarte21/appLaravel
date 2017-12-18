@@ -14,7 +14,7 @@ class CreateCigarroTable extends Migration
     public function up()
     {
 
-        
+            if(!Schema::hasTable('cigarro')){
             Schema::create('cigarro', function (Blueprint $table) {
             $table->increments('idcigarro');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
@@ -22,7 +22,7 @@ class CreateCigarroTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-         
+         }
 
     }
 

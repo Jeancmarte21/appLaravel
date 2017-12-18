@@ -14,7 +14,7 @@ class CreateConfiguracionMateriaPrimaTable extends Migration
     public function up()
     {
 
-        
+            if(!Schema::hasTable('configuracionMateriaPrima')){
             Schema::create('configuracionMateriaPrima', function (Blueprint $table) {
             $table->increments('idconfiguracionmateriaprima');
             $table->integer('materiaprima_id')->unsigned();
@@ -27,7 +27,7 @@ class CreateConfiguracionMateriaPrimaTable extends Migration
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
             $table->foreign('configuracion_id')->references('idconfiguracion')->on('configuracion');
         });
-         
+         }
 
     }
 

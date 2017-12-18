@@ -14,7 +14,7 @@ class CreateConfiguracionTable extends Migration
     public function up()
     {
         
-        
+            if(!Schema::hasTable('configuracion')){
             Schema::create('configuracion', function (Blueprint $table) {
             $table->increments('idconfiguracion');
             $table->integer('cigarro_id')->unsigned();
@@ -25,8 +25,7 @@ class CreateConfiguracionTable extends Migration
 
             $table->foreign('cigarro_id')->references('idcigarro')->on('cigarro');
         });
-         
-
+         }
     }
 
     /**

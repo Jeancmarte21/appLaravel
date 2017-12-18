@@ -13,7 +13,7 @@ class CreateProduccionMaquinaTable extends Migration
      */
     public function up()
     {
-
+            if(!Schema::hasTable('produccionMaquina')){
             Schema::create('produccionMaquina', function (Blueprint $table) {
             $table->increments('idproduccionmaquina');
             $table->integer('maquina_id')->unsigned();
@@ -30,6 +30,7 @@ class CreateProduccionMaquinaTable extends Migration
             $table->foreign('configuracion_id')->references('idconfiguracion')->on('configuracion');
 
         });
+        }
 
     }
 
