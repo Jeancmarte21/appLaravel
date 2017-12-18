@@ -14,18 +14,17 @@ class CreateCigarroTable extends Migration
     public function up()
     {
 
-        if(!Schema::hasTable('cigarro')){
+        
             Schema::create('cigarro', function (Blueprint $table) {
             $table->increments('idcigarro');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
             $table->enum('tipo', ['Fumas AMF', 'Fumas Arenco']);
-            $table->integer('saborizante')->unsigned()->nullable();
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('saborizante')->references('idmateriaPrima')->on('materiaPrima');
         });
-         }
+         
 
     }
 

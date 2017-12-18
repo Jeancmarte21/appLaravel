@@ -15,7 +15,7 @@ class CreateSalidaTable extends Migration
     {
         
 
-        if(!Schema::hasTable('salida')){
+        
             Schema::create('salida', function (Blueprint $table) {
             $table->increments('idsalida');
             $table->integer('materiaprima_id')->unsigned();
@@ -26,7 +26,7 @@ class CreateSalidaTable extends Migration
 
             $table->foreign('materiaprima_id')->references('idmateriaPrima')->on('materiaPrima');
         });
-         }
+         
 
     }
 

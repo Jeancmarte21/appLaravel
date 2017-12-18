@@ -53,7 +53,7 @@ class SalidasController extends Controller
     {
         $inventario = MateriaPrima::find($request->input('nombre'));
         if($inventario->existencia_real < $request->input('cantidad')){
-          return back()->withInput()->with('error', 'Cantidad de Salida a Produccion Excede la existencia de esta materia prima en inventario');
+          return back()->withInput()->with('errors', 'Cantidad digitada excede la cantidad disponible en el almacen');
         }
         $salida = Salida::create([
                 'materiaprima_id' => $request->input('nombre'),

@@ -14,18 +14,18 @@ class CreateConfiguracionTable extends Migration
     public function up()
     {
         
-        if(!Schema::hasTable('configuracion')){
+        
             Schema::create('configuracion', function (Blueprint $table) {
             $table->increments('idconfiguracion');
             $table->integer('cigarro_id')->unsigned();
-            $table->string('nombre', 35)->collation('utf8_spanish_ci');
+            $table->string('nombre', 45)->collation('utf8_spanish_ci');
             $table->date('fecha');
             $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('cigarro_id')->references('idcigarro')->on('cigarro');
         });
-         }
+         
 
     }
 

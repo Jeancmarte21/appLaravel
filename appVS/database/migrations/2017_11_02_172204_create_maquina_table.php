@@ -15,7 +15,7 @@ class CreateMaquinaTable extends Migration
     {
         
 
-        if(!Schema::hasTable('maquina')){
+        
             Schema::create('maquina', function (Blueprint $table) {
             $table->increments('idmaquina');
             $table->string('nombre', 20)->collation('utf8_spanish_ci');
@@ -23,7 +23,7 @@ class CreateMaquinaTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-         }
+         
     }
 
     /**

@@ -14,7 +14,7 @@ class CreateSuplidorTable extends Migration
     public function up()
     {
 
-        if(!Schema::hasTable('suplidor')){
+        
             Schema::create('suplidor', function (Blueprint $table) {
             $table->increments('idsuplidor');
             $table->string('nombre', 45)->collation('utf8_spanish_ci');
@@ -25,7 +25,7 @@ class CreateSuplidorTable extends Migration
             $table->softDeletes();
             $table->timestamps();
         });
-         }
+         
     }
 
     /**

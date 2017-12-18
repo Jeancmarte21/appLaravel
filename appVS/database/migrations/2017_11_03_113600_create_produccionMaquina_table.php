@@ -14,7 +14,6 @@ class CreateProduccionMaquinaTable extends Migration
     public function up()
     {
 
-        if(!Schema::hasTable('produccionMaquina')){
             Schema::create('produccionMaquina', function (Blueprint $table) {
             $table->increments('idproduccionmaquina');
             $table->integer('maquina_id')->unsigned();
@@ -22,6 +21,7 @@ class CreateProduccionMaquinaTable extends Migration
             $table->integer('configuracion_id')->unsigned();
             $table->integer('cantidad');
             $table->datetime('fecha')->unique();
+            $table->float('cantidad_sobrante', 7, 2);
             $table->softDeletes();
             $table->timestamps();
 
@@ -30,7 +30,6 @@ class CreateProduccionMaquinaTable extends Migration
             $table->foreign('configuracion_id')->references('idconfiguracion')->on('configuracion');
 
         });
-         }
 
     }
 
