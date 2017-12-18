@@ -26,13 +26,13 @@ $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
 
 public function __construct()
 {
-    //$this->middleware('auth');
+    $this->middleware('auth');
 }
 
     public function index(Request $request)
     {
 
-    //  $request->user()->authorizeRoles(['user','admin']);
+   $request->user()->authorizeRoles(['user','admin']);
 
       $users = User::orderBy('id','desc')->paginate(10);
       return view('admin.users.index')->with('users', $users);
