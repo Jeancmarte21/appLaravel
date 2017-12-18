@@ -119,10 +119,10 @@
     <div class="form-group">
         <label class="col-xs-3 control-label">Aroma</label>
         <div class="col-xs-3 selectContainer">
-            <select class="form-control" name="aroma" id="aroma">
+            <select class="form-control" name="saborizante" id="saborizante">
               <option value="">Seleccione</option>
-                @foreach($saborizante as $aromas)
-                <option value="{{$aromas->idmateriaPrima}}">{{$saborizante->nombre}}</option>
+                @foreach($saborizante as $saborizantes)
+                <option value="{{$saborizantes->idmateriaPrima}}">{{$saborizantes->nombre}}</option>
               @endforeach
       </select>
 
@@ -143,7 +143,7 @@
             <select class="form-control" name="pega" id="pega">
               <option value="">Seleccione</option>
                 @foreach($pega as $pegas)
-                <option value="{{$aromas->idmateriaPrima}}">{{$pega->nombre}}</option>
+                <option value="{{$pegas->idmateriaPrima}}">{{$pegas->nombre}}</option>
               @endforeach
       </select>
 
