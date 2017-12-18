@@ -2,12 +2,7 @@
 @section('title','Nomina')
 @section('contenido')
 
-<div class="row">
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 
-
-	</div>
-</div>
 <?php $cont = 0; $salario_acum = 0; $incent_acum = 0; $extra_acum = 0;
 	$tss_acum =0; $afs_acum = 0; $agua_acum = 0; $desc_acum = 0; $bruto_acum = 0; $neto_acum = 0;
 	$fecha = date('D, d \d\e F \d\e\l Y');
