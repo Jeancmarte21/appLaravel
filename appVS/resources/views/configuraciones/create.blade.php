@@ -99,6 +99,7 @@
         <label class="col-xs-3 control-label">Relleno</label>
         <div class="col-xs-3 selectContainer">
             <select class="form-control" name="relleno" id="relleno">
+              <option value="">Seleccione</option>
                 @foreach($tripa as $tripas)
                 <option value="{{$tripas->idmateriaPrima}}">{{$tripas->nombre}}</option>
               @endforeach
@@ -109,6 +110,48 @@
               <div class="input-group">
 
                   <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidadrelleno" step="0.1"/>
+                  <span class="input-group-addon">lbs</span>
+
+              </div>
+          </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Aroma</label>
+        <div class="col-xs-3 selectContainer">
+            <select class="form-control" name="aroma" id="aroma">
+              <option value="">Seleccione</option>
+                @foreach($saborizante as $aromas)
+                <option value="{{$aromas->idmateriaPrima}}">{{$saborizante->nombre}}</option>
+              @endforeach
+      </select>
+
+        </div>
+        <div class="col-xs-3 inputGroupContainer">
+              <div class="input-group">
+
+                  <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad_saborizante" step="0.1"/>
+                  <span class="input-group-addon">lbs</span>
+
+              </div>
+          </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Pega</label>
+        <div class="col-xs-3 selectContainer">
+            <select class="form-control" name="pega" id="pega">
+              <option value="">Seleccione</option>
+                @foreach($pega as $pegas)
+                <option value="{{$aromas->idmateriaPrima}}">{{$pega->nombre}}</option>
+              @endforeach
+      </select>
+
+        </div>
+        <div class="col-xs-3 inputGroupContainer">
+              <div class="input-group">
+
+                  <input type="number" class="form-control" min="0" data-number-to-fixed="2" data-number-stepfactor="100" name="cantidad_pega" step="0.1"/>
                   <span class="input-group-addon">lbs</span>
 
               </div>
