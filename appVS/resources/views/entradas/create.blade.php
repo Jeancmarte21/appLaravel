@@ -30,7 +30,7 @@
       <div class="form-group">
      <label class="col-xs-3 control-label">Fecha</label>
 <div class="col-xs-5 selectContainer">
-<input class="form-control" type="date"  id="example-date-input" name="fecha" required>
+<input class="form-control" type="date"  id="example-date-input" name="fecha"  value="<?php echo date("Y-m-d");?>" required>
 </div>
 </div>
 

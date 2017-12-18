@@ -19,6 +19,7 @@ class HomeController extends Controller
 
 
 
+
        return view('home');
     }
 /*
@@ -28,5 +29,6 @@ class HomeController extends Controller
         return view(‘some.view’);
     }
     */
+
 
 }

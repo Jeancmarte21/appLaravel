@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,6 @@
     <link rel="apple-touch-icon" href="{{ asset('img/apple-touch-icon.png') }}">
 
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
-
 
 
 
@@ -289,6 +288,7 @@
     <script src="{{asset ('plugins/mask/src/jquery.mask.js') }}"></script>
     <script src="{{asset('js/Chart.bundle.min.js')}}"></script>
 
+    <script src="node_modules/chart.js/Chart.min.js"></script>
 
   </body>
 </html>
