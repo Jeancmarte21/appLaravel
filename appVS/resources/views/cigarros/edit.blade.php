@@ -32,28 +32,7 @@
             </select>
         </div>
     </div>
-                  
-         
-                
-                    <div class="form-group">
-        <label class="col-xs-3 control-label">Saborizante</label>
-        <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="saborizante">
-                <option value="">Sin Aroma</option>
-                <option value="{{$cigarro->saborizante}}" selected>{{$cigarro->materiasprimas->nombre}}</option>
-              @foreach($materiasprimas as $materiaprima)
-                <option value="{{$materiaprima->idmateriaPrima}}">{{$materiaprima->nombre}}</option>
-              @endforeach  
-            </select>
-        </div>
-    </div>
-                   
-  
-
-
-
-
-
+              
             </fieldset>
                      <div class="form-group">
         <div class="col-md-12 text-center">

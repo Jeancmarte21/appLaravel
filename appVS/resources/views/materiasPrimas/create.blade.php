@@ -42,7 +42,7 @@
             <select class="form-control" name="categoria" name="categoria" required>
                 <option value="">Seleccione</option>
                 <option value="Tabaco">Tabaco</option>
-               <option value="Saborizante">Saborizante</option>
+               <option value="Saborizante">Aroma</option>
                <option value="Pega">Pega</option>
                <option value="Tripa">Tripa</option>
             </select>

@@ -18,7 +18,6 @@
 					<th class="text-center">ID</th>
 					<th class="text-center">NOMBRE</th>
 					<th class="text-center">TIPO CIGARRO</th>
-					<th class="text-center">AROMA</th>
 					<th class="text-center">ACCION</th>
 
 				</thead>
@@ -27,11 +26,6 @@
 					<td class="text-center">{{$cigarro->idcigarro}}</td>
 					<th class="text-center">{{$cigarro->nombre}}</th>
 					<td class="text-center">{{$cigarro->tipo}}</td>
-					@if($cigarro->saborizante != null)
-					<td class="text-center">{{$cigarro->materiasprimas->nombre}}</td>
-					@else
-					<td class="text-center">Sin Aroma</td>
-					@endif
 					<td>
 
 					<a href="#" class="btn btn-danger btn btn-xs btn-block" onclick=" var result = confirm('Esta seguro de eliminar este Cigarro?');

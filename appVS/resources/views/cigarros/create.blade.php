@@ -47,20 +47,6 @@
     </div>
 
 
-
-                    <div class="form-group">
-        <label class="col-xs-3 control-label">Aroma</label>
-        <div class="col-xs-5 selectContainer">
-            <select class="form-control" name="saborizante" required>
-            <option value="">Seleccione</option>
-            <option value="">Sin Aroma</option>
-              @foreach($materiasprimas as $materiaprima)
-                <option value={{$materiaprima->idmateriaPrima}}>{{$materiaprima->nombre}}</option>
-              @endforeach
-            </select>
-        </div>
-    </div>
-
     <div class="modal-footer">
          <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
 

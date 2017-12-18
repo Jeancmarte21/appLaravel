@@ -26,8 +26,7 @@ class CigarrosController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'admin']);
        $cigarros = Cigarro::all();
-       $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
-       return view('cigarros.index', ['cigarros'=> $cigarros, 'materiasprimas' => $materiasprimas]);
+       return view('cigarros.index', ['cigarros'=> $cigarros]);
     }
 
     /**
@@ -37,7 +36,7 @@ class CigarrosController extends Controller
      */
     public function create()
     {
-        $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        
         return view('cigarros.create', ['materiasprimas' => $materiasprimas]);
     }
 
@@ -52,8 +51,7 @@ class CigarrosController extends Controller
      $cigarro = Cigarro::create([
 
                 'nombre' => $request->input('nombre'),
-                'tipo' => $request->input('tipo_cigarro'),
-                'saborizante' => $request->input('saborizante')
+                'tipo' => $request->input('tipo_cigarro')
 
         ]);
      $cigarro->save();
@@ -90,9 +88,8 @@ class CigarrosController extends Controller
      */
      public function edit($idcigarro)
     {
-        $materiasprimas = MateriaPrima::where('categoria', 'like', 'Saborizante')->get();
         $cigarro = Cigarro::find($idcigarro);
-        return view('cigarros.edit', ['cigarro'=> $cigarro, 'materiasprimas'=>$materiasprimas]);
+        return view('cigarros.edit', ['cigarro'=> $cigarro]);
     }
 
     /**
@@ -108,8 +105,7 @@ class CigarrosController extends Controller
         $cigarroUpdate = Cigarro::find($cigarro)
             ->update([
                 'nombre' => $request->input('nombre'),
-                'tipo' => $request->input('tipo_cigarro'),
-                'saborizante' => $request->input('saborizante')
+                'tipo' => $request->input('tipo_cigarro')
             ]);
             if($cigarroUpdate){
                 return redirect()->route('cigarros.show', ['cigarros'=>$cigarro])->with('success', 'Cigarro editado correctamente');
