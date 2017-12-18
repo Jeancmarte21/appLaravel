@@ -20,6 +20,14 @@ Route::get('/inventariodownloadPDF','MateriasPrimasController@idownloadPDF');
 
 Route::get('/nominas.index','JornadasController@nomina');
 Route::get('/nominasdownloadPDF','JornadasController@downloadPDF');
+
+Route::get('/rendimiento.index','ConfiguracionesController@rendimiento');
+Route::get('/rendimientosdownloadPDF','ConfiguracionesController@downloadPDF');
+
+Route::get('/costoUnitario.index','ProduccionesMaquinasController@costoUnitario');
+Route::get('/costoUnitariosdownloadPDF','ProduccionesMaquinasController@downloadPDF');
+
+
 /*Rutas PDF*/
 
 

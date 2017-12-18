@@ -32,7 +32,8 @@
 
 
 			</table>
-
+			<h3 ALIGN=right><a href="{{action('ProduccionesMaquinasController@downloadPDF')}}" ><button class="btn btn-danger btn-xs"><i class="fa fa-clipboard" aria-hidden="true"></i>  Generar Reporte PDF</button></a></h3>
+			</div>
 		</div>
 
 	</div>

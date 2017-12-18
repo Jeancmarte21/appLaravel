@@ -26,7 +26,7 @@ table, th, td {
 
     <table style="width:100%">
       <tr>
-        <th class="text-center"></th>
+        
         <th class="text-center" >Nombre</th>
         <th class="text-center">SALARIO</th>
         <th class="text-center">INCENT</th>
