@@ -59,11 +59,19 @@
 
 
          <div class="form-group">
-        <label class="col-xs-3 control-label">Cantidad</label>
+        <label class="col-xs-3 control-label">Cantidad Producida</label>
         <div class="col-xs-5 selectContainer">
         <input class="form-control" type="number" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="cantidad" name="cantidad" value="{{$produccionesmaquinas->cantidad}}">
        </div>
             </div>
+
+            <div class="form-group">
+                <label class="col-xs-3 control-label">Cantidad Sobrante</label>
+                <div class="col-xs-5 selectContainer">
+                <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="cantidad_sobrante" name="cantidad_sobrante" value="{{produccionesmaquinas->cantidad_sobrante}}">
+               </div>
+            </div>
+
 
               <div class="form-group">
         <div class="col-md-12 text-center">
