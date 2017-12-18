@@ -32,8 +32,11 @@ class ConfiguracionesController extends Controller
         $request->user()->authorizeRoles(['user', 'admin']);
         $cigarros = Cigarro::all();
         $materiasprimas = DB::table('materiaPrima')->where('categoria', 'like', 'Tabaco')->get();
+        $saborizante = DB::table('materiaPrima')->where('categoria', 'like', 'Saborizante')->get();
+        $tripa = DB::table('materiaPrima')->where('categoria', 'like', 'Tripa')->get();
+        $pega = DB::table('materiaPrima')->where('categoria', 'like', 'Pega')->get();
         $configuraciones = Configuracion::all();
-        return view('configuraciones.index', ['configuraciones'=> $configuraciones,'materiasprimas' => $materiasprimas, 'cigarros' => $cigarros]);
+        return view('configuraciones.index', ['configuraciones'=> $configuraciones,'materiasprimas' => $materiasprimas, 'cigarros' => $cigarros, 'saborizante' => $saborizante, 'tripa' => $tripa, 'pega'=>$pega]);
     }
 
     /**

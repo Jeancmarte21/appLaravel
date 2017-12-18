@@ -99,7 +99,9 @@
         <label class="col-xs-3 control-label">Relleno</label>
         <div class="col-xs-3 selectContainer">
             <select class="form-control" name="relleno" id="relleno">
-                <option value="4" selected>Picadura</option>
+                @foreach($tripa as $tripas)
+                <option value="{{$tripas->idmateriaPrima}}">{{$tripas->nombre}}</option>
+              @endforeach
       </select>
 
         </div>
