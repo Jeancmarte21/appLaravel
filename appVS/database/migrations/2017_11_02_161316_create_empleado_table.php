@@ -24,8 +24,8 @@ class CreateEmpleadoTable extends Migration
             $table->string('telefono', 12)->nullable();
             $table->date('fecha_nacimiento');
             $table->longText('direccion')->collation('utf8_spanish_ci')->nullable();
-            $table->float('salario_dia', 11, 2)->after('direccion');
-            $table->float('salario_hora', 11, 2)->after('salario_dia');
+            $table->float('salario_dia', 11, 2);
+            $table->float('salario_hora', 11, 2);
             $table->softDeletes();
             $table->timestamps();
         });
