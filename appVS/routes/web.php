@@ -23,12 +23,15 @@ Route::get('/nominasdownloadPDF','JornadasController@downloadPDF');
 /*Rutas PDF*/
 
 
+/*Rutas Reportes*/
 Route::post('/nomina', 'JornadasController@nomina');
 Route::get('/prenomina','JornadasController@prenomina');
 Route::get('/inventarios','MateriasPrimasController@inventario');
 Route::get('/rendimiento','ConfiguracionesController@rendimiento');
+Route::get('/costoUnitario','ProduccionesMaquinasController@costoUnitario');
+/*Rutas Reportes*/
 
-
+/*Views & Controllers*/
 Route::resource('users', 'UsersController');
 Route::resource('empleados', 'EmpleadosController');
 Route::resource('suplidores','SuplidoresController');
@@ -42,7 +45,7 @@ Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
-
+/*Views & Controllers*/
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('/home');

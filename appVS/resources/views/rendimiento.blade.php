@@ -2,12 +2,9 @@
 @section('contenido')
 @section('title','Rendimiento Tabaco')
 
-<div class="row">
-	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-	@include('prerendimiento')
 
-	</div>
-</div>
+
+	@include('prerendimiento')
 
 
 <div class="row">

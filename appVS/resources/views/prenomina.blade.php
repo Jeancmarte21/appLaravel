@@ -32,7 +32,7 @@
 
 	<div class="form-group">
         <div class="col-xs-11 text-center">
-          <button type="submit" class="btn btn-primary btn-lg ">Actualizar</button>
+          <button type="submit" class="btn btn-primary btn-md ">Actualizar</button>
         </div>
     </div>
 </form>
