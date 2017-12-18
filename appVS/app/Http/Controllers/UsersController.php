@@ -26,7 +26,7 @@ $this->beforeFilter('@findUser',['only'=>['show','edit','update','destroy']]);
 
 public function __construct()
 {
-    $this->middleware('auth');
+    //$this->middleware('auth');
 }
 
     public function index(Request $request)
