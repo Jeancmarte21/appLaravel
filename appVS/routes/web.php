@@ -24,33 +24,46 @@ Route::get('/nominasdownloadPDF','NominasController@downloadPDF');
 Route::get('/rendimiento.index','RendimientosController@index');
 Route::get('/rendimientosdownloadPDF','RendimientosController@downloadPDF');
 
-Route::get('/costoUnitario.index','ProduccionesMaquinasController@costoUnitario');
-Route::get('/costoUnitariosdownloadPDF','ProduccionesMaquinasController@downloadPDF');
-
+Route::get('/costoUnitario.index','CostoUnitarioController@index');
+Route::get('/costoUnitariosdownloadPDF','CostoUnitarioController@downloadPDF');
 /*Rutas PDF*/
 
 
 /*Rutas Reportes*/
 Route::get('/inventarios','MateriasPrimasController@inventario');
-
 /*Rutas Reportes*/
 
 /*Views & Controllers*/
 Route::resource('users', 'UsersController');
+
 Route::resource('empleados', 'EmpleadosController');
+
 Route::resource('suplidores','SuplidoresController');
+
 Route::resource('cigarros' , 'CigarrosController');
+
 Route::resource('materiasPrimas', 'MateriasPrimasController');
+
 Route::resource('configuraciones' , 'ConfiguracionesController');
+
 Route::resource('maquinas', 'MaquinasController');
+
 Route::resource('jornadas', 'JornadasController');
+
 Route::resource('entradas', 'EntradasController');
+
 Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
+
 Route::resource('entradas','EntradasController');
+
 Route::resource('inicio', 'iniciosController');
+
 Route::resource('salidas','SalidasController');
+
 Route::resource('nomina', 'NominasController');
+
 Route::resource('rendimiento','RendimientosController');
+
 Route::resource('costoUnitario','CostoUnitarioController');
 /*Views & Controllers*/
 
