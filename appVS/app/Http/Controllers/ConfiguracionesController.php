@@ -93,6 +93,8 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 5
                         ]);
                     $confmat1->save();
+                    $disp_capa->existencia_produccion -= $request->input('cantidadcapa');
+                    $disp_capa->save(); 
 
                     $confmat2 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -101,6 +103,8 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 4
                         ]);
                     $confmat2->save();
+                    $disp_capote->existencia_produccion -= $request->input('cantidadcapote');
+                    $disp_capote->save();
 
                     $confmat3 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -109,6 +113,8 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 3
                         ]);
                     $confmat3->save();
+                    $disp_relleno->existencia_produccion -= $request->input('cantidadrelleno');
+                    $disp_relleno->save();
 
                     $confmat5 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -117,6 +123,9 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 1
                         ]);
                     $confmat5->save();
+
+                    $disp_pega->existencia_produccion -= $request->input('cantidad_pega');
+                    $disp_pega->save();
 
                return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
@@ -151,6 +160,9 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat1->save();
 
+                    $disp_capa->existencia_produccion -= $request->input('cantidadcapa');
+                    $disp_capa->save();
+
                     $confmat2 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
                         'materiaprima_id'  => $request -> input('capote'),
@@ -158,6 +170,9 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 4
                         ]);
                     $confmat2->save();
+
+                    $disp_capote->existencia_produccion -= $request->input('cantidadcapote');
+                    $disp_capote->save();
 
                     $confmat3 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -167,6 +182,8 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat3->save();
 
+                    $disp_relleno->existencia_produccion -= $request->input('cantidadrelleno');
+                    $disp_relleno->save();
 
                                 $confmat4 = ConfiguracionMateriaPrima::create([
                                 'configuracion_id' => $configuracion->idconfiguracion,
@@ -175,7 +192,8 @@ class ConfiguracionesController extends Controller
                                 'envoltura' => 2
                                 ]);
                             $confmat4->save();
-
+                     $disp_saborizante->existencia_produccion -= $request->input('cantidad_saborizante');
+                    $disp_saborizante->save();       
 
                     $confmat5 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -184,6 +202,9 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 1
                         ]);
                     $confmat5->save();
+
+                    $disp_pega->existencia_produccion -= $request->input('cantidad_pega');
+                    $disp_pega->save();
 
                return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
@@ -221,6 +242,9 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat2->save();
 
+                    $disp_capote->existencia_produccion -= $request->input('cantidadcapote');
+                    $disp_capote->save();
+
                     $confmat3 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
                         'materiaprima_id'  => $request -> input('relleno'),
@@ -229,6 +253,9 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat3->save();
 
+                    $disp_relleno->existencia_produccion -= $request->input('cantidadrelleno');
+                    $disp_relleno->save();
+
                     $confmat5 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
                         'materiaprima_id'  => $request -> input('pega'),
@@ -236,6 +263,9 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 1
                         ]);
                     $confmat5->save();
+
+                    $disp_pega->existencia_produccion -= $request->input('cantidad_pega');
+                    $disp_pega->save();
 
                return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
@@ -270,6 +300,10 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat2->save();
 
+                    $disp_capote->existencia_produccion -= $request->input('cantidadcapote');
+                    $disp_capote->save();
+
+
                     $confmat3 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
                         'materiaprima_id'  => $request -> input('relleno'),
@@ -278,6 +312,8 @@ class ConfiguracionesController extends Controller
                         ]);
                     $confmat3->save();
 
+                    $disp_relleno->existencia_produccion -= $request->input('cantidadrelleno');
+                    $disp_relleno->save();
 
                                 $confmat4 = ConfiguracionMateriaPrima::create([
                                 'configuracion_id' => $configuracion->idconfiguracion,
@@ -287,6 +323,8 @@ class ConfiguracionesController extends Controller
                                 ]);
                             $confmat4->save();
 
+                    $disp_saborizante->existencia_produccion -= $request->input('cantidad_saborizante');
+                    $disp_saborizante->save(); 
 
                     $confmat5 = ConfiguracionMateriaPrima::create([
                         'configuracion_id' => $configuracion->idconfiguracion,
@@ -295,6 +333,9 @@ class ConfiguracionesController extends Controller
                         'envoltura' => 1
                         ]);
                     $confmat5->save();
+
+                    $disp_pega->existencia_produccion -= $request->input('cantidad_pega');
+                    $disp_pega->save();
 
                return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }

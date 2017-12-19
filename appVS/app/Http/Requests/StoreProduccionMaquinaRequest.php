@@ -27,7 +27,8 @@ class StoreProduccionMaquinaRequest extends FormRequest
             'maquina' => 'required|numeric|exists:maquina,idmaquina',
             'cigarro' => 'required|numeric|exists:cigarro,idcigarro',
             'configuracion' => 'required|numeric|exists:configuracion,idconfiguracion',
-            'cantidad' => 'required|digits_between:1,5',
+            'cantidad' => 'required|digits_between:1,10',
+            'cantidad_sobrante' => 'required|digits_between:1,5'
             //'fecha' => 
         ];
     }

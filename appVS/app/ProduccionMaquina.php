@@ -16,6 +16,7 @@ class ProduccionMaquina extends Model
     	'cigarro_id',
     	'configuracion_id',
     	'cantidad',
+        'cantidad_sobrante',
     	'fecha'
     ];
 

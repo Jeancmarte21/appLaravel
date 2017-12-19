@@ -77,7 +77,8 @@ class ProduccionesMaquinasController extends Controller
                 'configuracion_id' => $request->input('configuracion'),
                 'cantidad' => $request->input('cantidad'),
                 //'fecha' => $request->input('fecha')
-                'fecha' => date('Y-m-d H:i:s')
+                'fecha' => date('Y-m-d H:i:s'),
+                'cantidad_sobrante' => $request->input('cantidad_sobrante')
                 ]);
             $produccionMaquina->save();
 
@@ -130,8 +131,10 @@ class ProduccionesMaquinasController extends Controller
             'cigarro_id' => $request->input('cigarro'),
             'configuracion_id' => $request->input('configuracion'),
             'cantidad' => $request->input('cantidad'),
-            'fecha' => $request->input('fecha')
+           // 'fecha' => $request->input('fecha'),
+            'cantidad_sobrante' => $request->input('cantidad_sobrante')
             //'fecha' => date('Y-m-d H:i:s')
+
             ]);
             if($prodmaqUpdate){
                 return redirect()->route('produccionesmaquinas.show', ['produccionMaquina'=>$produccionMaquina])->with('success', 'Produccion editada correctamente');
