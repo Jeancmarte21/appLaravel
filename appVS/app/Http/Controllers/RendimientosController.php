@@ -36,7 +36,7 @@ class RendimientosController extends Controller
                   ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras, SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad), 0) as rendimiento, EXTRACT(WEEK from produccionMaquina.fecha) as semana, EXTRACT(MONTH from produccionMaquina.fecha) as mes"))
                   ->where([
                       ['cigarro.tipo', 'like', 'Fumas AMF'],
-                      ['configuracionMateriaPrima.envoltura', '>=', '1'],
+                      ['configuracionMateriaPrima.envoltura', '>=', '4'],
                       ])
                   ->whereBetween('produccionMaquina.fecha',[$fecha_desde, $fecha_hasta])
                   ->groupBy('mes','semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')

@@ -23,15 +23,45 @@
 </div>
 			<table class="table table-striped table-bordered table-condensed table-hover">
 			<thead>
-					<th class="text-center">FECHA</th>
-					<th class="text-center">NOMBRE CONFIGURACIÓN</th>
+					<th class="text-center">MES</th>
+					<th class="text-center">SEMANA</th>
+					<th class="text-center">Cigarro</th>
+					<th class="text-center">CONFIGURACIÓN</th>
 					<th class="text-center">CAPA</th>
 					<th class="text-center">CAPOTE</th>
-          <th class="text-center">AROMA</th>
-          <th class="text-center">PEGA</th>
+          			<th class="text-center">AROMA</th>
+          			<th class="text-center">PEGA</th>
 					<th class="text-center">COSTO POR UNIDAD</th>
 
 					</thead>
+					@foreach ($costos as $costo)
+
+				<tr>
+
+				@if($mes != $costo->mes)
+				<td>{{$costo->mes}}</td>
+				@else
+				<td class="text-center">-</td>
+				@endif
+				@if($semana != $costo->semana)
+				<td>{{$costo->semana}}</td>
+				@else
+				<td class="text-center">-</td>
+				@endif
+				<td>{{$costo->cigarro}}</td>
+				<td>{{$costo->config}}</td>
+				<td></td>
+				<td></td>
+				<td>{{$costo->total_cigarros}}</td>
+				<td>{{$costo->total_costo}}</td>
+				<td>{{$costo->total_costo/$costo->total_cigarros}}</td>
+
+
+				<?php $mes = $costo->mes;
+						$semana = $costo->semana;
+				?>
+				</tr>
+				@endforeach
 
 
 

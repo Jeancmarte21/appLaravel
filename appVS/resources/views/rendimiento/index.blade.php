@@ -50,7 +50,7 @@
 				<td>{{$confi->total_libras}}</td>
 				<td>{{$confi->total_cigarros}}</td>
 				<td>{{$confi->rendimiento.' x lb'}}</td>
-				@if($confi->envoltura == 2)
+				@if($confi->envoltura == 5)
 				<td><font color="#DC143C">Capa</font></td>
 				@else
 				<td><font color="#3072CB">Capote</font></td>
