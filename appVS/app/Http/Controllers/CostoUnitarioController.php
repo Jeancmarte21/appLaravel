@@ -3,6 +3,13 @@
 namespace appVS\Http\Controllers;
 
 use Illuminate\Http\Request;
+use appVS\ProduccionMaquina;
+use appVS\Configuracion;
+use appVS\Maquina;
+use appVS\Cigarro;
+use appVS\Http\Requests\StoreProduccionMaquinaRequest;
+use DB;
+use PDF;
 
 class CostoUnitarioController extends Controller
 {
