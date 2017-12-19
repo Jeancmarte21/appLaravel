@@ -61,67 +61,249 @@ class ConfiguracionesController extends Controller
     public function store(StoreConfiguracionRequest $request)
     {
         $cigarro = Cigarro::find($request->input('cigarro'));
-       if(strcmp($cigarro->tipo,'Fumas AMF') == 0){
-       $configuracion = Configuracion::create([
-                'cigarro_id' => $request -> input('cigarro'),
-                'nombre' => $request->input('nombre'),
-                'fecha' => $request->input('fecha')
-                ]);
-       $configuracion->save();
 
-       if($configuracion){
-            $confmat1 = ConfiguracionMateriaPrima::create([
-                'configuracion_id' => $configuracion->idconfiguracion,
-                'materiaprima_id'  => $request -> input('capa'),
-                'cantidad' =>         $request -> input('cantidadcapa'),
-                'envoltura' => 2
-                ]);
-            $confmat1->save();
-            $confmat2 = ConfiguracionMateriaPrima::create([
-                'configuracion_id' => $configuracion->idconfiguracion,
-                'materiaprima_id'  => $request -> input('capote'),
-                'cantidad' =>         $request -> input('cantidadcapote'),
-                'envoltura' => 1
-                ]);
-            $confmat2->save();
-            $confmat3 = ConfiguracionMateriaPrima::create([
-                'configuracion_id' => $configuracion->idconfiguracion,
-                'materiaprima_id'  => $request -> input('relleno'),
-                'cantidad' =>         $request -> input('cantidadrelleno'),
-                'envoltura' => 0
-                ]);
-            $confmat3->save();
-           return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+        $disp_capa = MateriaPrima::find($request-> input('capa'));
+        $disp_capote = MateriaPrima::find($request-> input('capote'));
+        $disp_relleno = MateriaPrima::find($request-> input('relleno'));
+        $disp_pega = MateriaPrima::find($request-> input('pega'));
+        $disp_saborizante = MateriaPrima::find($request-> input('saborizante'));
+
+
+       if(strcmp($cigarro->tipo,'Fumas AMF') == 0){
+                if(!$disp_saborizante){
+
+                    if ($disp_capa->existencia_produccion >= $request->input('cantidadcapa') &&
+                        $disp_capote->existencia_produccion >= $request->input('cantidadcapote') &&
+                        $disp_relleno->existencia_produccion >= $request->input('cantidadrelleno')  &&
+                        $disp_pega->existencia_produccion >= $request->input('cantidad_pega')
+                        )
+                                {
+                                    $configuracion = Configuracion::create([
+                        'cigarro_id' => $request -> input('cigarro'),
+                        'nombre' => $request->input('nombre'),
+                        'fecha' => $request->input('fecha')
+                        ]);
+               $configuracion->save();
+
+           if($configuracion){
+                    $confmat1 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capa'),
+                        'cantidad' =>         $request -> input('cantidadcapa'),
+                        'envoltura' => 5
+                        ]);
+                    $confmat1->save();
+
+                    $confmat2 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capote'),
+                        'cantidad' =>         $request -> input('cantidadcapote'),
+                        'envoltura' => 4
+                        ]);
+                    $confmat2->save();
+
+                    $confmat3 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('relleno'),
+                        'cantidad' =>         $request -> input('cantidadrelleno'),
+                        'envoltura' => 3
+                        ]);
+                    $confmat3->save();
+
+                    $confmat5 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('pega'),
+                        'cantidad' =>         $request -> input('cantidad_pega'),
+                        'envoltura' => 1
+                        ]);
+                    $confmat5->save();
+
+               return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
        return back()->withInput();
+
+                                }
+                        return back()->with('error', 'Una de las cantidades digitades excede el inventario de produccion');
+                }
+
+                else {
+
+                    if ($disp_capa->existencia_produccion >= $request->input('cantidadcapa') &&
+                        $disp_capote->existencia_produccion >= $request->input('cantidadcapote') &&
+                        $disp_relleno->existencia_produccion >= $request->input('cantidadrelleno')  &&
+                        $disp_saborizante->existencia_produccion >= $request->input('cantidad_saborizante')  &&
+                        $disp_pega->existencia_produccion >= $request->input('cantidad_pega')
+                        )
+                                {
+                                    $configuracion = Configuracion::create([
+                        'cigarro_id' => $request -> input('cigarro'),
+                        'nombre' => $request->input('nombre'),
+                        'fecha' => $request->input('fecha')
+                        ]);
+               $configuracion->save();
+
+           if($configuracion){
+                    $confmat1 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capa'),
+                        'cantidad' =>         $request -> input('cantidadcapa'),
+                        'envoltura' => 5
+                        ]);
+                    $confmat1->save();
+
+                    $confmat2 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capote'),
+                        'cantidad' =>         $request -> input('cantidadcapote'),
+                        'envoltura' => 4
+                        ]);
+                    $confmat2->save();
+
+                    $confmat3 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('relleno'),
+                        'cantidad' =>         $request -> input('cantidadrelleno'),
+                        'envoltura' => 3
+                        ]);
+                    $confmat3->save();
+
+
+                                $confmat4 = ConfiguracionMateriaPrima::create([
+                                'configuracion_id' => $configuracion->idconfiguracion,
+                                'materiaprima_id'  => $request -> input('saborizante'),
+                                'cantidad' =>         $request -> input('cantidad_saborizante'),
+                                'envoltura' => 2
+                                ]);
+                            $confmat4->save();
+
+
+                    $confmat5 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('pega'),
+                        'cantidad' =>         $request -> input('cantidad_pega'),
+                        'envoltura' => 1
+                        ]);
+                    $confmat5->save();
+
+               return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+        }
+       return back()->withInput();
+
+                                }
+                        return back()->with('error', 'Una de las cantidades digitades excede el inventario de produccion');
+
+                }
+
         }
 
         else {
-            $configuracion = Configuracion::create([
-                'cigarro_id' => $request -> input('cigarro'),
-                'nombre' => $request->input('nombre'),
-                'fecha' => $request->input('fecha')
-                ]);
-       $configuracion->save();
+            if(!$disp_saborizante){
 
-       if($configuracion){
-            $confmat2 = ConfiguracionMateriaPrima::create([
-                'configuracion_id' => $configuracion->idconfiguracion,
-                'materiaprima_id'  => $request -> input('capote'),
-                'cantidad' =>         $request -> input('cantidadcapote'),
-                'envoltura' => 1
-                ]);
-            $confmat2->save();
-            $confmat3 = ConfiguracionMateriaPrima::create([
-                'configuracion_id' => $configuracion->idconfiguracion,
-                'materiaprima_id'  => $request -> input('relleno'),
-                'cantidad' =>         $request -> input('cantidadrelleno'),
-                'envoltura' => 0
-                ]);
-            $confmat3->save();
-           return redirect()->route('configuraciones.show', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+                    if ($disp_capote ->existencia_produccion >= $request->input('cantidadcapote') &&
+                        $disp_relleno->existencia_produccion >= $request->input('cantidadrelleno')  &&
+                        $disp_pega->existencia_produccion >= $request->input('cantidad_pega')
+                        )
+                                {
+                                    $configuracion = Configuracion::create([
+                        'cigarro_id' => $request -> input('cigarro'),
+                        'nombre' => $request->input('nombre'),
+                        'fecha' => $request->input('fecha')
+                        ]);
+               $configuracion->save();
+
+           if($configuracion){
+
+                    $confmat2 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capote'),
+                        'cantidad' =>         $request -> input('cantidadcapote'),
+                        'envoltura' => 4
+                        ]);
+                    $confmat2->save();
+
+                    $confmat3 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('relleno'),
+                        'cantidad' =>         $request -> input('cantidadrelleno'),
+                        'envoltura' => 3
+                        ]);
+                    $confmat3->save();
+
+                    $confmat5 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('pega'),
+                        'cantidad' =>         $request -> input('cantidad_pega'),
+                        'envoltura' => 1
+                        ]);
+                    $confmat5->save();
+
+               return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
         }
        return back()->withInput();
+
+                                }
+                        return back()->with('error', 'Una de las cantidades digitades excede el inventario de produccion');
+                }
+
+                else {
+
+                    if ($disp_saborizante->existencia_produccion >= $request->input('cantidad_saborizante') &&
+                        $disp_capote->existencia_produccion >= $request->input('cantidadcapote') &&
+                        $disp_relleno->existencia_produccion >= $request->input('cantidadrelleno')  &&
+                        $disp_pega->existencia_produccion >= $request->input('cantidad_pega')
+                        )
+                                {
+                                    $configuracion = Configuracion::create([
+                        'cigarro_id' => $request -> input('cigarro'),
+                        'nombre' => $request->input('nombre'),
+                        'fecha' => $request->input('fecha')
+                        ]);
+               $configuracion->save();
+
+           if($configuracion){
+
+                    $confmat2 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('capote'),
+                        'cantidad' =>         $request -> input('cantidadcapote'),
+                        'envoltura' => 4
+                        ]);
+                    $confmat2->save();
+
+                    $confmat3 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('relleno'),
+                        'cantidad' =>         $request -> input('cantidadrelleno'),
+                        'envoltura' => 3
+                        ]);
+                    $confmat3->save();
+
+
+                                $confmat4 = ConfiguracionMateriaPrima::create([
+                                'configuracion_id' => $configuracion->idconfiguracion,
+                                'materiaprima_id'  => $request -> input('saborizante'),
+                                'cantidad' =>         $request -> input('cantidad_saborizante'),
+                                'envoltura' => 2
+                                ]);
+                            $confmat4->save();
+
+
+                    $confmat5 = ConfiguracionMateriaPrima::create([
+                        'configuracion_id' => $configuracion->idconfiguracion,
+                        'materiaprima_id'  => $request -> input('pega'),
+                        'cantidad' =>         $request -> input('cantidad_pega'),
+                        'envoltura' => 1
+                        ]);
+                    $confmat5->save();
+
+               return redirect()->route('configuraciones.index', ['configuracion'=>$configuracion])->with('success', 'Configuracion creado correctamente');
+        }
+       return back()->withInput();
+
+                                }
+                        return back()->with('error', 'Una de las cantidades digitades excede el inventario de produccion');
+
+                }
         }
 
     }
@@ -203,22 +385,18 @@ class ConfiguracionesController extends Controller
 
     //$today = date('Y-m-d H:i:s');
     $configuraciones= DB::table('produccionMaquina')
-  ->join('configuracion', 'produccionMaquina.configuracion_id', '=', 'configuracion.idconfiguracion')
-  ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
-  ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
-  ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
-  ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad',
-  'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras,
-  SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad),
-  0) as rendimiento, EXTRACT(WEEK from produccionMaquina.fecha) as semana,
-  EXTRACT(MONTH from produccionMaquina.fecha) as mes"))
-  ->where([
-        ['cigarro.tipo', 'like', 'Fumas AMF'],
-          ['configuracionMateriaPrima.envoltura', '>=', '1'],
-        ])
-      ->whereBetween('produccionMaquina.fecha', ['2017-10-01 00:00:01', '2017-12-31 23:59:00'])
-      ->groupBy('mes','semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')
-      ->get();
+                ->join('configuracion', 'produccionMaquina.configuracion_id', '=', 'configuracion.idconfiguracion')
+                ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
+                ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
+                ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+                ->select('materiaPrima.nombre','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', DB::raw("SUM(configuracionMateriaPrima.cantidad) as total_libras, SUM(produccionMaquina.cantidad) as total_cigarros, round(SUM(produccionMaquina.cantidad)/SUM(configuracionMateriaPrima.cantidad), 0) as rendimiento, EXTRACT(WEEK from produccionMaquina.fecha) as semana, EXTRACT(MONTH from produccionMaquina.fecha) as mes"))
+                ->where([
+                    ['cigarro.tipo', 'like', 'Fumas AMF'],
+                    ['configuracionMateriaPrima.envoltura', '>=', '1'],
+                    ])
+                ->whereBetween('produccionMaquina.fecha', ['2017-10-01 00:00:01', '2017-12-31 23:59:00'])
+                ->groupBy('mes','semana','materiaPrima.nombre', 'configuracionMateriaPrima.envoltura')
+                ->get();
 
 return view('rendimiento', ['configuraciones' => $configuraciones]);
 }
