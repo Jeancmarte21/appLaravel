@@ -12,7 +12,7 @@
           <div class="x_title">
 
 
-<form class="form-horizontal" method="post" action="/rendimiento">
+<form class="form-horizontal" method="get" action="/rendimiento">
 {{ csrf_field()}}
 
 <h3>   <button  class="btn btn-primary btn btn-xs" data-toggle="modal" data-target=".bs-example-modal-lg"><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Seleccionar Rango de Fechas</button></h3>

@@ -27,16 +27,11 @@ Route::get('/rendimientosdownloadPDF','ConfiguracionesController@downloadPDF');
 Route::get('/costoUnitario.index','ProduccionesMaquinasController@costoUnitario');
 Route::get('/costoUnitariosdownloadPDF','ProduccionesMaquinasController@downloadPDF');
 
-
 /*Rutas PDF*/
 
 
 /*Rutas Reportes*/
-
-
-
 Route::get('/inventarios','MateriasPrimasController@inventario');
-Route::get('/rendimiento','ConfiguracionesController@rendimiento');
 Route::get('/costoUnitario','ProduccionesMaquinasController@costoUnitario');
 /*Rutas Reportes*/
 
@@ -55,6 +50,7 @@ Route::resource('entradas','EntradasController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
 Route::resource('nomina', 'NominasController');
+Route::resource('rendimiento','RendimientosController');
 /*Views & Controllers*/
 
 Auth::routes();
