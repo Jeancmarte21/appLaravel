@@ -38,7 +38,7 @@
         <label class="col-xs-3 control-label">Desde</label>
 
 				<div class="col-xs-8 selectContainer">
-					<input class="form-control" type="date"  id="example-date-input" name="fecha_desde" required>
+					<input class="form-control" type="datetime-local"  name="fecha_desde"  required>
 				</div>
 		</div>
   </div>
@@ -47,7 +47,7 @@
       	<div class="col-xs-10">
           <label class="col-xs-3 control-label">Hasta</label>
 				<div class="col-xs-8 selectContainer">
-					<input class="form-control" type="date"  id="example-date-input" name="fecha_hasta" required>
+					<input class="form-control" type="datetime-local"   name="fecha_hasta" required>
 
 			</div>
 		</div>
