@@ -25,6 +25,7 @@ class CreateMateriaPrimaTable extends Migration
             $table->float('existencia_real', 11,2)->default(0);
             $table->float('existencia_produccion', 11,2)->default(0);
             $table->float('costo', 11, 2)->default(0);
+            $table->float('costo_ant', 11, 2)->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

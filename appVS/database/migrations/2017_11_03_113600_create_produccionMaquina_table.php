@@ -20,7 +20,7 @@ class CreateProduccionMaquinaTable extends Migration
             $table->integer('cigarro_id')->unsigned();
             $table->integer('configuracion_id')->unsigned();
             $table->integer('cantidad');
-            $table->datetime('fecha')->unique();
+            $table->date('fecha');
             $table->float('cantidad_sobrante', 7, 2);
             $table->softDeletes();
             $table->timestamps();
