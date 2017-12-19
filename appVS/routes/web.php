@@ -32,8 +32,7 @@ Route::get('/costoUnitariosdownloadPDF','ProduccionesMaquinasController@download
 
 
 /*Rutas Reportes*/
-Route::get('/nomina', 'JornadasController@nomina');
-Route::post('/nomina', 'JornadasController@nomina');
+
 
 
 Route::get('/inventarios','MateriasPrimasController@inventario');
@@ -55,6 +54,7 @@ Route::resource('produccionesmaquinas', 'ProduccionesMaquinasController');
 Route::resource('entradas','EntradasController');
 Route::resource('inicio', 'iniciosController');
 Route::resource('salidas','SalidasController');
+Route::resource('nomina', 'NominasController');
 /*Views & Controllers*/
 
 Auth::routes();

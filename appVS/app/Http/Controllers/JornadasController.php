@@ -35,18 +35,7 @@ class JornadasController extends Controller
 
 
       return view('jornadas.index', ['jornadas' => $jornadas,'empleados' => $empleados, 'maquinas' => $maquinas]);
-        /* if ($request)
-        {
-
-            $jornad=DB::table('jornada')->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-            ->join('maquina', 'jornada.maquina_id', '=', 'maquina.idmaquina')
-            ->select('jornada.*', 'empleado.nombre', 'empleado.apellidos', 'maquina.nombre as maquina')
-            return view('jornadas.index',["jornad"=>$jornad]);
-        }*/
-
-
-        //$jornadas = Jornada::all();
-        //return view('jornadas.index');
+    
     }
 
     /**
@@ -154,55 +143,7 @@ class JornadasController extends Controller
       return back()->with('errors', 'No se pudo borrar la Jornada');
     }
 
-    public function nomina(FechaNominaRequest $request){
 
-      if ($request)
-      {
-          $fecha_desde=trim($request->get('fecha_desde'));
-          $fecha_hasta=trim($request->get('fecha_hasta'));
-    //  $fecha_desde = $request->input('fecha_desde');
-    //  $fecha_hasta = $request->input('fecha_hasta');
-
-      $jornadas= DB::table('jornada')
-                  ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-                  ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos',
-                              DB::raw('SUM(jornada.incentivo) as incent,
-                              count(jornada.idjornada)*empleado.salario_dia as salario,
-                              sum(jornada.extra) as extra,
-                              round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss,
-                              round((count(jornada.idjornada)*empleado.salario_dia*3.04) / 100, 0) as afs'))
-                  ->whereBetween('fecha',[$fecha_desde, $fecha_hasta])
-                  ->groupBy('jornada.empleado_id')
-                  ->orderBy('empleado.nombre')
-                  ->get();
- return view('nomina', ['jornadas'=>$jornadas,'fecha_desde' => $fecha_desde,'fecha_hasta' => $fecha_hasta]);
-                }
-     return view('nomina', ['jornadas'=>$jornadas]);
-   }
-
-
-
-   public function downloadPDF(Request $request){
-
-    $jornadas = Jornada::all();
-  //  $fecha_desde = $request->input('fecha_desde');
-  //  $fecha_hasta = $request->input('fecha_hasta');
-    $jornadas= DB::table('jornada')
-                ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
-                ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos',
-                            DB::raw('SUM(jornada.incentivo) as incent,
-                            count(jornada.idjornada)*empleado.salario_dia as salario,
-                            sum(jornada.extra) as extra,
-                            round((count(jornada.idjornada)*empleado.salario_dia*2.87) / 100, 0) as tss,
-                            round((count(jornada.idjornada)*empleado.salario_dia*3.04) / 100, 0) as afs'))
-              //  ->whereBetween('fecha',[$fecha_desde, $fecha_hasta])
-                ->groupBy('jornada.empleado_id')
-                ->orderBy('empleado.nombre')
-                ->get();
-
-    $pdf = PDF::loadView('nominaPDF', compact('jornadas'));
-    return $pdf->download('nomina.pdf');
-   }
 
 
 }
