@@ -247,7 +247,7 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-
+                @include('partials.error')
                 @include('partials.errors')
                 @include('partials.success')
                   	<div class="row">

@@ -90,7 +90,7 @@
         <section>
 
 
-
+                @include('partials.error')
                 @include('partials.errors')
                 @include('partials.success')
 

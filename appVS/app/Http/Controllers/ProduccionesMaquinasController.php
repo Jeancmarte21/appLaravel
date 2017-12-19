@@ -77,7 +77,7 @@ class ProduccionesMaquinasController extends Controller
                 'configuracion_id' => $request->input('configuracion'),
                 'cantidad' => $request->input('cantidad'),
                 //'fecha' => $request->input('fecha')
-                'fecha' => date('Y-m-d H:i:s'),
+                'fecha' => date('Y-m-d'),
                 'cantidad_sobrante' => $request->input('cantidad_sobrante')
                 ]);
             $produccionMaquina->save();
