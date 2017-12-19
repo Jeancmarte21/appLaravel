@@ -3,10 +3,18 @@
 @section('contenido')
 
 
+
 <?php $cont = 0; $salario_acum = 0; $incent_acum = 0; $extra_acum = 0;
 	$tss_acum =0; $afs_acum = 0; $agua_acum = 0; $desc_acum = 0; $bruto_acum = 0; $neto_acum = 0;
 	$fecha = date('D, d \d\e F \d\e\l Y');
 	$semana = date('W');?>
+
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+		@include('prenomina')
+
+	</div>
+	</div>
 <div class="row">
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 	<div><h5 align="right"><span>S-</span>  {{$semana}}</h5><h5 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h5></div>

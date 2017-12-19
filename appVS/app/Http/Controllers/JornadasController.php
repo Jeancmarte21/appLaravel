@@ -156,13 +156,13 @@ class JornadasController extends Controller
 
     public function nomina(FechaNominaRequest $request){
 
-    // $empleado = Empleado::has('jornadas')->whereBetween('fecha', ['12-08-2017', '12-10-2017'])->tosql();
-    //$empleado = Empleado::has('jornadas')->whereBetween('fecha', ['2017-12-01', '2017-12-31'])->get();
-    //$empleado = Empleado::whereHas('jornadas', function($q){
-    //$q->whereBetween('fecha', ['2017-12-01', '2017-12-31']);})->get();
-     // $jornadas = Jornada::whereBetween('fecha',['2017-12-01', '2017-12-31'])->get();
-      $fecha_desde = $request->input('fecha_desde');
-      $fecha_hasta = $request->input('fecha_hasta');
+      if ($request)
+      {
+          $fecha_desde=trim($request->get('fecha_desde'));
+          $fecha_hasta=trim($request->get('fecha_hasta'));
+    //  $fecha_desde = $request->input('fecha_desde');
+    //  $fecha_hasta = $request->input('fecha_hasta');
+
       $jornadas= DB::table('jornada')
                   ->join('empleado', 'jornada.empleado_id', '=', 'empleado.idempleado')
                   ->select('jornada.empleado_id','empleado.nombre', 'empleado.apellidos',
@@ -175,12 +175,12 @@ class JornadasController extends Controller
                   ->groupBy('jornada.empleado_id')
                   ->orderBy('empleado.nombre')
                   ->get();
+ return view('nomina', ['jornadas'=>$jornadas,'fecha_desde' => $fecha_desde,'fecha_hasta' => $fecha_hasta]);
+                }
      return view('nomina', ['jornadas'=>$jornadas]);
    }
 
-   public function prenomina(){
-    return view('prenomina');
-   }
+
 
    public function downloadPDF(Request $request){
 

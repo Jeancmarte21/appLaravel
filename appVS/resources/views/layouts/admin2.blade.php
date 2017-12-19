@@ -211,7 +211,7 @@
                  <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-               <li><a href="/prenomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
+               <li><a href="/nomina"><i class="fa fa-circle-o"></i>Nomina</a></li>
                <li><a href="/inventarios"><i class="fa fa-circle-o"></i> Inventario</a></li>
                <li><a href="/rendimiento"><i class="fa fa-circle-o"></i> Rendimiento tabaco</a></li>
                <li><a href="/costoUnitario"><i class="fa fa-circle-o"></i> Costo unitario</a></li>

@@ -32,8 +32,10 @@ Route::get('/costoUnitariosdownloadPDF','ProduccionesMaquinasController@download
 
 
 /*Rutas Reportes*/
+Route::get('/nomina', 'JornadasController@nomina');
 Route::post('/nomina', 'JornadasController@nomina');
-Route::get('/prenomina','JornadasController@prenomina');
+
+
 Route::get('/inventarios','MateriasPrimasController@inventario');
 Route::get('/rendimiento','ConfiguracionesController@rendimiento');
 Route::get('/costoUnitario','ProduccionesMaquinasController@costoUnitario');
