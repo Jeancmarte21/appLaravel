@@ -130,7 +130,7 @@ class NominasController extends Controller
                     ->orderBy('empleado.nombre')
                     ->get();
 
-        $pdf = PDF::loadView('nominaPDF', compact('jornadas'));
+        $pdf = PDF::loadView('nomina.nominaPDF', compact('jornadas'));
         return $pdf->download('nomina.pdf');
        }
 }

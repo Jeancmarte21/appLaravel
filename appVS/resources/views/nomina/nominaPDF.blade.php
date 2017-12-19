@@ -26,7 +26,7 @@ table, th, td {
 
     <table style="width:100%">
       <tr>
-        
+        <th class="text-center"></th>
         <th class="text-center" >Nombre</th>
         <th class="text-center">SALARIO</th>
         <th class="text-center">INCENT</th>
@@ -60,6 +60,22 @@ table, th, td {
      <td>{{($jornada->salario + $jornada->incent + $jornada->extra) - ($jornada->tss + $jornada->afs + 13)}}</td>
    </tr>
       @endforeach
+
+<tr>
+<td></td>
+<td align="right"><strong>TOTAL</strong></td>
+<td>{{$salario_acum}}</td>
+<td>{{$incent_acum}}</td>
+<td></td>
+<td>{{$extra_acum}}</td>
+<td>{{$bruto_acum}}</td>
+<td></td>
+<td>{{$tss_acum}}</td>
+<td>{{$afs_acum}}</td>
+<td>{{$agua_acum}}</td>
+<td>{{$desc_acum}}</td>
+<td>{{$neto_acum}}</td>
+</tr>
 
     </table>
 
