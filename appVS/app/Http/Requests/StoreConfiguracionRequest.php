@@ -28,12 +28,16 @@ class StoreConfiguracionRequest extends FormRequest
                 'cigarro' => 'required|numeric|exists:cigarro,idcigarro',
                 'nombre' => 'required|max:35',
                 'fecha' => 'required|date|date_equals:today',
-                'capa'  => 'nullable|numeric|exists:materiaPrima,idmateriaPrima|different:capote',
+                'capa'  => 'nullable|numeric|exists:materiaPrima,idmateriaPrima',
                 'cantidadcapa' => 'required_with:capa|numeric|nullable',
                 'capote'  => 'required|numeric|exists:materiaPrima,idmateriaPrima',
                 'cantidadcapote' => 'required|numeric',
                 'relleno'  => 'required|numeric|exists:materiaPrima,idmateriaPrima',
-                'cantidadrelleno' => 'required|numeric'
+                'cantidadrelleno' => 'required|numeric',
+                'saborizante'  => 'nullable|numeric|exists:materiaPrima,idmateriaPrima',
+                'cantidad_saborizante' => 'required_with:saborizante|numeric|nullable',
+                'pega'  => 'required|numeric|exists:materiaPrima,idmateriaPrima',
+                'cantidad_pega' => 'required|numeric'
         ];
     }
 }

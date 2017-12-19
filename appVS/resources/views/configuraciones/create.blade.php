@@ -120,7 +120,7 @@
         <label class="col-xs-3 control-label">Aroma</label>
         <div class="col-xs-3 selectContainer">
             <select class="form-control" name="saborizante" id="saborizante">
-              <option value="">Seleccione</option>
+              <option value="">Sin Aroma</option>
                 @foreach($saborizante as $saborizantes)
                 <option value="{{$saborizantes->idmateriaPrima}}">{{$saborizantes->nombre}}</option>
               @endforeach
