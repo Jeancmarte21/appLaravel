@@ -27,10 +27,8 @@
 					<th class="text-center">SEMANA</th>
 					<th class="text-center">Cigarro</th>
 					<th class="text-center">CONFIGURACIÓN</th>
-					<th class="text-center">CAPA</th>
-					<th class="text-center">CAPOTE</th>
-          			<th class="text-center">AROMA</th>
-          			<th class="text-center">PEGA</th>
+          			<th class="text-center">COSTO PRODUCCION</th>
+          			<th class="text-center">TOTAL CIGARROS</th>
 					<th class="text-center">COSTO POR UNIDAD</th>
 
 					</thead>
@@ -48,13 +46,11 @@
 				@else
 				<td class="text-center">-</td>
 				@endif
-				<td>{{$costo->cigarro}}</td>
-				<td>{{$costo->config}}</td>
-				<td></td>
-				<td></td>
-				<td>{{$costo->total_cigarros}}</td>
-				<td>{{$costo->total_costo}}</td>
-				<td>{{$costo->total_costo/$costo->total_cigarros}}</td>
+				<td class="text-center">{{$costo->cigarro}}</td>
+				<td class="text-center">{{$costo->config}}</td>
+				<td class="text-center">{{$costo->total_costo}}</td>
+				<td class="text-center">{{$costo->total_cigarros/$costo->dividendo}}</td>
+				<td class="text-center">{{$costo->rounded}}</td>
 
 
 				<?php $mes = $costo->mes;
