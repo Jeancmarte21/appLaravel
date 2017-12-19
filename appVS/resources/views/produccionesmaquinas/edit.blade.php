@@ -9,7 +9,7 @@
       <fieldset>
       {{ csrf_field()}}
       <input type="hidden" name="_method" value="put">
-
+      
 
                 <!--   <div class="form-group">
         <label for="example-datetime-local-input" class="col-xs-3 control-label">Fecha & hora</label>
@@ -50,7 +50,7 @@
         <label class="col-xs-3 control-label">Configuración</label>
         <div class="col-xs-5 selectContainer">
             <select class="form-control" name="configuracion" required>
-                <option value="{{$produccionesmaquinas->idproduccionesmaquinas}}" selected>{{$produccionesmaquinas->configuraciones->nombre}}</option>
+                <option value="{{$produccionesmaquinas->configuracion_id}}" selected>{{$produccionesmaquinas->configuraciones->nombre}}</option>
                 @foreach($configuraciones as $configuracion)
                 <option value="{{$configuracion->idconfiguracion}}">{{$configuracion->nombre}}</option>
               @endforeach
@@ -70,7 +70,7 @@
             <div class="form-group">
                 <label class="col-xs-3 control-label">Cantidad Sobrante</label>
                 <div class="col-xs-5 selectContainer">
-                <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="cantidad_sobrante" name="cantidad_sobrante" value="{{produccionesmaquinas->cantidad_sobrante}}">
+                <input class="form-control" type="number" value="0" min="0" step="0.1" data-number-to-fixed="2" data-number-stepfactor="100" class="currency" id="cantidad_sobrante" name="cantidad_sobrante" value="{{$produccionesmaquinas->cantidad_sobrante}}">
                </div>
             </div>
 
