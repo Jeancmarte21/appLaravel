@@ -31,7 +31,7 @@ class JornadasController extends Controller
       $request->user()->authorizeRoles(['user', 'admin']);
       $empleados = Empleado::all();
       $maquinas = Maquina::all();
-      $jornadas = Jornada::all();
+      $jornadas = Jornada::paginate(8);
 
 
       return view('jornadas.index', ['jornadas' => $jornadas,'empleados' => $empleados, 'maquinas' => $maquinas]);

@@ -247,9 +247,10 @@
                 </div>
                 <!-- /.box-header -->
                 <div class="box-body">
-                @include('partials.error')
+                
                 @include('partials.errors')
                 @include('partials.success')
+                @include('partials.error')
                   	<div class="row">
 	                  	<div class="col-md-12">
 

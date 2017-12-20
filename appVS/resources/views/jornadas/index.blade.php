@@ -45,7 +45,7 @@
 
 				@endforeach
 			</table>
-			</table>
+			{{$jornadas->links() }}
 		</div>
 
 	</div>

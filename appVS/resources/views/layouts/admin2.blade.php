@@ -236,10 +236,10 @@
         <section class="content">
 
 
-                @include('partials.error')
+                
                 @include('partials.errors')
                 @include('partials.success')
-
+                @include('partials.error')
 		                          <!--Contenido-->
                               @yield('contenido')
 		                          <!--Fin Contenido-->
