@@ -141,7 +141,7 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-
+        Maatwebsite\Excel\ExcelServiceProvider::class,
         Khill\Lavacharts\Laravel\LavachartsServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
@@ -196,7 +196,8 @@ return [
     */
 
     'aliases' => [
-    
+      
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
         'Lava' => Khill\Lavacharts\Laravel\LavachartsFacade::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
         'App' => Illuminate\Support\Facades\App::class,
