@@ -29,6 +29,12 @@ Route::get('/costoUnitariosdownloadPDF','CostoUnitarioController@downloadPDF');
 /*Rutas PDF*/
 
 
+
+/*Rutas excel*/
+Route::resource('excel','ExcelController');
+/*Rutas excel*/
+
+
 /*Rutas Reportes*/
 Route::get('/inventarios','MateriasPrimasController@inventario');
 /*Rutas Reportes*/
