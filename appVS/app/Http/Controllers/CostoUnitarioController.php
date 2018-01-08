@@ -107,4 +107,24 @@ class CostoUnitarioController extends Controller
     {
         //
     }
+
+    public function downloadPDF(Request $request){
+
+      $configuraciones = Configuracion::all();
+
+      $costos= DB::table('configuracion')
+                  ->join('produccionMaquina', 'configuracion.idconfiguracion', '=','produccionMaquina.configuracion_id')
+                  ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
+                  ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
+                  ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+                  ->select('materiaPrima.nombre','configuracion.nombre as config','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', 'cigarro.nombre as cigarro', DB::raw("SUM(configuracionMateriaPrima.cantidad * materiaPrima.costo) as total_costo, SUM(produccionMaquina.cantidad) as total_cigarros, EXTRACT(WEEK from produccionMaquina.fecha) as semana, EXTRACT(MONTH from produccionMaquina.fecha) as mes, count(configuracionMateriaPrima.materiaprima_id) as dividendo, round(SUM(configuracionMateriaPrima.cantidad * materiaPrima.costo) / (SUM(produccionMaquina.cantidad) / count(configuracionMateriaPrima.materiaprima_id)),4) as rounded"))
+                //  ->whereBetween('configuracion.fecha',[$fecha_desde, $fecha_hasta])
+                  ->groupBy('mes','semana','cigarro.nombre')
+                  ->get();
+                  $pdf = PDF::loadView('costoUnitario.costoUnitarioPDF', compact('costos'));
+                  return $pdf->download('Costo Unitario.pdf');
+
+
+
+    }
 }
