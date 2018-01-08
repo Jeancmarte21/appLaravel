@@ -15,7 +15,8 @@ table, th, td {
     <?php $cont = 0; $salario_acum = 0; $incent_acum = 0; $extra_acum = 0;
     	$tss_acum =0; $afs_acum = 0; $agua_acum = 0; $desc_acum = 0; $bruto_acum = 0; $neto_acum = 0;
     	$fecha = date('D, d \d\e F \d\e\l Y');
-    	$semana = date('W');?>
+    	$semana = date('W');
+      $mes = date('M')?>
     <div><h4 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h4></div>
   <div ALIGN=center>
   <img src="./img/logo copia.ico" width="100" alt="logo"/>
@@ -40,11 +41,12 @@ table, th, td {
 
     <tr>
 
-    @if($mes != $confi->mes)
-    <td>{{$confi->mes}}</td>
-    @else
-    <td class="text-center">-</td>
-    @endif
+      @if($mes != $confi->mes)
+       <td>{{$confi->mes}}</td>
+       @else
+       <td class="text-center">-</td>
+       @endif
+
     @if($semana != $confi->semana)
     <td>{{$confi->semana}}</td>
     @else
