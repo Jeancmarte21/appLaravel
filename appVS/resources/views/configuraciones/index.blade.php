@@ -17,14 +17,14 @@
     <div class="table-responsive">
       <table class="table table-striped table-bordered table-condensed table-hover">
         <thead>
-          <th class="text-center">ID</th>
+          <th class="text-center">Fecha</th>
           <th class="text-center">NOMBRE</th>
           <th class="text-center">ACCION</th>
 
         </thead>
         @foreach($configuraciones as $configuracion)
           <tr>
-          <td class="text-center">{{$configuracion->idconfiguracion}}</td>
+          <td class="text-center">{{$configuracion->fecha}}</td>
           <td class="text-center">{{$configuracion->nombre}}</td>
           <td>
 

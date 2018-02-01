@@ -15,7 +15,8 @@ table, th, td {
     <?php $cont = 0; $salario_acum = 0; $incent_acum = 0; $extra_acum = 0;
     	$tss_acum =0; $afs_acum = 0; $agua_acum = 0; $desc_acum = 0; $bruto_acum = 0; $neto_acum = 0;
     	$fecha = date('D, d \d\e F \d\e\l Y');
-    	$semana = date('W');?>
+    	$semana = date('W');
+      $mes = date('M')?>
     <div><h4 ALIGN=right><strong><span>Fecha:</span>  {{$fecha}}</strong></h4></div>
   <div ALIGN=center>
   <img src="./img/logo copia.ico" width="100" alt="logo"/>
@@ -26,7 +27,7 @@ table, th, td {
 
   <table style="width:100%">
 
-    <thead>
+    <tr>
         <th class="text-center">FECHA</th>
         <th class="text-center">NOMBRE CONFIGURACIÓN</th>
         <th class="text-center">CAPA</th>
@@ -35,8 +36,33 @@ table, th, td {
         <th class="text-center">PEGA</th>
         <th class="text-center">COSTO POR UNIDAD</th>
 
-        </thead>
+      </tr>
+        @foreach ($costos as $costo)
 
+      <tr>
+
+      @if($mes != $costo->mes)
+      <td>{{$costo->mes}}</td>
+      @else
+      <td class="text-center">-</td>
+      @endif
+      @if($semana != $costo->semana)
+      <td>{{$costo->semana}}</td>
+      @else
+      <td class="text-center">-</td>
+      @endif
+      <td class="text-center">{{$costo->cigarro}}</td>
+      <td class="text-center">{{$costo->config}}</td>
+      <td class="text-center">{{$costo->total_costo}}</td>
+      <td class="text-center">{{$costo->total_cigarros/$costo->dividendo}}</td>
+      <td class="text-center">{{$costo->rounded}}</td>
+
+
+      <?php $mes = $costo->mes;
+          $semana = $costo->semana;
+      ?>
+      </tr>
+      @endforeach
 
       </table>
 
