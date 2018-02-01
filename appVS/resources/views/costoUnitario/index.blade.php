@@ -49,7 +49,7 @@
 				<td class="text-center">{{$costo->cigarro}}</td>
 				<td class="text-center">{{$costo->config}}</td>
 				<td class="text-center">{{$costo->total_costo}}</td>
-				<td class="text-center">{{$costo->total_cigarros/$costo->dividendo}}</td>
+				<td class="text-center">{{$costo->total_cigarros}}</td>
 				<td class="text-center">{{$costo->rounded}}</td>
 
 

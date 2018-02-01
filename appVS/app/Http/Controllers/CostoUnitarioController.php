@@ -24,8 +24,28 @@ class CostoUnitarioController extends Controller
       {
       $fecha_desde=trim($request->get('fecha_desde'));
       $fecha_hasta=trim($request->get('fecha_hasta'));
-
       $costos= DB::table('configuracion')
+                  ->join('produccionMaquina', 'configuracion.idconfiguracion', '=','produccionMaquina.configuracion_id')
+                  ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
+                  ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
+                  ->join('materiaPrima', 'configuracionMateriaPrima.materiaprima_id', '=', 'materiaPrima.idmateriaPrima')
+                  ->select('materiaPrima.nombre','configuracion.nombre as config','configuracionMateriaPrima.cantidad as libra','produccionMaquina.cantidad', 'configuracionMateriaPrima.envoltura', 'cigarro.nombre as cigarro', DB::raw("
+                        SUM(configuracionMateriaPrima.cantidad * materiaPrima.costo) as total_costo,
+                        SUM( Distinct produccionMaquina.cantidad) as total_cigarros,
+                        
+                        EXTRACT(WEEK from produccionMaquina.fecha) as semana,
+                        EXTRACT(MONTH from produccionMaquina.fecha) as mes,
+                        count(configuracionMateriaPrima.materiaprima_id) as dividendo, 
+                        
+                        (
+                            SUM(configuracionMateriaPrima.cantidad * materiaPrima.costo) / (
+                            SUM(DISTINCT produccionMaquina.cantidad) )
+                        ) as  rounded "))
+                  ->whereBetween('configuracion.fecha',[$fecha_desde, $fecha_hasta])
+                  ->groupBy('mes','semana','cigarro.nombre' )
+                  ->get();
+
+    /*  $costos= DB::table('configuracion')
                   ->join('produccionMaquina', 'configuracion.idconfiguracion', '=','produccionMaquina.configuracion_id')
                   ->join('configuracionMateriaPrima', 'configuracion.idconfiguracion', '=', 'configuracionMateriaPrima.configuracion_id')
                   ->join('cigarro', 'configuracion.cigarro_id', '=', 'cigarro.idcigarro')
@@ -34,6 +54,17 @@ class CostoUnitarioController extends Controller
                   ->whereBetween('configuracion.fecha',[$fecha_desde, $fecha_hasta])
                   ->groupBy('mes','semana','cigarro.nombre')
                   ->get();
+
+        $costos = DB::select( "
+            SELECT
+                materiaPrima.nombre,
+                configuracion.nombre as config,
+                configuracionMateriaPrima.cantidad as libra,
+                produccionMaquina.cantidad, 
+                configuracionMateriaPrima.envoltura,
+                cigarro.nombre as cigarro
+            FROM
+        " );*/
 
 
   return view('costoUnitario.index',['costos' => $costos, 'fecha_desde' => $fecha_desde, 'fecha_hasta' => $fecha_hasta]);
